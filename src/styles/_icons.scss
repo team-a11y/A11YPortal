@@ -1,0 +1,835 @@
+//----------
+// Font-face
+// Icon
+// Icon-sizes
+// Variables
+//----------
+
+// Font-face
+
+@font-face {
+  font-family: 'company-name-icons';
+  src:  url('../fonts/company-name-icons-v4-3.eot');
+  src:  url('../fonts/company-name-icons-v4-3.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/company-name-icons-v4-3.woff') format('woff'),
+        url('../fonts/company-name-icons-v4-3.ttf') format('truetype'),
+        url('../fonts/company-name-icons-v4-3#company-name-icons') format('svg');
+}
+
+// Icon
+
+.icon {
+  display: inline-block;
+  font-family: 'company-name-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+ 
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon:before {
+  color: inherit;
+	position: relative;
+	// z-index: -1; 
+}
+
+// Icon-sizes
+
+.icon-md {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    font-size: 1.125rem;
+}
+
+.icon-search {
+  line-height: 1;
+}
+
+// // Icon
+
+// .icon {
+//     position: relative;
+//     top: 6px;
+//     display: inline-block;
+//     padding-left: 1.7em;
+//     background: white;
+// }
+
+// .icon-sm {
+//     width: 22px;
+//     height: 22px;
+  
+//   img {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: inherit;
+//     height: inherit;
+//   }
+  
+// }
+
+// Variables
+
+$icon-18-birthday: "\e9d9";
+$icon-balance: "\e9dc";
+$icon-boat: "\e9dd";
+$icon-first-home: "\e9de";
+$icon-graduation: "\e9df";
+$icon-house-2: "\e9e0";
+$icon-money-coins: "\e9e1";
+$icon-study: "\e9e2";
+$icon-pig-2: "\e9e3";
+$icon-grandchildren: "\e93d";
+$icon-renovation: "\e949";
+$icon-car-2: "\e9d8";
+$icon-electronics: "\e9da";
+$icon-game: "\e9db";
+$icon-add-z1: "\e901";
+$icon-add-z2: "\e90d";
+$icon-information-z1: "\e90e";
+$icon-information-z2: "\e90f";
+$icon-subtract-z1: "\e910";
+$icon-subtract-z2: "\e919";
+$icon-menu-close: "\e91a";
+$icon-add: "\e91b";
+$icon-arrow-c-down: "\e91c";
+$icon-arrow-c-left: "\e91d";
+$icon-arrow-c-right: "\e952";
+$icon-arrow-c-up: "\e95d";
+$icon-arrow-f-up-right: "\e95f";
+$icon-arrow-g-down: "\e977";
+$icon-arrow-g-left: "\e984";
+$icon-arrow-g-right: "\e993";
+$icon-arrow-g-up: "\e994";
+$icon-information: "\e9ad";
+$icon-menu2: "\e9ae";
+$icon-procent: "\e9d1";
+$icon-subtract: "\e9d2";
+$icon-accessibility: "\e900";
+$icon-addressbook: "\e902";
+$icon-addressbook-empty: "\e903";
+$icon-alarmclock: "\e904";
+$icon-arrow-a-down: "\e905";
+$icon-arrow-a-left: "\e906";
+$icon-arrow-a-right: "\e907";
+$icon-arrow-a-up: "\e908";
+$icon-arrow-b-down: "\e909";
+$icon-arrow-b-left: "\e90a";
+$icon-arrow-b-right: "\e90b";
+$icon-arrow-b-up: "\e90c";
+$icon-arrow-d-down: "\e911";
+$icon-arrow-d-left: "\e912";
+$icon-arrow-d-right: "\e913";
+$icon-arrow-d-up: "\e914";
+$icon-arrow-e-down: "\e915";
+$icon-arrow-e-left: "\e916";
+$icon-arrow-e-right: "\e917";
+$icon-arrow-e-up: "\e918";
+$icon-arrow-h-down: "\e91e";
+$icon-arrow-h-up: "\e91f";
+$icon-attachment: "\e920";
+$icon-backpack: "\e921";
+$icon-bandaid: "\e922";
+$icon-bikes: "\e923";
+$icon-boat-2: "\e924";
+$icon-box: "\e925";
+$icon-calculator: "\e926";
+$icon-calendar: "\e927";
+$icon-calendar-2: "\e928";
+$icon-camera: "\e929";
+$icon-car: "\e92a";
+$icon-chart: "\e92b";
+$icon-chat: "\e92c";
+$icon-check: "\e92d";
+$icon-clothes: "\e92e";
+$icon-college: "\e92f";
+$icon-community: "\e930";
+$icon-community-blog: "\e931";
+$icon-community-forum: "\e932";
+$icon-community-home: "\e933";
+$icon-community-people: "\e934";
+$icon-community-profile: "\e935";
+$icon-community-suggestions: "\e936";
+$icon-debt: "\e937";
+$icon-desktop: "\e938";
+$icon-document: "\e939";
+$icon-dot-a: "\e93a";
+$icon-download: "\e93b";
+$icon-edit: "\e93c";
+$icon-email: "\e93e";
+$icon-eq: "\e93f";
+$icon-erlenmeyer: "\e940";
+$icon-euro: "\e941";
+$icon-exclamationmark: "\e942";
+$icon-eye: "\e943";
+$icon-facebook-logo: "\e944";
+$icon-feedback: "\e945";
+$icon-file: "\e946";
+$icon-filter: "\e947";
+$icon-forecast: "\e948";
+$icon-gender-female: "\e94a";
+$icon-gender-male: "\e94b";
+$icon-googleplus-logo: "\e94c";
+$icon-guitar: "\e94d";
+$icon-hammer: "\e94e";
+$icon-holiday: "\e94f";
+$icon-home: "\e950";
+$icon-house: "\e951";
+$icon-information-badge: "\e953";
+$icon-instagram-logo: "\e954";
+$icon-instagram-logo-inverted: "\e955";
+$icon-label: "\e956";
+$icon-like: "\e957";
+$icon-linkedin-logo: "\e958";
+$icon-loading-image-placeholder: "\e959";
+$icon-location: "\e95a";
+$icon-lock: "\e95b";
+$icon-menu: "\e95c";
+$icon-menu-arrow-open-left: "\e95e";
+$icon-min: "\e960";
+$icon-mobile: "\e961";
+$icon-moneybag: "\e962";
+$icon-moon-dashed: "\e963";
+$icon-more: "\e964";
+$icon-multiply: "\e965";
+$icon-my-location: "\e966";
+$icon-notification-error: "\e967";
+$icon-notification-information: "\e968";
+$icon-notification-interference: "\e969";
+$icon-notification-maintenance: "\e96a";
+$icon-notification-success: "\e96b";
+$icon-notification-warning: "\e96c";
+$icon-party: "\e96d";
+$icon-pdf: "\e96e";
+$icon-phone: "\e96f";
+$icon-pig: "\e970";
+$icon-play: "\e971";
+$icon-plus: "\e972";
+$icon-plus-circle: "\e973";
+$icon-portfolio: "\e974";
+$icon-portfolio-open: "\e975";
+$icon-print: "\e976";
+$icon-questionmark: "\e978";
+$icon-refresh: "\e979";
+$icon-right-left: "\e97a";
+$icon-rings: "\e97b";
+$icon-risk: "\e97c";
+$icon-risk-2: "\e97d";
+$icon-save: "\e97e";
+$icon-search: "\e97f";
+$icon-settings: "\e980";
+$icon-shoppingbasket: "\e981";
+$icon-star: "\e982";
+$icon-star-half: "\e983";
+$icon-target: "\e985";
+$icon-tip-bulb: "\e986";
+$icon-trashcan: "\e987";
+$icon-twitter-logo: "\e988";
+$icon-up-down: "\e989";
+$icon-upload: "\e98a";
+$icon-user: "\e98b";
+$icon-users: "\e98c";
+$icon-users-2: "\e98d";
+$icon-washing-machine: "\e98e";
+$icon-wealth-increase: "\e98f";
+$icon-wrench: "\e990";
+$icon-addressbook-z1: "\e991";
+$icon-addressbook-z2: "\e992";
+$icon-arrow-d-down-z2: "\e995";
+$icon-arrow-d-left-z2: "\e996";
+$icon-arrow-d-right-z2: "\e997";
+$icon-arrow-d-up-z2: "\e998";
+$icon-calculator-z1: "\e999";
+$icon-calculator-z2: "\e99a";
+$icon-calendar-2-z1: "\e99b";
+$icon-calendar-2-z2: "\e99c";
+$icon-calendar-z1: "\e99d";
+$icon-calendar-z2: "\e99e";
+$icon-car-z1: "\e99f";
+$icon-car-z2: "\e9a0";
+$icon-community-profilelock-z3: "\e9a1";
+$icon-document-z1: "\e9a2";
+$icon-document-z2: "\e9a3";
+$icon-edit-z1: "\e9a4";
+$icon-edit-z2: "\e9a5";
+$icon-eye-z1: "\e9a6";
+$icon-eye-z2: "\e9a7";
+$icon-flickr-z1: "\e9a8";
+$icon-flickr-z2: "\e9a9";
+$icon-flickr-z3: "\e9aa";
+$icon-information-badge-z1: "\e9ab";
+$icon-information-badge-z2: "\e9ac";
+$icon-location-z1: "\e9af";
+$icon-location-z2: "\e9b0";
+$icon-lock-z1: "\e9b1";
+$icon-lock-z2: "\e9b2";
+$icon-mobile-z1: "\e9b3";
+$icon-mobile-z2: "\e9b4";
+$icon-notification-error-z1: "\e9b5";
+$icon-notification-error-z2: "\e9b6";
+$icon-notification-information-z1: "\e9b7";
+$icon-notification-information-z2: "\e9b8";
+$icon-notification-interference-z1: "\e9b9";
+$icon-notification-maintenance-z1: "\e9ba";
+$icon-notification-maintenance-z2: "\e9bb";
+$icon-notification-success-z2: "\e9bc";
+$icon-notification-warning-z1: "\e9bd";
+$icon-notification-warning-z2: "\e9be";
+$icon-notification-z1: "\e9bf";
+$icon-pdf-z2: "\e9c0";
+$icon-pdf-z3: "\e9c1";
+$icon-portfolio-open-z1: "\e9c2";
+$icon-portfolio-open-z2: "\e9c3";
+$icon-print-z1: "\e9c4";
+$icon-print-z2: "\e9c5";
+$icon-save-z1: "\e9c6";
+$icon-save-z2: "\e9c7";
+$icon-search-z1: "\e9c8";
+$icon-search-z2: "\e9c9";
+$icon-settings-z1: "\e9ca";
+$icon-settings-z2: "\e9cb";
+$icon-slideshare-z1: "\e9cc";
+$icon-slideshare-z2: "\e9cd";
+$icon-social-bg: "\e9ce";
+$icon-star-half-z1: "\e9cf";
+$icon-star-half-z2: "\e9d0";
+$icon-target-z1: "\e9d3";
+$icon-target-z2: "\e9d4";
+$icon-youtube-tube: "\e9d5";
+$icon-youtube-tube-bg: "\e9d6";
+$icon-youtube-you: "\e9d7";
+$icon-company-name-clip: "\e64d";
+$icon-company-name-logo-lion: "\e6b8";
+$icon-company-name-logo-company-name: "\e6b9";
+$icon-lioninverse: "\e70f";
+$icon-circle-xl: "\e669";
+$icon-arrow-inner-circle: "\e696";
+$icon-tv-tl1: "\e607";
+$icon-tv-tl2: "\e606";
+$icon-tv-half: "\e608";
+$icon-tv-full: "\e609";
+$icon-tv-br2: "\e60a";
+$icon-tv-br1: "\e60b";
+$icon-moon-tl1: "\e638";
+$icon-moon-tl2: "\e637";
+$icon-moon-half: "\e639";
+$icon-moon-full: "\e63a";
+$icon-moon-br2: "\e63c";
+$icon-moon-br1: "\e63d";
+$icon-legend-z2: "\e64b";
+$icon-legend-z1: "\e64c";
+$icon-circle-lg: "\e6d6";
+
+// obselete needs refactor oSearch and pPaymentsoverview
+$icon-close: "\e605";
+
+// === VARIATIONS ===
+// --------------------------------------------------
+
+//  VARIED
+// --------------------------------------------------
+
+.icon-company-name-clip                          { content: $icon-company-name-clip; &:before { content: $icon-company-name-clip !important; }}
+.icon-company-name-logo-lion                     { content: $icon-company-name-logo-lion; &:before { content: $icon-company-name-logo-lion !important; }}
+.icon-company-name-logo-company-name                      { content: $icon-company-name-logo-company-name; &:before { content: $icon-company-name-logo-company-name !important; }}
+.icon-lioninverse                       { content: $icon-lioninverse; &:before { content: $icon-lioninverse !important; }}
+.icon-notification-warning              { content: $icon-notification-warning; &:before { content: $icon-notification-warning !important; }}
+.icon-circle-xl                         { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-notification-warning-z2           { content: $icon-notification-warning-z2; &:before { content: $icon-notification-warning-z2 !important; }}
+.icon-notification-warning-z1           { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-notification-success              { content: $icon-notification-success; &:before { content: $icon-notification-success !important; }}
+.icon-notification-success-z2           { content: $icon-notification-success-z2; &:before { content: $icon-notification-success-z2 !important; }}
+.icon-notification-success-z1           { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-notification-information          { content: $icon-notification-information; &:before { content: $icon-notification-information !important; }}
+.icon-notification-information-z2       { content: $icon-notification-information-z2; &:before { content: $icon-notification-information-z2 !important; }}
+.icon-notification-information-z1       { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-notification-error                { content: $icon-notification-error; &:before { content: $icon-notification-error !important; }}
+.icon-notification-error-z2             { content: $icon-notification-error-z2; &:before { content: $icon-notification-error-z2 !important; }}
+.icon-notification-error-z1             { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-notification-interference         { content: $icon-notification-interference; &:before { content: $icon-notification-interference !important; }}
+.icon-notification-maintenance          { content: $icon-notification-maintenance; &:before { content: $icon-notification-maintenance !important; }}
+.icon-notification-z1                   { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-risk                              { content: $icon-risk; &:before { content: $icon-risk !important; }}
+.icon-risk-2                            { content: $icon-risk-2; &:before { content: $icon-risk-2 !important; }}
+.icon-moon-dashed                       { content: $icon-moon-dashed; &:before { content: $icon-moon-dashed !important; }}
+.icon-erlenmeyer                        { content: $icon-erlenmeyer; &:before { content: $icon-erlenmeyer !important; }}
+.icon-arrow-d-up                        { content: $icon-arrow-d-up; &:before { content: $icon-arrow-d-up !important; }}
+.icon-arrow-d-up-z1                     { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-d-up-z2                     { content: $icon-arrow-d-up-z2; &:before { content: $icon-arrow-d-up-z2 !important; }}
+.icon-arrow-d-right                     { content: $icon-arrow-d-right; &:before { content: $icon-arrow-d-right !important; }}
+.icon-arrow-d-right-z1                  { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-d-right-z2                  { content: $icon-arrow-d-right-z2; &:before { content: $icon-arrow-d-right-z2 !important; }}
+.icon-arrow-d-left                      { content: $icon-arrow-d-left; &:before { content: $icon-arrow-d-left !important; }}
+.icon-arrow-d-left-z1                   { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-d-left-z2                   { content: $icon-arrow-d-left-z2; &:before { content: $icon-arrow-d-left-z2 !important; }}
+.icon-arrow-d-down                      { content: $icon-arrow-d-down; &:before { content: $icon-arrow-d-down !important; }}
+.icon-arrow-d-down-z1                   { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-d-down-z2                   { content: $icon-arrow-d-down-z2; &:before { content: $icon-arrow-d-down-z2 !important; }}
+.icon-arrow-inner-circle                { content: $icon-arrow-inner-circle; &:before { content: $icon-arrow-inner-circle !important; }}
+.icon-arrow-b-up                        { content: $icon-arrow-b-up; &:before { content: $icon-arrow-b-up !important; }}
+.icon-arrow-b-up-z1                     { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-b-up-z2                     { content: $icon-arrow-inner-circle; &:before { content: $icon-arrow-inner-circle !important; }}
+.icon-arrow-b-up-z3                     { content: $icon-arrow-d-up-z2; &:before { content: $icon-arrow-d-up-z2 !important; }}
+.icon-arrow-b-right                     { content: $icon-arrow-b-right; &:before { content: $icon-arrow-b-right !important; }}
+.icon-arrow-b-right-z1                  { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-b-right-z2                  { content: $icon-arrow-inner-circle; &:before { content: $icon-arrow-inner-circle !important; }}
+.icon-arrow-b-right-z3                  { content: $icon-arrow-d-right-z2; &:before { content: $icon-arrow-d-right-z2 !important; }}
+.icon-arrow-b-left                      { content: $icon-arrow-b-left; &:before { content: $icon-arrow-b-left !important; }}
+.icon-arrow-b-left-z1                   { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-b-left-z2                   { content: $icon-arrow-inner-circle; &:before { content: $icon-arrow-inner-circle !important; }}
+.icon-arrow-b-left-z3                   { content: $icon-arrow-d-left-z2; &:before { content: $icon-arrow-d-left-z2 !important; }}
+.icon-arrow-b-down                      { content: $icon-arrow-b-down; &:before { content: $icon-arrow-b-down !important; }}
+.icon-arrow-b-down-z1                   { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-arrow-b-down-z2                   { content: $icon-arrow-inner-circle; &:before { content: $icon-arrow-inner-circle !important; }}
+.icon-arrow-b-down-z3                   { content: $icon-arrow-d-down-z2; &:before { content: $icon-arrow-d-down-z2 !important; }}
+.icon-backpack                          { content: $icon-backpack; &:before { content: $icon-backpack !important; }}
+.icon-bandaid                           { content: $icon-bandaid; &:before { content: $icon-bandaid !important; }}
+.icon-bikes                             { content: $icon-bikes; &:before { content: $icon-bikes !important; }}
+.icon-boat-2                            { content: $icon-boat-2; &:before { content: $icon-boat-2 !important; }}
+.icon-game                              { content: $icon-game; &:before { content: $icon-game !important; }}
+.icon-holiday                           { content: $icon-holiday; &:before { content: $icon-holiday !important; }}
+.icon-washing-machine                   { content: $icon-washing-machine; &:before { content: $icon-washing-machine !important; }}
+.icon-wealth-increase                   { content: $icon-wealth-increase; &:before { content: $icon-wealth-increase !important; }}
+.icon-clothes                           { content: $icon-clothes; &:before { content: $icon-clothes !important; }}
+.icon-guitar                            { content: $icon-guitar; &:before { content: $icon-guitar !important; }}
+.icon-rings                             { content: $icon-rings; &:before { content: $icon-rings !important; }}
+.icon-party                             { content: $icon-party; &:before { content: $icon-party !important; }}
+.icon-house                             { content: $icon-house; &:before { content: $icon-house !important; }}
+.icon-electronics                       { content: $icon-electronics; &:before { content: $icon-electronics !important; }}
+.icon-debt                              { content: $icon-debt; &:before { content: $icon-debt !important; }}
+.icon-college                           { content: $icon-college; &:before { content: $icon-college !important; }}
+.icon-18-birthday                       { content: $icon-18-birthday; &:before { content: $icon-18-birthday !important; }}
+.icon-first-home                        { content: $icon-first-home; &:before { content: $icon-first-home !important; }}
+.icon-graduation                        { content: $icon-graduation; &:before { content: $icon-graduation !important; }}
+.icon-study                             { content: $icon-study; &:before { content: $icon-study !important; }}
+.icon-boat                              { content: $icon-boat; &:before { content: $icon-boat !important; }}
+.icon-house-2                           { content: $icon-house-2; &:before { content: $icon-house-2 !important; }}
+.icon-money-coins                       { content: $icon-money-coins; &:before { content: $icon-money-coins !important; }}
+.icon-balance                           { content: $icon-balance; &:before { content: $icon-balance !important; }}
+.icon-youtube-you                       { content: $icon-youtube-you; &:before { content: $icon-youtube-you !important; }}
+.icon-youtube-tube                      { content: $icon-youtube-tube; &:before { content: $icon-youtube-tube !important; }}
+.icon-youtube-tube-bg                   { content: $icon-youtube-tube-bg; &:before { content: $icon-youtube-tube-bg !important; }}
+.icon-twitter-logo                      { content: $icon-twitter-logo; &:before { content: $icon-twitter-logo !important; }}
+.icon-linkedin-logo                     { content: $icon-linkedin-logo; &:before { content: $icon-linkedin-logo !important; }}
+.icon-social-bg                         { content: $icon-social-bg; &:before { content: $icon-social-bg !important; }}
+.icon-googleplus-logo                   { content: $icon-googleplus-logo; &:before { content: $icon-googleplus-logo !important; }}
+.icon-facebook-logo                     { content: $icon-facebook-logo; &:before { content: $icon-facebook-logo !important; }}
+.icon-instagram-logo                    { content: $icon-instagram-logo; &:before { content: $icon-instagram-logo !important; }}
+.icon-instagram-logo-inverted           { content: $icon-instagram-logo-inverted; &:before { content: $icon-instagram-logo-inverted !important; }}
+.icon-flickr-logo                       { content: $icon-flickr-z1; &:before { content: $icon-flickr-z1 !important; }}
+.icon-flickr-z1                         { content: $icon-flickr-z1; &:before { content: $icon-flickr-z1 !important; }}
+.icon-flickr-z2                         { content: $icon-flickr-z2; &:before { content: $icon-flickr-z2 !important; }}
+.icon-slideshare-z1                     { content: $icon-slideshare-z1; &:before { content: $icon-slideshare-z1 !important; }}
+.icon-slideshare-z2                     { content: $icon-slideshare-z2; &:before { content: $icon-slideshare-z2 !important; }}
+.icon-flickr-z3                         { content: $icon-flickr-z3; &:before { content: $icon-flickr-z3 !important; }}
+.icon-community-blog                    { content: $icon-community-blog; &:before { content: $icon-community-blog !important; }}
+.icon-community-forum                   { content: $icon-community-forum; &:before { content: $icon-community-forum !important; }}
+.icon-community-home                    { content: $icon-community-home; &:before { content: $icon-community-home !important; }}
+.icon-community-people                  { content: $icon-community-people; &:before { content: $icon-community-people !important; }}
+.icon-community-profile                 { content: $icon-community-profile; &:before { content: $icon-community-profile !important; }}
+.icon-community-suggestions             { content: $icon-community-suggestions; &:before { content: $icon-community-suggestions !important; }}
+.icon-community                         { content: $icon-community; &:before { content: $icon-community !important; }}
+.icon-community-profilelock-z1          { content: $icon-community-profile; &:before { content: $icon-community-profile !important; }}
+//.icon-community-profilelock-z2          { content: $icon-community-profilelock-z2; &:before { content: $icon-community-profilelock-z2 !important; }}
+.icon-community-profilelock-z3          { content: $icon-community-profilelock-z3; &:before { content: $icon-community-profilelock-z3 !important; }}
+.icon-tv-tl1                            { content: $icon-tv-tl1; &:before { content: $icon-tv-tl1 !important; }}
+.icon-tv-tl2                            { content: $icon-tv-tl2; &:before { content: $icon-tv-tl2 !important; }}
+.icon-tv-half                           { content: $icon-tv-half; &:before { content: $icon-tv-half !important; }}
+.icon-tv-full                           { content: $icon-tv-full; &:before { content: $icon-tv-full !important; }}
+.icon-tv-br2                            { content: $icon-tv-br2; &:before { content: $icon-tv-br2 !important; }}
+.icon-tv-br1                            { content: $icon-tv-br1; &:before { content: $icon-tv-br1 !important; }}
+.icon-moon-tl1                          { content: $icon-moon-tl1; &:before { content: $icon-moon-tl1 !important; }}
+.icon-moon-tl2                          { content: $icon-moon-tl2; &:before { content: $icon-moon-tl2 !important; }}
+.icon-moon-half                         { content: $icon-moon-half; &:before { content: $icon-moon-half !important; }}
+.icon-moon-full                         { content: $icon-moon-full; &:before { content: $icon-moon-full !important; }}
+.icon-moon-br2                          { content: $icon-moon-br2; &:before { content: $icon-moon-br2 !important; }}
+.icon-moon-br1                          { content: $icon-moon-br1; &:before { content: $icon-moon-br1 !important; }}
+.icon-target                            { content: $icon-target; &:before { content: $icon-target !important; }}
+.icon-target-z1                         { content: $icon-circle-xl; &:before { content: $icon-circle-xl !important; }}
+.icon-target-z2                         { content: $icon-target-z2; &:before { content: $icon-target-z2 !important; }}
+.icon-wrench                            { content: $icon-wrench; &:before { content: $icon-wrench !important; }}
+.icon-users                             { content: $icon-users; &:before { content: $icon-users !important; }}
+.icon-users-2                           { content: $icon-users-2; &:before { content: $icon-users-2 !important; }}
+.icon-user                              { content: $icon-user; &:before { content: $icon-user !important; }}
+.icon-up-down                           { content: $icon-up-down; &:before { content: $icon-up-down !important; }}
+.icon-right-left                   		 	{ content: $icon-right-left; &:before { content: $icon-right-left !important; }}
+.icon-tip-bulb                          { content: $icon-tip-bulb; &:before { content: $icon-tip-bulb !important; }}
+.icon-subtract                          { content: $icon-subtract; &:before { content: $icon-subtract !important; }}
+.icon-subtract-z1                       { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-subtract-z2                       { content: $icon-subtract-z2; &:before { content: $icon-subtract-z2 !important; }}
+.icon-add                               { content: $icon-add; &:before { content: $icon-add !important; }}
+.icon-add-z1                            { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-add-z2                            { content: $icon-add-z2; &:before { content: $icon-add-z2 !important; }}
+.icon-rectangle-rounded                 { content: $icon-notification-z1; &:before { content: $icon-notification-z1 !important; }}
+.icon-settings                          { content: $icon-settings; &:before { content: $icon-settings !important; }}
+.icon-settings-z2                       { content: $icon-settings-z2; &:before { content: $icon-settings-z2 !important; }}
+.icon-settings-z1                       { content: $icon-settings-z1; &:before { content: $icon-settings-z1 !important; }}
+.icon-search                            { content: $icon-search; &:before { content: $icon-search !important; }}
+.icon-search-z2                         { content: $icon-search-z2; &:before { content: $icon-search-z2 !important; }}
+.icon-search-z1                         { content: $icon-search-z1; &:before { content: $icon-search-z1 !important; }}
+.icon-refresh                           { content: $icon-refresh; &:before { content: $icon-refresh !important; }}
+.icon-questionmark                      { content: $icon-questionmark; &:before { content: $icon-questionmark !important; }}
+.icon-procent                           { content: $icon-procent; &:before { content: $icon-procent !important; }}
+.icon-print                             { content: $icon-print; &:before { content: $icon-print !important; }}
+.icon-print-z2                          { content: $icon-print-z2; &:before { content: $icon-print-z2 !important; }}
+.icon-print-z1                          { content: $icon-print-z1; &:before { content: $icon-print-z1 !important; }}
+.icon-portfolio                         { content: $icon-portfolio; &:before { content: $icon-portfolio !important; }}
+.icon-portfolio-open                    { content: $icon-portfolio-open; &:before { content: $icon-portfolio-open !important; }}
+.icon-portfolio-open-z2                 { content: $icon-portfolio-open-z2; &:before { content: $icon-portfolio-open-z2 !important; }}
+.icon-portfolio-open-z1                 { content: $icon-portfolio-open-z1; &:before { content: $icon-portfolio-open-z1 !important; }}
+.icon-plus                              { content: $icon-plus; &:before { content: $icon-plus !important; }}
+.icon-phone                             { content: $icon-phone; &:before { content: $icon-phone !important; }}
+.icon-multiply                          { content: $icon-multiply; &:before { content: $icon-multiply !important; }}
+.icon-moneybag                          { content: $icon-moneybag; &:before { content: $icon-moneybag !important; }}
+.icon-mobile                            { content: $icon-mobile; &:before { content: $icon-mobile !important; }}
+.icon-mobile-z2                         { content: $icon-mobile-z2; &:before { content: $icon-mobile-z2 !important; }}
+.icon-mobile-z1                         { content: $icon-mobile-z1; &:before { content: $icon-mobile-z1 !important; }}
+.icon-min                               { content: $icon-min; &:before { content: $icon-min !important; }}
+.icon-menu                              { content: $icon-menu; &:before { content: $icon-menu !important; }}
+.icon-lock                              { content: $icon-lock; &:before { content: $icon-lock !important; }}
+.icon-lock-z2                           { content: $icon-lock-z2; &:before { content: $icon-lock-z2 !important; }}
+.icon-lock-z1                           { content: $icon-lock-z1; &:before { content: $icon-lock-z1 !important; }}
+.icon-location                          { content: $icon-location; &:before { content: $icon-location !important; }}
+.icon-location-z2                       { content: $icon-location-z2; &:before { content: $icon-location-z2 !important; }}
+.icon-location-z1                       { content: $icon-location-z1; &:before { content: $icon-location-z1 !important; }}
+.icon-my-location                       { content: $icon-my-location; &:before { content: $icon-my-location !important; }}
+.icon-legend-z2                         { content: $icon-legend-z2; &:before { content: $icon-legend-z2 !important; }}
+.icon-legend-z1                         { content: $icon-legend-z1; &:before { content: $icon-legend-z1 !important; }}
+.icon-information-badge                 { content: $icon-information-badge; &:before { content: $icon-information-badge !important; }}
+.icon-information-badge-z2              { content: $icon-information-badge-z2; &:before { content: $icon-information-badge-z2 !important; }}
+.icon-information-badge-z1              { content: $icon-information-badge-z1; &:before { content: $icon-information-badge-z1 !important; }}
+.icon-forecast                          { content: $icon-forecast; &:before { content: $icon-forecast !important; }}
+.icon-feedback                          { content: $icon-feedback; &:before { content: $icon-feedback !important; }}
+.icon-eye                               { content: $icon-eye; &:before { content: $icon-eye !important; }}
+.icon-eye-z2                            { content: $icon-eye-z2; &:before { content: $icon-eye-z2 !important; }}
+.icon-eye-z1                            { content: $icon-eye-z1; &:before { content: $icon-eye-z1 !important; }}
+.icon-exclamationmark                   { content: $icon-exclamationmark; &:before { content: $icon-exclamationmark !important; }}
+.icon-euro                              { content: $icon-euro; &:before { content: $icon-euro !important; }}
+.icon-home                              { content: $icon-home; &:before { content: $icon-home !important; }}
+.icon-eq                                { content: $icon-eq; &:before { content: $icon-eq !important; }}
+.icon-email                             { content: $icon-email; &:before { content: $icon-email !important; }}
+.icon-edit                              { content: $icon-edit; &:before { content: $icon-edit !important; }}
+.icon-edit-z2                           { content: $icon-edit-z2; &:before { content: $icon-edit-z2 !important; }}
+.icon-edit-z1                           { content: $icon-edit-z1; &:before { content: $icon-edit-z1 !important; }}
+.icon-download                          { content: $icon-download; &:before { content: $icon-download !important; }}
+.icon-dot-a                             { content: $icon-dot-a; &:before { content: $icon-dot-a !important; }}
+.icon-check                             { content: $icon-check; &:before { content: $icon-check !important; }}
+.icon-chat                              { content: $icon-chat; &:before { content: $icon-chat !important; }}
+.icon-camera                            { content: $icon-camera; &:before { content: $icon-camera !important; }}
+.icon-calendar                          { content: $icon-calendar; &:before { content: $icon-calendar !important; }}
+.icon-calendar-z2                       { content: $icon-calendar-z2; &:before { content: $icon-calendar-z2 !important; }}
+.icon-calendar-z1                       { content: $icon-calendar-z1; &:before { content: $icon-calendar-z1 !important; }}
+.icon-calendar-2                        { content: $icon-calendar-2; &:before { content: $icon-calendar-2 !important; }}
+.icon-calendar-2-z2                     { content: $icon-calendar-2-z2; &:before { content: $icon-calendar-2-z2 !important; }}
+.icon-calendar-2-z1                     { content: $icon-calendar-2-z1; &:before { content: $icon-calendar-2-z1 !important; }}
+.icon-calculator                        { content: $icon-calculator; &:before { content: $icon-calculator !important; }}
+.icon-calculator-z2                     { content: $icon-calculator-z2; &:before { content: $icon-calculator-z2 !important; }}
+.icon-calculator-z1                     { content: $icon-calculator-z1; &:before { content: $icon-calculator-z1 !important; }}
+.icon-attachment                        { content: $icon-attachment; &:before { content: $icon-attachment !important; }}
+.icon-arrow-f-up-right                  { content: $icon-arrow-f-up-right; &:before { content: $icon-arrow-f-up-right !important; }}
+.icon-arrow-e-up                        { content: $icon-arrow-e-up; &:before { content: $icon-arrow-e-up !important; }}
+.icon-arrow-e-right                     { content: $icon-arrow-e-right; &:before { content: $icon-arrow-e-right !important; }}
+.icon-arrow-e-left                      { content: $icon-arrow-e-left; &:before { content: $icon-arrow-e-left !important; }}
+.icon-arrow-e-down                      { content: $icon-arrow-e-down; &:before { content: $icon-arrow-e-down !important; }}
+.icon-arrow-c-up                        { content: $icon-arrow-c-up; &:before { content: $icon-arrow-c-up !important; }}
+.icon-arrow-c-right                     { content: $icon-arrow-c-right; &:before { content: $icon-arrow-c-right !important; }}
+.icon-arrow-c-left                      { content: $icon-arrow-c-left; &:before { content: $icon-arrow-c-left !important; }}
+.icon-arrow-c-down                      { content: $icon-arrow-c-down; &:before { content: $icon-arrow-c-down !important; }}
+.icon-arrow-h-down                      { content: $icon-arrow-h-down; &:before { content: $icon-arrow-h-down !important; }}
+.icon-arrow-h-up                        { content: $icon-arrow-h-up; &:before { content: $icon-arrow-h-up !important; }}
+.icon-arrow-a-up                        { content: $icon-arrow-a-up; &:before { content: $icon-arrow-a-up !important; }}
+.icon-arrow-a-right                     { content: $icon-arrow-a-right; &:before { content: $icon-arrow-a-right !important; }}
+.icon-arrow-a-left                      { content: $icon-arrow-a-left; &:before { content: $icon-arrow-a-left !important; }}
+.icon-arrow-a-down                      { content: $icon-arrow-a-down; &:before { content: $icon-arrow-a-down !important; }}
+.icon-addressbook                       { content: $icon-addressbook; &:before { content: $icon-addressbook !important; }}
+.icon-addressbook-z2                    { content: $icon-addressbook-z2; &:before { content: $icon-addressbook-z2 !important; }}
+.icon-addressbook-z1                    { content: $icon-addressbook-z1; &:before { content: $icon-addressbook-z1 !important; }}
+.icon-addressbook-empty                 { content: $icon-addressbook-empty; &:before { content: $icon-addressbook-empty !important; }}
+.icon-arrow-g-down                      { content: $icon-arrow-g-down; &:before { content: $icon-arrow-g-down !important; }}
+.icon-arrow-g-left                      { content: $icon-arrow-g-left; &:before { content: $icon-arrow-g-left !important; }}
+.icon-arrow-g-right                     { content: $icon-arrow-g-right; &:before { content: $icon-arrow-g-right !important; }}
+.icon-arrow-g-up                        { content: $icon-arrow-g-up; &:before { content: $icon-arrow-g-up !important; }}
+.icon-menu-close                        { content: $icon-menu-close; &:before { content: $icon-menu-close !important; }}
+.icon-menu-arrow-open-left              { content: $icon-menu-arrow-open-left; &:before { content: $icon-menu-arrow-open-left !important; }}
+.icon-menu2                             { content: $icon-menu2; &:before { content: $icon-menu2 !important; }}
+.icon-trashcan                          { content: $icon-trashcan; &:before { content: $icon-trashcan !important; }}
+.icon-plus-circle                       { content: $icon-plus-circle; &:before { content: $icon-plus-circle !important; }}
+.icon-play                              { content: $icon-play; &:before { content: $icon-play !important; }}
+.icon-play-circle                       { content: $icon-circle-lg; &:before { content: $icon-circle-lg !important; }}
+.icon-desktop                           { content: $icon-desktop; &:before { content: $icon-desktop !important; }}
+.icon-pig                               { content: $icon-pig; &:before { content: $icon-pig !important; }}
+.icon-hammer                            { content: $icon-hammer; &:before { content: $icon-hammer !important; }}
+.icon-file                              { content: $icon-file; &:before { content: $icon-file !important; }}
+.icon-accessibility                     { content: $icon-accessibility; &:before { content: $icon-accessibility !important; }}
+.icon-box                               { content: $icon-box; &:before { content: $icon-box !important; }}
+.icon-filter                            { content: $icon-filter; &:before { content: $icon-filter !important; }}
+.icon-information                       { content: $icon-information; &:before { content: $icon-information !important; }}
+.icon-information-z1                    { content: $icon-circle-lg; &:before { content: $icon-circle-lg !important; }}
+.icon-information-z2                    { content: $icon-information; &:before { content: $icon-information !important; }}
+.icon-circle-lg                         { content: $icon-circle-lg; &:before { content: $icon-circle-lg !important; }}
+.icon-pdf                               { content: $icon-pdf; &:before { content: $icon-pdf !important; }}
+.icon-star                              { content: $icon-star; &:before { content: $icon-star !important; }}
+.icon-star-half                         { content: $icon-star-half; &:before { content: $icon-star-half !important; }}
+.icon-star-half-z1                      { content: $icon-star; &:before { content: $icon-star !important; }}
+.icon-star-half-z2                      { content: $icon-star-half; &:before { content: $icon-star-half !important; }}
+.icon-save                              { content: $icon-save; &:before { content: $icon-save !important; }}
+//.icon-pdf-z4                            { content: $icon-pdf-z4; &:before { content: $icon-pdf-z4 !important; }}
+.icon-pdf-z3                            { content: $icon-pdf-z3; &:before { content: $icon-pdf-z3 !important; }}
+.icon-pdf-z2                            { content: $icon-pdf-z2; &:before { content: $icon-pdf-z2 !important; }}
+//.icon-pdf-z1                            { content: $icon-pdf-z1; &:before { content: $icon-pdf-z1 !important; }}
+.icon-save-z2                           { content: $icon-save-z2; &:before { content: $icon-save-z2 !important; }}
+.icon-save-z1                           { content: $icon-save-z1; &:before { content: $icon-save-z1 !important; }}
+.icon-car                               { content: $icon-car; &:before { content: $icon-car !important; }}
+.icon-car-z2                            { content: $icon-car-z2; &:before { content: $icon-car-z2 !important; }}
+.icon-car-z1                            { content: $icon-car-z1; &:before { content: $icon-car-z1 !important; }}
+.icon-document                          { content: $icon-document; &:before { content: $icon-document !important; }}
+.icon-document-z2                       { content: $icon-document-z2; &:before { content: $icon-document-z2 !important; }}
+.icon-document-z1                       { content: $icon-document-z1; &:before { content: $icon-document-z1 !important; }}
+.icon-alarmclock                        { content: $icon-alarmclock; &:before { content: $icon-alarmclock !important; }}
+.icon-chart                             { content: $icon-chart; &:before { content: $icon-chart !important; }}
+.icon-upload                            { content: $icon-upload; &:before { content: $icon-upload !important; }}
+.icon-like                              { content: $icon-like; &:before { content: $icon-like !important; }}
+.icon-gender-female                     { content: $icon-gender-female; &:before { content: $icon-gender-female !important; }}
+.icon-gender-male                       { content: $icon-gender-male; &:before { content: $icon-gender-male !important; }}
+.icon-more                              { content: $icon-more; &:before { content: $icon-more !important; }}
+.icon-label                             { content: $icon-label; &:before { content: $icon-label !important; }}
+.icon-shoppingbasket                    { content: $icon-shoppingbasket; &:before { content: $icon-shoppingbasket !important; }}
+.icon-loading-image-placeholder         { content: $icon-loading-image-placeholder; &:before { content: $icon-loading-image-placeholder !important; }}
+
+.icon-grandchildren                    	{ content: $icon-grandchildren; &:before { content: $icon-grandchildren !important; }}
+.icon-renovation                        { content: $icon-renovation; &:before { content: $icon-renovation !important; }}
+.icon-car-2                             { content: $icon-car-2; &:before { content: $icon-car-2 !important; }}
+.icon-pig-2                             { content: $icon-pig-2; &:before { content: $icon-pig-2 !important; }}
+
+// Stacked icon
+
+.stacked-icon {
+  position: relative;
+  display: inline-block;
+  line-height: 0.65;
+  vertical-align: middle;
+  text-align: center;
+}
+.stacked-icon .icon {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+}
+.stacked-icon.icon-block {
+  display: block;
+}
+.stacked-icon-text {
+  position: relative;
+  z-index: 2000;
+  color: #ffffff;
+}
+.figure-icon {
+  display: inline-block;
+  text-align: center;
+}
+.figure-icon figcaption {
+  margin-top: 5.75px;
+}
+.figure-icon .figcaption-bold {
+  font-weight: bold;
+}
+.figure-icon .figcaption-lg {
+  font-size: 21px;
+  font-size: 1.3125rem;
+}
+
+
+.icon-black {
+  color: #000000;
+}
+.icon-gray-darker {
+  color: #333333;
+}
+.icon-gray-dark {
+  color: #767676;
+}
+.icon-gray {
+  color: #adadad;
+}
+.icon-gray-light {
+  color: #d5d5d5;
+}
+.icon-gray-lighter {
+  color: #ebebeb;
+}
+.icon-white {
+  color: #ffffff;
+}
+.icon-blue {
+  color: #000066;
+}
+.icon-blue-light {
+  color: #60a6da;
+}
+.icon-green {
+  color: #349651;
+}
+.icon-orange {
+  color: #ff6200;
+}
+.icon-red {
+  color: #ff0000;
+}
+.icon-inline.icon {
+  line-height: 0;
+}
+.icon-xxs {
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+.icon-xs {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  font-size: 1rem;
+}
+.icon-md {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.icon-lg {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+.icon-lg .stacked-icon-text {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.2;
+}
+.icon-xl {
+  width: 27px;
+  height: 27px;
+  font-size: 27px;
+  font-size: 1.6875rem;
+}
+.icon-xl .stacked-icon-text {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.2;
+}
+.icon-xxl {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  font-size: 2rem;
+}
+.icon-xxl .stacked-icon-text {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.icon-xxxl {
+  width: 37px;
+  height: 37px;
+  font-size: 37px;
+  font-size: 2.3125rem;
+}
+.icon-xxxl .stacked-icon-text {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.icon-jb {
+  width: 44px;
+  height: 44px;
+  font-size: 44px;
+  font-size: 2.75rem;
+}
+.icon-jb .stacked-icon-text {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.icon-xj {
+  width: 54px;
+  height: 54px;
+  font-size: 54px;
+  font-size: 3.375rem;
+}
+.icon-xj .stacked-icon-text {
+  font-size: 21px;
+  font-size: 1.3125rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.icon-xxj {
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+  font-size: 4rem;
+}
+.icon-xxj .stacked-icon-text {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+.icon-xxxj {
+  width: 74px;
+  height: 74px;
+  font-size: 74px;
+  font-size: 4.625rem;
+}
+.icon-xxxj .stacked-icon-text {
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+.icon-mg {
+  width: 84px;
+  height: 84px;
+  font-size: 84px;
+  font-size: 5.25rem;
+}
+.icon-xmg {
+  width: 94px;
+  height: 94px;
+  font-size: 94px;
+  font-size: 5.875rem;
+}
+.icon-xxmg {
+  width: 104px;
+  height: 104px;
+  font-size: 104px;
+  font-size: 6.5rem;
+}
+.icon-xxxmg {
+  width: 124px;
+  height: 124px;
+  font-size: 124px;
+  font-size: 7.75rem;
+}

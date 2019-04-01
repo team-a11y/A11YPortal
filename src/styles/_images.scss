@@ -1,0 +1,50 @@
+//----------
+// Img radius
+// Avatar
+// Figure
+//----------
+
+// Img radius
+
+.img-radius-m {
+  border-radius: 4px;
+}
+
+.img-radius-l {
+  border-radius: 6px;
+}
+
+// Avatar
+
+.avatar-img {
+  width: 44px;
+  height: 44px;
+}
+
+.profile-btn {
+  width: 24px;
+  height:24px;
+}
+
+// Figure
+
+figure,
+.figure {
+  margin-bottom: 1.5rem;
+}
+
+figcaption,
+.figcaption {
+  border-bottom: 1px solid #767676;
+  color: #767676;
+  padding: .5rem 0 .25rem 0;
+  
+  > span {
+    max-width: 580px;
+  }
+  
+  .bad & {
+    font-style: italic;    
+  }
+  
+}

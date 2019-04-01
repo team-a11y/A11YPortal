@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design - Quiz - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="https://bit.ly/a11y-portal" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html" aria-current="true" id="main-menu">Quiz <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/fundamentals.html" aria-current="page">Fundamentals </a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/quiz/design.html">Design <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/content.html">Content</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/code.html">Code</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/testing.html">Testing</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/various.html">Various</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Design Quiz</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#images" class="link-ts"><span>Images, SVG and Canvas</span></a></li>
+          <li><a href="#visual" class="link-ts"><span>Visual Design and Colors</span></a></li>
+          <li><a href="#multi" class="link-ts"><span>Multimedia, Animation and Motion</span></a></li>
+          <li><a href="#forms" class="link-ts"><span>Forms and Validation</span></a></li>
+          <li><a href="#annotations" class="link-ts"><span>Design Annotations</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="images">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="images">Images, SVG and Canvas</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>How to subscribe a svg picture for best accessiblity?</p>
+                <ol class="list-alpha">
+
+                  <li>add title attribute</li>
+                  <li>add description attribute</li>
+                  <li>add aria-labelledby</li>
+                  <li>A + B</li>
+                  <li>B + C</li>
+                  <li>A + C</li>
+                  <li>A + B + C</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: G</p>
+                </div>
+
+                <hr>
+
+                <p>What is the best way to make an infographic accessible?</p>
+                <ol class="list-alpha">
+
+                  <li>add alt tag</li>
+                  <li>add aria-labeledby/li>
+                    <li>add description</li>
+                    <li>add pdf option without structural information</li>
+                    <li>add css + html alternative</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E</p>
+                </div>
+
+                <hr>
+
+                <p>What is the most accessible image format?</p>
+                <ol class="list-alpha">
+
+                  <li>jpg</li>
+                  <li>png</li>
+                  <li>svg</li>
+                  <li>gif</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A</p>
+                </div>
+
+                <hr>
+
+                <p>True or False: The brandbar image on company-name.com should have an alt text</p>
+                <ol class="list-alpha">
+
+                  <li>True</li>
+                  <li>False</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>question</p>
+                <ol class="list-alpha">
+
+                  <li>True</li>
+                  <li>False</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A</p>
+                </div>
+
+                <hr>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title mb-4">Deque questions</h3>
+
+                <hr>
+
+                <p>Which of following methods can be used to add programmatically discernible alternative text to an informative background image?</p>
+                <ol class="list-alpha">
+                  <li>CSS visibility:hidden on &lt;span&gt;</li>
+                  <li>CSS clip on &lt;span&gt;</li>
+                  <li>CSS display:none on &lt;span&gt;</li>
+                  <li>aria-label on &lt;span&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Images of text are as accessible as regular text in a web page.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Why is it important that alternative text not exceed about 250 characters? (Select the best answer.)</p>
+                <ol class="list-alpha">
+                  <li>Screen readers do not treat alternative text like they text regular text in an HTML document.</li>
+                  <li>Because all it takes is 250 characters to accurately describe an image.</li>
+                  <li>If alternative text is longer than 250 characters, the user becomes bored listening to the image description.</li>
+                  <li>It is not important. Alternative text can exceed 250 characters if that is needed to describe an image.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: If the &lt;area&gt; elements of an image map have alternative text, then alternative text does not need to be provided for the main &lt;img&gt; element.</p>
+                <ol class="list-alpha">
+                  <li>Describe the location of the image.</li>
+                  <li>Convey the functionality or end result of the form input.</li>
+                  <li>Describe the look of the input.</li>
+                  <li>An image used as an input is a decorative image, so it does not need a text alternative.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The alternative text for an image used as a form input must:</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: If a long description of a complex image is provided using the longdesc attribute, both sighted users and screen reader users can access the description.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which accessibility techniques apply to an image (&lt;img&gt;) that is purely for visual decoration? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>It can be given an empty, or null, alt attribute value.</li>
+                  <li>The image can be assigned ARIA role="presentation".</li>
+                  <li>The image must be described using the alt attribute.</li>
+                  <li>The image can be placed in the background using CSS.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The alt text for an image of a painting can direct users to a longer description of the painting.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Composing alternative text for images is based on: (Select the best answer.)</p>
+                <ol class="list-alpha">
+                  <li>The visual characteristics of the image.</li>
+                  <li>The file name of the image.</li>
+                  <li>What the author intends to convey with the image.</li>
+                  <li>It really is not based on anything.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is an effective way to provide alternative text for visual driving directions?</p>
+                <ol class="list-alpha">
+                  <li>Describe visually where streets, roads, and bridges are in relation to one another.</li>
+                  <li>Describe the colors of roads and different areas on the map.</li>
+                  <li>There is no way to compose alternative text for driving directions.</li>
+                  <li>Compose text-based directions that include street names, turns, exits, distance, etc.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What should be done to an &lt;img&gt; element to increase screen reader compatibility when an SVG is used as its source?</p>
+                <ol class="list-alpha">
+                  <li>It should be assigned role="img".</li>
+                  <li>It should be assigned role="region".</li>
+                  <li>It should be assigned role="presentation".</li>
+                  <li>Nothing should be done to the &lt;img&gt; element.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What can be used to provide alternative text for SVG &lt;img&gt; elements? (Select all that apply.)</p>
+                <ol class="list-alpha">
+                  <li>alt attribute</li>
+                  <li>aria-owns attribute</li>
+                  <li>aria-label attribute</li>
+                  <li>aria-labelledby attribute</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Text in SVG images retains its crispness and legibility when magnified.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following ways to incorporate SVGs are considered bad for accessibility? (Select all that apply.)</p>
+                <ol class="list-alpha">
+                  <li>&lt;object&gt;</li>
+                  <li>&lt;svg&gt;</li>
+                  <li>&lt;img&gt;</li>
+                  <li>&lt;iframe&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the best way to link the &lt;title&gt; in an &lt;svg&gt; so that screen readers will recognize it as the alternative text?</p>
+                <ol class="list-alpha">
+                  <li>aria-label</li>
+                  <li>aria-describedby</li>
+                  <li>aria-live</li>
+                  <li>aria-labelledby</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: Interactive SVG objects must be fully keyboard-accessible.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Why should role="img" be assigned to informative and actionable icon fonts?</p>
+                <ol class="list-alpha">
+                  <li>It should be assigned so that screen readers will ignore icon fonts.</li>
+                  <li>It should be assigned so that icon fonts receive visual focus.</li>
+                  <li>It should be assigned so that screen readers will recognize icon fonts as an images.</li>
+                  <li>Icon fonts aren't images, so they don't need to be assigned the role="img".</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>When assigning alternative text to actionable icon fonts (buttons or links), which technique is most effective?</p>
+                <ol class="list-alpha">
+                  <li>Add aria-label to the button or link</li>
+                  <li>Add hidden text within the button or link using CSS clip assigned to the surrounding span element</li>
+                  <li>Add text to an alt attribute in the surrounding span element.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods is recommended for decorative or redundant icon fonts?</p>
+                <ol class="list-alpha">
+                  <li>Decorative or redundant icon fonts should be described using aria-label.</li>
+                  <li>Decorative or redundant icon fonts should be assigned role="img".</li>
+                  <li>Decorative or redundant icon fonts should be assigned an empty, or null, alt attribute.</li>
+                  <li>Decorative or redundant icon fonts should be set to aria-hidden="true".</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods are acceptable for adding alternative text to &lt;canvas&gt; elements? (Select all that apply.)</p>
+                <ol class="list-alpha">
+                  <li>Add text in the alt attribute.</li>
+                  <li>Add text via aria-label.</li>
+                  <li>Refer to text via aria-labelledby.</li>
+                  <li>Add text within the &lt;canvas&gt; element.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What must be done to the &lt;canvas&gt; element if it is used to present an image?</p>
+                <ol class="list-alpha">
+                  <li>It must be assignedIt must be assigned ARIA role="img".</li>
+                  <li>ARIA role="presentation".</li>
+                  <li>Nothing needs to be done to the element.</li>
+                  <li>It must have an alt attribute.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: If a &lt;canvas&gt; element does not specify the background color, when a user enters into Windows High Contrast Mode, the background color of the image will change along with the color of the web page as a whole.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Effective methods for providing alternative text for simple &lt;canvas&gt; elements include: (Select all that apply.)</p>
+                <ol class="list-alpha">
+                  <li>Using the aria-label attribute on the &lt;canvas&gt; element.</li>
+                  <li>Using the alt attribute on the &lt;canvas&gt; element.</li>
+                  <li>Providing a description within the &lt;canvas&gt; element and referencing it using the aria-labelledby attribute.</li>
+                  <li>Providing a description within the &lt;canvas&gt; element.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: To make a &lt;canvas&gt; element keyboard focusable, use tabindex=“1” on the &lt;canvas&gt; element.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Alternative text for &lt;video&gt; and &lt;audio&gt; elements can be provided using the alt attribute.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Providing documents in HTML format is preferred over non-HTML documents because of the accessibility features available in HTML.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following is true about audio descriptions?</p>
+                <ol class="list-alpha">
+                  <li>Audio descriptions describe important visual information through synchronized captions.</li>
+                  <li>Audio descriptions are not required if there is no audio content.</li>
+                  <li>Audio descriptions describe important visual information that is not conveyed through a video's audio track.</li>
+                  <li>Audio descriptions describe important visual information through a transcript.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>People who are deafblind access video and audio through:</p>
+                <ol class="list-alpha">
+                  <li>Transcripts</li>
+                  <li>Captions</li>
+                  <li>Audio Description</li>
+                  <li>None of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: A PDF document must be untagged in order for screen reader users to access the document.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Using the accessibility API for Silverlight and Flash makes them accessible across all screen readers.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="visual">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="visual">Visual Design and Colors</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>For the greatest cross-browser accuracy, it is better to use the name of a color (RED) in CSS rather than the code of the color (#FF0000).</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B. It is the other way around.
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the first thing a screenreader reads on a page?</p>
+                <ol class="list-alpha">
+                  <li>Headings</li>
+                  <li>Lists</li>
+                  <li>Data tables</li>
+                  <li>Page title</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Seventeen standard colors have been defined in HTML and CSS. Should you use them to get the greatest browser accuracy?</p>
+                <ol class="list-alpha">
+                  <li>NO, use color codes instead</li>
+                  <li>YES, of course!</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To allow effective Text Zoom, use pixels when specifying the dimensions of objects in a web layout.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>When text doesn't have enough color contrast. Which guideline has not been complied to?</p>
+                <ol class="list-alpha">
+                  <li>1.3 Create content that can be presented in different ways (for example simpler layout) without losing information or structure</li>
+                  <li>2.3 Do not design content in a way that is known to cause seizures</li>
+                  <li>4.1 Maximize compatibility with current and future user agents, including assistive technologies</li>
+                  <li>3.1 Make text content readable and understandable</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The recommended % to be able to zoom into a page is?</p>
+                <ol class="list-alpha">
+                  <li>150%</li>
+                  <li>200%</li>
+                  <li>300%</li>
+                  <li>400%</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>How is large text defined? (select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>font-size: 18px; font-weight: normal</li>
+                  <li>font-size: 18px; font-weight: bold</li>
+                  <li>font-size: 24px; font-weight: normal</li>
+                  <li>font-size: 24px; font-weight: bold</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What would be a good way to check whether the order in your html structure matches the visual order on screen? (open question)</p>
+
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">
+                    Answer: disable styles in browser
+                  </p>
+                </div>
+
+                <hr>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title mb-4">Deque questions</h3>
+
+                <hr>
+
+                <p>Which groups of people are affected when only color is used to communicate information on a web page? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>People who have low vision</li>
+                  <li>People who are deaf</li>
+                  <li>People who are blind</li>
+                  <li>People who are colorblind</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Using distinct colors only for hover and focus on links are enough to distinguish links from normal text.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>From an accessibility stance, why should standard (real) text and native UI components be used instead of images of text and UI components?</p>
+                <ol class="list-alpha">
+                  <li>Standard text and native components give web designers more options to style the look of a web page.</li>
+                  <li>As long as contrast ratio requirements are met, images of text and native components can and should be used.</li>
+                  <li>The use of standard text and native components allows users to customize text and colors.</li>
+                  <li>As long as alternative text is provided, images of text and native components can and should be used.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Providing alternative text for an image that communicates information using color alone is sufficient in communicating that information to users.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What method can be used to distinguish UI components from surrounding content?</p>
+                <ol class="list-alpha">
+                  <li>Providing an outline around the UI component</li>
+                  <li>Using a different color for the UI component that has high contrast against the surrounding content</li>
+                  <li>Changing the background of the UI component</li>
+                  <li>Any of the above methods can be used</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To aid people with low vision or color deficiencies, the contrast between text and its background must be at least:</p>
+                <ol class="list-alpha">
+                  <li>3 to 1 for small text and 2 to 1 for large text</li>
+                  <li>5 to 1 for small text and 6.5 to 1 for large text</li>
+                  <li>4.5 to 1 for small text and 3 to 1 for large text</li>
+                  <li>12 to 1 for small text and 8 to 1 for large text</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: When high contrast is activated on an operating system, a user cannot choose to have the high contrast theme override the styling of a web page.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The recommended contrast ratio for UI component boundaries smaller than 3 px by 3 px is:</p>
+                <ol class="list-alpha">
+                  <li>3 to 1</li>
+                  <li>2.5 to 1</li>
+                  <li>5 to 1</li>
+                  <li>4.5 to 1/li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Enhancing the visual focus indicator benefits which group of users? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Users who have photosensitivity</li>
+                  <li>Users who have low vision</li>
+                  <li>Sighted keyboard users</li>
+                  <li>Users who are blind</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The recommended contrast ratio for small visual focus indicators is:</p>
+                <ol class="list-alpha">
+                  <li>3 to 1</li>
+                  <li>4.5 to 1</li>
+                  <li>4 to 1</li>
+                  <li>3.5 to 1</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the purpose of "visual white space" in web design?</p>
+                <ol class="list-alpha">
+                  <li>To ensure sufficient color contrast</li>
+                  <li>To allow user CSS customization</li>
+                  <li>To visually separate different elements of the design</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: A text label for a form input should never be placed adjacent to that text input.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If the text label for an icon is placed visually too far away from its text label, which category of users with a disability will be most affected?</p>
+                <ol class="list-alpha">
+                  <li>Blind users</li>
+                  <li>Deaf users</li>
+                  <li>Users with low vision</li>
+                  <li>Users with colorblindness</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the recommended maximum number of main focus areas on a web page?</p>
+                <ol class="list-alpha">
+                  <li>One</li>
+                  <li>Two</li>
+                  <li>Three</li>
+                  <li>Any number is acceptable as long as they are designed well</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The order that screen readers navigate through page content is determined by the:</p>
+                <ol class="list-alpha">
+                  <li>Visual order of the elements on the screen: left-to-right, top-to-bottom</li>
+                  <li>CSS</li>
+                  <li>Document Object Model (DOM)</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: For screen reader users, the reading order and focus order are always the same thing.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which two of the following can impact the reading order and focus order of page content? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>JavaScript DOM manipulation</li>
+                  <li>Turning on a screen reader</li>
+                  <li>Magnification</li>
+                  <li>CSS positioning techniques</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The best way to fix focus order problems is to use tabindex values greater than 1.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>When the order of content in a webpage's source code does not match the visual presentation of the content, the following users may find it hard to use the page: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Blind users</li>
+                  <li>Keyboard-only users</li>
+                  <li>Mouse users</li>
+                  <li>Deaf users</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which categories of fonts are acceptable general-purpose fonts in terms of readability? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Bold fonts such as Impact</li>
+                  <li>Sans Serif fonts such as Arial</li>
+                  <li>Serif fonts such as Times New Roman</li>
+                  <li>Fixed-width fonts such as Courier</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The line spacing within a paragraph of text should be at least 2.0.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The spacing between paragraphs should be at least 1.5 times the line spacing.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To help people who have trouble keeping their place and following the flow of text when columns of text are too wide, you can do which of the following (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Use a breaking space at the end of approximately 80 characters to keep columns narrow. </li>
+                  <li>Use CSS to set a maximum column width of approximately 80 characters.</li>
+                  <li>Write in short, simple sentences.</li>
+                  <li>Ensure the text on your website reflows as the viewport is narrowed so users can determine the column width that works for them.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Paragraph text should be full justified because the neat edges are less distracting for people with reading disorders.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Using real text instead of embedding text in an image benefits which of the following users? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>People with low vision</li>
+                  <li>People with speech disabilities</li>
+                  <li>People who are deaf</li>
+                  <li>People with reading disabilities</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following text formats allows user customizability of things like color, font, size, etc.?</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following text formats allows user customizability of things like color, font, size, etc.?</p>
+                <ol class="list-alpha">
+                  <li>Text embedded in a JPG image</li>
+                  <li>Text embedded in an SVG image</li>
+                  <li>Text written in an HTML paragraph</li>
+                  <li>Text embedded in a Flash object</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which screen reader and browser combinations support CSS-generated content? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>JAWS and Internet Explorer</li>
+                  <li>Narrator and Edge</li>
+                  <li>VoiceOver on OS X and Safari</li>
+                  <li>VoiceOver on iOS and Safari</li>
+                  <li>NVDA and Firefox</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C,D,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which CSS methods will hide content from screen readers? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>display:none</li>
+                  <li>display:inline-block</li>
+                  <li>visibility:hidden</li>
+                  <li>screenreader:hidden</li>
+                  <li>hide:true</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: An inactive dialog box that is not visible to sighted users must be hidden from blind users to give them an equivalent experience.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="multi">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="multi">Multimedia, Animation and Motion</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>There is no audio/video solution for people who are blind and deaf?</p>
+                <ol class="list-alpha">
+
+                  <li>True</li>
+                  <li>False</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>Is it true that Captions for live events are required at WCAG Level A?</p>
+                <ol class="list-alpha">
+
+                  <li>True</li>
+                  <li>False</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B [correct, only level AA]</p>
+                </div>
+
+                <hr>
+
+                <p>What is an audio description?</p>
+                <ol class="list-alpha">
+
+                  <li>A. Just a text version of the presented audio file.</li>
+                  <li>B. Audio descriptions are nothing more than an audio track with a narrator explaining what is happening visually</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title mb-4">Deque questions</h3>
+
+                <hr>
+
+                <p>The Web Content Accessibility Guidelines (WCAG) Level AA requires that captions be provided for:</p>
+                <ol class="list-alpha">
+                  <li>rerecorded multimedia (video plus audio)</li>
+                  <li>Live multimedia (video plus audio)</li>
+                  <li>Prerecorded video-only</li>
+                  <li>A and B</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Captions MUST include which of the following: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Dialog</li>
+                  <li>Important background sounds</li>
+                  <li>Important visual cues</li>
+                  <li>The identity of the individual speaking</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following best practices for the visual presentation of captions are true: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Caption should not exceed three lines on the screen at one time</li>
+                  <li>Captions should be upper case</li>
+                  <li>The default font size for captions should be at least 22pt</li>
+                  <li>The last caption frame should be removed from the screen during long silent intervals</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Users MUST be able to customize the font face, size, and color of captions.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The advantage of advanced caption file formats over basic file formats is that advanced formats support greater flexibility in styling captions to meet user needs.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The Web Content Accessibility Guidelines (WCAG) Level AA requires that transcripts be provided for:</p>
+                <ol class="list-alpha">
+                  <li>Prerecorded multimedia (video plus audio)</li>
+                  <li>Live multimedia (video plus audio)</li>
+                  <li>Prerecorded audio-only</li>
+                  <li>A and C</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Transcripts are the only way people who are deafblind can access multimedia (audio and video) content.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Transcripts MUST include which of the following: (select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Dialog</li>
+                  <li>The lyrics to the complete musical soundtrack</li>
+                  <li>The identity of the individual speaking</li>
+                  <li>Important background sounds</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Transcripts must be provided on the same page as their corresponding media file.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The benefits of interactive transcripts include:</p>
+                <ol class="list-alpha">
+                  <li>The ability to search and navigate videos by selecting text in the transcript</li>
+                  <li>Increased accessibility for people with low vision</li>
+                  <li>The ability to provide captions in multiple languages</li>
+                  <li>Greater clarity for people with vestibular disorders</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The Web Content Accessibility Guidelines (WCAG) Level AA requires that audio descriptions be provided for:</p>
+                <ol class="list-alpha">
+                  <li>rerecorded multimedia (video plus audio)</li>
+                  <li>Prerecorded audio-only</li>
+                  <li>Prerecorded video-only</li>
+                  <li>A and B</li>
+                  <li>A and C</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Audio descriptions benefit which of the following user categories: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Deaf users</li>
+                  <li>Blind users</li>
+                  <li>Deaf-blind users</li>
+                  <li>Low-vision users</li>
+                  <li>Users with mobility disabilities</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following best practices for the content of audio descriptions are true: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Important actions that cannot be identified by sound should be described</li>
+                  <li>Settings should be described, but not in overwhelming detail</li>
+                  <li>Important background sounds should be described</li>
+                  <li>New speakers in a scene should be identified</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Extended audio descriptions are useful when the audio track does not provide sufficient gaps for the audio description narrator to adequately describe what is happening on the screen.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: When an audio description track is available for a movie or video, it should be the default audio track because it enhances the viewing experience for all users.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p> True or false: To meet WCAG standards, the audio description track MUST be available in the same video file as the regular audio track.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The Web Content Accessibility Guidelines (WCAG) Level AA requires that sign language interpretation be provided for:</p>
+                <ol class="list-alpha">
+                  <li>Prerecorded multimedia(video plus audio)</li>
+                  <li>Prerecorded audio-only</li>
+                  <li>Prerecorded video-only</li>
+                  <li>None of the above, sign language interpretation is a Level AAA requirement</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Sign language interpretation is helpful for deaf people who are more fluent in sign language than written language.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The simplest way to provide sign language interpretation for a live event such as a press conference is:</p>
+                <ol class="list-alpha">
+                  <li>Via Picture in Picture (PiP), in the corner of the video</li>
+                  <li>In a separate, synchronized video</li>
+                  <li>By including the interpreter in the same video frame as the speaker</li>
+                  <li>By ensuring the speaker signs as they speak</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: HTML 5 video players have made the need for custom plugins to view online video practically obsolete.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Keyboard accessibility considerations for media players include: (select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Tab order must be logical</li>
+                  <li>Focus must be managed logically</li>
+                  <li>Visual focus indicator color and shape must be customizable</li>
+                  <li>Instructions should be provided for unusual keyboard interactions</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Screen reader accessibility considerations for media players include:</p>
+                <ol class="list-alpha">
+                  <li>All media player controls must have a Name and a Role </li>
+                  <li>All media player controls must be keyboard accessible</li>
+                  <li>Some media player controls (such as a volume slider) must have a Value</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Media players MUST provide the ability to turn on and off all accessibility features such as captions, transcripts, and audio descriptions.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Background sounds in media presentations and web pages have the potential to negatively impact which of the following user categories: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Users who are hard of hearings</li>
+                  <li>Blind users</li>
+                  <li>Deaf users</li>
+                  <li>Users with cognitive disabilities</li>
+                  <li>Users with mobility disabilities</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: In a multimedia or audio-only presentation, background sounds during dialog MUST be eliminated.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: In a multimedia or audio-only presentation, background audio should be at least 20 decibels lower than (about 4 times quieter than) primary speech or sounds.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>It is acceptable for audio content that auto-starts on a web page to play for up to:</p>
+                <ol class="list-alpha">
+                  <li>3 seconds</li>
+                  <li>5 seconds</li>
+                  <li>10 seconds</li>
+                  <li>It never acceptable for audio to auto-start on a web page</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>While it is acceptable to auto-play audio on a webpage for more than 3 seconds IF a mechanism to turn it off is available, doing so may make it IMPOSSIBLE for which user category/categories to use your web page?</p>
+                <ol class="list-alpha">
+                  <li>Deaf users</li>
+                  <li>Users who are hard of hearing</li>
+                  <li>People who use screen readers</li>
+                  <li>Users with cognitive disabilities</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following statements are true? (select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Photo-epileptic seizures are always milder than 'regular' epileptic seizures</li>
+                  <li>Photo-epileptic seizures can be serious and cause physical harm</li>
+                  <li>Only people with traumatic brain injuries are sensitive to flashing content</li>
+                  <li>High-contrast flashes are more dangerous than low-contrast flashe</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>It is acceptable for content to flash up to how many times per second?</p>
+                <ol class="list-alpha">
+                  <li>1 time</li>
+                  <li>3 times</li>
+                  <li>7 times</li>
+                  <li>It is never acceptable for content to flash on a web page</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>WCAG Level AA allows for content to flash more than 3 times per second as long as certain conditions are met. These qualifying conditions include: (select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>The flashing content contains no red</li>
+                  <li>The flashing area is small enough</li>
+                  <li>The flashing content is low contrast</li>
+                  <li>The flashing content has a mechanism to turn the flashing off</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Animations, parallax effects, and background videos or animations in web pages have the potential to negatively impact which of the following user categories:</p>
+                <ol class="list-alpha">
+                  <li>Users with vestibular disorders</li>
+                  <li>Blind users</li>
+                  <li>Users with cognitive impairments</li>
+                  <li>A and C</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Vestibular disorders affect a person's:</p>
+                <ol class="list-alpha">
+                  <li>Reading comprehension</li>
+                  <li>Balance</li>
+                  <li>Ability to perceive some colors</li>
+                  <li>Ability to use a mouse</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Parallax effects refer to the effect of some elements on a page moving in a different direction or at a different rate than other elements.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Parallax effects can negatively impact:</p>
+                <ol class="list-alpha">
+                  <li>Keyboard accessibility</li>
+                  <li>Readability of text</li>
+                  <li>Search Engine Optimization</li>
+                  <li>A and B</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Background videos that contain more than just decorative content must be fully accessible with captions, transcript, and audio descriptions, as appropriate.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Background videos that autoplay are not required to stop playing after 5 seconds.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The procurement laws Section 508 (U.S.) and EN 301 549 (Europe) apply to the procurement of information and communication technology by:</p>
+                <ol class="list-alpha">
+                  <li>Public entities</li>
+                  <li>Private entities</li>
+                  <li>Domestic entities</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The Americans with Disabilities Act (U.S. civil rights law) explicitly covers online content.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Section 508 of the Rehabilitation Act (U.S. procurement law) explicitly covers online content.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The 21st Century Video Communications and Accessibility Act (CVAA) requires captions for:</p>
+                <ol class="list-alpha">
+                  <li>All video content available on the web</li>
+                  <li>All audio content available on the web</li>
+                  <li>All video and audio content on the web that was made by U.S. companies</li>
+                  <li>Video content on the web that was previously aired with captions on television in the US</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="forms">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="forms">Forms and Validation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title mb-4">Deque questions</h3>
+
+                <hr>
+
+                <p>The most recommended method to programmatically associate a label and form field is:</p>
+                <ol class="list-alpha">
+                  <li>aria-label attribute</li>
+                  <li>title attribute</li>
+                  <li>Explicit &lt;label&gt; association</li>
+                  <li>Implicit &lt;label&gt; association</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Icons must not be used as labels.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Why is the use of placeholder text as a form label bad for accessibility?</p>
+                <ol class="list-alpha">
+                  <li>The default color for placeholder text does not meet color contrast requirements</li>
+                  <li>Placeholder text disappears when data is entered in the field</li>
+                  <li>Screen reader support for placeholder text is not consistent</li>
+                  <li>B and C</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following statements about labels are correct: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Labels should be visually close to their corresponding form fields</li>
+                  <li>Labels should be similar in color to their corresponding form fields</li>
+                  <li>Labels should be close to their corresponding form fields in the DOM</li>
+                  <li>Labels should be close in length to the other labels on the page</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: When multiple visible labels are used to label one field, the best attribute to associate each label with the field is aria-label.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: When one visible label is used to label multiple fields, such as the three parts of a telephone number, each individual field must have a screen reader accessible label.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods can be used to associate a group label with the fields it labels? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>&lt;fieldset&gt; and &lt;label&gt;</li>
+                  <li>&lt;fieldset&gt; and &lt;legend&gt;</li>
+                  <li>Wrap the group of fields with a &lt;label&gt;</li>
+                  <li>role=&quot;group&quot; and aria-labelledby</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Color must never be used in labels.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: As long as a group label is programmatically associated with the group of fields it labels, its location in the DOM does not matter.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Group labels must be available to all users - sighted and non-sighted alike.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Adding the ARIA attribute aria-required="true" tells every user that a form input is required.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods can be used to provide form instructions for specific fields programmatically? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Using aria-describedby on the &lt;input&gt; element</li>
+                  <li>Providing instructions in regular text nearby the <input> element</li>
+                  <li>Placing instructions in the &lt;label&gt; element</li>
+                  <li>Providing instructions about form fields before the form itself</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Instructions that aren't placed visually near their corresponding form fields can negatively impact which of the following user categories?</p>
+                <ol class="list-alpha">
+                  <li>Users who are blind</li>
+                  <li>Users who have low vision</li>
+                  <li>Users with vestibular disorders</li>
+                  <li>All of the above/li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Using a different text color for an input's label to convey that input is required may exclude which of the following user categories? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Users who are blind</li>
+                  <li>Users who have low vision</li>
+                  <li>Users who are deaf or hard of hearing</li>
+                  <li>Users who are colorblind</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following is the most semantically-appropriate way to associate instructions with an input?</p>
+                <ol class="list-alpha">
+                  <li>Include the instructions within the &lt;label&gt; text, along with the label/name of the input</li>
+                  <li>Write the text in an aria-instructions attribute</li>
+                  <li>Reference the ID of the instructions via aria-describedby</li>
+                  <li>Include the instructions in the title attribute, to create a visible tooltip on mouse hover</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods are considered best practices for progressive form updates? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Provide a summary of users' choices at the end of the form before submission</li>
+                  <li>Include multiple steps on the screen at the same time</li>
+                  <li>Number the steps in the form</li>
+                  <li>Manage keyboard focus as users move forward and backward through the form</li>
+                  <li>Make dynamic changes in the form anywhere in the DOM</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: From an accessibility perspective, focusing on a form element must not cause a change of context, but context changes may occur when a user hovers over a form element.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Changes in context can inhibit accessibility when those changes happen automatically and users aren't allowed to request the changes in context.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To conform to ARIA specification, which of the following methods should be applied when creating a custom checkbox within a form? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Provide a visible and programmatically-associated label for the checkbox </li>
+                  <li>Ensure the checkbox is assigned role="checkbox"</li>
+                  <li>Convey to users the state of the checkbox through toggling aria-expanded values</li>
+                  <li>Make sure the Space bar can be used to change the state of the checkbox</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Custom form elements should be modeled after native HTML form elements.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What might happen if an aria-live announcement is tied to a blur event in a form?</p>
+                <ol class="list-alpha">
+                  <li>A screen reader might read the announcement after it reads the next item in focus</li>
+                  <li>A screen reader user might miss the announcement because the announcement competes with the screen reader reading the next item in focus</li>
+                  <li>The aria-live announcement might be made before the screen reader reads the next item in focus</li>
+                  <li>None of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What should happen to the page title if a form submission causes the same page to reload?</p>
+                <ol class="list-alpha">
+                  <li>Nothing should happen to the page title</li>
+                  <li>The page title should reflect errors in form submission</li>
+                  <li>The page title should reflect the status of the form submission</li>
+                  <li>Form submission should not cause the page to reload</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What are some techniques that can be used to prevent errors in forms? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Provide clear, accurate, and accessible form labels</li>
+                  <li>Use custom form inputs whenever possible</li>
+                  <li>Give additional instructions for inputs if necessary</li>
+                  <li>Provide visual cues that guide users through the form</li>
+                  <li>Present all options and possibilities to users as they interact with the form</li>
+                  <li>Allow users to review their choices before and after they submit the for</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D,F
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: In terms of accessibility, if error messages are programmatically associated with their form inputs, then providing visible error messages for form inputs are optional.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which ARIA attribute should be used to identify which form elements have errors?</p>
+                <ol class="list-alpha">
+                  <li>aria-required</li>
+                  <li>aria-describedby</li>
+                  <li>aria-readonly</li>
+                  <li>aria-invalid</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which ARIA attribute should be used to provide more information about an error in a form element?</p>
+                <ol class="list-alpha">
+                  <li>aria-required</li>
+                  <li>aria-describedby</li>
+                  <li>aria-readonly</li>
+                  <li>aria-invalid</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the code examples below best adheres to the requirements and best practices for error feedback?</p>
+                <ol class="list-alpha">
+                  <li>&lt;label for=&quot;password&quot;&gt; Error - Password: &lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; aria-invalid=&quot;true&quot;&gt;</li>
+                  <li>&lt;label for=&quot;password&quot;&gt; Password: &lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; aria-required=&quot;true&quot; aria-invalid=&quot;true&quot;&gt;</li>
+                  <li>&lt;p id=&quot;passwordError&quot;&gt;Error: Password must be at least be 8 characters&lt;/p&gt; &lt;label for=&quot;password&quot;&gt; Password: &lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;
+                    aria-required=&quot;true&quot; aria-invalid=&quot;true&quot; aria-describedby=&quot;passwordError&quot;&gt;</li>
+                  <li>&lt;p&gt;Error: Password must be at least be 8 characters&lt;/p&gt; &lt;label for=&quot;password&quot;> Password: &lt;/label&gt; &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; aria-required=&quot;true&quot;
+                    aria-invalid=&quot;true&quot;></li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Regions like aria-live and role="alert" can be used to convey success messages as long as success messages aren't hidden from visual users.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The basic keyboard commands for interacting with HTML form controls are common across all screen reader / browser combinations.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which one of the following is NOT a screen reader mode?</p>
+                <ol class="list-alpha">
+                  <li>Document mode</li>
+                  <li>Forms mode</li>
+                  <li>Caption mode</li>
+                  <li>Table mode</li>
+                  <li>Application mode</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Using the Tab key to move through a page will put focus on which of the following elements: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Plain text</li>
+                  <li>Form fields</li>
+                  <li>Links</li>
+                  <li>Elements with tabindex="0"</li>
+                  <li>Elements with tabindex="-1"</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The default mode for most screen readers is forms mode.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Since plain text is non-focusable, text such as instructions or formatting hints should not be placed in the middle of a form unless the text is programmatically associated with a focusable element.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="annotations">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="annotations">Design Annotations</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+
+  <footer class="full-cover site-footer bg-faded" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="pipe-links list-inline mt-2 mb-3" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="http://a11y.ing.net">ING Accessibility Portal</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://confluence.europe.intranet../../advanced/viewpage.action?spaceKey=ACC&title=A11Y+@ING">A11Y @ING NL</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal">Github</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/">Deque University</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright py-2">
+      <p class="m-0">&copy; 2018 Copyright</p>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

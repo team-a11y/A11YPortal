@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary - Fundamentals - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" aria-current="true" id="main-menu">Fundamentals
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/home.html">Home</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/testing.html">Testing</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/checklists.html">Checklists</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/fundamentals/summary.html" aria-current="page">Summary <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/principles.html">Principles</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/references.html">References</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/content/editorial.html">Content</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Summary</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#audio-and-video" class="link-ts"><span>Audio and video</span></a></li>
+          <li><a href="#editorial" class="link-ts"><span>Editorial</span></a></li>
+          <li><a href="#e-documents" class="link-ts"><span>E-Documents</span></a></li>
+          <li><a href="#focus" class="link-ts"><span>Focus</span></a></li>
+          <li><a href="#forms" class="link-ts"><span>Forms</span></a></li>
+          <li><a href="#images" class="link-ts"><span>Images</span></a></li>
+          <li><a href="#links" class="link-ts"><span>Links</span></a></li>
+          <li><a href="#notifications" class="link-ts"><span>Notifications</span></a></li>
+          <li><a href="#scripts-and-dynamic-content" class="link-ts"><span>Scripts and dynamic content</span></a></li>
+          <li><a href="#structure" class="link-ts"><span>Structure</span></a></li>
+          <li><a href="#text-equivalents" class="link-ts"><span>Text equivalents</span></a></li>
+          <li><a href="#visual-design" class="link-ts"><span>Visual Design</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+
+                <p class="lead"><strong>The Guidelines are the baseline you should not drop below</strong></p>
+
+                <p>Dropping below these guidelines will automatically exclude people from fully using the product in one or more ways with the technology or their choice or in certain circumstances. These guidelines are like the bronze medal while the silver, gold and even the platinum medal is achievable</p>
+
+                <p>Guidelines categorised as <strong>MUST</strong> or <strong>MUST NOT</strong> are best practices that can easily be tested with specific criteria that is not subjective and is technologically possible to achieve with current assistive technology on mobile devices.</p>
+
+                <p>Guidelines categorised as <strong>SHOULD</strong> or <strong>SHOULD NOT</strong> are less testable but considered core to accessible mobile website and apps.</p>
+
+                <ul class="list-unstyled">
+                  <li><span class="badge badge-success">MUST</span>: Required</li>
+                  <li><span class="badge badge-danger">MUST NOT</span>: Not allowed</li>
+                  <li><span class="badge badge-info">SHOULD</span>: Strongly recommended</li>
+                  <li><span class="badge badge-info">SHOULD NOT</span>: Strongly discouraged</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/references.html" class="link-ts"><span>References</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="audio-and-video" aria-labelledby="title-audio-and-video">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-audio-and-video">Audio and video</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/code/audio-and-video.html#alternatives-for-audio-and-visual-content" class="link-ts"><span>Alternatives for audio and visual content</span></a>: <span class="badge badge-success">MUST</span> Alternative delivery, such as subtitles, sign language, audio description and transcripts, must be provided with embedded media when available.</li>
+                  <li><a href="../../guidelines/code/audio-and-video.html#autoplay" class="link-ts"><span>Autoplay</span></a>: <span class="badge badge-danger">MUST NOT</span> Audio must not play automatically unless the user is made aware this will happen or a pause/stop/mute button is provided.</li>
+                  <li><a href="../../guidelines/code/audio-and-video.html#metadata" class="link-ts"><span>Metadata</span></a>: <span class="badge badge-info">SHOULD</span> Relevant metadata should be provided for all media.</li>
+                  <li><a href="../../guidelines/code/audio-and-video.html#volume-control" class="link-ts"><span>Volume control</span></a>: <span class="badge badge-info">SHOULD</span> Separate volume controls should be provided for background music, ambient sounds, narrative and editorially significant sound effects.</li>
+                  <li><a href="../../guidelines/code/audio-and-video.html#audio-conflict" class="link-ts"><span>Audio conflict</span></a>: <span class="badge badge-info">SHOULD NOT</span> Narrative audio in games or interactive media should not talk over or conflict with native assistive technology.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="editorial" aria-labelledby="title-editorial">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-editorial">Editorial</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/content/editorial.html#consistent-labelling" class="link-ts"><span>Consistent labelling</span></a>: <span class="badge badge-info">SHOULD</span> Consistent labelling should be used across websites and native applications as well as within websites and applications.</li>
+                  <li><a href="../../guidelines/content/editorial.html#indicating-language" class="link-ts"><span>Indicating language</span></a>: <span class="badge badge-success">MUST</span> The language of a page or app must be specified, and changes in language must be indicated.</li>
+                  <li><a href="../../guidelines/content/editorial.html#instructions" class="link-ts"><span>Instructions</span></a>: <span class="badge badge-info">SHOULD</span> When needed, additional instructions should be provided to supplement visual and audio cues.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="e-documents" aria-labelledby="title-e-documents">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-e-documents">E-Documents</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/e-documents/pdf.html" class="link-ts"><span>PDF</span></a>: <span class="badge badge-info">MUST</span> Multiple layers and properties must be present in a good quality end product.</li>
+                  <li><a href="../../guidelines/e-documents/word.html" class="link-ts"><span>Word</span></a>: <span class="badge badge-info">MUST</span> The document outline, headings and proper typographic elements, must be properly cared for in a good quality end product.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="focus" aria-labelledby="title-focus">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-focus">Focus</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/code/focus.html#focusable-elements" class="link-ts"><span>Focusable elements</span></a>: <span class="badge badge-success">MUST</span> All interactive elements must be focusable and inactive elements must not be focusable.</li>
+                  <li><a href="../../guidelines/code/focus.html#keyboard-trap" class="link-ts"><span>Keyboard trap</span></a>: <span class="badge badge-danger">MUST NOT</span> There must not be a keyboard trap.</li>
+                  <li><a href="../../guidelines/code/focus.html#content-order" class="link-ts"><span>Content order</span></a>: <span class="badge badge-success">MUST</span> Content order must be logical.</li>
+                  <li><a href="../../guidelines/code/focus.html#focus-order" class="link-ts"><span>Focus order</span></a>: <span class="badge badge-success">MUST</span> Actionable content must be navigable in a meaningful sequence.</li>
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a>: <span class="badge badge-success">MUST</span> Actions must be triggered when appropriate for the type of user interaction.</li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a>: <span class="badge badge-success">MUST</span> Alternative input methods must be supported.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="forms" aria-labelledby="title-forms">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-forms">Forms</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/code/forms.html#labelling-form-controls" class="link-ts"><span>Labelling form controls</span></a>: <span class="badge badge-success">MUST</span> All form controls must be labelled.</li>
+                  <li><a href="../../guidelines/code/forms.html#form-inputs" class="link-ts"><span>Form inputs</span></a>: <span class="badge badge-success">MUST</span> A default input format must be indicated and supported.</li>
+                  <li><a href="../../guidelines/code/forms.html#form-layout" class="link-ts"><span>Form Layout</span></a>: <span class="badge badge-success">MUST</span> Labels must be placed close to the relevant form control, and laid out appropriately.</li>
+                  <li><a href="../../guidelines/code/forms.html#grouping-form-elements" class="link-ts"><span>Grouping form elements</span></a>: <span class="badge badge-success">MUST</span> Controls, labels, and other form elements must be properly grouped.</li>
+                  <li><a href="../../guidelines/code/forms.html#managing-focus" class="link-ts"><span>Managing focus</span></a>: <span class="badge badge-danger">MUST NOT</span> Focus or context must not automatically change during user input.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="images" aria-labelledby="title-images">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-images">Images</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/design/images.html#images-of-text" class="link-ts"><span>Images of text</span></a>: <span class="badge badge-info">SHOULD</span> Images of text should be avoided.</li>
+                  <li><a href="../../guidelines/design/images.html#background-images" class="link-ts"><span>Background images</span></a>: <span class="badge badge-success">MUST</span> Background images that convey information or meaning must have an additional accessible alternative.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="links" aria-labelledby="title-links">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-links">Links</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/design/links.html#descriptive-links" class="link-ts"><span>Descriptive links</span></a>: <span class="badge badge-success">MUST</span> Link and navigation text must uniquely describe the target or function of the link or item.</li>
+                  <li><a href="../../guidelines/design/links.html#links-to-alternative-formats" class="link-ts"><span>Links to alternative formats</span></a>: <span class="badge badge-success">MUST</span> Links to alternative formats must indicate that an alternative is opening.</li>
+                  <li><a href="../../guidelines/design/links.html#combining-repeated-links" class="link-ts"><span>Combining repeated links</span></a>: <span class="badge badge-success">MUST</span> Repeated links to the same resource must be combined within a single link.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="notifications" aria-labelledby="title-notifications">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-notifications">Notifications</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/content/notifications.html#inclusive-notifications" class="link-ts"><span>Inclusive notifications</span></a>: <span class="badge badge-success">MUST</span> Notifications must be both visible and audible.</li>
+                  <li><a href="../../guidelines/content/notifications.html#standard-os-notifications" class="link-ts"><span>Standard operating system notifications</span></a>: <span class="badge badge-info">SHOULD</span> Standard operating system notifications should be used where available and appropriate.</li>
+                  <li><a href="../../guidelines/content/notifications.html#error-messages-and-correction" class="link-ts"><span>Error messages and correction</span></a>: <span class="badge badge-success">MUST</span> Clear error messages must be provided.</li>
+                  <li><a href="../../guidelines/content/notifications.html#feedback-and-assistance" class="link-ts"><span>Feedback and assistance</span></a>: <span class="badge badge-info">SHOULD</span> Non-critical feedback or assistance should be provided when appropriate.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="scripts-and-dynamic-content" aria-labelledby="title-scripts-and-dynamic-content">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-scripts-and-dynamic-content">Scripts and dynamic content</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#progressive-functionality" class="link-ts"><span>Progressive experience for all users</span></a>: <span class="badge badge-success">MUST</span> Apps and websites must be built to work in a progressive manner that ensures a functional experience for all users.</li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#controlling-media" class="link-ts"><span>Controlling media</span></a>: <span class="badge badge-success">MUST</span> Media that updates or animated content must have a pause, stop or hide control.</li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#page-refreshes" class="link-ts"><span>Page refreshes</span></a>: <span class="badge badge-danger">MUST NOT</span> Automatic page refreshes must not be used without warning.</li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#timeouts" class="link-ts"><span>Timeouts</span></a>: <span class="badge badge-success">MUST</span> A timed response must be adjustable.</li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control" class="link-ts"><span>Input control</span></a>: <span class="badge badge-info">SHOULD</span> Interaction input control should be adaptable.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="structure" aria-labelledby="title-structure">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-structure">Structure</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/design/structure.html#unique-page-screen-titles" class="link-ts"><span>Unique page/screen titles</span></a>: <span class="badge badge-success">MUST</span> All pages or screens must be uniquely and clearly identifiable.</li>
+                  <li><a href="../../guidelines/design/structure.html#headings" class="link-ts"><span>Headings</span></a>: <span class="badge badge-success">MUST</span> Content must provide a logical and hierarchical heading structure, as supported by the platform.</li>
+                  <li><a href="../../guidelines/design/structure.html#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a>: <span class="badge badge-info">SHOULD</span> Containers should be used to describe page/screen structure, as supported by the platform.</li>
+                  <li><a href="../../guidelines/design/structure.html#grouped-elements" class="link-ts"><span>Grouped elements</span></a>: <span class="badge badge-success">MUST</span> Controls, objects and grouped interface elements must be represented as a single accessible component.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="text-equivalents" aria-labelledby="title-text-equivalents">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-text-equivalents">Text equivalents</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content" class="link-ts"><span>Alternatives for non-text content</span></a>: <span class="badge badge-success">MUST</span> Alternatives must briefly describe the editorial intent or purpose of the image, object, or element.</li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#decorative-content" class="link-ts"><span>Decorative content</span></a>: <span class="badge badge-success">MUST</span> Decorative images must be hidden from assistive technology.</li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#tooltips-supplementary-info" class="link-ts"><span>Tooltips and supplementary information</span></a>: <span class="badge badge-danger">MUST NOT</span> Tooltips must not repeat link text or other alternatives.</li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#roles-traits-properties" class="link-ts"><span>Roles, traits and properties</span></a>: <span class="badge badge-success">MUST</span> Elements must have accessibility properties set appropriately.</li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a>: <span class="badge badge-danger">MUST NOT</span> Visual formatting alone must not be used to convey meaning.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="visual-design" aria-labelledby="title-visual-design">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-visual-design">Visual Design</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-block">
+
+                <ul class="list-icons list-linklist" role="directory">
+                  <li><a href="../../guidelines/design/visual-design.html#colour-contrast" class="link-ts"><span>Colour contrast</span></a>: <span class="badge badge-success">MUST</span> The colour of text and background content must have sufficient contrast.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#colour-and-meaning" class="link-ts"><span>Colour and meaning</span></a>: <span class="badge badge-danger">MUST NOT</span> Information or meaning must not be conveyed by colour only.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#styling-and-readability" class="link-ts"><span>Styling and readability</span></a>: <span class="badge badge-success">MUST</span> Core content must still be accessible when styling is unsupported or removed.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#touch-target-size" class="link-ts"><span>Touch target size</span></a>: <span class="badge badge-success">MUST</span> Touch targets must be large enough to touch accurately.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#spacing">Spacing</a>: <span class="badge badge-info">SHOULD</span> An inactive space should be provided around actionable elements.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#content-resizing" class="link-ts"><span>Content resizing</span></a>: <span class="badge badge-success">MUST</span> Users must be able to control font sizing and user interface (UI) scaling.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#actionable-elements" class="link-ts"><span>Actionable elements</span></a>: <span class="badge badge-success">MUST</span> Links and other actionable elements must be clearly distinguishable.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a>: <span class="badge badge-success">MUST</span> When focused, all actionable and focusable elements must have a visible state change.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#consistency" class="link-ts"><span>Consistency</span></a>: <span class="badge badge-info">SHOULD</span> A user's experience should be consistent.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#choice" class="link-ts"><span>Choice</span></a>: <span class="badge badge-success">MUST</span> Interfaces must provide multiple ways to interact with content.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#adjustable" class="link-ts"><span>Adjustability</span></a>: <span class="badge badge-info">SHOULD</span> Interactive media, including games, should be adjustable for user ability and preference.</li>
+                  <li><a href="../../guidelines/design/visual-design.html#flicker" class="link-ts"><span>Flicker</span></a>: <span class="badge badge-danger">MUST NOT</span> Content must not visibly or intentionally flicker or flash more than three times in any one-second period.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio and Video - Code - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html" aria-current="page">Code
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/code/audio-and-video.html" aria-current="page">Audio and Video <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/focus.html">Focus</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/forms.html">Forms</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/scripts-and-dynamic-content.html">Scripts and Dynamic Content</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Audio and Video</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#alternatives-for-audio-and-visual-content" class="link-ts"><span>Alternatives for audio and visual content</span></a></li>
+          <li><a href="#autoplay" class="link-ts"><span>Autoplay</span></a></li>
+          <li><a href="#metadata" class="link-ts"><span>Metadata</span></a></li>
+          <li><a href="#volume-control" class="link-ts"><span>Volume control</span></a></li>
+          <li><a href="#audio-conflict" class="link-ts"><span>Audio conflict</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="alternatives-for-audio-and-visual-content" aria-labelledby="title-alternatives-for-audio-and-visual-content">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-alternatives-for-audio-and-visual-content">Alternatives for audio and visual content
+          <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Alternative delivery, such as subtitles, sign language, audio description and transcripts, must be provided with embedded media when available.</strong></p>
+
+                <p>Some users may not be able to hear audible content. Some users may not be able to see visual content. Having an alternative delivery, in addition to the media that can be perceived, supports comprehension. Multiple delivery formats also
+                  help cognitively impaired users.</p>
+
+                <p>This guideline applies to all forms of audio and visual content, regardless of length or format, as appropriate for the content:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li><strong>Subtitles</strong> must be provided where feasible, when they were included with a pre-recorded broadcast, or if content is for public facing corporate communications, employment or suppliers;</li>
+                  <li><strong>Audio described</strong> or <strong>sign language</strong> versions must be provided if they were included with an original broadcast; </li>
+                  <li>For interactive content, such as e-learnings, narrative and instructions must be available both visually and audibly, for example using <strong>subtitles</strong>;</li>
+                  <li>In addition to other alternative delivery, <strong>transcripts</strong> can be provided for all types of audio and visual content.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-alternatives-for-audio-and-visual-content" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-alternatives-for-audio-and-visual-content" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-alternatives-for-audio-and-visual-content" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-alternatives-for-audio-and-visual-content-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-alternatives-for-audio-and-visual-content-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#captions" class="link-ts"><span>Captions</span></a>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#transcripts" class="link-ts"><span>Transcripts</span></a>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#audio-descriptions" class="link-ts"><span>Audio Descriptions</span></a>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#sign-language-interpretation" class="link-ts"><span>Sign Language Interpretation</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-alternatives-for-audio-and-visual-content">iOS</h4>
+
+            <p>iOS provides support for multiple audio tracks (which can be used for audio description) and caption support using the standard video playback views and a supported codec. Captions may not be available in full screen mode. Use the Apple Media
+              player with closed or open captions and support audio description.</p>
+
+            <h4 class="heading-s" id="android-alternatives-for-audio-and-visual-content">Android</h4>
+
+            <p>Android does not handle multiple audio tracks or captions automatically therefore developers must incorporate support for these features into their application using a codec supported by the Android MediaPlayer API or a custom player. Incorporate
+              closed captions and audio description into a multimedia video.</p>
+
+            <h4 class="heading-s" id="html-alternatives-for-audio-and-visual-content">HTML</h4>
+
+            <p>Use a media player that supports captions/subtitles. Provide correctly labelled controls to turn on and off the captions/subtitles. Flash is not supported on many devices and thus HTML 5 based media players will likely need to be used to deliver
+              captions and audio description via HTML.</p>
+
+            <p>There are several different options to deliver captions and audio descriptions, including different caption formats. The caption format may be dependent on the media player used. The audio description format can either by text synchronization
+              (this is not currently supported), a secondary audio file, or a secondary video with an enhanced audio track.</p>
+
+            <p>An accessible media player should be used for all embedded video or audio content.</p>
+
+            <p>For other interactive media use visible text and cues to support audio narrative or instructions, and ensure this is provided as text or as a text alternative so it can be spoken by screen readers.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-alternatives-for-audio-and-visual-content-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <p>The key aim will be to verify that:</p>
+                <ul class="list-icons list-checklist">
+                  <li>any audible content necessary for understanding is provided visually;</li>
+                  <li>and any visual content necessary for understanding is provided in a way that can be audible.</li>
+                </ul>
+                <ol>
+                  <li>Activate the app or webpage.</li>
+                  <li>Locate media.</li>
+                  <li>Determine if the media has audio content that contains important information - such as a spoken narrative.</li>
+                  <li>Check that any audible information necessary for understanding the media is also provided via subtitles/open or closed captions in conjunction and synchronized with the audio.</li>
+                  <li>Determine if the media has visual content that contains important information - such as a sign or new character entering.</li>
+                  <li>Check that any visual information necessary for understanding the media is also described as part of the audio or is provided through a separate track containing the audio descriptions and is synchronised with the video. This may be
+                    via a screen reader where appropriate.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-alternatives-for-audio-and-visual-content-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Media provides subtitles/opened or closed captions that are synchronised with any audio content that contains important information;</li>
+                  <li>Visual content necessary for understanding the media is described using an audio which is synchronised with the video content (Video description), or where appropriate provides textual content for a screen reader.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="autoplay" aria-labelledby="title-autoplay">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-autoplay">Autoplay <span class="badge badge-danger">Must not</span>
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Audio must not play automatically unless the user is made aware this will happen or a pause/stop/mute button is provided.</strong></p>
+
+                <p>Audio in AV and interactive content can be disruptive for screen reader users because it can conflict with and speak over the screen reader. Unexpected audio may also distress users with cognitive or sensory sensitivity.</p>
+
+                <p>Users should be given a choice to opt in for auto-playing content audio. Where a pause/stop/mute button is provided instead, it must be fully and immediately accessible.</p>
+
+                <p>Where play automatically continues to the next content item, this must be <a href="../../guidelines/content/notifications.html#inclusive-notifications">indicated in an accessible way</a>, with a choice to opt out and <a href="../../guidelines/code/scripts-and-dynamic-content.html#timeouts">sufficient time</a> to do so.</p>
+
+                <p>User preferences should persist.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-autoplay" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-autoplay" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-autoplay" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-autoplay-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-autoplay-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#auto-play" class="link-ts"><span>Auto-Play</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-autoplay">iOS</h4>
+
+            <p>Provide a button or link along with the controls for the audio playback that will start the audio. Do not call the play method directly after loading the audio in app unless creating the audio when initiated by the user.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+[audioPlayer prepareToPlay];
+UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+[playButton setTitle: NSLocalizedString(@"Play", @"Button title")]
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+[audioPlayer prepareToPlay];
+[audioPlayer play];
+--></code></pre>
+              </div>
+            </div>
+            <h4 class="heading-s" id="android-autoplay">Android</h4>
+
+            <p>Video content should open in it's own screen using the native player. No action is needed for autoplay as Android automatically decreases the volume of playback in order to allow Talkback users to hear speech output. Consider forewarning new
+              users.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<Button android:id="@+id/pause_button" android:src="@drawable/pause" android:contentDescription="@string/pause"/>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-autoplay">HTML</h4>
+
+            <p>Do not play audio automatically unless there is a setting where the user can opt in before content is autoplayed or the user is forewarned.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-autoplay-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate audio content that plays automatically.</li>
+                  <li>Check that the containing page does not play audio automatically when it loads while a screen reader is active, or that the user is pre-warned and a control is provided to stop or pause the audio.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-autoplay-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Audio content does not play automatically when a screen reader is running.</li>
+                  <li>The user is pre-warned that audio will automatically play and there is a control to stop or pause the audio.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="metadata" aria-labelledby="title-metadata">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-metadata">Metadata <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Relevant metadata should be provided for all media.</strong></p>
+
+                <p>Metadata, information about an item, can help people to find what they require. Metadata provided with media content can help users understand the media and locate alternative versions.</p>
+
+                <p>Relevant metadata might include duration, and the presence of subtitles, sign language, or audio description.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-metadata" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-metadata" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-metadata" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-metadata-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-metadata-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-metadata">iOS</h4>
+
+            <p>Not applicable.</p>
+
+            <h4 class="heading-s" id="android-metadata">Android</h4>
+
+            <p>Not applicable.</p>
+
+            <h4 class="heading-s" id="html-metadata">HTML</h4>
+
+            <p>Metadata can be used to associate accessible alternate versions of Web pages with pages or content that does not meet the standards and guidelines. It can also be used to locate and describe alternative media. Use the <code>link</code> element
+              with <code>rel</code> and <code>type</code> attributes.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<title>COMPANY NAME - Private</title>
+<meta name="description" content="A financial guide to your freedom">
+<meta name="keywords" content="Financial, Money, Freedom">
+<link rel="alternate"
+      type="application/html"
+      hreflang="nl"
+      title="COMPANY NAME - Particulier"
+      href="https://www.company-name.com/particulier/" />
+
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<title>COMPANY NAME - Private</title>
+<meta name="description" content="A financial guide to your freedom">
+<meta name="keywords" content="Financial, Money, Freedom">
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-metadata-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Locate media.</li>
+                  <li>View the source of the page.</li>
+                  <li>Verify that metadata content is indicated in the head section of the page and indicates where alternatives to language or the media are located.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-metadata-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Correct metadata is provided for media.</li>
+                  <li>Correct metadata is provided for language.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="volume-control" aria-labelledby="title-volume-control">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-volume-control">Volume control <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Separate volume controls should be provided for background music, ambient sounds, narrative and editorially significant sound effects.</strong></p>
+
+                <p>Separate volume controls, in addition to the mute control, should be provided in settings for interactive media, such as e-learnings, to minimise the risk of sensory overload for users with audio sensitivity:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Users with cognitive impairments that include audio sensitivity need to be able to minimise the risk of sensory shock.</li>
+                  <li>Users with mild to moderate hearing impairment may need to adjust different audio elements to hear the narrative speech clearly.</li>
+                  <li>Screen reader users need to be able to hear the screen reader over the sounds within interactive media.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-volume-control" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-volume-control" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-volume-control" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-volume-control-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-volume-controlt-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#media-player-accessibility" class="link-ts"><span>Media Player Accessibility</span></a></li>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#background-sounds" class="link-ts"><span>Background Sounds</span></a></li>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#auto-play" class="link-ts"><span>Auto-Play</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-volume-control">iOS</h4>
+
+            <p>Information to be confirmed.</p>
+
+            <h4 class="heading-s" id="android-volume-control">Android</h4>
+
+            <p>Information to be confirmed.</p>
+
+            <h4 class="heading-s" id="html-volume-control">HTML</h4>
+
+            <p>Information to be confirmed.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-volume-control-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Locate media.</li>
+                  <li>View the source of the page.</li>
+                  <li>Verify that metadata content is indicated in the head section of the page and indicates where alternatives to the media are located.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-volume-controlt-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All sound can be muted independently of the screen reader;</li>
+                  <li>Where appropriate the volume of different aspects of audio can be controlled and modified independently.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="audio-conflict" aria-labelledby="title-audio-conflict">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-audio-conflict">Audio conflict <span class="badge badge-info">Should not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Narrative audio in games, e-learnings or interactive media should not talk over or conflict with native assistive technology.</strong></p>
+
+                <p>In order to interact with embedded media, users need to perceive the editorial narrative and/or instructions.</p>
+
+                <p>If the embedded media is self-voicing content, then this should be hidden from the screen reader. If the embedded media is providing content to the screen reader, then this should not be self-voicing.</p>
+
+                <p><em>Note: Further research is currently being conducted to ascertain user preferences.</em></p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-audio-conflict" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-audio-conflict" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-audio-conflict" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-audio-conflict-procedures" class="link-ts"><span>Testingg Procedures</span></a></li>
+                  <li><a href="#testing-audio-conflict-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-audio-conflict">iOS</h4>
+
+            <p>Use the starts-media-session trait to silence the audio output of assistive technology, such as VoiceOver, during a media session that should not be interrupted. For example, use this trait to silence VoiceOver speech while the user is recording
+              audio.</p>
+
+            <p>This trait may not be always appropriate. Some situations may require VoiceOver speech during a media session with audio.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+var button = UIButton(type: .system)
+button.accessibilityTraits |= UIAccessibilityTraitStartsMediaSession
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-audio-conflict">Android</h4>
+
+            <p>Android automatically decreases the volume of playback in order to allow Talkback users to hear speech output.</p>
+
+            <h4 class="heading-s" id="html-audio-conflict">HTML</h4>
+
+            <p>Information to be confirmed.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-audio-conflict-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Locate media.</li>
+                  <li>Enable screen reader.</li>
+                  <li>Ensure screen reader can be heard and does not clash unnecessarily with any audio in the media.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-audio-conflict-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>None documented</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS - Native - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="true" id="main-menu">Code <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/semantic-structure-and-navigation.html">Semantics and Navigation</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/responsive-design-and-zoom.html">Responsive and Zoom</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/dynamic-updates.html">Dynamic Updates</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/wai-aria.html">WAI-ARIA</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/android.html">Android</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/code/ios.html" aria-current="page">iOS <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">iOS</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#ios-accessibility-features" class="link-ts"><span>iOS Accessibility Features</span></a></li>
+          <li><a href="#user-interaction" class="link-ts"><span>User Interaction</span></a></li>
+          <li><a href="#ui-controls" class="link-ts"><span>UI Controls</span></a></li>
+          <li><a href="#notifications" class="link-ts"><span>Notifications</span></a></li>
+          <li><a href="#custom-elements" class="link-ts"><span>Custom Elements</span></a></li>
+          <li><a href="#form-labels-and-validation" class="link-ts"><span>Form Labels and Validation</span></a></li>
+          <li><a href="#navigation" class="link-ts"><span>Navigation</span></a></li>
+          <li><a href="#device-orientation" class="link-ts"><span>Device Orientation</span></a></li>
+          <li><a href="#semantic-structure-and-meaning" class="link-ts"><span>Semantic Structure and Meaning</span></a></li>
+          <li><a href="#color-and-contrast" class="link-ts"><span>Color and Contrast</span></a></li>
+          <li><a href="#animations-and-motion" class="link-ts"><span>Animations and Motion</span></a></li>
+          <li><a href="#audio-and-video" class="link-ts"><span>Audio and Video</span></a></li>
+          <li><a href="#text-content" class="link-ts"><span>Text Content</span></a></li>
+          <li><a href="#images" class="link-ts"><span>Images</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>iOS Native Mobile App Accessibility</strong></p>
+                <p>The iOS platform features a wide range of accessibility features for a wide range of disability types. It was the first mobile operating system for smart phones and tablets to offer a robust touchscreen interface and screen reader for
+                  users who are blind.</p>
+
+                <p>The accessibility API is sophisticated, approaching the accessibility support in desktop operating systems or in web content, though often in a simplified way. For example, iOS allows developers to create headings, but unlike in HTML,
+                  iOS does not allow headings to be given levels or to be organized in a hierarchical structure. Similarly, iOS does not distinguish between buttons and links. Both are treated as buttons.</p>
+
+                <p>Even within the simplified nature of the iOS accessibility model, it is possible to create highly accessible native iOS applications by following the same general principles common to all digital accessibility. In the end, all digital
+                  content must follow the same four principles outlined by the World Wide Web Consortium in the Web Content Accessibility Guidelines (WCAG) 2.0:</p>
+                <ol>
+                  <li><strong>Perceivable</strong> — All content must be available to users through whichever senses they can use: sight, sound, or touch.</li>
+                  <li><strong>Operable</strong> — People must be able to interact with the content and interface using the methods they are able to use (e.g. mouse, keyboard, touch, voice, and alternative assistive technologies).</li>
+                  <li><strong>Understandable</strong> — Users must be able to comprehend the content, interface, and interactions.</li>
+                  <li><strong>Robust</strong> — The interface and content must be designed to be compatible with current and future technologies, taking into account coding best practices and the accessibility API.</li>
+                </ol>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>This training summarizes many of the concepts taught in the full web accessibility training, in a way that makes the concepts relevant to iOS developers. It can still be useful to learn the details of web accessibility (HTML, CSS, JavaScript),
+                  because of the way that iOS applications frequently include web content.</p>
+
+                <p>The iOS platform is rich with accessibility possibilities. It does have some limitations in comparison to the accessibility capabilities of full-featured desktop systems, but it comes with the advantage of being able to carry around an
+                  accessible mobile computer in your pocket or hand bag. Mobile device accessibility is one of the most powerful enablers of independence for people with disabilities, but only if the apps have been designed with accessibility in mind.
+                  It is up to the design and development team to take advantage of the accessibility possibilities in the iOS development environment. </p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/ios2/intro/" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="ios-accessibility-features" aria-labelledby="title-ios-accessibility-features">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-ios-accessibility-features">iOS Accessibility Features</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/features/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> iOS Accessibility Features - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">IOS: Accessibility features</h3>
+                <p>Accessibility features for iOS7+ include:</p>
+                <ul>
+                  <li>Sir- voice search</li>
+                  <li>Text size</li>
+                  <li>VoiceOver - speech output</li>
+                  <li>Invert colours</li>
+                  <li>Speak selection</li>
+                  <li>Speak auto-text - automatically speaks auto-corrections and auto-capitalisations</li>
+                  <li>Larger Type</li>
+                  <li>Bold Text</li>
+                  <li>Increase Contrast</li>
+                  <li>Reduce Motion</li>
+                  <li>Hearing Aid support</li>
+                  <li>Subtitles&nbsp;and Captioning - customise and style your own subtitles</li>
+                  <li>Mono Audio</li>
+                  <li>Noise Cancellation</li>
+                  <li>Adjust&nbsp;Volume between Right and Left Channels</li>
+                  <li>Guided Access</li>
+                  <li>Switch Control</li>
+                  <li>Assistive Touch</li>
+                  <li>Home-click Speed</li>
+                  <li>Accessibility&nbsp;shortcut - map features to the Home Key</li>
+                </ul>
+                <h4 class="heading-s">VoiceOver</h4>
+                <p>iOS VoiceOver supports explore by touch and gestures. When in web pages or in an app you can use a gesture like turning a dial to bring up a Web Rotor. This is a list of options that you can choose to navigate by - it's similar to how you may navigate by headings, lists or WAI ARIA Landmarks using a desktop browser such as Jaws, NVDA or Voiceover on Mac. A great way of testing how accessible content is for VoiceOver users is to switch off the screen and use <strong>screen curtain</strong>. You can switch off the display by triple tapping the screen with three fingers.</p>              
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="user-interaction" aria-labelledby="title-user-interaction">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-user-interaction">User Interaction</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Touch Target Size</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The click/touch target size <span class="badge badge-info">SHOULD</span> be large enough (without using zoom) to facilitate easy use with a finger, without risking activating an adjacent link or button.</li>
+                </ul>
+
+                <h4 class="heading-s">Target Spacing and Grouping</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Touch targets <span class="badge badge-danger">MUST NOT</span> overlap.</li>
+                  <li>Compact touch targets <span class="badge badge-info">SHOULD NOT</span> be immediately adjacent to each other.</li>
+                  <li>Active elements with the same target <span class="badge badge-info">SHOULD</span> be grouped into one touch target.</li>
+                </ul>
+
+                <h4 class="heading-s">Activate on Release</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Touch controls <span class="badge badge-danger">MUST NOT</span> activate when an item is first touched.</li>
+                </ul>
+
+                <h4 class="heading-s">Kinetic/Accelerometer</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An application <span class="badge badge-danger">MUST NOT</span> rely on kinetic motion (detected by the accelerometer) alone.</li>
+                  <li>The user <span class="badge badge-info">SHOULD</span> be able to disable motion-sensitive features.</li>
+                </ul>
+
+                <h4 class="heading-s">Voice</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An application <span class="badge badge-danger">MUST NOT</span> rely on voice control alone.</li>
+                </ul>
+
+                <h4 class="heading-s">Gestures</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An application <span class="badge badge-danger">MUST NOT</span> rely on gestures alone.</li>
+                  <li>Whenever possible, actions <span class="badge badge-info">SHOULD</span> be mapped to their corresponding default iOS gestures.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/user-interaction/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> User Interaction - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="ui-controls" aria-labelledby="title-ui-controls">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-ui-controls">UI Controls</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Buttons</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A button <span class="badge badge-success">MUST</span> always convey its role using the correct trait.</li>
+                  <li>An active image used as a button <span class="badge badge-success">MUST</span> convey the correct role.</li>
+                  <li>When a button is disabled it <span class="badge badge-success">MUST</span> convey its state.</li>
+                </ul>
+
+                <h4 class="heading-s">Links</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The role and purpose of a link <span class="badge badge-success">MUST</span> be clearly conveyed by VoiceOver.</li>
+                </ul>
+
+                <h4 class="heading-s">Progress Bar</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Progress bars <span class="badge badge-success">MUST</span> convey their visible name to VoiceOver users with a descriptive, unique accessibility label.</li>
+                  <li>Progress spinners (UIActivityIndicatorView) <span class="badge badge-success">MUST</span> speak correct alternative text or immediately receive focus in order to convey an accessible name to VoiceOver users.</li>
+                </ul>
+
+                <h4 class="heading-s">Slider</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Slider controls <span class="badge badge-success">MUST</span> have a visible label that is programmatically associated using the accessibility label property.</li>
+                </ul>
+
+                <h4 class="heading-s">Switch</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Switch controls <span class="badge badge-success">MUST</span> have a visible label that is programmatically associated using the accessibility label property.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/ui-controls/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> UI Controls - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="notifications" aria-labelledby="title-notifications">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-notifications">Notifications</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Notifying Users of Changes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Dynamically generated content following user interaction <span class="badge badge-success">MUST</span> meet one of the following: assistive technology is automatically made aware of the new content OR the new content is the very next
+                    thing the assistive technology will encounter on the page.</li>
+                </ul>
+
+                <h4 class="heading-s">Time Limits</h4>
+                <ul class="list-icons list-checklist">
+                  <li>If there is a session time limit, users <span class="badge badge-success">MUST</span> be warned before the session ends and <span class="badge badge-success">MUST</span> be given time to save their data and/or extend the session.</li>
+                  <li>Incomplete data <span class="badge badge-info">SHOULD</span> be saved after a session timeout.</li>
+                </ul>
+
+                <h4 class="heading-s">Alert</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Alerts <span class="badge badge-success">MUST</span> include a title and description.</li>
+                </ul>
+
+                <h4 class="heading-s">Dialog</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Custom Dialogs <span class="badge badge-success">MUST</span> set <code>accessibilityViewIsModal</code> to "true" and the focus <span class="badge badge-success">MUST</span> be sent to the dialog.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/notify/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Notifications - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="custom-elements" aria-labelledby="title-custom-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-custom-elements">Custom Elements</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accordion</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Accordion components <span class="badge badge-success">MUST</span> announce their accessible name and their expanded or collapsed state.</li>
+                </ul>
+
+                <h4 class="heading-s">Autocomplete</h4>
+                <ul class="list-icons list-checklist">
+                  <li>VoiceOver users <span class="badge badge-success">MUST</span> be automatically made aware of the autocomplete suggestions when they appear.</li>
+                </ul>
+
+                <h4 class="heading-s">Rating</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A rating control <span class="badge badge-success">MUST</span> always convey its current value, any visible information, and be operable by both VoiceOver and non-VoiceOver users.</li>
+                </ul>
+
+                <h4 class="heading-s">Sortable Table</h4>
+                <ul class="list-icons list-checklist">
+                  <li>If a table is sortable, the header cells' accessibility labels <span class="badge badge-success">MUST</span> dynamically update to correctly convey their sorted state each time the data order changes.</li>
+                </ul>
+
+                <h4 class="heading-s">Toggle</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Toggle buttons <span class="badge badge-success">MUST</span> convey an accessible name with programmatically associated, visible labels and convey their state using the accessibility label.</li>
+                  <li>Image toggle buttons <span class="badge badge-success">MUST</span> have descriptive, accurate alternative text provided in the accessibility label.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/custom/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Custom Elements - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="form-labels-and-validation" aria-labelledby="title-form-labels-and-validation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-form-labels-and-validation">Form Labels and Validation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The label <span class="badge badge-success">MUST</span> be visible at all times.</li>
+                  <li>Labels <span class="badge badge-success">MUST</span> be programmatically associated with their corresponding control elements.</li>
+                  <li>A "hint" <span class="badge badge-info">SHOULD</span> be provided when the label doesn't sufficiently convey a control's purpose to VoiceOver users.</li>
+                </ul>
+
+                <h4 class="heading-s">Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>For groups of related controls where the individual labels for each control do not provide a sufficient description, additional group labels <span class="badge badge-success">MUST</span> be provided.</li>
+                </ul>
+
+                <h4 class="heading-s">Checkboxes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Checkboxes <span class="badge badge-success">MUST</span> convey their selected or checked state to VoiceOver.</li>
+                  <li>Groups of checkboxes <span class="badge badge-success">MUST</span> provide a common group label as well as a unique label for each control via their accessibility label properties.</li>
+                </ul>
+
+                <h4 class="heading-s">Date Picker</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A standard Date Picker control <span class="badge badge-info">SHOULD</span> be used instead of a text field in order to avoid forcing users to enter a date with a default keyboard.</li>
+                </ul>
+
+                <h4 class="heading-s">Radio Buttons</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Radio buttons <span class="badge badge-success">MUST</span> provide a common group label as well as a unique label for each control via their accessibility labels and they <span class="badge badge-success">MUST</span> convey their selected
+                    state.</li>
+                </ul>
+
+                <h4 class="heading-s">Select (UIPickerView)</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Controls using UIPickerView <span class="badge badge-success">MUST</span> be programmatically associated with their visible label in order to provide an accessible name.</li>
+                </ul>
+
+                <h4 class="heading-s">Text Fields</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text fields <span class="badge badge-success">MUST</span> have programmatically associated, visible labels.</li>
+                </ul>
+
+                <h4 class="heading-s">Validation and Error Reporting</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Efficient, intuitive, and clearly identified text based alerts <span class="badge badge-success">MUST</span> be provided to users for form validation cues and errors.</li>
+                  <li>If input errors are automatically detected, suggestions <span class="badge badge-success">MUST</span> be provided in text for fixing the input in a timely and accessible manner before the data is submitted to the server.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/forms/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Form Labels and Validation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="navigation" aria-labelledby="title-navigation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-navigation">Navigation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Page Titles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Screens <span class="badge badge-success">MUST</span> have meaningful titles.</li>
+                </ul>
+
+                <h4 class="heading-s">Tab Panel</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Tabs <span class="badge badge-success">MUST</span> convey their role, their current state, and their order in the total number of tabs to VoiceOver users.</li>
+                </ul>
+
+                <h4 class="heading-s">Menu</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Menu items <span class="badge badge-success">MUST</span> have the appropriate trait in order to convey their accessible role.</li>
+                  <li>The button that opens the menu <span class="badge badge-success">MUST</span> have a clear, descriptive title or accessibility label to accurately convey its purpose.</li>
+                  <li>VoiceOver users <span class="badge badge-success">MUST</span> be able to dismiss the menu.</li>
+                  <li>When the menu is closed, focus <span class="badge badge-success">MUST</span> return to the triggering button.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/navigation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Navigation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="device-orientation" aria-labelledby="title-device-orientation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-device-orientation">Device Orientation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <ul class="list-icons list-checklist">
+                  <li>The orientation of the content <span class="badge badge-success">MUST</span> not be locked to either landscape or portrait unless a specific orientation is essential for the functionality of the app.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/device-orientation" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Device Orientation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="semantic-structure-and-meaning" aria-labelledby="title-semantic-structure-and-meaning">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-semantic-structure-and-meaning">Semantic Structure and Meaning</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Headings</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Headings used to title or describe sections of content <span class="badge badge-success">MUST</span> use the header trait in order to convey their semantic purpose.</li>
+                </ul>
+
+                <h4 class="heading-s">Tables</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Data tables <span class="badge badge-success">MUST</span> have the correct reading order, <span class="badge badge-success">MUST</span> convey the row and column header text for each data cell, and <span class="badge badge-success">MUST</span>                    correctly associate the data cell with the header cell in the accessibility label.</li>
+                </ul>
+
+                <h4 class="heading-s">Reading Order and Focus Order</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The reading order of a screen as conveyed by VoiceOver <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li>When content is added or deleted from a screen, VoiceOver focus <span class="badge badge-success">MUST</span> be managed logically and never be lost.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/semantic-structure/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Semantic Structure and Meaning - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/principles.html#user-interface-controls">User Interface Controls</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="color-and-contrast" aria-labelledby="title-color-and-contrast">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-color-and-contrast">Color and Contrast</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Colors that Convey Information</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Any information conveyed by color <span class="badge badge-success">MUST</span> be accompanied by a programmatically-discernible text alternative.</li>
+                  <li>The text alternative for information conveyed by color <span class="badge badge-success">MUST</span> accurately convey the same information without color.</li>
+                  <li>Any information conveyed by color <span class="badge badge-success">MUST</span> be accompanied by a visible alternative (text, image, etc.) that does not depend on color for meaning.</li>
+                  <li>Color alone <span class="badge badge-danger">MUST NOT</span> be used to distinguish links from surrounding text unless the color contrast between the link and the surrounding text is at least 3:1. An additional differentiation (e.g.
+                    underline, outline, etc.) <span class="badge badge-info">SHOULD</span> BE provided as well.</li>
+                </ul>
+
+                <h4 class="heading-s">Contrast</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Small text (under 18 point regular font or 14 point bold font) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 4.5 to 1 with the background.</li>
+                  <li>Large text and images of large text (at or over 18 point or 14 point bold) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 3 to 1 with the background.</li>
+                  <li>The contrast of UI control boundaries compared to adjacent areas <span class="badge badge-info">SHOULD</span> be sufficient (3 to 1 for UI control boundaries measuring at least 3px by 3px, and 4.5 to 1 for all other UI controls) to distinguish
+                    the UI control from the adjacent areas.
+                  </li>
+                  <li>Small text (under 18 point regular font or 14 point bold font) <span class="badge badge-info">SHOULD</span> have a contrast ratio of at least 7 to 1 with the background.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/color-contrast/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Color and Contrast - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="animations-and-motion" aria-labelledby="title-animations-and-motion">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-animations-and-motion">Animations and Motion</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Parallax and Accelerometer Animations</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Moving the physical device <span class="badge badge-info">SHOULD NOT</span> cause non-essential visual motion or animations (e.g. parallax effects)</li>
+                  <li>Users <span class="badge badge-success">MUST</span> be able to disable any non-essential motion-sensitive visual effects.</li>
+                </ul>
+
+                <h4 class="heading-s">Moving or Disappearing Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Automatically moving, blinking, or scrolling content that lasts longer than 5 seconds <span class="badge badge-success">MUST</span> be able to be paused, stopped, or hidden by the user.</li>
+                </ul>
+
+                <h4 class="heading-s">Blinking or Flashing Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A screen <span class="badge badge-danger">MUST NOT</span> contain content that flashes more than 3 times per second unless that flashing content is sufficiently small, the flashes are of low contrast, and do not violate general flash
+                    thresholds.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/animations-motion/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Animations and Motion - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="audio-and-video" aria-labelledby="title-audio-and-video">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-audio-and-video">Audio and Video</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Captions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All prerecorded video <span class="badge badge-success">MUST</span> have synchronized captions.</li>
+                  <li>All live multimedia (video plus audio) events that contain dialog and/or narration <span class="badge badge-success">MUST</span> be accompanied by synchronized captions.</li>
+                  <li>Live audio consisting mainly of dialog and/or narration <span class="badge badge-info">SHOULD</span> have synchronized captions.</li>
+                </ul>
+                <h4 class="heading-s">Transcripts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All prerecorded video and audio <span class="badge badge-success">MUST</span> have text transcripts.</li>
+                </ul>
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/audio-video/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Audio and Video - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="text-content" aria-labelledby="title-text-content">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-text-content">Text Content</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Language Settings</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The language of the page <span class="badge badge-success">MUST</span> be programmatically identified.</li>
+                  <li>The language of sections of content that are different from the app's default language <span class="badge badge-success">MUST</span> be identified in such a way that they can be discovered by assistive technology.</li>
+                </ul>
+
+                <h4 class="heading-s">Text Resize</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The screen <span class="badge badge-success">MUST</span> be readable and functional when text is set to 200% of its initial size.</li>
+                </ul>
+
+                <h4 class="heading-s">Emojis</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Emojis <span class="badge badge-warning">MAY</span> be used in text content.</li>
+                  <li>Custom emojis in custom keyboards <span class="badge badge-success">MUST</span> have alternative text.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/text-content/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Text Content - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="images" aria-labelledby="title-images">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-images">Images</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Alternative Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images that convey information <span class="badge badge-success">MUST</span> have a descriptive accessibility label that serves the same purpose and presents the same information as the image.</li>
+                  <li>Images that are active <span class="badge badge-success">MUST</span> have an accessibility label that describes the purpose or function of the image.</li>
+                  <li>Images that are too complex to be fully described in a short text alternative <span class="badge badge-success">MUST</span> have their purpose described using an extended text alternative.</li>
+                  <li>Images that do not convey content, are decorative, or with content that is already conveyed in the text <span class="badge badge-danger">MUST NOT</span> be given an alternative text equivalent that is exposed to assistive technology.</li>
+                </ul>
+
+                <h4 class="heading-s">Text in Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An image <span class="badge badge-danger">MUST NOT</span> include informative text if an equivalent visual presentation of the text can be rendered using real text.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/iOS%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>iOS Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/ios2/images/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Images - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

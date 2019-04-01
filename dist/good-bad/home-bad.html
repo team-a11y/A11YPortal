@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  
+  <title>Bad</title>
+
+  <link rel="stylesheet" href="../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styles-responsive.css">
+  <link rel="stylesheet" href="../styles/prism.css">
+</head>
+
+<body class="body bad" id="totop">
+  <button type="button" class="btn btn-annot btn-annot-title" data-toggle="modal" data-target="#annotModal01">01</button>
+  <button type="button" class="btn btn-annot btn-annot-meta" data-toggle="modal" data-target="#annotModal02">02</button>
+
+  <div class="site-header">
+    <button type="button" class="btn btn-annot btn-annot-skip" data-toggle="modal" data-target="#annotModal03">03</button>
+
+    <div class="site-nav bg-grey">
+      <nav class="container" role="navigation" aria-labelledby="title-site-nav">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../good-bad/home.html" aria-current="true"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="wcag-annotations" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <button class="btn btn-secondary btn-sm" id="annotations01">WCAG Annotations</button>
+
+        <div class="table-of-contents">
+
+          <h2 class="m-0" id="title-toc">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#table-of-contents" aria-expanded="false" aria-controls="table-of-contents">
+              Table of Contents
+            </button>
+          </h2>
+
+          <div class="collapse" id="table-of-contents">
+            <ul class="list-icons list-linklist toc-columns mx-2 pt-4" role="directory">
+              <li><a href="#annotModal01" class="link-ts"><span>01. Page unclear titled</span></a></li>
+              <li><a href="#annotModal02" class="link-ts"><span>02. Zoom and scaling prevented</span></a></li>
+              <li><a href="#annotModal03" class="link-ts"><span>03. No mechanisms to bypass repeated content</span></a></li>
+              <li><a href="#annotModal04" class="link-ts"><span>04. No Landmarks or sectioning elements used</span></a></li>
+              <li><a href="#annotModal05" class="link-ts"><span>05. Omitted Language of and within the Document</span></a></li>
+              <li><a href="#annotModal06" class="link-ts"><span>06. Main menu without name, role, states and values</span></a></li>
+              <li><a href="#annotModal07" class="link-ts"><span>07. Omitted sectioning landmark, label for input and button not present</span></a></li>
+              <li><a href="#annotModal08" class="link-ts"><span>08. Headings not marked up as such</span></a></li>
+              <li><a href="#annotModal09" class="link-ts"><span>09. Informative image without any text alternative</span></a></li>
+              <li><a href="#annotModal10" class="link-ts"><span>10. Decorative image without empty text alternative</span></a></li>
+              <li><a href="#annotModal11" class="link-ts"><span>11. Links and buttons not properly highlighted when they receive focus</span></a></li>
+              <li><a href="#annotModal12" class="link-ts"><span>12. Link text is not descriptive</span></a></li>
+              <li><a href="#annotModal13" class="link-ts"><span>13. Links and Buttons are wrongly mixed for interactivity</span></a></li>
+              <li><a href="#annotModal14" class="link-ts"><span>14. Lists not marked up as such</span></a></li>
+              <li><a href="#annotModal15" class="link-ts"><span>15. Insufficient color contrast</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <div class="container btn-annot-outline">
+        <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal04">04</button>
+        
+        <a href="../" class="navbar-brand">
+          <img class="avatar-img" src="../images/a11y-logo-2.png" alt="Logo Accessibility">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <div class="navbar-nav">
+              <div class="nav-item active">
+                <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal06">06</button>
+                <a class="nav-link btn-annot-outline" href="../good-bad/home.html" id="main-menu">Home</a>
+                <div class="pagination pagination-navbar">
+                  <div class="page-item"><a class="page-link" href="../good-bad/home.html">Good</a></div>
+                  <div class="page-item"><a class="page-link active" href="../good-bad/home-bad.html">Bad</a></div>
+                </div>                
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="../good-bad/article.html">Article</a>
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="../good-bad/media.html">Media</a>
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="../../good-bad/request.html">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-form form-inline my-2 my-lg-0 btn-annot-outline">
+
+            <div class="m-0 mr-4">
+              <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal04">04</button>
+              <input class="form-control form-control-search mr-2 btn-annot-outline" type="text" placeholder="Type term...">
+              <button type="button" class="btn btn-annot btn-annot-search" data-toggle="modal" data-target="#annotModal07">07</button>
+              <button class="btn btn-tertiary search-button my-sm-0 ml-0 p-1" type="submit">
+                <img src="../images/icon-search.png">
+              </button>
+            </div>
+
+            <div class="font-reset">
+              <div class="d-inline-block p-relative">
+                <select class="form-control btn-annot-outline" name="language" id="language">
+                  <option value="english" selected>English</option>
+                  <option value="nederlands">Netherlands</option>
+                </select>
+                <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal05">05</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="btn-annot-outline" id="main-content">
+
+    <div class="brandbar brandbar-b">
+      <div class="brandbar-image brandbar-image-kitesurf"></div>
+      <div class="container">
+        <div class="brandbar-header">          
+          <div class="brandbar-heading">
+            <span class="d-block annot-relative">
+              <span class="brandbar-title btn-annot-outline">Inaccessible Home Page</span>
+              <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal08">08</button>
+            </span>
+            <p class="brandbar-lead">Good and Bad Demonstration</p>
+            <span class="d-block mt-2 annot-relative">
+              <a href="../basics/fundamentals/getting-started.html" class="btn btn-primary">
+                Getting Started with A11Y
+              </a>
+            </span>
+          </div>        
+        </div>
+      </div>
+    </div>
+
+    <div class="full-cover btn-annot-outline bg-faded">
+      <div class="container btn-annot-outline">
+        <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal04">04</button>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4">
+            
+            <div class="card">
+              <div class="annot-relative btn-annot-outline">
+                <img class="card-img-top img-fluid border-grey-light" src="../images/getting-started.png">
+                <button type="button" class="btn btn-annot btn-annot-image" data-toggle="modal" data-target="#annotModal09">09</button>
+              </div>
+              <div class="card-block">
+                <div class="card-title">The Basics</div>
+                <p class="lead text-primary">Want to start with accessibility?</p>
+                <p class="card-text">We help you get up-and-running with the first steps and provide easy guidelines. These form the baseline for inclusive banking. We're always looking for the latest solutions to make it as easy as possible. Wondering if you're already using all of the handy guiding?
+                  <span class="d-block mt-4 annot-relative">
+                    <a href="../" class="btn btn-primary btn-annot-outline">
+                      Read more...
+                    </a>
+                    <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal11">11</button>
+                  </span>
+                </p>
+              </div>
+            </div>
+            
+            <div class="card">            
+              <div class="card-block">
+                <div class="card-title">Take a look at the quiz questions!</div>
+                <img class="card-img-top mb-4 img-fluid" src="../images/quiz.jpg" alt="">
+                <p class="card-text">For a quick insight in accessibility and what it's based upon the quiz questions are a good place to start. Based on the Champion lessons it covers a wide range of topics. From fundamentals to HTML and CSS, from legal requirements to testing techniques and much more.
+                  <span class="d-block">
+                    <a href="../advanced/quiz/fundamentals.html" class="btn btn-primary mt-4">
+                      Read more...
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            
+            <div class="card">
+              <div class="card-block">
+                <div class="annot-relative">
+                  <div class="card-title btn-annot-outline">Accessibility Champions</div>
+                  <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal08">08</button>
+                </div>
+                <img class="card-img-top mb-4 img-fluid" src="../images/a11y-champs.png" alt="">
+                <p class="card-text">The backbone for sustainable inclusive design are the champions. They form the basis and are the fallback for teams to rely upon. Regular training and advanced knowledge make them the driving force.
+                  <span class="d-block mt-4 annot-relative">
+                    <a href="../advanced/fundamentals/home.html#champ-training" class="btn btn-primary btn-annot-outline">
+                      Read more...
+                    </a>
+                    <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal12">12</button>
+                  </span>
+                </p>
+                <span class="d-block mt-4 annot-relative">
+                  <a href="../about/fundamentals/contact.html" class="link-linklist btn-annot-outline">Need help? Ask a Champ!</a>
+                </span>
+              </div>
+            </div>
+            
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../images/computers-with-A11y-logo2.png" alt="">
+              <div class="card-block">
+                <div class="card-title">Easy Guidelines</div>
+                <p class="card-text">Most Guidelines are best practices that can easily be tested with specific criteria that is not subjective and is technologically possible to achieve with current assistive technology on mobile devices. Others are less testable but considered core to accessible mobile website and apps.
+                  <span class="d-block">
+                    <a href="../guidelines/fundamentals/home.html" class="btn btn-primary mt-4">
+                      Read more...
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-block">
+                <div class="annot-relative btn-annot-outline">
+                  <h3 class="card-title">
+                    Responsibilities for:
+                  </h3>
+                  <div class="mb-2"><a href="../basics/fundamentals/responsibilities.html#user-experience" class="link-linklist">User Experience</a></div>
+                  <div class="mb-2"><a href="../basics/fundamentals/responsibilities.html#developers" class="link-linklist">Developers</a></div>
+                  <div class="mb-2"><a href="../basics/fundamentals/responsibilities.html#editors" class="link-linklist">Editors</a></div>
+                  <div class="mb-2"><a href="../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-linklist">Customer Journey Expert</a></div>
+                  <div class="mb-2"><a href="../basics/fundamentals/responsibilities.html#accessibility-champions" class="link-linklist">Accessibility Champions</a></div>
+                  <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal14">14</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            
+            <div class="card">
+              <img class="card-img-top img-fluid btn-annot-outline" src="../images/experts.jpg" alt="image">
+              <button type="button" class="btn btn-annot btn-annot-image" data-toggle="modal" data-target="#annotModal10">10</button>
+              <div class="card-block">
+                <div class="card-title">Expert section</div>
+                <p class="lead text-primary btn-annot-outline">What was the standard like again? <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal15">15</button></p>
+                <p class="card-text">When people are new to accessibility, it's easy for them to get overwhelmed by all of the standards, laws, and regulations. Providing an alternative is what the expert team does. So don't worry, we have it covered and are always ready to help.
+                  <span class="d-block mt-4 mb-3 annot-relative">
+                    <a href="../about/fundamentals/contact.html" class="btn btn-primary btn-annot-outline">
+                      Read more...
+                    </a>
+                    <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal13">13</button>
+                  </span>
+                  <span class="d-block mt-4 annot-relative">
+                    <a href="#" class="link-linklist btn-annot-outline" data-toggle="modal" data-target="#a11ycasts">Watch the video</a>
+                    <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal13">13</button>
+                  </span>
+                </p>
+              </div>
+            </div>
+            
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../images/tile-ForwardPlanning.jpg" alt="">
+              <div class="card-block">
+                <div class="card-title">Training!</div>
+                <p class="lead text-primary btn-annot-outline">We would also like YOU to become a champ <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal15">15</button></p>
+                <p class="card-text">
+                  <span class="d-block">
+                    <a href="../advanced/fundamentals/home.html" class="btn btn-primary mt-2">
+                      Read more...
+                    </a>
+               </span>
+                </p>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+  
+  <footer class="full-cover site-footer" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="pipe-links list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <span id="placeholderurl">Company link</span>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal">Github</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/">Deque University</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../about/fundamentals/contact.html">Contact</a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal fade" id="a11ycasts" tabindex="-1" role="dialog" aria-labelledby="a11ycastsHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="a11ycastsHeading">Introducing A11Ycasts! -- A11ycasts #01</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" class="modal-youtube" src="https://www.youtube.com/embed/HtTyRajRuyY?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="full-cover bg-faded annotations" role="region" aria-labelledby="annotationsSection">
+    <div class="container">
+
+      <h2 class="full-cover-title" id="annotationsSection">Annotations</h2>
+
+      <div class="modal fade modal-annot" id="annotModal01" tabindex="-1" role="dialog" aria-labelledby="annotModal01Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal01Heading">01. Page unclear titled</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This and all other pages are identified as "Bad Demonstration" using the <code>&lt;title&gt;</code> element so that it is unclear for some readers on which page they are on.</p>
+              
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Errors on the template are propagated throughout the entire website.
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+              
+<pre><code class="language-markup"><!-- 
+
+<title>Bad Demonstration</title>
+--></code></pre>
+
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+              
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-title">2.4.2 Page Titled Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F25.html">F25: Failure of Success Criterion 2.4.2 due to the title of a Web page not identifying the contents</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal02" tabindex="-1" role="dialog" aria-labelledby="annotModal02Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal02Heading">02. Zoom and scaling prevented</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Don't add the user-scalable=no parameter in the <code>&lt;meta name="viewport"&gt;</code> element because it disables scaling and zooming which is essential to low vision users.</p>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Example</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+<meta name="viewport"
+      content="width=device-width, 
+               initial-scale=1, 
+               maximum-scale=1, 
+               minimum-scale=1, 
+               user-scalable=no">
+--></code></pre>
+
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#visual-audio-contrast-scale">1.4.4 Resize text Level AA</a>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal03" tabindex="-1" role="dialog" aria-labelledby="annotModal03Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal03Heading">03. No mechanisms to bypass repeated content</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The page does not offer mechanisms to bypass the header and navigation blocks which are repeated on each page. Such skip-links make website use more effective for some readers and keyboard users.</p>
+              
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Errors on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+              
+<pre><code class="language-markup"><!-- 
+
+<body>
+// No skip-links
+...
+</body>
+--></code></pre>
+
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+              
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-skip">2.4.1 Bypass Blocks Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G1.html">G1: Adding a link at the top of each page that goes directly to the main content area</a></li>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G124.html">G124: Adding links at the top of the page to each area of the content</a></li>
+                      <li>Advisory Techniques: Providing skip links to enhance page navigation</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal04" tabindex="-1" role="dialog" aria-labelledby="annotModal04Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal04Heading">04. No Landmarks or sectioning elements used</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Not using ARIA landmark roles or HTML5 sectioning elements to describe document structure and outline different parts of the page, such as navigation, main content and footer info.</p>
+              
+              <p>For more information refer to the W3C <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html">HTML5 Sectioning Elements: ARIA Landmarks Example</a>.</p>
+              
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Errors on the template are propagated throughout the entire website.
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+              
+<pre><code class="language-markup"><!-- 
+
+<div id="header">
+  <div id="logo">...</div>
+  <div id="navigation">
+    <ul>
+      <li>Payments</li>
+      <li>Savings</li>
+      <li>Mortgages</li>
+    </ul>
+    <div id="search">...<input type="text" />...</div>
+  </div>
+</div>
+<div id="main-content">
+  <h1>COMPANY NAME</h1>
+  ...
+</div>
+<div id="complementary-content"> ... </div>
+<div id="footer">
+  <p>COMPANY NAME 2017</p>
+  <ul> ... </ul>
+</div>     
+--></code></pre>
+
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+              
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-skip">1.3.1
+  Info and Relationships Level A</a>
+                    <ul>
+                      <li>No failures currently documented</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-skip">2.4.1
+        Bypass Blocks Level A</a>
+                    <ul>
+                      <li>Failure by not providing landmarks</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#consistent-behavior-consistent-locations">3.2.3 Consistent Navigation Level AA</a>
+                    <ul>
+                      <li>No failures currently documented</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal05" tabindex="-1" role="dialog" aria-labelledby="annotModal05Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal05Heading">05. Omitted Language of and within the Document</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The primary language of the document in the opening <code>&lt;html&gt;</code> element as well as the language of each passage or phrase in the content is not present.</p>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+              
+<pre><code class="language-markup"><!-- 
+
+// Document level
+
+<html>
+
+// Within the Document
+
+<option value="nederlands">Nederlands</option>
+
+<p>While in Spain, my friend tried to speak Spanish, but she wasn't very good.
+Everyone kept saying "No comprendo nada de lo que dices."</p>
+
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#meaning-doc-lang-id">3.1.1 Language of Page Level A</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#meaning-other-lang-id">3.1.2 Language of Parts Level AA</a>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal06" tabindex="-1" role="dialog" aria-labelledby="annotModal06Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal06Heading">06. Main menu without name, role, states and values</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The main menu navigation menu is:</p>
+
+              <ul>
+                <li>No navigational landmark and accessible name present</li>
+                <li>No relationship between and status for menu present</li>
+                <li>No text alternative present for functional icon</li>
+                <li>Menu not marked up with a list and no nested relationsship present</li>
+                <li>No indication of current / active link</li>
+              </ul>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+// No navigational landmark present
+// No accessible name present
+  
+// No relationship between and status for menu present
+<button>
+  <span class="icon-hamburger"></span>
+  // No text alternative present
+</button>
+
+<div id="mainMenuItems">
+  // Menu not marked up with a list
+  <div>
+    <div class="active">
+      // No indication of current / active link
+      <a href="../good-bad/home.html">Home</a>
+      // No nested relationsship present
+      <div>
+        <div><a class="active" href="../good-bad/home.html">Good</a></div>
+        <div><a href="/index-bad.html">Bad</a></div>
+      </div>
+    </div>
+    <div>
+      <a href="/table.html">Tables</a>
+    </div>
+  </div>
+</div>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#text-equiv-all">1.1.1 Non-text Content Level A</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F68.html">F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically determined name</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#ensure-compat-rsv">4.1.2 Name, Role, Value Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F68.html">F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically determined name</a></li>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F89.html">F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal07" tabindex="-1" role="dialog" aria-labelledby="annotModal07Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal07Heading">07. Omitted sectioning landmark, label for input and button not present</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Quick navigating by landmark is not available. The button as well as the input don't have a label and the placeholder who is not descriptive is not an equivalent replacement.</p>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+<input type="text" placeholder="Type term...">
+<button type="submit">
+  <img src="../icon-search.png">
+</button>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1
+  Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F68.html">F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically determined name</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-descriptive">2.4.6 Headings and Labels Level AA</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_overview#ensure-compat-rsv">4.1.2 Name, Role, Value Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F68.html">F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically determined name</a></li>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/F89.html">F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal08" tabindex="-1" role="dialog" aria-labelledby="annotModal08Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal08Heading">08. Headings not marked up as such</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The template suggests styling for headings without use of the corresponding markup within the HTML code.</p>
+              
+              <p>Other things to consider, in order to make headings more usable for screen reader users:</p>
+              
+              <ul>
+                <li>Lists and headings used together to mark up content should be avoided</li>
+                <li>Be consistent in the use of headings</li>
+              </ul>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+  // Not using H elements for headings
+  
+  <span class="brandbar-title">Inaccessible Home Page</span>
+  
+  <div class="heading-m">The Baseline</div>
+  <div class="heading-m">Accessibility Champions</div>
+  <div class="heading-m">Expert section</div>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F2">F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal09" tabindex="-1" role="dialog" aria-labelledby="annotModal09Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal09Heading">09. Informative image without any text alternative</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This image does not have any text alternative, so that it is unclear to some users if the image is important or not.</p>
+              
+              <p>Screen readers try to solve the lack of an <code>alt</code> attribute for example by reading the file name. This may cause the screen reader to read: "image, 123-xyz-AHOF9JD.jpg" which is not what a user is expected to hear of course.</p>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Every img element should have an alt attribute. The attribute should be empty if the image should be ignored by assistive technology.
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+<img src="/infographic-xyz.png">
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#text-equiv-all">1.1.1 Non-text Content Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F65">F65: Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative on img elements, area elements, and input elements of type "image"</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal10" tabindex="-1" role="dialog" aria-labelledby="annotModal10Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal10Heading">10. Decorative image without empty text alternative</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This image has the text alternative "image", which does not provide any useful information. The image should have an empty text alternative to indicate that it is a decorative image that should be ignored by assistive technology.</p>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Images can also be dispayed using CSS rather than the img element.
+                </p>
+
+              </div>
+
+              <h4 class="heading-s">HTML Example</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+<img src="/experts.jpg" alt="image">
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F39">F39: Failure of Success Criterion 1.1.1 due to providing a text alternative that is not null (e.g., alt="spacer" or alt="image") for images that should be ignored by assistive technology</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal11" tabindex="-1" role="dialog" aria-labelledby="annotModal11Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal11Heading">11. Links and buttons not properly highlighted when they receive focus</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>These links and buttons are not properly highlighted when they are selected using the keyboard or hovered over using a pointer device.</p>
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+// Link / button with button styling
+
+<a href="../baseline" class="btn btn-primary">Read more...</a>
+<button class="btn btn-primary">Read more...</button>
+
+.btn-primary {
+    color: f; background-color: #ff6200; border-color: #ff6200; text-decoration: none; outline-width: 0; }
+.btn-primary:hover {
+    color: #fff; background-color: #ff6200; border-color: #ff6200; text-decoration: none; }
+.btn-primary:focus {
+    outline: 0; box-shadow: 0 2px 2px 0 rgba(0,0,0,.24); }
+
+// Link with regular link styling
+
+<a href="../champions">Need help? Ask a Champ!</a>
+
+a       { outline: 0; text-decoration: none; border-bottom: 1px solid #767676; }
+a:hover { outline: 0; text-decoration: none; border-bottom: 1px solid #767676; }
+a:focus { outline: 0; text-decoration: none; border-bottom: 1px solid #767676; }
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-focus-visible">2.4.7 Focus Visible Level AA</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F55.html">F55: Failure of Success Criteria 2.1.1, 2.4.7, and 3.2.1 due to using script to remove focus when focus is received</a></li>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F78.html">F78: Failure of Success Criterion 2.4.7 due to styling element outlines and borders in a way that removes or renders non-visible the visual focus indicator</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal12" tabindex="-1" role="dialog" aria-labelledby="annotModal12Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal12Heading">12. Link text is not descriptive</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Link and navigation is not describing the target or function of the link or item.</p>
+              <p>Link text uses "Read more..." and this doesn't indicate the purpose of the link.</p>
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+<a href="../champions">Read more...</a>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-refs">2.4.4 Link Purpose (In Context) Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F63.html">F63: Failure of Success Criterion 2.4.4 due to providing link context only in content that is not related to the link</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-link">2.4.9 Link Purpose (Link Only) Level AAA</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F84.html">F84: Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal13" tabindex="-1" role="dialog" aria-labelledby="annotModal13Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal13Heading">13. Links and Buttons are wrongly mixed for interactivity</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Choosing the wrong element will cause confusion for users, some examples:</p>
+              <ol>
+                <li>Buttons can be activated with the Spacebar, with links you will scroll down.</li>
+                <li>Links appear in the link list for assistive technology, if they are buttons they will not show up.</li>
+                <li>Buttons appear in the form list for assistive technology, if they are links they will not show up.</li>
+                <li>After activating a link you expect the back button to work, if you activated a button this will not work.</li>
+                <li>When having contact with the call center and they tell you to click a link while you only see buttons this creates confusion.</li>
+              </ol>
+              <p>General guidelines on making the choice:</p>
+              <ul>
+                <li>Use command buttons for:
+                  <ul>
+                    <li>Primary commands</li>
+                    <li>Displaying windows used to gather input or making choices, even if they are secondary commands</li>
+                    <li>Destructive or irreversible actions, as well as commitment within wizards and page flows</li>
+                  </ul>
+                </li>
+                <li>Use links for navigation to another page, window, or Help topic; display definitions; and command menus</li>
+              </ul>
+              <h4 class="heading-s">HTML Fail</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+Go to other page:
+
+// Link in code and button styling
+<a href="../good-bad/home.html" class="btn btn-primary">Read more...</a>
+
+// Button in code and button styling
+<button type="button" class="link-primary">Read more...</button>
+
+Staying on same page:
+
+// Link in code and link styling
+<a href="../good-bad/home.html" class="link-primary">Watch the video</a>
+
+// Button in code and link styling
+<button type="button" class="link-primary">Watch the video</button>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F2.html">F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</a></li>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F43.html">F43: Failure of Success Criterion 1.3.1 due to using structural markup in a way that does not represent relationships in the content</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal14" tabindex="-1" role="dialog" aria-labelledby="annotModal14Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal14Heading">14. Lists not marked up as such</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The list items "User Experience" and "Developers" etc. are formatted to visually resemble a list but this structural information is not represented in the HTML code.</p>
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+// Using divs to visually fake items
+
+<div class="mb-2"><a href="../good-bad/home.html" class="link-linklist">User Experience</a></div>
+<div class="mb-2"><a href="../good-bad/home.html" class="link-linklist">Developers</a></div>
+<div class="mb-2"><a href="../good-bad/home.html" class="link-linklist">Editors</a></div>
+
+// Applying CSS styling on non semantic elements
+
+<div class="list-styling">
+  <div class="list-item"><a href="../good-bad/home.html">About A11Y</a></div>
+  <div class="list-item"><a href="/index.htm">Universal Design</a></div>
+  <div class="list-item">...</div>
+</div>
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F2">F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal15" tabindex="-1" role="dialog" aria-labelledby="annotModal15Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal15Heading">15. Insufficient color contrast</h3>
+              <div class="text-right to-top">
+                <a href="#totop" class="link-ts"><span>To Top</span></a>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Contrast ratio between foreground (text) color (#ff6200) and background color (#ffffff) is with 3:1 too low for some people to differentiate.</p>
+              
+              <ul>
+                <li>If background colours are used, apply the 4.5:1 contrast ratio to foreground colours for regular text and 3:1 contrast ratio for big or bold text.</li>
+              </ul>
+              
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+              
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+.card { background-color: #ffffff; }
+.lead .text-primary { color: #ff6200; }
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#visual-audio-contrast-contrast">1.4.3 Contrast (Minimum) Level AA</a>
+                    <p>Situation A: text is less than 18 point if not bold and less than 14 point if bold</p>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G18.html">G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text</a></li>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G148.html">G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults</a></li>
+                    </ul>
+                    <p>Situation B: text is at least 18 point if not bold and at least 14 point if bold</p>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G145.html">G145: Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text</a></li>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G148.html">G148: Not specifying background color, not specifying text color, and not using technology features that change those defaults</a></li>
+                    </ul>
+                    <p>Failures</p>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F24.html">F24: Failure of Success Criterion 1.4.3, 1.4.6 and 1.4.8 due to specifying foreground colors without specifying background colors or vice versa</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../scripts/libs/tether/tether.min.js"></script>
+  <script src="../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../scripts/script.js"></script>
+	<script src="../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images, SVG, and Canvas - Design - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html" aria-current="true" id="main-menu">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../advanced/design/images-svg-and-canvas.html" aria-current="page">Images <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/visual-design-and-colors.html">Visual Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/multimedia-animations-and-motion.html">Multimedia and Animations</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/form-labels-instructions-and-validation.html">Forms</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Images, SVG, and Canvas</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#image-alt-text" class="link-ts"><span>Image Alt Text</span></a></li>
+          <li><a href="#advanced-alt-text-and-extended-descriptions" class="link-ts"><span>Advanced Alt Text & Extended Descriptions</span></a></li>
+          <li><a href="#svg" class="link-ts"><span>SVG</span></a></li>
+          <li><a href="#icon-fonts" class="link-ts"><span>Icon Fonts</span></a></li>
+          <li><a href="#html-5-canvas" class="link-ts"><span>HTML 5 Canvas</span></a></li>
+          <li><a href="#multimedia-plug-ins-and-documents" class="link-ts"><span>Multimedia, Plug-ins, and Documents</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>Every non-text element requires a text alternative.</strong></p>
+                <p>People who are blind do not access images directly. They listen to their screen readers read the alternative text that the developer or content creator provided for the image. In the case of users who are deafblind, the text is converted to refreshable braille characters that they feel with their fingers.</p>
+                <p>The techniques for supplying alternative text vary, depending on whether the image is presented in the <code>&lt;img&gt;</code> element, via SVG markup, via the HTML 5 <code>&lt;canvas&gt;</code> element, or via some other method. But the concept is the same: The alternative text must be meaningful, and must serve as an effective substitute for the image in a way that makes sense to users who are blind.</p>
+                <p>Other kinds of content usually require alternative representations too, such as:</p>
+                <ul>
+                  <li>Video (which requires captions, a transcript, and which may require audio descriptions)</li>
+                  <li>Audio (which requires a transcript, at a minimum)</li>
+                  <li>Plug-ins (e.g. Silverlight and Flash, which require effective use of their respective accessibility APIs)</li>
+                  <li>Documents (e.g. Word, PowerPoint, PDF, etc., which also require effective use of their respective APIs)</li>
+                </ul>
+                <p>Often it is best to also create an HTML-based alternative version of non-HTML content, because HTML usually offers the greatest potential for accessibility across the greatest diversity of devices.</p>               
+
+                <h3 class="heading-s">Summary</h3>
+                <p>All non-text content must be represented in a text format in one way or another, whether in the form of an <code>alt</code> attribute for an image, an alternative representation of non-HTML objects, or within the accessibility API methods of non-HTML objects.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/images2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="image-alt-text" aria-labelledby="title-image-alt-text">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-image-alt-text">Image Alt Text</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Informative Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images that convey content <span class="badge badge-success">MUST</span> have programmatically-discernible alternative text.</li>
+                  <li>The alternative text for informative images <span class="badge badge-success">MUST</span> be meaningful (accurately conveying the purpose of the image and the author's intent in a way that is useful to those who cannot see the image).</li>
+                  <li>Alternative text <span class="badge badge-info">SHOULD NOT</span> include words that identify the element as a graphic or image.</li>
+                  <li>The length of the alternative text for informative images <span class="badge badge-info">SHOULD</span> be concise (no more than about 250 characters).</li>
+                </ul>
+
+                <h4 class="heading-s">Decorative or Redundant Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images that do not convey content, are decorative, or are redundant to content that is already conveyed in text <span class="badge badge-success">MUST</span> be given null alternative text (<code>alt=""</code>), ARIA <code>role="presentation"</code>, or implemented as CSS backgrounds.</li>
+                </ul>
+
+                <h4 class="heading-s">Actionable Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All actionable images (e.g. links, buttons, controls) <span class="badge badge-success">MUST</span> have alternative text.</li>
+                  <li>The alternative text for actionable images <span class="badge badge-success">MUST</span> be meaningful (accurately conveying the purpose or result of the action).</li>
+                  <li>Alternative text <span class="badge badge-info">SHOULD NOT</span> include words that identify the element as a link, graphic, or image.</li>
+                  <li>The length of the alternative text for actionable images <span class="badge badge-info">SHOULD</span> be concise (no more than about 250 characters).</li>
+                </ul>
+
+                <h4 class="heading-s">Form Inputs <code>type="image"</code></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Form inputs with <code>type="image"</code> <span class="badge badge-success">MUST</span> have alternative text.</li>
+                  <li>The alternative text for form inputs with <code>type="image"</code> <span class="badge badge-success">MUST</span> accurately convey the purpose or result of the input action.</li>
+                  <li>The length of the alternative text for inputs with <code>type="image"</code> <span class="badge badge-info">SHOULD</span> be concise (no more than about 250 characters).</li>
+                </ul>
+
+                <h4 class="heading-s">Animated Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A method <span class="badge badge-success">MUST</span> be provided to pause, stop, or hide any prerecorded video-only content that begins playing automatically and which lasts 5 seconds or more. </li>
+                  <li>Animated images <span class="badge badge-danger">MUST NOT</span> flash or flicker at 3 or more times per second.</li>
+                </ul>
+
+                <h4 class="heading-s">Complex Images - Extended Descriptions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Complex images <span class="badge badge-success">MUST</span> be briefly described using alt text AND <span class="badge badge-success">MUST</span> have a more complete long description.</li>
+                  <li>The long description (or a link or button to access the long description) <span class="badge badge-info">SHOULD</span> be visible to sighted users.</li>
+                  <li>The long description <span class="badge badge-info">SHOULD</span> be programmatically associated with the image.</li>
+                </ul>
+
+                <h4 class="heading-s">Images of Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An image <span class="badge badge-danger">MUST NOT</span> include informative text if an equivalent visual presentation of the text can be rendered using real text.</li>
+                  <li>Images <span class="badge badge-danger">MUST NOT</span> include informative text, unless the text is essential (such as a logo), or the font, size, color, and background are customizable.</li>
+                </ul>
+
+                <h4 class="heading-s">CSS Background Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Purely decorative or redundant CSS images <span class="badge badge-info">SHOULD NOT</span> have a text alternative in the HTML content.</li>
+                  <li>The alternative text for informative or actionable CSS images <span class="badge badge-success">MUST</span> be available as programmatically-discernible text in the HTML content.</li>
+                  <li>The alternative text (in the HTML content) for informative or actionable CSS images <span class="badge badge-success">MUST</span> adequately and accurately describe the purpose of the image.</li>
+                </ul>
+
+                <h4 class="heading-s">Image Maps</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The alternative text for the <code>&lt;img&gt;</code> of a client-side image map <span class="badge badge-success">MUST</span> be available as programmatically-discernible text. </li>
+                  <li>The alternative text for the <code>&lt;img&gt;</code> element of a client-side image map <span class="badge badge-success">MUST</span> be meaningful (accurately describing the purpose or author's intent in a way that is useful to people who cannot see the image). </li>
+                  <li>The length of the alternative text for the <code>&lt;img&gt;</code> element of client-side image maps <span class="badge badge-info">SHOULD</span> be concise (no more than about 250 characters).</li>
+                  <li>The alternative text for the <code>&lt;area&gt;</code> of a client-side image map <span class="badge badge-success">MUST</span> be available as programmatically-discernible text.</li>
+                  <li>The alternative text for the actionable <code>&lt;area&gt;</code> element of a client-side image map <span class="badge badge-success">MUST</span> be meaningful (accurately describing the purpose or result of the action in a way that is useful to people who cannot see the image).
+                  </li>
+                  <li>The length of the alternative text for the <code>&lt;area&gt;</code> element of client-side image maps <span class="badge badge-info">SHOULD</span> be concise (no more than about 250 characters).</li>
+                  <li>Server-side image maps <span class="badge badge-info">SHOULD NOT</span> be used when a client-side image map (or other method) can accomplish the same functionality.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/alt-text/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Image Alt Text - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Images</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Informative, Decorative, Functional</li>
+                  <li>Images of text, Image maps</li>
+                  <li>Complex images, Groups of images</li>
+                  <li>Alt VS role="presentation"</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/images.html#images-of-text" class="link-ts"><span>Images of text</span></a></li>
+                  <li><a href="../../guidelines/design/images.html#background-images" class="link-ts"><span>Background images</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content" class="link-ts"><span>Alternatives for non-text content</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#decorative-content" class="link-ts"><span>Decorative content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/html5/semantics-embedded-content.html#the-img-element" class="link-ts"><span>The img element - HTML5</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#img" class="link-ts"><span>img (role) - ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-hidden" class="link-ts"><span>aria-hidden (state) - ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/graphics-aria-1.0/" class="link-ts"><span>WAI-ARIA Graphics Module</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#namecalculation" class="link-ts"><span>Accessible Name Calculation</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+
+                <h5 class="heading-xs">Simple images</h5>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/images/" class="link-ts"><span>Images Tutorial - WAI W3C</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/" class="link-ts"><span>An alt Decision Tree - WAI W3C</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html5/semantics-embedded-content.html#alt-text" class="link-ts"><span>Requirements for providing text to act as an alternative for images</span></a></li>
+                </ul>
+
+                <h5 class="heading-xs">Complex images</h5>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/GL/wiki/Using_aria-labelledby_to_provide_a_text_alternative_for_non-text_content#Example_2" class="link-ts"><span>How to use the aria-labelledby attribute for a complex star rating pattern</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html5/semantics-embedded-content.html#graphical-representations-charts-diagrams-graphs-maps-illustrations" class="link-ts"><span>Graphical Representations: Charts, diagrams, graphs, maps, illustrations</span></a></li>
+                  <li><a href="http://webaim.org/resources/designers/#infographic" class="link-ts"><span>Infographic - WebAIM example</span></a></li>
+                  <li><a href="https://www.company-name.com/graphs" class="link-ts"><span>Zo goed doen Nederlandse dj’s het (infographic) - example</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.bbc.co.uk/gel/guidelines/how-to-design-infographics" class="link-ts"><span>How to design infographics - BBC</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="advanced-alt-text-and-extended-descriptions" aria-labelledby="title-advanced-alt-text-and-extended-descriptions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-advanced-alt-text-and-extended-descriptions">Advanced Alt Text & Extended Descriptions</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/advanced/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Advanced Alt Text & Extended Descriptions - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/editorial.html#instructions" class="link-ts"><span>Instructions</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content" class="link-ts"><span>Alternatives for non-text content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="svg" aria-labelledby="title-svg">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-svg">SVG</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">SVG as <code>img src</code></h4>
+                <ul class="list-icons list-checklist">
+                  <li>All SVG <code>&lt;img&gt;</code> elements <span class="badge badge-info">SHOULD</span> be set to <code>role="img"</code>.</li>
+                  <li>All informative or actionable SVG <code>&lt;img&gt;</code> elements <span class="badge badge-success">MUST</span> have meaningful, concise alternative text (via <code>alt</code>, <code>aria-label</code>, or <code>aria-labelledby</code>).</li>
+                </ul>
+
+                <h4 class="heading-s">Inline SVGs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All <code>&lt;svg&gt;</code> elements <span class="badge badge-success">MUST</span> be set to <code>role="img"</code>.</li>
+                  <li>All informative or actionable <code>&lt;svg&gt;</code> elements <span class="badge badge-success">MUST</span> have meaningful, concise alternative text (via <code>&lt;title&gt;</code> element).</li>
+                  <li>The alternative text (<code>&lt;title&gt;</code>) of an <code>&lt;svg&gt;</code> element <span class="badge badge-success">MUST</span> be programmatically associated with the <code>&lt;svg&gt;</code> element via <code>aria-labelledby</code>.</li>
+                  <li>All text within the image that needs to be spoken by a screen reader <span class="badge badge-success">MUST</span> be associated with the <code>&lt;svg&gt;</code> element using <code>aria-labelledby</code>.</li>
+                  <li>The total number of characters of alt text associated with the <code>&lt;svg&gt;</code> element <span class="badge badge-info">SHOULD NOT</span> exceed 250 characters.</li>
+                </ul>
+
+                <h4 class="heading-s">Embedded SVGs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An SVG object <span class="badge badge-info">SHOULD NOT</span> be embedded via <code>&lt;object&gt;</code> or <code>&lt;iframe&gt;</code>.</li>
+                </ul>
+
+                <h4 class="heading-s">Complex Alternative Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Complex <code>&lt;svg&gt;</code> images <span class="badge badge-success">MUST</span> have meaningful, concise alternative text AND <span class="badge badge-success">MUST</span> have a more complete long description.</li>
+                  <li>A <code>&lt;desc&gt;</code> element <span class="badge badge-success">MUST</span> be used to provide a detailed description of a complex <code>&lt;svg&gt;</code> if it is not provided in any other way.</li>
+                  <li>The <code>&lt;desc&gt;</code> attribute of an <code>&lt;svg&gt;</code> element <span class="badge badge-success">MUST</span> be programmatically associated with the <code>&lt;svg&gt;</code> element (via <code>aria-labelledby</code>).</li>
+                </ul>
+
+                <h4 class="heading-s">Text in SVGs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text within <code>&lt;svg&gt;</code> elements <span class="badge badge-info">SHOULD</span> be eliminated OR <span class="badge badge-info">SHOULD</span> be kept to a minimum.</li>
+                  <li>All <code>&lt;text&gt;</code> elements inside <code>&lt;svg&gt;</code> elements <span class="badge badge-success">MUST</span> be referenced in the alternative text of the <code>&lt;svg&gt;</code> element, or in a long description.</li>
+                </ul>
+
+                <h4 class="heading-s">SVG Color Contrast</h4>
+                <ul class="list-icons list-checklist">
+                  <li>SVG images <span class="badge badge-info">SHOULD</span> include a base background color behind the important parts of the image, at a minimum.</li>
+                  <li>SVG images <span class="badge badge-info">SHOULD</span> be styled to ensure compatibility with Windows High Contrast Mode</li>
+                </ul>
+
+                <h4 class="heading-s">Animated SVG Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>SVG animations <span class="badge badge-info">SHOULD</span> use JavaScript, rather than the <code>&lt;animate&gt;</code> element.</li>
+                  <li>SVG animations <span class="badge badge-success">MUST</span> not flash or blink at a rate of 3 times per second or more.</li>
+                  <li>SVG animations <span class="badge badge-danger">MUST NOT</span> auto-play for more than 5 seconds.</li>
+                  <li>SVG animations <span class="badge badge-success">MUST</span> allow users to pause the animation.</li>
+                  <li>SVG animations <span class="badge badge-info">SHOULD NOT</span> distract the user from the main purpose of the web content.</li>
+                </ul>
+
+                <h4 class="heading-s">Interactive SVGs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Interactive <code>&lt;svg&gt;</code> objects <span class="badge badge-success">MUST</span> be fully keyboard-accessible. </li>
+                  <li>Interactive <code>&lt;svg&gt;</code> objects <span class="badge badge-success">MUST</span> be fully touchscreen-accessible.</li>
+                  <li>Interactive <code>&lt;svg&gt;</code> objects <span class="badge badge-success">MUST</span> communicate the applicable name, role, and value of controls, events, and semantic elements within the <code>&lt;svg&gt;</code> object.<br>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/svg/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> SVG - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Preferred approach: Basic <code>&lt;svg&gt;...&lt;svg&gt;</code></li>
+                  <li>Use <code>&lt;title&gt;</code>, <code>&lt;desc&gt;</code> and <code>aria-labelledby</code> for maximum accessibility</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/graphics-aria-1.0/" class="link-ts"><span>WAI-ARIA Graphics Module</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://css-tricks.com/mega-list-svg-information/" class="link-ts"><span>A Compendium of SVG Information</span></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="icon-fonts" aria-labelledby="title-icon-fonts">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-icon-fonts">Icon Fonts</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Icon Fonts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Informative icon fonts without accompanying visible text <span class="badge badge-info">SHOULD</span> be assigned <code>role="img"</code>.</li>
+                  <li>Informative icon fonts without accompanying visible text <span class="badge badge-success">MUST</span> have a text alternative.</li>
+                  <li>Actionable icon fonts without accompanying visible text <span class="badge badge-success">MUST</span> have a text alternative.</li>
+                  <li>The alternative text for informative icon fonts <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Decorative or redundant icon fonts <span class="badge badge-info">SHOULD</span> be set to <code>aria-hidden="true"</code>.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/icon-font/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Icon Fonts - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Strongly discouraged, use SVG instead</li>
+                  <li>A11Y problems when fonts are replaced</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/" class="link-ts"><span>Ten reasons we switched from an icon font to SVG</span></a></li>
+                  <li><a href="https://speakerdeck.com/ninjanails/death-to-icon-fonts" class="link-ts"><span>Death to Icon Fonts</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="html-5-canvas" aria-labelledby="title-html-5-canvas">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-html-5-canvas">HTML 5 Canvas</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">HTML 5 <code>&lt;canvas&gt;</code></h4>
+                <ul class="list-icons list-checklist">
+                  <li>When <code>&lt;canvas&gt;</code> elements are used to display graphics, they <span class="badge badge-success">MUST</span> be assigned <code>role="img"</code>.</li>
+                  <li>All <code>&lt;canvas&gt;</code> elements <span class="badge badge-success">MUST</span> have a text alternative.</li>
+                  <li>The alternative text for <code>&lt;canvas&gt;</code> elements <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>All <code>&lt;canvas&gt;</code> elements with complex images <span class="badge badge-success">MUST</span> have a detailed text alternative.</li>
+                  <li>All <code>&lt;canvas&gt;</code> elements <span class="badge badge-info">SHOULD</span> have a background fill.</li>
+                  <li>If text is required in a graphic, consider using SVG instead of <code>&lt;canvas&gt;</code>.</li>
+                  <li>A <code>&lt;canvas&gt;</code> element operable with mouse <span class="badge badge-success">MUST</span> also be keyboard accessible.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/canvas/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> HTML 5 Canvas - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="multimedia-plug-ins-and-documents" aria-labelledby="title-multimedia-plug-ins-and-documents">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-multimedia-plug-ins-and-documents">Multimedia, Plug-ins, and Documents</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Multimedia</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All prerecorded video <span class="badge badge-success">MUST</span> have synchronized captions.</li>
+                  <li>Prerecorded audio <span class="badge badge-warning">MAY</span> have synchronized captions.</li>
+                  <li>All live video with dialog and/or narration <span class="badge badge-success">MUST</span> have synchronized captions.</li>
+                  <li>Live audio consisting mainly of dialog and/or narration <span class="badge badge-info">SHOULD</span> have synchronized captions.</li>
+                  <li>All prerecorded video and audio <span class="badge badge-success">MUST</span> have text transcripts.</li>
+                  <li>Videos <span class="badge badge-success">MUST</span> include audio descriptions of important visual content that is not conveyed through the audio.</li>
+                </ul>
+
+                <h4 class="heading-s">Plug-ins</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All <code>&lt;object&gt;</code> elements <span class="badge badge-success">MUST</span> have alternative text.</li>
+                  <li>A full-featured HTML alternative <span class="badge badge-info">SHOULD</span> be provided for Silverlight and Flash objects.</li>
+                  <li>Accessible Silverlight and Flash objects <span class="badge badge-success">MUST</span> use the accessibility API.</li>
+                  <li>Silverlight and Flash objects <span class="badge badge-success">MUST</span> adhere to basic content accessibility principles.</li>
+                  <li>Silverlight and Flash objects <span class="badge badge-success">MUST</span> adhere to multimedia accessibility principles.</li>
+                  <li>Silverlight and Flash objects <span class="badge badge-success">MUST</span> adhere to basic interactive accessibility principles.</li>
+                </ul>
+
+                <h4 class="heading-s">Documents</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An HTML version of non-HTML content <span class="badge badge-info">SHOULD</span> be made available to users.</li>
+                  <li>Non-HTML documents <span class="badge badge-success">MUST</span> adhere to basic accessibility principles.</li>
+                  <li>PDF files <span class="badge badge-success">MUST</span> be in tagged PDF format.</li>
+                  <li>EPUB files <span class="badge badge-success">MUST</span> adhere to HTML accessibility principles, and the accessibility principles of any other technologies used within the EPUB document.</li>
+                  <li>EPUB files <span class="badge badge-info">SHOULD</span> be in EPUB 3 format.</li>
+                  <li>EPUB documents <span class="badge badge-info">SHOULD</span> adhere to the additional accessibility principles in the EPUB Accessibility specification.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Images%2C%20Canvas%2C%20SVG%2C%20and%20Other%20Non-Text%20Content%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Images, Canvas, SVG, and Other Non-Text Content PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/images2/audio-video/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Multimedia, Plug-ins, and Documents - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/images-svg-and-canvas.html#multimedia-plug-ins-and-documents" class="link-ts"><span>Multimedia, Plug-ins, and Documents</span></a></li>
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html" class="link-ts"><span>Multimedia, Animations, and Motion</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#multimedia" class="link-ts"><span>Multimedia - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+               <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

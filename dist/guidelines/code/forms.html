@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms - Code - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html" aria-current="page">Code
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/audio-and-video.html">Audio and Video</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/focus.html">Focus</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/code/forms.html" aria-current="page">Forms <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/scripts-and-dynamic-content.html">Scripts and Dynamic Content</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Forms</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#labelling-form-controls" class="link-ts"><span>Labellings form controls</span></a></li>
+          <li><a href="#form-inputs" class="link-ts"><span>Form inputs</span></a></li>
+          <li><a href="#form-layout" class="link-ts"><span>Form layout</span></a></li>
+          <li><a href="#grouping-form-elements" class="link-ts"><span>Grouping form elements</span></a></li>
+          <li><a href="#managing-focus" class="link-ts"><span>Managing focus</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="labelling-form-controls" aria-labelledby="title-labelling-form-controls">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-labelling-form-controls">Labelling form controls <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>All form controls must be labelled</strong></p>
+
+                <p>Labels help all users to understand what a form control is and what is being asked for. And they are essential for users who cannot easily determine this by looking at the form and surrounding content.</p>
+
+                <p>All form controls, such as text inputs, check boxes, select lists, or buttons, must each have a unique label. The label can be either a default value of the control, such as a submit button, or a correctly associated property or element,
+                  such as a <code>label</code> . While placeholders may provide additional hints, they are temporary and must not substitute a label. Labels must be visible and available to assistive technology.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-labelling-form-controls" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-labelling-form-controls" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-labelling-form-controls" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-labelling-form-controls-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-labelling-form-controls-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#labels" class="link-ts"><span>Labels</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#group-labels" class="link-ts"><span>Group Labels</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-labelling-form-controls">iOS</h4>
+
+            <p>Key recommendations are:</p>
+
+            <ul class="list-icons list-checklist">
+              <li>Provide visual labels;</li>
+              <li>Use the <code>accessibilityLabel</code> property to name the form control;</li>
+              <li>Use the appropriate <code>accessibilityTraits</code> property to describe the type;</li>
+              <li>Use the <code>accessibilityHint</code> property when the form control needs instructions or explanation for screen reader users.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[FNLabel setText:NSLocalizedString(@"First Name", nil)];
+[FNField setAccessibilityLabel:FNLabel.accessibilityLabel];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[FNLabel setText:NSLocalizedString(@"First Name", nil)];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-labelling-form-controls">Android</h4>
+
+            <p>Use <code>editText</code> to provide explicit labels for fields.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<TextView android:id="@+id/password_label" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:text="Password"></TextView>
+<EditText android:id="@+id/password" android:inputType="textPassword" android:hint="Password" android:layout_height="wrap_content" android:layout_width="wrap_content"></EditText>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>On-screen text followed by a text input, the text input does not have an accessible label or uses <code>contentDescription.</code></p>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-labelling-form-controls">HTML</h4>
+
+            <p>Key recommendations are:</p>
+            <ul class="list-icons list-checklist">
+              <li>Use explicitly associated labels;</li>
+              <li>Do not solely rely on ARIA labels;</li>
+              <li>Do not solely rely on HTML 5 attributes like <code>title=""</code>.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<label for="uname">Username:</label>
+<input type="text" id="uname" />
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div>Username: <input type="text" id="uname" /></div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-labelling-form-controls-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate form fields.</li>
+                  <li>Verify that all form fields have a visual label.</li>
+                  <li>Verify that all form field labels are announced by a screen reader upon navigation to the form field. Use tab or screen reader "next" control to navigate.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-labelling-form-controls-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Visual labels are present for all form fields;</li>
+                  <li>A screen reader announces all form field labels.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="form-inputs" aria-labelledby="title-form-inputs">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-form-inputs">Form inputs <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>A default input format must be indicated and supported.</strong></p>
+
+                <p>All users benefit from clearly indicated, well supported, form input formats, whether text, numbers, date, or a specific combination. It makes it easier to get it right first time and reduces errors when completing forms.</p>
+
+                <p>The format required can be indicated as part of the label, set by correctly coding the input field, and assisted by providing the correct keyboard mode on devices that support it.</p>
+
+                <p>Gesture based input, such as a slider or swipe-able select list, should also be clearly indicated. Any gestures must be implemented along with support for accessible alternatives, for example mobile keyboards.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-form-inputs" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-form-inputs" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-form-inputs" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-form-inputs-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-form-inputs-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#using-forms-with-screen-readers" class="link-ts"><span>Using Forms with Screen Readers</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-form-inputs">iOS</h4>
+
+            <p><code>UITextField</code> elements use the <code>UITextInputTraits</code> protocol to control what type of keyboard will be shown to the user (numeric, text, etc.). Thus, the default type of keyboard can be set using the <code>keyboardType</code>              property.</p>
+
+            <p>Accessibility traits can be used to provide special accessibility gestures such as flicking up and down to increase or decrease a value or using <code>UIAccessibilityTraitAllowsDirectInteraction</code> to allow users to use the control directly
+              once it is focused. Accessibility Hints should be used to indicate special gestures.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Example 1 - set the default input type for a text field
+textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+
+// Example 2 - allow and indicate direct interaction for gestures
+[aButton setTitle:NSLocalizedString(@"Smile", @"Button title") forState:UIControlStateNormal];
+[aButton setAccessibilityHint:NSLocalizedString(@"Draw a smile on this button!", @"Accessibility hint for the smile button")];
+[aButton setAccessibilityTraits:UIAccessibilityTraitSelected | UIAccessibilityTraitImage | UIAccessibilityTraitAllowsDirectInteraction];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// No indication of input type or gestures expected
+[aButton setTitle:NSLocalizedString(@"Smile", @"Button title") forState:UIControlStateNormal];
+[aButton setAccessibilityTraits:UIAccessibilityTraitSelected | UIAccessibilityTraitImage];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-form-inputs">Android</h4>
+
+            <p>Use <code>contentDescription</code> to provide information on special gestures. The default keyboard can also be set using the <code>android:inputType</code> attribute of the <code>editText</code> element.&nbsp;This can be used to tailor the
+              provided keyboard for entry of numbers, passwords or email addresses. See <a href="https://developer.android.com/advanced/keyboard-input/style.html">Android Developer Training - Keyboard Input</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Example 1 - setting the default keyboard type
+<EditText android:inputType="number" ... />
+
+// Example 2 - using android:contentDescription to indicate gestures that can be used with graphical elements
+<View android:contentDescription="Mood - Draw a smile or a frown" />
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Example 1 - not setting the default keyboard type to number for a number field
+<EditText ... />
+
+// Example 2 - not setting the contentDescription property with instructions for gesture use
+<View android:hint="Mood" ... />
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-form-inputs">HTML</h4>
+
+            <p>In HTML 5 the type of input can be indicated by the type attribute. Examples include:</p>
+            <ul class="list-icons list-checklist">
+              <li><code>Date</code></li>
+              <li><code>Month</code></li>
+              <li><code>Number</code></li>
+              <li><code>Range</code></li>
+              <li><code>Tel</code></li>
+              <li><code>Text</code></li>
+              <li><code>Time</code></li>
+              <li><code>url</code></li>
+              <li><code>week</code></li>
+            </ul>
+
+            <p>Without HTML 5 the input method can be indicated textually as part of the explicit label or through off-screen text for screen reader users.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p><code>input[type=range]</code> with descriptive fallback text in associated label:</p>
+
+                <pre><code class="language-markup"><!--
+<label for="t1">Rating (between 1 and 5):</label>
+<input type="range" min="1" max="5" value="3" id="t1">
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>No indication of expected input:</p>
+
+                <pre><code class="language-markup"><!--
+<label for="t1">Rating:</label>
+<input type="text" id="t1">
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-form-inputs-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate form fields.</li>
+                  <li>Verify that form fields announce a input type or restrict the keyboard to relavant input.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-form-inputs-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The input type is announced by a screen reader;</li>
+                  <li>The input type is restricted via the keyboard.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="form-layout" aria-labelledby="title-form-layout">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-form-layout">Form layout <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Labels must be placed close to the relevant form control, and laid out appropriately.</strong></p>
+
+                <p><a href="../../guidelines/code/forms.html#labelling-form-controls">Labelling form controls</a> helps users to understand what is required. Keep labels close to the associated form control to prevent users becoming disoriented, particularly users who magnify or zoom in on content.</p>
+
+                <p>Labels should precede associated controls, visually above or to the left of the input field. Labels for radio buttons and checkboxes visually work better to the right of the field, however, assistive technology such as screen readers must always speak the associated label before the input control. Labels for select lists may be included as the first item of the list itself.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-form-layout" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-form-layout" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-form-layout" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-form-layout-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-form-layout-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#labels" class="link-ts"><span>Labels</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-form-layout">iOS</h4>
+
+            <p>Provide visible labels that are visually close to the associated form field, for example, using the frame location and the <code>textAlignment</code> property. Ensure there is limited white space between labels and fields. Keep labels above
+              form fields in portrait layouts. Labels may be positioned to the side of form fields in landscape layouts.</p>
+
+            <h4 class="heading-s" id="android-form-layout">Android</h4>
+
+            <p>Provide visible labels that are visually close to the associated form field, for example, using <code>AutoLayout</code>, the <code>android:gravity</code> or <code>android:textAlignment</code> attribute. Ensure there is limited white space
+              between labels and fields. Keep labels above form fields in portrait layouts. Labels may be positioned to the side of form fields in landscape layouts.</p>
+
+            <h4 class="heading-s" id="html-form-layout">HTML</h4>
+
+            <p>Provide visible labels that are visually close to the associated form control. Use CSS media queries to remove empty space and position content into mobile friendly layouts. Also ensure that buttons in forms are not distanced from form elements.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-form-layout-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app with zoom enabled to two times magnification.</li>
+                  <li>Gain focus on each individual form field.</li>
+                  <li>Verify that the control is visually labelled.</li>
+                  <li>Verify the label is in close proximity to the control.</li>
+                  <li>Verify that the label placement is most effective for the layout (portrait or landscape).</li>
+                  <li>Verify that the label of the field is announced properly by a screen reader and matches the label’s on-screen text.</li>
+                  <li>Verify that the label when taken out of context clearly and uniquely describes the purpose of the control and the action the user must take.</li>
+                  <li>Verify that any field constraints of the field are indicated in the accessible name announced by a screen reader.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-form-layout-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>On-screen controls are visually labelled with meaningful names which when taken out of context describe the control’s purpose;</li>
+                  <li>The label must be in close proximity to the field;</li>
+                  <li>The label must be placed in an effective location for the layout of the screen:
+                    <ul>
+                      <li>Above the field for portrait</li>
+                      <li>To the left of the field of landscap</li>
+                    </ul>
+                  </li>
+                  <li>The label of the field is rendered properly via a screen reader and matches the label’s on-screen text;</li>
+                  <li>Field constraints of the field are announced properly via a screen reader.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="grouping-form-elements" aria-labelledby="title-grouping-form-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-grouping-form-elements">Grouping form elements <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Controls, labels, and other form elements must be properly grouped.</strong></p>
+
+                <p>Properly grouped form elements help all users understand the relationships between form controls and make forms easier to use. For users of assistive technology this can mean fewer steps and reduced complexity.</p>
+
+                <p>Correctly grouped controls also ensure standard behaviours work as expected.</p>
+
+                <p>There are four things to consider when grouping form elements:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Correctly associating labels with form controls,</li>
+                  <li>Correctly associating related radio buttons or checkboxes,</li>
+                  <li>Wrapping related form elements in a labelled container such as<code>fieldset</code> with <code>legend</code>,</li>
+                  <li>Keeping labels and legends succinct to minimise verbosity.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-grouping-form-elements" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-grouping-form-elements" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-grouping-form-elements" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-grouping-form-elements-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-grouping-form-elements-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#group-labels" class="link-ts"><span>Group Labels</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-grouping-form-elements">iOS</h4>
+
+            <p>iOS does not provide a mechanism for grouping controls. Controls that are related can be noted using the <code>accessibilityLabel</code> property to indicate the group that an object relates to, for example, to differentiate between a shipping
+              and billing address field that would normally be labelled "Address:".</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[shipAddy setAccessibilityLabel:[NSString stringWithFormat: NSLocalizedString(@"Shipping Address:", @"Label title")]];
+[billAddy setAccessibilityLabel:[NSString stringWithFormat: NSLocalizedString(@"Billing Address:", @"Label title")]];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[shipAddy setAccessibilityLabel:[NSString stringWithFormat:@"Address"]];
+[billAddy setAccessibilityLabel:[NSString stringWithFormat:@"Address"]];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-grouping-form-elements">Android</h4>
+
+            <p>Android does not provide any general method of grouping form controls apart from the <code>RadioGroup</code> structure. Radio buttons are normally used together in a <code>RadioGroup</code> . When several radio buttons live inside a radio
+              group, checking one radio button unchecks all the others. Refer to <a href="https://developer.android.com/guide/topics/ui/accessibility/apps.html#grouping-content-organize">Android Developer Training - organising content</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<RadioGroup android:layout_width="match_parent" android:id="@+id/radioGroup_1" android:orientation="horizontal">
+  <RadioButton android:layout_height="wrap_content" android:id="@+id/radio_0" android:checked="true" android:text="Option A" android:contentDescription="Choose Option - Option A"></RadioButton>
+  <RadioButton android:layout_height="wrap_content" android:id="@+id/radio_1" android:text="Option B" android:contentDescription="Choose Option - Option B"></RadioButton>
+  <RadioButton android:layout_height="wrap_content" android:id="@+id/radio_2" android:text="Option C" android:contentDescription="Choose Option - Option C"></RadioButton>
+</RadioGroup>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Individual radio buttons that are not grouped together, yet are supposed to be exclusive:</p>
+
+                <pre><code class="language-markup"><!--
+<RadioButton android:layout_height="wrap_content" android:id="@+id/radio_0" android:checked="true" android:text="Option A" android:contentDescription="Option A"></RadioButton>
+<RadioButton android:layout_height="wrap_content" android:id="@+id/radio_1" android:text="Option B" android:contentDescription="Option B"></RadioButton>
+<RadioButton android:layout_height="wrap_content" android:id="@+id/radio_2" android:text="Option C" android:contentDescription="Option C"></RadioButton>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-grouping-form-elements">HTML</h4>
+
+            <ul class="list-icons list-checklist">
+              <li>Ensure all radio buttons in a group have the same name attribute.</li>
+              <li>Use the <code>legend</code> and <code>fieldset</code> grouping to group form fields.</li>
+              <li>Use the ARIA <code>radiogroup</code> role when using non-standard HTML radio button controls.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Correct use of name attribute ensures checking one radio button will uncheck the other:</p>
+
+                <pre><code class="language-markup"><!--
+<fieldset>
+  <legend>Would you like to receive email updates?</legend>
+  <input name="rg1" type="radio" id="r1" value="yes"/>
+  <label for="r1">Yes</label>
+  <input name="rg1" type="radio" id="r2" value="no"/>
+  <label for="r2">No</label>
+</fieldset> 
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Incorrect use of the name attribute prevents correct keyboard access to radio buttons:</p>
+
+                <pre><code class="language-markup"><!--
+<fieldset>
+  <legend>Would you like to receive email updates?</legend>
+  <input name="rg1" type="radio" id="r1" value="yes"/>
+  <label for="r1">Yes</label>
+  <input name="rg1" type="radio" id="r2" value="no"/>
+  <label for="r2">No</label>
+</fieldset> 
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-grouping-form-elements-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate any forms within the screen.</li>
+                  <li>Determine if one or more logical groupings exist within the form.</li>
+                  <li>For each grouping, navigate to each field in the group and verify that the group name is announced prior to the field’s label.</li>
+                  <li>Verify that the methods of interacting with each grouping work as expected with alternative input methods.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-grouping-form-elements-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>On-screen fields that are part of a logical grouping have a visible group name indicated as part of the label for the on-screen field;</li>
+                  <li>For each field that is part of the group, the group label is announced prior to the field’s label by either using platform conventions to associate fields with a group and testing using a screen reader, or pre-pending the group label
+                    to the accessible name of each field within the group;</li>
+                  <li>For each group of items, navigation and interaction among the group items must work as expected for group items, for example, properly grouped HTML radio buttons allow navigation between them via up and down arrows.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="managing-focus" aria-labelledby="title-managing-focus">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-managing-focus">Managing focus <span class="badge badge-danger">Must not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Focus or context must not automatically change during user input.</strong></p>
+
+                <p>It can be disorienting and hinder users from verifying information or correcting mistakes if the focus automatically changes when the user is not expecting it. For example, moving to the next control or to a validation error message during
+                  input.</p>
+
+                <p>Focus must only change when activated by the user. This could be via mouse or touch, using 'tab' or 'flicking' to change form control, or using 'space' or 'enter' to activate a button.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-managing-focus" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-managing-focus" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-managing-focus" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-managing-focus-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-managing-focus-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/dynamic-updates.html#notifying-users-of-changes" class="link-ts"><span>Notifying Users of Changes</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-managing-focus">iOS</h4>
+
+            <p>Do not move focus between fields automatically. Require the user to select a new field manually to move focus.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+- (IBAction)dataValidation:(id)sender {
+  // Do not change focus
+}   
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Code checks the contents of the field during edit and sends <code>sender resignFirstResponder </code> ; or assigns theFirstResponder to the next control when entry is complete.</p>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-managing-focus">Android</h4>
+
+            <p>Remove focus shifts that the user does not control. For example, when a user selects a certain radio button via the keyboard, focus shall not move off of the radio button onto another component.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A toggle button and progress bar appear on the screen, focus does not switch automatically
+<ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/toggleButton_1" android:contentDescription="@string/toggleButton_1_desc"></ToggleButton>
+<ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" style="?android:attr/progressBarStyleLarge" android:id="@+id/progressBar_1" android:contentDescription="@string/progressBar_1_desc"></ProgressBar>
+...
+final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.bars_toggleButton_1);
+final ProgressBar progressbar = (ProgressBar) findViewById(R.id.bars_progressBar_1);  
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A toggle button and progress bar appear on the screen and focus switches to the progress bar automatically
+<ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/toggleButton_1" android:contentDescription="@string/toggleButton_1_desc"></ToggleButton>
+<ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" style="?android:attr/progressBarStyleLarge" android:id="@+id/progressBar_1" android:contentDescription="@string/progressBar_1_desc"></ProgressBar>
+...
+final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.bars_toggleButton_1);
+final ProgressBar progressbar = (ProgressBar) findViewById(R.id.bars_progressBar_1);
+progressbar.requestFocus();
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-managing-focus">HTML</h4>
+
+            <p>Keys points are:</p>
+
+            <ul class="list-icons list-checklist">
+              <li>Use the <code>onBlur</code> method rather than <code>onChange</code> method.</li>
+              <li>Do not move focus on input validation - for example, once a certain number of characters have been entered.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Validating input after the user completes what is being entered, without moving focus:</p>
+
+                <pre><code class="language-markup"><!--
+<fieldset>
+  <legend>Mobile phone number</legend>
+  <label for="p1"> Country code </label>
+  <input type="text" id="p1" onBlur="validateCode();" />
+  <label for="p2"> Number </label>
+  <input type="text" id="p2" onBlur="validateNumber();" />
+</fieldset>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <P>Validating input while the user is typing, and/or moving focus to the error message:</P>
+
+                <pre><code class="language-markup"><!--
+<fieldset>
+  <legend>Mobile phone number</legend>
+  <label for="p1"> Country code </label>
+  <input type="text" id="p1" onChange="validateAndMove();" />
+  <label for="p2"> Number </label>
+  <input type="text" id="p2" onChange="validateAndMove();" />
+</fieldset>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-managing-focus-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the screen reader.</li>
+                  <li>Fill in form fields according to their constraints and verify that focus is not forcibly shifted when entering text, traversing a list or selecting an item.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-managing-focus-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Focus does not shift to other objects, elements, or controls while navigating lists, entering data into form fields or selecting an item within an object, element, or control.</li>
+                </ul>
+                <p>Note: Focus movement to a sub-item of the object, control, element that is expected, such as movement to the next list item on using arrow key, tabbing or flicking, is desired and thus meets this check.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

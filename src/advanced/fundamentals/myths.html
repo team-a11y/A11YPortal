@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myths - Fundamentals - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html" aria-current="true" id="main-menu">Fundamentals <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/home.html">Home</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/disabilities.html">Disabilities</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/designing-an-accessible-user-experience.html">Accessible UX</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/fundamentals/myths.html" aria-current="page">Myths <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/guidelines.html">Guidelines</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/laws.html">Laws</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Myths and Misconceptions about Accessibility</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#benefit" class="link-ts"><span>Accessibility benefits only a small minority</span></a></li>
+          <li><a href="#short-term" class="link-ts"><span>Accessiblity is a short term project</span></a></li>
+          <li><a href="#last-step" class="link-ts"><span>Accessibility should be the last step</span></a></li>
+          <li><a href="#hard" class="link-ts"><span>Accessibility is hard and expensive</span></a></li>
+          <li><a href="#ugly" class="link-ts"><span>Accessiblity is ugly</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Myths and Misconceptions about Accessibility</strong></p>
+                <p>Talking about web accessibility makes some people nervous, and they come with a list of objections, many of which are actually myths. This next section examines a few of those myths and presents some counter arguments. Being able to refute such short-sighted misconceptions is essential for the progress in the accessibility revolution and to support day-to-day work on accessible web sites.</p>
+                
+                <p>After completing this section, you should be able to:</p>                
+                <ul class="list-icons list-checklist">
+                  <li>Cite common myths about and objections to accessibility.</li>
+                  <li>Judge and refute negative myths and objections to accessibility.</li>
+                  <li>Present evidence and examples that debunk myths and support reasons for accessibility.</li>
+               </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/fundamentals2/myths/" class="link-ts"><span>Myths and Misconceptions about Accessibility - Deque University</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="benefit" aria-labelledby="title-benefit">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-benefit">Accessibility benefits only as a small minority</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accessibility benefits only as a small minority</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/myths/minority" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility benefits only as a small minority - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <p>Myth: Accessibility Benefits a Small Minority<br>
+                Truth: Accessibility Benefits a Wide Variety of People</p>
+                <ul class="list-icons list-checklist">
+                  <li>People with disabilities make up 20% of the population</li>
+                  <li>Design with accessibility in mind</li>
+                  <li>Think specifically about people with disabilities</li>
+                  <li>Benefits of accessibility extend far beyond disabilities</li>
+                  <li>Also make it good for people on mobile devices</li>
+                  <li>Also for people with different browsers</li>
+                  <li>Also for different brands of computers</li>
+                  <li>Also for older browsers or computers</li>
+                  <li>Also better for people who are aging</li>
+                  <li>Also better for people losing their eyesight</li>
+                  <li>Also better for people losing their hearing</li>
+                  <li>Also better for people losing their mobility</li>
+                  <li>Also better for people losing their cognition</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="short-term" aria-labelledby="title-short-term">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-short-term">Accessibility is a short term project</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accessibility is a short term project</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/myths/short-terms" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility is a short term project - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="last-step" aria-labelledby="title-last-step">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-last-step">Accessibility should be the last step</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accessibility should be the last step</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/myths/last-step" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility should be the last step - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <p>Myth: Accessibility Should be the Last Step<br>
+                Truth: Designing for Accessibility is Much Easier (and Cheaper) than Retrofitting for Accessibility</p>
+                <ul class="list-icons list-checklist">
+                  <li>Accessibility is <strong>not</strong> easy and trivial enough for the last minute of development</li>
+                  <li>Bolt-on approach is extremely difficult with finished products</li>
+                  <li>If ignoring people with disabilities, it may need a complete redesign</li>
+                  <li>Leaving accessibility until the end can be very difficult and time-consuming</li>
+                  <li>The whole scene will be a frantic mess, especially if the designers and developers still don't know enough about web accessibility to be able to do the job intelligently and efficiently.</li>
+                  <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#devlifecycle">Developments Life Cycle</button>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="hard" aria-labelledby="title-hard">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-hard">Accessibility is hard and expensive</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accessibility is hard and expensive</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/myths/hard-expensive" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility is hard and expensive - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <p>Myth: Accessibility is Hard & Expensive<br>
+                Truth: The Cost of Accessibility is Reasonable when Compared to the Cost of the Alternatives</p>
+                <ul class="list-icons list-checklist">
+                  <li>Some people think accessibility is too much of a burden, so they avoid their responsibility</li>
+                  <li>There's truth to this objection trying to retrofit an existing web site with lots of accessibility problems</li>
+                  <li>At that point it's too late to reap the benefits of good planning</li>
+                  <li>Starting with accessibility in mind will able to incorporate accessible design into every step of the process</li>
+                  <li>Soon it will become second nature</li>
+                  <li>It takes time to plan for it</li>
+                  <li>It takes time to add accessibility features to the markup</li>
+                  <li>It takes time to add accessibility features during the development phase of scripts</li>
+                  <li>There will always be some cost associated with accessibility</li>
+                  <li>All of this time costs money</li>
+                  <li>But when compared to the cost of trying to retrofit for accessibility the costs are not as bad as they may seem at first</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="ugly" aria-labelledby="title-ugly">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-ugly">Accessibility is ugly</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accessibility is ugly</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/myths/ugly" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility is ugly - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <p>Myth: Accessibility is Ugly<br>
+                Truth: Accessible Web Sites Can Be Stunningly Beautiful</p>
+                <ul class="list-icons list-checklist">
+                  <li>Designs for people with disabilities can be just as beautiful (or as ugly) as designs for anyone else, that part is up to you</li>
+                  <li>Lots accessibility features are invisible</li>
+                  <li>Create a single design that looks beautiful, and which also happens to be accessible</li>
+                  <li>Check out the <a href="../../good-bad/home.html">Good / Bad site</a> to see a possible difference for yourself</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal fade" id="devlifecycle" tabindex="-1" role="dialog" aria-labelledby="devlifecycleHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="devlifecycleHeading">Development Life Cycle</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1182308/Development_Life-Cycle.jpeg" class="img-fluid" alt="Development Life Cycle">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structure - Design - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html" aria-current="page">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/visual-design.html">Visual Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/images.html">Images</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/links.html">Links</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/design/structure.html" aria-current="page">Structure <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Structure</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#unique-page-screen-titles" class="link-ts"><span>Unique page/screen titles</span></a></li>
+          <li><a href="#headings" class="link-ts"><span>Headings</span></a></li>
+          <li><a href="#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a></li>
+          <li><a href="#grouped-elements" class="link-ts"><span>Grouped elements</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="unique-page-screen-titles" aria-labelledby="title-unique-page-screen-titles">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-unique-page-screen-titles">Unique page/screen titles <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>All pages or screens must be uniquely and clearly identifiable.</strong></p>
+
+                <p>The page/screen title is often the first thing people will see or hear and acts as a confirmation of where they have arrived at, helping people orientate themselves within websites and apps. It is particularly helpful for vision impaired
+                  users who cannot perceive the whole page/screen at once.</p>
+
+                <p>Page titles are standard for HTML. Apps have the facility to add screen titles. However, when visible space is in short supply other means may be used to identify location, such as a logo on a homepage, the first item of content presented
+                  as a heading, or a selected tab on top navigation.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-unique-page-screen-titles" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-unique-page-screen-titles" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-unique-page-screen-titles" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-unique-page-screen-titles-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-unique-page-screen-titles-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#page-title" class="link-ts"><span>Page Title</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#document-title" class="link-ts"><span>Document Title</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-unique-page-screen-titles">iOS</h4>
+
+            <p>Provide a concise and descriptive title for each screen of the app. If a <code>NavigationBar</code> is used, for example, set the title of the {coce}UINavigationItem to unique descriptive text.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UINavigationItem *item = [[UINavigationItem alloc] initWithTitle: NSLocalizedString (@"COMPANY NAME Global", @"Title for navigation item")];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"COMPANY NAME"];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-unique-page-screen-titles">Android</h4>
+
+            <p>Set the title of the activity using the <code>setTitle</code> method to a concise and descriptive name.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<activity android:name=".myApp" android:label="COMPANY NAME Mobile Application"></activity>
+or
+setTitle("COMPANY NAME Mobile");
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<activity android:name=".myApp" android:label="COMPANY NAME"></activity>
+or
+setTitle("COMPANY NAME");
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-unique-page-screen-titles">HTML</h4>
+
+            <p>Provide unique page titles using the <code>title</code> element that concisely describe the page content. Page titles should generally be the same text as the 1st level heading on the page.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>For the home page of the [COMPANY NAME] Global site:</p>
+
+                <pre><code class="language-markup"><!--
+<title>COMPANY NAME Mobile</title>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>For the home page of the [COMPANY NAME] Global site:</p>
+
+                <pre><code class="language-markup"><!--
+<title>COMPANY NAME</title>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-unique-page-screen-titles-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Examine the title of each page/screen on the site/app.</li>
+                  <li>Verify that a title exists:
+                    <ul>
+                      <li>For HTML a unique descriptive <code>title</code> element must be present be announced by a screen reader;</li>
+                    </ul>
+                    <ul>
+                      <li>For Android and iOS a title must appear at the top of the screen and be announced by a screen reader.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-unique-page-screen-titles-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>For HTML a unique descriptive <code>title</code> element is present and announced by a screen reader;</li>
+                  <li>For Android and iOS a title appears at the top of the screen and is announced by a screen reader.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="headings" aria-labelledby="title-headings">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-headings">Headings <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Content must provide a logical and hierarchical heading structure, as supported by the platform.</strong></p>
+
+                <p>A good heading structure enables people to scan a page/screen quickly and understand the structure of the content. Screen reader users can also use headings to quickly navigate within a page or screen.</p>
+
+                <p>Headings are standard for HTML, and available on iOS since iOS6. Android does not have a way to distinguish headings programmatically, however some elements, such as tables and listviews, do have headers.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-headings" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-headings" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-headings" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-headings-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-headings-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#headings" class="link-ts"><span>Headings - Web</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#headings" class="link-ts"><span>Headings - Content</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-headings">iOS</h4>
+
+            <p>Explicit headings are only available in version iOS6 and later and can be assigned by using the <code>UIAccessibilityTraitHeader</code>. Aside from that headers are available in <code>UITableView</code>, <code>UINavigationBar</code> and content
+              displayed via a web view.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+  if (section == 0)
+  {
+    return NSLocalizedString (@"Weather", @"Section header for Weather area of table");
+  }
+  else if (section == 1)
+  {
+      return NSLocalizedString(@"Warnings", @"Section header for warnings area of table");
+  }
+  else
+  {
+    // Unknown section - log error, return safely
+    return nil;
+  }
+}
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p><code>UITableView</code> with several sections without headers.</p>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-headings">Android</h4>
+
+            <p>Headings are not available. Explicit headers are provided via the <code>HeaderViewListAdapter</code> which is only available to list views.</p>
+
+            <h4 class="heading-s" id="html-headings">HTML</h4>
+
+            <p>For responsive sites think carefully about the use of headings if content is reduced on mobile. For example, on desktop a heading may be given with an image and some brief text. On mobile this may collapse down to the heading and image, which
+              may work better as a list across both desktop and mobile.</p>
+
+            <p>Other things to consider, in order to make headings more usable for screen reader users:</p>
+
+            <ul class="list-icons list-checklist">
+              <li>Lists and headings used together to mark up content should be avoided;</li>
+              <li>Headings should be coded around content that doesn’t change, i.e. a category name such as ‘COMPANY NAME News’ rather than a news item that will update frequently;</li>
+              <li>Headings should not overwhelm a page as this can undermine their usefulness for screen reader users when navigating, a maximum of 7-9 headings should suffice.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<h1>European Stocks</h1>
+<h2>Today's Forecast</h2>
+<h2>Tomorrow Forecast</h2>
+<h3>Tomorrow's Banking Stocks</h3>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div class="heading">European Stocks</div>
+<div class="subheading">Today's Forecast</div>
+<div class="subheading">Tomorrow Forecast</div>
+<div class="subheading2">Tomorrow's Banking Stocks</div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-headings-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Examine each page/screen and locate any visual headings/headers.</li>
+                  <li>Determine if headings/headers are possible in the platform.</li>
+                  <li>Verify that there are actual heading/headers.</li>
+                  <li>Verify that headings/headers are announced by a screen reader.</li>
+                  <li>Verify that all headings are logically structured. This is for HTML content only.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-headings-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All visual heading/header elements are represented as headings/headers (within the limited imposed by the platform);</li>
+                  <li>All headers are logically structured (HTML content only).</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="containers-and-landmarks" aria-labelledby="title-containers-and-landmarks">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-containers-and-landmarks">Containers and landmarks <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Containers should be used to describe page/screen structure, as supported by the platform.</strong></p>
+
+                <p>The visual layout of a page or screen groups elements to help people understand the structure of the content. Containers help assistive technology, such as screen readers, to describe groups of elements so that people who cannot see the
+                  visual layout can also understand the content structure. Screen reader users can also use containers and landmarks to quickly navigate within a page or screen.</p>
+
+                <p>Semantic structural elements and/or ARIA landmarks are available for HTML. Structural containers are available for native apps.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-containers-and-landmarks" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-containers-and-landmarks" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-containers-and-landmarks" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-containers-and-landmarks-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-containers-and-landmarks-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#landmarks" class="link-ts"><span>Landmarks</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-containers-and-landmarks">iOS</h4>
+
+            <p>Use standard iOS navigational and structural views. Use of these views will allow for navigation using containers with a screen reader. Use <code>UINavigationBar</code>, <code>UITabBar</code> and other standard navigational structures.</p>
+
+            <h4 class="heading-s" id="android-containers-and-landmarks">Android</h4>
+
+            <p>Not applicable for native apps. Android accessibility only interacts with a single element at a time and does not have a mechanism to navigate by container and does not indicate entrance or exit from containers.</p>
+
+            <h4 class="heading-s" id="html-containers-and-landmarks">HTML</h4>
+
+            <p>Use ARIA landmark roles or HTML5 sectioning elements to describe document structure and outline different parts of the page, such as navigation, main content and footer info.</p>
+            <p>Landmark roles include: <code>banner</code>, <code>navigation</code>, <code>search</code>, <code>main</code>, <code>complementary</code>, <code>article</code>, <code>section</code>, and <code>contentinfo</code>.</p>
+            <p>Equivalent HTML5 elements include: <code>header</code>, <code>nav</code>, <code>main</code>, <code>aside</code>, <code>article</code>, <code>section</code>, <code>form</code>, and <code>footer</code>. These elements have default landmark roles and do not require
+              an ARIA role attribute to be set.</p>
+            <p>For more information refer to the W3C <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html">HTML5 Sectioning Elements: ARIA Landmarks Example</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div id="header" role="banner">
+  <div id="logo">...</div>
+  <h1>COMPANY NAME</h1>
+  <div id="nav" role="navigation">
+    <ul>
+      <li>User Experience</li>
+      <li>Developers</li>
+      <li>Editors</li>
+      <li>Product Owners</li>
+    </ul>
+  </div>
+</div>
+<div id="content" role="main"> ... </div>
+<div id="related-content" role="complementary"> ... </div>
+<div id="footer" role="contentinfo">
+  <p>COMPANY NAME 2018</p>
+  <ul> ... </ul>
+</div>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML5 Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<header>
+  <div id="logo">...</div>
+  <h1>COMPANY NAME</h1>
+  <nav>
+    <ul>
+      <li>User Experience</li>
+      <li>Developers</li>
+      <li>Editors</li>
+      <li>Product Owners</li>
+    </ul>
+  </nav>
+</header>
+<main> ... </main>
+<aside> ... </aside>
+<footer>
+  <p>COMPANY NAME 2018</p>
+  <ul> ... </ul>
+</footer>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div id="header">
+  <div id="logo">...</div>
+  <h1>COMPANY NAME</h1>
+  <div id="nav">
+    <ul>
+      <li>User Experience</li>
+      <li>Developers</li>
+      <li>Editors</li>
+      <li>Product Owners</li>
+    </ul>
+  </div>
+</div>
+<div id="content"> ...</div>
+<div id="related-content"> ...</div>
+<div id="footer">
+  <p>COMPANY NAME 2018</p>
+  <ul> ... </ul>
+</div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-containers-and-landmarks-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Verify that containers are used to structure the page:
+                    <ul>
+                      <li>For HTML pages these must be appropriate sectioning elements, or non-semantic containers with an ARIA landmark role, for each part of the page that has an equivalent ARIA landmark,</li>
+                    </ul>
+                    <ul>
+                      <li>For HTML pages in mobile Safari each part of the page that has an equivalent ARIA landmark must be navigable by selecting 'Landmarks' in the Rotor menu.</li>
+                      <li>For HTML pages in mobile Chrome each part of the page that has an equivalent ARIA landmark must be navigable by selecting 'Headings and landmarks' in the Local context menu.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-containers-and-landmarks-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The page is structured with appropriate containers:
+                    <ul>
+                      <li>HTML pages announced appropriate containers for each part of the page with an ARIA equivalent landmark;</li>
+                      <li>iOS pages containers could be navigated to as landmarks;</li>
+                      <li>Android pages containers could be navigated to as landmarks.</li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="grouped-elements" aria-labelledby="title-grouped-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-grouped-elements">Grouped elements <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Controls, objects and grouped interface elements must be represented as a single accessible component.</strong></p>
+
+                <p>It is easier and quicker for people using a keyboard or screen reader to interact with content when not overwhelmed and confused by extraneous elements. Grouping elements into a single overall control makes things clearer, simplifies interactions, and can provide larger touch targets.</p>
+
+                <p>For example, a control such as a custom item selector may be made up of smaller interface elements, but will be easier to use if conveyed as a single control. Another common example is <a href="../../guidelines/design/links.html#combining-repeated-links">grouping adjacent links</a> to the same resource.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-grouped-elements" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-grouped-elements" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-grouped-elements" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-grouped-elements-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-grouped-elements-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#group-labels" class="link-ts"><span>Group Labels</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-grouped-elements">iOS</h4>
+
+            <p>Disable accessibility for visual elements such as labels that are represented elsewhere such as an accessibility label for a control element.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[FNLabel setText:NSLocalizedString(@"First Name", @"Label title")];
+[FNLabel setIsAccessibilityElement:NO]; // We hide the label element since it is announced as part of the field
+[FNField setAccessibilityLabel:FNLabel.accessibilityLabel];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[FNLabel setText:NSLocalizedString(@"First Name", @"Label title")];
+[FNLabel setIsAccessibilityElement:YES];
+[FNField setAccessibilityLabel:FNLabel.accessibilityLabel];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-grouped-elements">Android</h4>
+
+            <p>Group items into a single target container.</p>
+
+            <h4 class="heading-s" id="html-grouped-elements">HTML</h4>
+
+            <p>Where possible use standard controls rather than custom controls. HTML elements can be grouped using ARIA roles and attributes such as <code>tablist</code>, as well HTML 5 structures such as <code>figure</code> or <code>fieldset</code>. Group
+              related elements inside a single link element. Whereas links representing tree nodes in HTML should be grouped using a single link element when only one action is expected of the tree node, e.g. expand/collapse.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// Example 1 - tabs with ARIA roles and attributes
+<ul role="tablist">
+  <li role="presentation"><a href="#s1" role="tab" aria-controls="s1" aria-selected="true">Read</a></li>
+  <li role="presentation"><a href="#s2" role="tab" aria-controls="s2">Watched</a></li>
+</ul>
+<section id="s1" role="tabpanel">...</section>
+<section id="s2" role="tabpanel" aria-hidden="true">...</section>
+
+// Example 2 - figure with caption
+<figure>
+  <img src="clouds.jpg" alt="" ... />
+  <img style="position:relative; left:-10px;" src="sun.jpg" alt="" ... />
+  <figcaption>Partly sunny</figcaption>
+</figure>
+
+// Example 3 - tree view
+<ul>
+  <li><a href=""><img src="expanded.jpg" alt="expanded" />TV Shows<span class="offscrn"> level 0</span></a></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// Example 1 - tabs
+<ul>
+  <li><a href="#s1" class="selected">Read</a></li>
+  <li><a href="#s2">Watched</a></li>
+</ul>
+<section id="s1" class="showing">...</section>
+<section id="s2">...</section>
+<img src="clouds.jpg" alt="cloudy" ... />
+
+// Example 2 - figure with caption
+<img style="position:relative; left:-10px;" src="sun.jpg" alt="sunny" ... />
+<p>Partly sunny</p>
+
+// Example 3 - tree view
+<ul>
+  <li><img src="expanded.jpg" alt="expanded" /><a href="...">TV Shows</a><span class="offscrn"> level 0</span></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-grouped-elements-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Identify all compound object, elements and controls on a page.</li>
+                  <li>Verify that compound objects, elements, or controls are announced as a single unit where applicable e.g. a slider control should be indicated as a slider rather than as an up button, a down button, and an indicator.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-grouped-elements-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All compound element, objects, and controls do not indicate individual elements but rather announce themselves as whole unit.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Fundamentals - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" aria-current="true" id="main-menu">Fundamentals <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/fundamentals/home.html" aria-current="page">Home<span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/testing.html">Testing</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/checklists.html">Checklists</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/summary.html">Summary</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/principles.html">Principles</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/references.html">References</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/content/editorial.html">Content</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <h1 class="sr-only">Accessibility Guidelines</h1>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="cards-main">
+      <div class="container">
+
+        <h2 id="cards-main" class="sr-only">Selected for you</h2>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/tile-design.jpg" alt="">
+              <div class="card-block">
+                <div role="heading" aria-level="3" class="card-title">Design</div>
+                <p class="card-text">From colours, contrast and focus, to touch target, actionable elements and adjustability. Design covers a broad spectrum for all of us to be aware of. Design your specs, visuals and code according to these standards.</p>
+              </div>
+              <div>
+                <a href="../../guidelines/design/visual-design.html" class="link-plug-on">
+                  <span class="icon icon-edit icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Design Guidelines</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning-Large.jpg" alt="">
+              <div class="card-block">
+                <div role="heading" aria-level="3" class="card-title">Training</div>
+                <p class="lead"><strong>We would also like YOU to become a champ!</strong></p>
+                <p>Based on global conventions and standards, Team A11Y provides training that builds upon the baseline. The training can be given in different formats to match the needs of different disciplines, e.g. Customer Journey Experts, Developers and Designers/UX, and different experience levels, from ad-hoc solutions and presentation to complete curriculums.</p>
+              </div>
+              <div>
+                <a href="../../advanced/fundamentals/home.html" class="link-plug-on">
+                  <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Training Formats
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Content</h3>
+              <img class="card-img-top mb-4 img-fluid" src="../../images/tile-reading.jpg" alt="">
+                <p class="card-text">Clear, simple, consistent and understandable content for all users to comprehend. Where, when and how to supply extra text for clarity is where this section adds value to a more inclusive world. Check out the advice based on lots of research!</p>
+              </div>
+              <div>
+                <a href="../../guidelines/content/editorial.html" class="link-plug-on">
+                  <span class="icon icon-chat icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Content Guidelines</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <div role="heading" aria-level="3" class="card-title">Testing</div>
+                <img class="card-img-top mt-4 mb-4 img-fluid" src="../../images/computers-with-A11y-logo2.png" alt="">
+                <p class="card-text">Most Guidelines are best practices which can easily be tested with specific objective criteria. They are technologically possible to achieve with current assistive technology on desktop and mobile devices. Others are less testable but considered core to accessible mobile website and apps.</p>
+              </div>
+              <div>
+                <a href="../../guidelines/fundamentals/testing.html" class="link-plug-on">
+                  <span class="icon icon-check icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Testing
+                </a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">
+                  Training A11Y Champs
+                </h3>
+                <ul class="list-icons list-linklist m-0">
+                  <li>
+                    <a href="../../advanced/fundamentals/home.html#champ-training" class="link-ts"><span>Become a Champ yourself</span></a>
+                  </li>
+                  <li>
+                    <a href="../../advanced/quiz/fundamentals.html" class="link-ts"><span>See all A11Y quiz questions</span></a>
+                  </li>
+                  <li>
+                    <a href="../../good-bad/home.html" class="link-ts"><span>Good / Bad Examples</span></a>
+                  </li>
+                  <li>
+                    <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Need help? Ask a Champ!</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/tile-code.jpg" alt="">
+              <div class="card-block">
+                <div role="heading" aria-level="3" class="card-title">Code</div>
+                <p class="lead"><strong>A proper codebase following the standards for the specific platforms and technologies creates robustness.</strong></p>
+                <p>Robust in this case means all technologies and tools of choice, according to people's needs, can work with the products created, 100% guaranteed!</p>
+              </div>
+              <div>
+                <a href="../../guidelines/code/audio-and-video.html" class="link-plug-on">
+                  <span class="icon icon-wrench icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Code Guidelines</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/experts.jpg" alt="">
+              <div class="card-block">
+                <h3 class="card-title">Global Conventions</h3>
+                <p class="lead"><strong>What were those standards like again?</strong></p>
+                <p class="card-text">When people are new to accessibility, it's easy for them to get overwhelmed by all of the standards, global conventions, laws, and regulations. Providing Baseline Guidelines is what the accessibility team does. So don't worry, we have
+                  it covered and are always ready to help.
+                </p>
+              </div>
+              <a href="../../guidelines/fundamentals/references.html" class="link-plug-on">
+                <span class="icon icon-document icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> References Guidelines
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

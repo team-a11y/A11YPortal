@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principles - Essentials - Accessibility Portal</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body class="quiz" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html" aria-current="true"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../basics/essentials/principles.html" aria-current="true" id="main-menu">Essentials <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../basics/essentials/principles.html" aria-current="page">Principles<span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/personas.html">Personas</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/tools.html">Tools</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/design-annotations.html">Design Annotations</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/glossary.html">Glossary</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/videos/a11ycasts.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/presentations/intro-to-a11y.html">Presentations</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-people"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Principles</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#inclusive-design" class="link-ts"><span>Inclusive Design</span></a></li>
+          <li><a href="#standards" class="link-ts"><span>Standards</span></a></li>
+          <li><a href="#user-interface-controls" class="link-ts"><span>User Interface Controls</span></a></li>
+          <li><a href="#platform-accessibility" class="link-ts"><span>Platform accessibility</span></a></li>
+        </ul>
+      
+      </div>          
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                
+                <p class="lead"><strong>A principle approach to design thinking and development</strong></p>
+                
+                <p>These principles embody an approach to the design and development of inclusive and usable applications and websites for all.</p>
+
+                <p>Based on lots of research with real users around the globe for more than three decades we can quietly assume clear principles have been formed. With these principles in hand you'll be able to deliver a quality to the highest standards so everyone can enjoy the true freedom and independance of the internet.</p>
+
+                <p>With the principles in hand guidelines and success criteria have been formed. Guidelines on the scale of the well known companies with their own expertice, innovations and differentiation but also from a neutral position in the form of a member consortium, the <a href="https://www.w3.org/">W3C</a> who is setting the global standards.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/principles.html#introduction" class="link-ts"><span>Principles</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/guidelines.html" class="link-ts"><span>Guidelines</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="inclusive-design" aria-labelledby="title-inclusive-design">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-inclusive-design">Inclusive Design</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <p class="lead"><strong>Inclusive Design, or Universal Design, is for those who want to make great products for the greatest number of people</strong></p>
+
+                <p>The question is not who is included but Who might get excluded and how to fix this?</p>
+
+                <blockquote>
+                  Empathizing with users: A good designer gets married to the users’ problems. A bad designer gets married to his own solutions.
+                </blockquote>
+
+                <h3 class="heading-m">Inclusive Design Vs. Accessibility</h3>
+
+                <h4 class="heading-xs">Inclusive design:</h4>
+                <p>A design methodology that enables and draws on the full range of human diversity.</p>
+
+                <h4 class="heading-xs">Accessibility:</h4>
+                <ol>
+                  <li>The qualities that make an experience open to all.</li>
+                  <li>A professional discipline aimed at achieving No. 1.</li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design-principles" class="link-ts"><span>Inclusive Design Principles - Microsoft</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design" class="link-ts"><span>Inclusive Design - IBM</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.smashingmagazine.com/2018/04/designing-accessibility-inclusion/" class="link-ts"><span>Designing For Accessibility And Inclusion - Smashing Magazine</span></a></li>
+                  <li><a href="https://inclusivedesignprinciples.org/" class="link-ts"><span>Inclusive Design Principles - TPG</span></a></li>
+                  <li><a href="https://github.com/Heydon/inclusive-design-checklist" class="link-ts"><span>Inclusive Web Design Checklist</span></a></li>
+                  <li><a href="http://www.inclusivedesigntoolkit.com/" class="link-ts"><span>Inclusive Design Toolkit - University of Cambridge</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="standards" aria-labelledby="title-standards">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-standards">Standards</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <p class="lead"><strong>Use platform and web standards / specifications as intended</strong></p>
+
+                <p>Always use web and platform specific standards as intended.</p>
+
+                <p>When standards and guidelines are implemented using non-standard techniques there is a risk that users who are dependant on platform specific accessibility features such as accessibility settings and screen readers will be excluded from accessing the content.</p>
+
+                <h4 class="heading-s">Web</h4>
+
+                <p>For the web there are i.a. the <a href="https://www.w3.org/TR/html52/">HTML 5</a>, <a href="https://www.w3.org/TR/CSS2/">CSS 2</a> and <a href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a> as well as <a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines</a> (WCAG) and the <a href="http://www.w3.org/WAI/mobile/">Mobile Accessibility resources</a> from the W3C.</p>
+
+                <h4 class="heading-s">Native</h4>
+
+                <p>Platform specific guidelines include the <a href="https://developer.apple.com/technologies/ios/accessibility.html">iOS Accessibility Guidelines</a>, the <a href="http://developer.android.com/design/">Android User Interface Guidelines</a> and the <a href="http://developer.android.com/guide/topics/ui/accessibility/">Designing for Accessibility</a> portion of the Android guidelines and <a href="https://material.io/design/usability/accessibility.html">Material Design Accessibility</a></p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/principles.html#wcag" class="link-ts"><span>WCAG</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#wai-aria" class="link-ts"><span>WAI-ARIA</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#material-design" class="link-ts"><span>Material Design - Google</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#human-interface-guidelines" class="link-ts"><span>Human Interface Guidelines - Apple</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design-principles" class="link-ts"><span>Inclusive Design Principles - Microsoft</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design" class="link-ts"><span>Inclusive Design - IBM</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="user-interface-controls" aria-labelledby="title-user-interface-controls">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-user-interface-controls">User Interface Controls</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <p class="lead"><strong>Use standard user interface components where possible</strong></p>
+
+                <p>Standard User Interface Components (UIC), objects, and elements should be used to ensure a greater level of accessibility. Custom controls tend to not implement accessibility as fully as standard platform controls.</p>
+
+                <p>All UI controls provided by platforms have semantics build in and are very robust. They have been developed and tuned over a long period of time to work well with user agents like browsers and assistive technology. Semantics in this case are the characteristics to recognize components. Think of giving it a name, role and a value if needed.
+
+                <p>For example in iOS standard controls will have traits assigned that are understood by the build in screen reader VoiceOver and therefore users. And for the web there are native HTML elements containing a role and when implemented according to the specifications get a proper name.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html" class="link-ts"><span>Semantic Structure and Navigation</span></a></li>
+                  <li><a href="../../advanced/code/android.html#semantic-structure-and-meaning" class="link-ts"><span>Semantic Structure and Meaning - Android</span></a></li>
+                  <li><a href="../../advanced/code/ios.html#semantic-structure-and-meaning" class="link-ts"><span>Semantic Structure and Meaning - iOS</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://html5doctor.com/lets-talk-about-semantics/" class="link-ts"><span>HTML5 semantics and accessibility</span></a></li>
+                  <li><a href="https://developer.paciellogroup.com/blog/2011/11/html5-semantics-and-accessibility/" class="link-ts"><span>Let’s Talk about Semantics</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="platform-accessibility" aria-labelledby="title-platform-accessibility">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-platform-accessibility">Platform accessibility</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <p class="lead"><strong>Support platform accessibility</strong></p>
+
+                <p>All content and functionality must work alongside, and not suppress, native accessibility, features and settings.</p>
+
+                <h4 class="heading-s">Navigation methods</h4>
+
+                <p>All content must be accessible and navigable using the platforms navigation paradigm for assistive technology.</p>
+
+                <p>For example, the directional controller must be supported on Android to allow users of the TalkBack screen reader to review and navigate page content. Android requires that all elements be keyboard accessible so they can be accessed with a d-pad or track ball. Android 4.0 has lessened this requirement a bit by including an “Explore by Touch" method.</p>
+
+                <p>On iOS it is possible to hook items into the Accessibility API by ensuring all meaningful items have ‘accessibility enabled’ which in turn makes them focusable.</p>
+
+                <h4 class="heading-s">Support platform assistive technologies or features</h4>
+
+                <p>When applications or sites block, disable, or interfere with platform specific accessibility features or technology, users with disabilities may not be able to use the site or app. Potential issues include suppressing zoom on websites or disabling the ability to highlight and copy text in HTML and therefore ‘Speak Text’ features.</p>
+
+                <p>Some users with disabilities may require multiple accessibility features because they have multiple disabilities. For example, a user may be deaf and blind or may have low vision and unable to use a pointing device or touch screen. Multiple modes of operation should be supported allowing users to access content according to their preferences.</p>
+
+                <p>On Android and iOS for example, built-in keyboard support should not prevent other standard touch events. iOS accessibility features and the API are designed to make accessibility information and input methods available to multiple disability types however some optimisation such as the deliberate misspelling of an accessibility label or hint to ensure correct pronunciation can make the content inaccessible to other disability types - for example, users of Braille who are deaf blind.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#content-resizing" class="link-ts"><span>Content resizing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/various/input-methods.html" class="link-ts"><span>Device-Independent User Input Methods</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#keyboard-input" class="link-ts"><span>Keyboard Input</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-between-pages" class="link-ts"><span>Navigation Between Pages</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal fade" id="devlifecycle" tabindex="-1" role="dialog" aria-labelledby="devlifecycleHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="devlifecycleHeading">Development Life Cycle</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1182308/Development_Life-Cycle.jpeg" class="img-fluid" alt="Development Life Cycle">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

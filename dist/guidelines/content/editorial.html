@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial - Content - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/content/editorial.html" aria-current="page">Content <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/content/editorial.html" aria-current="page">Editorial <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/content/notifications.html">Notifications</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/content/text-equivalents.html">Text Equivalents</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Editorial</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#consistent-labelling" class="link-ts"><span>Consistent labelling</span></a></li>
+          <li><a href="#indicating-language" class="link-ts"><span>Indicating language</span></a></li>
+          <li><a href="#instructions" class="link-ts"><span>Instructions</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="consistent-labelling" aria-labelledby="title-consistent-labelling">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-consistent-labelling">Consistent labelling <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Consistent labelling should be used across websites and native applications as well as within websites and applications.</strong></p>
+
+                <p>Consistency is important for all users to navigate confidently, whatever the device or product. It helps content and interactions quickly become familiar and recognisably COMPANY NAME. Consistent labelling particularly helps screen reader users
+                  who do not have visual reinforcement to aid understanding.</p>
+
+                <p>Labelling could be link text, headings, text for buttons, form fields, icons, text alternatives, page titles and so on.</p>
+
+                <p>Text alternatives, labels and descriptions can influence the usability of items such as images, icons, buttons, links, and form elements.</p>
+
+                <strong>Tip</strong>
+                <p>Sharing an up-to-date inventory between teams will ensure consistency for images and alternative text, form labels, and headings. This can be reinforced through style guidelines and templates.&nbsp;</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-consistent-labelling" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-consistent-labelling" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-consistent-labelling" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-consistent-labelling-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-consistent-labelling-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#labels" class="link-ts"><span>Labels</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#group-labels" class="link-ts"><span>Group Labels</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-consistent-labelling">iOS</h4>
+
+            <p>Review editorial on existing web and mobile versions and replicate where appropriate.</p>
+
+            <h4 class="heading-s" id="android-consistent-labelling">Android</h4>
+
+            <p>Review editorial on existing web and mobile versions and replicate where appropriate.</p>
+
+            <h4 class="heading-s" id="html-consistent-labelling">HTML</h4>
+
+            <p>Responsive websites are the best way of ensuring consistency across devices. If building separate mobile versions reuse, where possible, images, icons, alternative text, buttons, logos, and editorial for alternative text, heading, form labels
+              and page titles.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-consistent-labelling-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Navigate to an image, object, element or control denoted by an image.</li>
+                  <li>Ensure that any image that is used two or more times across the application performs the same function and has the same textual representation.</li>
+                  <li>Repeat for each image that represents different functionality.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-consistent-labelling-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Images that are used two or more times across the application perform the same functions, have the same textual representation and have an accessible alternative that is announced consistently;</li>
+                  <li>Images that are used for different purposes are different.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="indicating-language" aria-labelledby="title-indicating-language">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-indicating-language">Indicating language <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>The language of a page or app must be specified, and changes in language must be
+                indicated.</strong></p>
+
+                <p>When listening, correct pronunciation helps understanding. For users of assistive technologies such as screen readers it is particularly important, as some have different speech synthesizers for different languages. For example, "chat"
+                  means something different when using English pronunciation rather than French.</p>
+
+                <p>The default language for the content of a page or app must be defined in the code for the correct speech synthesizer to be used. It will over-ride any language and dialect setting specified on the users device.</p>
+
+                <p>For multi-lingual content, the language for anything that varies from the default language must also be defined in the local code for the correct speech synthesizer to be used. This includes image alternatives, form labels, quotes, objects,
+                  media alternatives, and other elements. It will over-ride the specified default language and any language and dialect setting specified on the users device.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-indicating-language" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-indicating-language" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-indicating-language" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-indicating-language-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-indicating-language-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#language" class="link-ts"><span>Language</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-indicating-language">iOS</h4>
+
+            <p>iOS applications will default to the language in use on the device and will search down the available language resources based upon the device language order. See
+              <a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html">Introduction
+              to Internationalization and Localization</a> for details.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+UIButton *priorButton = [UIButton buttonWithType:UIButtonTypeCustom];
+[nextButton setTitle: NSLocalizedString(@"Next story", @"Button title - goes direct to next story") forState:UIControlStateNormal];
+[priorButton setTitle: NSLocalizedString(@"Prior story", @"Button title - goes direct to previous story") forState:UIControlStateNormal];
+...
+[aButton setAccessibilityLanguage:@"en-us"];
+[aButton setAccessibilityLabel:NSLocalizedString(@"Label", @"Accessibility label to be read in US English")]; //NB: Not sure if this should be a localized string - might be best left in just US English so text readout is not translated
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+UIButton *priorButton = [UIButton buttonWithType:UIButtonTypeCustom];
+[nextButton setTitle: @"Next story" forState:UIControlStateNormal];
+[priorButton setTitle: @"Prior story" forState:UIControlStateNormal];
+...
+// Specific language wanted for this label not set, no comment for translator
+[aButton setAccessibilityLabel:NSLocalizedString(@"Label", nil)];
+--></code></pre>
+              </div>
+            </div>
+            <h4 class="heading-s" id="android-indicating-language">Android</h4>
+
+            <p>Android applications will attempt to load resources for the language set by the device. If no language specific resources are found the default resource is used. See <a href="https://developer.android.com/guide/topics/resources/localization.html">Android Localization</a> for details.</p>
+            <p>Assistive technologies are not aware of language specific content and will read all content using the default language settings set for the speech engine or applicable output device.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// res/values-xx/strings.xml file is provided for each supported language where xx is the 2 letter code for each language (en=English, de=German, etc.)
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/some_text"/>
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// res/values/strings.xml
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="some_text"/>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-indicating-language">HTML</h4>
+
+            <p>Use the lang attribute on the html element to specify the page language.</p>
+
+            <p>Use the lang attribute to set language of smaller parts of the document.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// HTML
+<html lang="en">
+...
+// XHTML
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+...
+  <div>
+    <h2>Upcoming Spanish Holidays</h2>
+    <p lang="es">Les Fogueres de Sant Joan.</p>
+  </div>
+...
+</html>
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// HTML
+<html>
+...
+// XHTML
+<html xmlns="http://www.w3.org/1999/xhtml">
+...
+  <div>
+    <h2>Upcoming Spanish Holidays</h2>
+    <p>Les Fogueres de Sant Joan.</p>
+  </div>
+...
+</html>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-indicating-language-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Set the platform language.</li>
+                  <li>Activate the app with platform standard assistive technologies enabled.</li>
+                  <li>Verify the following appears or are announced in the correct language:
+                    <ul>
+                      <li>Text,</li>
+                      <li>Text in a different language from that of app/site,</li>
+                      <li>Images of text,</li>
+                      <li>Images of text in a different language from that of app/site,</li>
+                      <li>Labels,</li>
+                      <li>Tooltips,</li>
+                      <li>Sounds,</li>
+                      <li>Video sub-titles,</li>
+                      <li>Page and screen titles,</li>
+                      <li>Alternatives for image, objects and elements in a different language from that of app/site.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-indicating-language-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All content, text, images of text, audio, video subtitles, and alternatives are announced or displayed in the language expected, as set in iOS;</li>
+                  <li>The language should switch appropriately.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="instructions" aria-labelledby="title-instructions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-instructions">Instructions <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>When needed, additional instructions should be provided to supplement visual and audio cues.</strong></p>
+
+                <p>Visual cues are not always obvious or visible to all users. In particular, screen reader users, users who magnify or zoom in on content, and cognitively impaired users.</p>
+
+                <p>Similarly, audio cues are not always perceivable. In particular, to users who are deaf or hearing impaired, have volume diminished or muted, or are in noisy environments.</p>
+
+                <p>Instructions, menus, dialogue and in-content messages should be delivered visually and audibly, at a user controlled speed, to help users understand how to interact with content. However, be aware that verbosity, whether visual or audible,
+                  can also be disorienting and try to be succinct.</p>
+
+                <strong>Tip</strong>
+                <p>Accessible instructions might be:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Visible labels - such as on-screen <a href="../../guidelines/code/forms.html#labelling-form-controls">labels for form controls</a>;</li>
+                  <li>Hidden text, text alternatives or labels - for screen reader users only;</li>
+                  <li>Help instructions - such as a link to a text/audio file, or another section/page;</li>
+                  <li>Temporarily hidden text - such as a pop-over hint or progressively expanded text;</li>
+                  <li><a href="../../guidelines/content/notifications.html#inclusive-notifications">Standard notifications</a> - such as error messages.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-instructions" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-instructions" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-instructions" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-instructions-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-instructions-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/design-annotations.html" class="link-ts"><span>Design Annotations</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/images-svg-and-canvas.html#advanced-alt-text-and-extended-descriptions" class="link-ts"><span>Advanced Alt Text & Extended Descriptions</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-instructions">iOS</h4>
+
+            <p>Use on-screen text, icons and/or accessible labels and accessible hints.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[aButton setImage:[UIImage imageNamed:@"add.jpg"] forState:UIControlStateNormal];
+[aButton setTitle:NSLocalizedString(@"Add", @"Button title") forState:UIControlStateNormal];
+[aButton setAccessibilityHint:NSLocalizedString(@"Adds a show to your queue", @"Accessibility hint for add item to queue button")];  
+--></code></pre>
+              </div>
+            </div>
+
+            <p>Does not provide additional instruction indication that the add button adds a show to your queue:</p>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[aButton setImage:[UIImage imageNamed:@"add.jpg"] forState:UIControlStateNormal];
+[aButton setTitle:NSLocalizedString(@"Add", nil) forState:UIControlStateNormal]; 
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-instructions">Android</h4>
+
+            <p>Provide additional information via on-screen labels, or as off-screen via the <code>contentDescription</code> attribute.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+ <ImageButton android:layout_height="wrap_content" android:id="@+id/add_btn" android:src="@drawable/addBtn" android:focusable="true" android:contentDescription="Add"></ImageButton>
+--></code></pre>
+              </div>
+
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageButton android:layout_height="wrap_content" android:id="@+id/add_btn" android:src="@drawable/addBtn" android:focusable="true" android:contentDescription="Add"></ImageButton>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-instructions">HTML</h4>
+
+            <p>Use visible text (labels), alternative text, title attributes for form fields, or off-screen text depending on the need.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// provide a label for instructions for screen reader users
+<input type="text" id="s1" aria-label="Search" />
+<button>Go</button>
+
+// Providing instructions at the top of a form
+<p>All required fields are indicated with an asterisk (*) </p>
+<label for="email">*Email: </label>
+<input type="text" id="email" aria-required="true" />
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// no instructions for screen reader users
+<input type="text" id="s1" />
+<button>Go</button>
+
+// no indication of what an asterisk means
+<label for="email">*Email: </label>
+<input type="text" id="email" aria-required="true" />
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-instructions-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate all forms or actionable items.</li>
+                  <li>Verify the page or object/element/control contains instructions explaining how to complete the form or what the object/element/controls will do.</li>
+                  <li>Verify that the instructions are sufficiently clear to avoid and prevent errors.</li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-instructions-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Forms provide instructions;</li>
+                  <li>Forms provide clear instructions which assist users in avoiding and preventing errors during form completion;</li>
+                  <li>Actionable object/controls/elements provide labels or instruction that indicate what action will be performed when the item is activated.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

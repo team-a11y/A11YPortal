@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device-Independent User Input Methods - Various - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/various/input-methods.html" aria-current="true" id="main-menu">Various <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../advanced/various/input-methods.html" aria-current="page">Input Methods <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/various/program-management.html">Program Management</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Device-Independent User Input Methods</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#mouse-input" class="link-ts"><span>Mouse Input</span></a></li>
+          <li><a href="#keyboard-input" class="link-ts"><span>Keyboard Input</span></a></li>
+          <li><a href="#touch-input" class="link-ts"><span>Touch Input</span></a></li>
+          <li><a href="#voice-input" class="link-ts"><span>Voice Input</span></a></li>
+          <li><a href="#motion-disappearing-content-and-transitions" class="link-ts"><span>Motion, Disappearing Content, and Transitions</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>The importance of User Input Methods</strong></p>
+                <p>Users must be able to interact with web content with a mouse, a keyboard, a touch device, and by voice input. If any one of these methods is unavailable, at least one group of users with disabilities will be unable to use your web content.
+                  This module discusses the rules and techniques for ensuring that users will be able to use your content, scripted events, custom widgets, and so on, no matter what kind of input device they're using.</p>
+                <p>It's worth it to point out that there are many other kinds of input devices beyond the ones covered in this module, such as single switch devices, sip and puff devices, eye tracking devices, and other more advanced or less common devices.
+                  The good news is that all of these devices are variations of keyboard, mouse, touch, and voice devices. In fact, most of them emulate a keyboard. Some also offer basic mouse emulation. You don't need to know all of the nuances of all
+                  the possible kinds of devices, as long as you get the keyboard, mouse, touch, and voice right. </p>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Users need to be able to interact with web content. This includes all form elements, links, JavaScript features, custom widgets, and all other types of content. The primary methods for interacting are mouse, keyboard, touch, and voice.
+                  Other methods are available (e.g. eye tracking or single switch devices), but they all essentially make use of, or emulate, one of the other aforementioned methods.</p>
+                <p>It is important to consider all aspects of input method accessibility, including functionality, focus management in custom widgets, visual focus and hover indicators, the unavailability of JavaScript gesture actions on mobile devices when
+                  the screen reader is turned on, etc. User input method accessibility ensures that users can not only read web content, but also interact with it and submit data when necessary.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/input-methods2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.atia.org/at-resources/what-is-at/" class="link-ts"><span>What is AT? - ATiA</span></a></li>
+                  <li><a href="https://axesslab.com/switches/" class="link-ts"><span>Assistive Technologies – The Switch</span></a></li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="mouse-input" aria-labelledby="title-mouse-input">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-mouse-input">Mouse Input</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Click Target Size</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The click target size <span class="badge badge-info">SHOULD</span> be large enough to facilitate easy use with a mouse (including for users with tremors or limited dexterity) without risking activating an adjacent link or button.</li>
+                </ul>
+
+                <h4 class="heading-s">Visual Hover Indicator</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An enhanced visual hover indicator <span class="badge badge-info">SHOULD</span> be provided.</li>
+                  <li>The mouse cursor icon on hover <span class="badge badge-info">SHOULD</span> correspond to the type of action allowed by the element.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/input-methods2/mouse-input/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Mouse Input - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control" class="link-ts"><span>Input control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="keyboard-input" aria-labelledby="title-keyboard-input">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-keyboard-input">Keyboard Input</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Tab Focusability</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Links, buttons, and interactive controls <span class="badge badge-success">MUST</span> be keyboard-focusable.</li>
+                </ul>
+
+                <h4 class="heading-s">Tab Order</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The navigation order of focusable elements (links, form elements, etc.) <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li><code>tabindex</code> of positive values <span class="badge badge-info">SHOULD</span> be avoided.</li>
+                </ul>
+
+                <h4 class="heading-s">Visual Focus Indicator</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All focusable elements <span class="badge badge-success">MUST</span> have a visual focus indicator when in focus.</li>
+                  <li>Focusable elements <span class="badge badge-info">SHOULD</span> have enhanced visual focus indicator styles.</li>
+                  <li>The contrast of all small visual focus indicators (smaller than 3px by 3px) against the background <span class="badge badge-info">SHOULD</span> be at least 4.5 to 1.</li>
+                  <li>The contrast of all large visual focus indicators (at least 3px by 3px) against the background) <span class="badge badge-info">SHOULD</span> be at least 3 to 1.</li>
+                </ul>
+
+                <h4 class="heading-s">Keyboard Functionality</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Functionality <span class="badge badge-success">MUST</span> be available using the keyboard, unless the functionality cannot be accomplished in any known way using a keyboard.</li>
+                </ul>
+
+                <h4 class="heading-s">Keyboard Traps</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Keyboard focus <span class="badge badge-danger">MUST NOT</span> be locked or trapped in a particular page element and the user <span class="badge badge-success">MUST</span> be able to navigate to and from all navigable page elements using only a keyboard.</li>
+                </ul>
+
+                <h4 class="heading-s">Focus Management During Interactions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The focus <span class="badge badge-success">MUST</span> be purposely moved or set (via JavaScript) onto the appropriate element when the user's action requires a change of context or location for effective keyboard or touch interaction.</li>
+                  <li>The focus <span class="badge badge-danger">MUST NOT</span> become lost or reset to the top of the page, except when loading or re-loading a page.</li>
+                  <li>When moving or setting focus, the destination element <span class="badge badge-success">MUST</span> contain discernible text (either standard text or programmatically-associated text).</li>
+                </ul>
+
+                <h4 class="heading-s">Keyboard Shortcuts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Page-specified shortcut keys and accesskeys <span class="badge badge-danger">MUST NOT</span> conflict with existing keyboard shortcuts in the browser, operating system, or assistive technologies.</li>
+                </ul>
+
+                <h4 class="heading-s">Giving Users Keyboard Instructions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>When custom keyboard behavior is required to use a component, keyboard instructions <span class="badge badge-success">MUST</span> be provided.</li>
+                  <li>ARIA widgets that require more than just the Tab key to interact with may be confusing to users, so you <span class="badge badge-warning">MAY</span> provide keyboard instructions.</li>
+                  <li>Page-specified shortcut keys and accesskeys <span class="badge badge-danger">MUST NOT</span> conflict with existing keyboard shortcuts in the browser, operating system, or assistive technologies.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/input-methods2/keyboard-input/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Keyboard Input - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                
+                <h4 class="heading-s">Basics of Keyboard Accessibility</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=keyboard&amp;levels=aaa">Keyboard: WCAG Filters</a>
+                  </li>
+                  <li>People who cannot use a mouse use a keyboard to access websites
+                    <ul>
+                      <li>Operate all using only the keyboard</li>
+                      <li>Focus is always visible</li>
+                      <li>Keypress rather than onfocus</li>
+                      <li>Add skiplinks</li>
+                      <li>Provide logical tab order</li>
+                      <li>Dynamically content needs focus attention</li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                <h4 class="heading-s">Programmatic Focus</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Managing Focus
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/wai-aria-1.1/#managingfocus">2.3 Managing Focus - ARIA 1.1</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices/#keyboard">Focus: Developing a Keyboard Interface</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex">Within Components Using a Roving tabindex: tabindex="0"</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices/#kbd_focus_activedescendant">In Composites Using aria-activedescendant</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-activedescendant">Aria-activedescendant (property)</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/listbox/listbox.html">Listbox Example aria-activedescendant</a></li>
+                      <li><a href="http://www.ssbbartgroup.com/blog/differences-aria-1-0-1-1-changes-rolecombobox/">Activedescendant example: Differences between ARIA 1.0 and 1.1: Changes to role=”combobox”</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    Different Kinds of Focus
+                    <ul>
+                      <li>The user's visual focus</li>
+                      <li>The browser's viewport focus</li>
+                      <li>The mouse hover focus</li>
+                      <li>The keyboard focus</li>
+                      <li>The programmatic focus</li>
+                      <li>Extra: The accessibility tree focus</li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                <h4 class="heading-s">Keyboard Tab Order</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Tab Order in CSS and accessibility problems, careful with:
+                    <ul>
+                      <li>Position: absolute</li>
+                      <li>Position: relative</li>
+                      <li>Float: left</li>
+                      <li>Float: right</li>
+                    </ul>
+                    Especially careful with WYSIWYG editors that allow easy visual manipulation of the layout.
+                  </li>
+                  <li>Tabindex
+                    <ul>
+                      <li>tabindex="-1"</li>
+                      <li>tabindex="0"</li>
+                      <li>tabindex="1"</li>
+                    </ul>
+                  </li>
+                  <li>Tab Order in Dynamic Widgets: Tabs
+                    <ul>
+                      <li>Remember tab order is NOT about the Tab widget</li>
+                      <li>Visual appearance tabs </li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices/#tabpanel">ARIA Authoring Practices: Tab Panels</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs.html">ARIA Tabs Widget Example</a></li>
+                      <li><a href="http://whatsock.com/tsg/Coding%20Arena/ARIA%20and%20Non-ARIA%20Tabs/ARIA%20Tabs%20(Internal%20Content)/demo.htm">ARIA Tabs Demo by Bryan Garaventa</a></li>
+                    </ul>
+                  </li>
+                  <li>Render Dynamic Content in Line with the Controls Which Invoked the Content: Dialog
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/wai-aria/complete#dialog">Old: ARIA Authoring Practices: Dialog (Modal)</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">New: ARIA Authoring Practices: Dialog (Modal)</a></li>
+                      <li><a href="https://www.w3.org/TR/wai-aria-1.1/#dialog">ARIA 1.1: Dialog (role)</a></li>
+                      <li>Ensure that focus shifts back to the point where interaction started</li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                <h4 class="heading-s">Others</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Visual Focus Indicator
+                    <ul>
+                      <li>
+                        <a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_overview#navigation-mechanisms-focus-visible">2.4.7 Focus Visible Level AA: WCAG Filters</a></li>
+                      <li>Make sure the focus state really stands out and is clearly recognizable.</li>
+                    </ul>
+                  </li>
+                  <li>Keyboard trap
+                    <ul>
+                      <li><a href="https://www.w3.org/WAI/WCAG20/quickref/#keyboard-operation-trapping">2.1.2 No Keyboard Trap Level A: WCAG Filters</a></li>
+                      <li>Extra checks for traps when combining / creating or embedding self made widgets / components</li>
+                      <li>Different browser / OS combinations need to be tested, special attention for Internet Explorer</li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#keyboard-trap" class="link-ts"><span>Keyboard trap</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control" class="link-ts"><span>Input control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex" class="link-ts"><span>Using tabindex - Google</span></a></li>
+                  <li><a href="https://webaim.org/techniques/keyboard/" class="link-ts"><span>Keyboard Accessibility - WebAIM</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="touch-input" aria-labelledby="title-touch-input">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-touch-input">Touch Input</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Touch Functionality</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Functionality <span class="badge badge-success">MUST</span> be available using standard touch methods, unless the functionality cannot be accomplished in any known way using a touch device.</li>
+                </ul>
+
+                <h4 class="heading-s">Touch Functionality with Screen Reader Turned on</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Functionality <span class="badge badge-success">MUST</span> be available using screen reader touch methods (e.g. click actions), unless the functionality cannot be accomplished in any known way using a touch device.</li>
+                </ul>
+
+                <h4 class="heading-s">Touch Target Size</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The click/touch target size <span class="badge badge-info">SHOULD</span> be large enough to facilitate easy use with a finger, without risking activating an adjacent link or button.</li>
+                </ul>
+
+                <h4 class="heading-s">Focus Trap</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Touch/gesture focus <span class="badge badge-danger">MUST NOT</span> be locked or trapped in a particular page element and the user <span class="badge badge-success">MUST</span> be able to navigate to and from all navigable page elements using standard touch actions or gestures.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/input-methods2/touch-input/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Touch Input - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control" class="link-ts"><span>Input control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.bbc.co.uk/gel/guidelines/how-to-design-for-touch" class="link-ts"><span>How to design for touch - BBC</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="voice-input" aria-labelledby="title-voice-input">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-voice-input">Voice Input</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/input-methods2/voice-input/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Voice Input - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control" class="link-ts"><span>Input control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="motion-disappearing-content-and-transitions" aria-labelledby="title-motion-disappearing-content-and-transitions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-motion-disappearing-content-and-transitions">Motion, Disappearing Content, and Transitions</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Transitions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Transitions <span class="badge badge-danger">MUST NOT</span> interfere with reading or interaction, unless the interference is brief.</li>
+                  <li>Transition effects <span class="badge badge-info">SHOULD</span> be kept to a minimum (to avoid nausea, dizziness, annoyance, etc.).</li>
+                  <li>Transitions <span class="badge badge-info">SHOULD</span> avoid parallax effects.</li>
+                </ul>
+
+                <h4 class="heading-s">Animations</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A method <span class="badge badge-success">MUST</span> be provided to pause, stop, or hide any prerecorded video-only content that begins playing automatically and which lasts 5 seconds or more.</li>
+                  <li>Animated images <span class="badge badge-danger">MUST NOT</span> flash or flicker at 3 or more times per second.</li>
+                </ul>
+
+                <h4 class="heading-s">Moving or Disappearing Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Content <span class="badge badge-info">SHOULD NOT</span> move in a way that makes interactive elements difficult to activate.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Device-Independent%20User%20Input%20Methods%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Device-Independent User Input Methods PDF</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Dragon%20Naturally%20Speaking%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Dragon Naturally Speaking PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/input-methods2/motion/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Motion, Disappearing Content, and Transitions - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#controlling-media" class="link-ts"><span>Controlling media</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

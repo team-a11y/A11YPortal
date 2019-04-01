@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Program Management - Various - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/various/input-methods.html" aria-current="true" id="main-menu">Various <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/various/input-methods.html" aria-current="page">Input Methods</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/various/program-management.html">Program Management <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Accessibility Program Management</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#sustainable-accessibility-programs" class="link-ts"><span>Sustainable Accessibility Programs</span></a></li>
+          <li><a href="#jobs-roles-and-responsibilities" class="link-ts"><span>Jobs, Roles, and Responsibilities</span></a></li>
+          <li><a href="#finding-and-hiring-accessibility-talent" class="link-ts"><span>Finding and Hiring Accessibility Talent</span></a></li>
+          <li><a href="#managing-urgent-remediation-projects" class="link-ts"><span>Managing Urgent Remediation Projects</span></a></li>
+          <li><a href="#building-a-library-of-accessible-components-and-design-patterns" class="link-ts"><span>Building a Library of Accessible Components and Design Patterns</span></a></li>
+          <li><a href="#building-a-library-of-accessibility-test-cases" class="link-ts"><span>Building a Library of Accessibility Test Cases</span></a></li>
+          <li><a href="#assessing-the-legal-risk" class="link-ts"><span>Assessing the Legal Risk</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>The importance of roles, responsibilities, and other processes</strong></p>
+                <p>This module outlines the roles, responsibilities, and other processes to successfully integrate accessibility throughout a project’s lifecycle. The strategies presented in this module will help directors, program managers, and other team members not only address urgent accessibility remediation in projects, but help establish ways that accessibility can be incorporated, managed, and sustained for future projects from start to finish.</p>
+                
+                <h3 class="heading-s">Summary</h3>
+                <p>Accessibility is an ongoing process that takes effort throughout the organization. Establishing accessibility governance and management will help organizations avoid the expensive and legal consequences of addressing accessibility on an as-needed basis; and it will help promote accessibility awareness within the organization.</p>
+                <p>Directors and program managers have a responsibility to manage, govern, and enforce accessibility standards and best practices among their teams; while designers, engineers, and developers have a responsibility to develop projects based on those accessibility standards and best practices.</p>
+                <p>An organization’s accessibility commitment should not <strong>just</strong> be about developing good accessible code, rather it should be about delivering the best possible experiences to customers. Everyone plays a key role in making sure the organization succeeds in that effort.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/program-management2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="sustainable-accessibility-programs" aria-labelledby="title-sustainable-accessibility-programs">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-sustainable-accessibility-programs">Sustainable Accessibility Programs</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/sustainable-programs/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Sustainable Accessibility Programs - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="jobs-roles-and-responsibilities" aria-labelledby="title-jobs-roles-and-responsibilities">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-jobs-roles-and-responsibilities">Jobs, Roles, and Responsibilities</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/jobs-roles/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Jobs, Roles, and Responsibilities - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/responsibilities.html" class="link-ts"><span>Responsibilities</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="finding-and-hiring-accessibility-talent" aria-labelledby="title-finding-and-hiring-accessibility-talent">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-finding-and-hiring-accessibility-talent">Finding and Hiring Accessibility Talent</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/finding-accessibility-talent" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Finding and Hiring Accessibility Talent - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="managing-urgent-remediation-projects" aria-labelledby="title-managing-urgent-remediation-projects">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-managing-urgent-remediation-projects">Managing Urgent Remediation Projects</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/managing-urgent-remediation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Managing Urgent Remediation Projects - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="building-a-library-of-accessible-components-and-design-patterns" aria-labelledby="title-building-a-library-of-accessible-components-and-design-patterns">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-building-a-library-of-accessible-components-and-design-patterns">Building a Library of Accessible Components and Design Patterns</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/building-a-library-of-components-patterns/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Building a Library of Accessible Components and Design Patterns - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="building-a-library-of-accessibility-test-cases" aria-labelledby="title-building-a-library-of-accessibility-test-cases">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-building-a-library-of-accessibility-test-cases">Building a Library of Accessibility Test Cases</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/building-a-library-of-test-cases/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Building a Library of Accessibility Test Cases - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="assessing-the-legal-risk" aria-labelledby="title-assessing-the-legal-risk">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-assessing-the-legal-risk">Assessing the Legal Risk</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/program-management2/assess-legal-risk" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Assessing the Legal Risk - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

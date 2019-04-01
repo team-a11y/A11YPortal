@@ -1,0 +1,28 @@
+//----------
+// Colors
+// Links
+//----------
+
+// Colors
+
+$black:          #333333 !default;       
+$blue:           #007394 !default;
+$orange:         #993300 !default;
+$red-dark:       #993300 !default;
+$brand-primary:  $red-dark !default;
+
+// Links
+
+$link-color:     $blue !default;
+
+$btn-secondary-color:            #ffffff !default;
+$btn-secondary-bg:               #559bd1 !default;
+$btn-secondary-border:           #2d82c1 !default;
+
+$btn-tertiary-color:             $black !default;
+$btn-tertiary-bg:                #f5f5f5 !default;
+$btn-tertiary-border:            #d5d5d5 !default;
+
+$btn-annot-color:            #ffffff !default;
+$btn-annot-bg:               red !default;
+$btn-annot-border:           red !default;

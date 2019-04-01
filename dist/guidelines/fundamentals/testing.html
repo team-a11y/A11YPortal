@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to test - Fundamentals - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+  <link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" aria-current="true" id="main-menu">Fundamentals
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/home.html">Home</a></li>
+                  <li class="page-item">
+                    <a class="page-link active" href="../../guidelines/fundamentals/testing.html" aria-current="page">Testing<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/checklists.html">Checklists</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/summary.html">Summary</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/principles.html">Principles</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/fundamentals/references.html">References</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/content/editorial.html">Content</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Functional Testing Method: How-To</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#visual-inspection" class="link-ts"><span>1. Visual Inspection</span></a></li>
+          <li><a href="#page-structure" class="link-ts"><span>2. Page Structure</span></a></li>
+          <li><a href="#composed-widgets" class="link-ts"><span>3. Composed Widgets</span></a></li>
+          <li><a href="#interactive-components" class="link-ts"><span>Test Instructions</span></a></li>
+        </ul>
+      
+      </div>          
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-introduction">Introduction 
+          <span class="badges">
+            <span class="badge bg-indigo">DEV</span>
+            <span class="badge bg-fuchsia">UX</span>
+            <span class="badge bg-lime text-default">EDITOR</span>
+            <span class="badge bg-black54">CJE</span>
+          </span>
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h3 class="card-title sr-only">Preface</h3>
+                
+                <p class="lead"><strong>Functional testing for Inclusive Design</strong></p>
+                
+                <p>The accessibility features and basics of how to functional test content using heuristic analysis, tools and screen readers are covered here for Web, Android and iOS.</p>
+
+                <h4 class="heading-m mt-0">Basic testing steps:</h4>
+
+                <ol>
+                  <li>Visual Inspection</li>
+                  <li>Page Structure</li>
+                  <li>Composed Widgets</li>
+                </ol>
+
+                <h4 class="heading-m mt-0">Process steps:</h4>
+
+                <p>At each step you'll perform the following actions.</p>
+
+                <dl>
+                  <dt>1. Heuristic analysis</dt>
+                  <dd>At this first step you'll start guessing what the functional expectation is. Identify what you see, what should be read aloud, what should happen step-by-step, and how this should be constructed. DON'T use a mouse, keyboard or other input method yet. In principle this information must already be present at the <a href="/basics/essentials/design-annotations.html">Design Annotation</a> fase.</dd>
+                  <dt>2. Write down possible focus points</dt>
+                  <dd>For each focus point where you're not sure if this is done properly put it on paper:
+                    <ul>
+                      <li>Name and place</li>
+                      <li>Focus point and expected result</li>
+                    </ul> 
+                  </dd>
+                  <dt>3. Start inspection</dt>
+                  <dd>Next we start the actual inspection. For latin languages this means we start from top to bottom and from left to right. We will use the tab key on the keyboard, see what will happen when we use the mouse and with screen readers we'll use the left and right arrow keys on a keyboard or swipe left and right with a mobile device. Tools will be used to support the inspection. Is everything communicated as expected and logical?</dd>
+                  <dt>4. Annotate failures</dt>
+                  <dd>When the result is NOT what's expected, note the possible fail. Please make sure it's clear which part may have a fail, where this exactly happens, under which conditions, and how to reproduce.</dd>
+                </dl>
+
+                <h4 class="heading-m mt-0">Test Procedures & Results:</h4>
+                <p>At each step you'll find the most common accessibility checkpoints with a short explanation on what's expected. When not sure on how to test these, there are links for each checkpoint at the "Test Procedures & Results" sections where you'll be taken to the guideline with an explanation on how to test.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/tools.html" class="link-ts"><span>Tools</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/checklists.html" class="link-ts"><span>Checklists</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/testing/testing-methods-and-tools.html" class="link-ts"><span>Testing Methods and Tools</span></a></li>
+                  <li><a href="../../advanced/testing/screen-reader-testing.html" class="link-ts"><span>Screen Reader Testing</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html" class="link-ts"><span>Input methods</span></a></li>
+                </ul>
+
+              </div>
+              
+            </div>            
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Which Tools to use:</h3>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/tools.html#wave" class="link-ts"><span>WAVE - Automated Tool</span></a></li>
+                  <li><a href="../../basics/essentials/tools.html#axe" class="link-ts"><span>aXe - Automated Tool</span></a></li>
+                  <li><a href="../../basics/essentials/tools.html#screen-readers" class="link-ts"><span>Screen Reader</span></a></li>
+                  <li><a href="../../basics/essentials/tools.html#cca" class="link-ts"><span>Contrast Analyser</span></a></li>
+                  <li><a href="../../basics/essentials/tools.html#code-helpers" class="link-ts"><span>Code inspector</span></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="visual-inspection" aria-labelledby="title-visual-inspection">
+      <div class="container">
+
+        <div class="gs-highway"></div>
+
+        <h2 class="full-cover-title gs-title" id="title-visual-inspection">
+          <span class="badge badge-pill bg-primary gs-number">1</span> Visual Inspection
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card gs-highway-content">
+              <div class="card-block">
+
+                <p class="lead"><strong>What you see is what everyone should get</strong></p>
+
+                <p>On basis of the visual appearance you'll start guessing what the functional expectation is. Identify what you see, what should be read aloud, what should happen step-by-step, and how this should have been constructed.</p>
+
+                <p>Essential content communicated visually MUST be heard by a screen reader. Thoroughly examine the visual design, states and processes using different <a href="../../advanced/various/input-methods.html">input methods</a>.</p>
+
+                <ul class="list-unstyled">
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Focus</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>All interactive elements must be focusable and inactive elements must not be focusable.</li>
+                        <li>When focused, all actionable and focusable elements must have a visible state change.</li>
+                        <li>Content order must be logical.</li>
+                        <li>Actionable content must be navigable in a meaningful sequence.</li>
+                        <li>Alternative input methods must be supported.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Consistency</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Links in different places referring to the same page are identified consistently.</li>
+                        <li>The look and sound of a control, object or element should inform the user how to interact with it.</li>
+                        <li>Unless there is a recognised convention, such as for navigation, do not use links that are styled to look like buttons.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Responsive / Content resizing</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Users must be able to control font sizing</li>
+                        <li>Interface (UI) scaling must be possible.</li>
+                        <li>All breakpoints of responsive design must be tested by changing viewport size or zoom.</li>
+                        <li>Reflow of content is presented without loss of information or functionality.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>
+                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Color / Contrast</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Information or meaning must not be conveyed by colour only.</li>
+                        <li>The colour of text and background content must have sufficient contrast.</li>
+                        <li>The colour of interactive components and background must have sufficient contrast.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Process steps:</h3>
+                <ul class="list-unstyled">
+                  <li>1.1 Heuristic analysis</li>
+                  <li>1.2 Write down possible focus points</li>
+                  <li>1.3 Start inspection</li>
+                  <li>1.4 Annotate failures</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Test Procedures & Results</h3>
+
+                <h4 class="heading-s"><a href="../../guidelines/fundamentals/summary.html#focus" class="link-ts"><span>Focus</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#testing-focusable-elements-procedures" class="link-ts"><span>Focusable elements testing</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#testing-visible-focus-procedures" class="link-ts"><span>Visible focus testing</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#testing-content-order-procedures" class="link-ts"><span>Content order testing</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#testing-focus-order-procedures" class="link-ts"><span>Focus order testing</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#testing-alternative-input-methods-procedures" class="link-ts"><span>Alternative input methods testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/visual-design.html#consistency" class="link-ts"><span>Consistency</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#testing-consistency-procedures" class="link-ts"><span>Consistency testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/visual-design.html#content-resizing" class="link-ts"><span>Responsive / Content resizing</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#testing-content-resizing-procedures" class="link-ts"><span>Content resizing testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/visual-design.html#colour-and-meaning" class="link-ts"><span>Color</span></a> and <a href="../../guidelines/design/visual-design.html#colour-contrast" class="link-ts"><span>Contrast</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#testing-colour-and-meaning-procedures" class="link-ts"><span>Colour and meaning testing</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#testing-colour-contrast-procedures" class="link-ts"><span>Colour contrast testing</span></a></li>
+                </ul>
+
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="page-structure" aria-labelledby="title-page-structure">
+      <div class="container">
+
+        <div class="gs-highway"></div>
+
+        <h2 class="full-cover-title gs-title" id="title-page-structure">
+          <span class="badge badge-pill bg-primary gs-number">2</span> Page Structure
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card gs-highway-content">
+              <div class="card-block">
+
+                <p class="lead"><strong>Well-structured content enables more efficient navigation and provides simular experiences for everyone</strong></p>
+
+                <p>Looking at a page provides lot's of clues about it's structure and relationships. This enables to quickly judge the content and focus on the parts we're interested in.</p>
+
+                <p>All these clues must also be present in a similar way in the code so everyone can experience this. The functional outcome of this structure can easily be tested with a screen reader.</p>
+
+                <ul class="list-unstyled">
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Containers and Landmarks</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Containers should be used to describe page/screen structure, as supported by the platform.</li>
+                        <li>Use ARIA landmark roles or HTML5 sectioning elements to describe document structure and outline different parts of the page.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Unique Titles and Headings</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>All pages or screens must be uniquely and clearly identifiable.</li>
+                        <li>Content must provide a logical and hierarchical heading structure, as supported by the platform.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Links Vs. Buttons</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Link and navigation text must uniquely describe the target or function of the link or item.</li>
+                        <li>Links to alternative formats must indicate that an alternative is opening.</li>
+                        <li>Repeated links to the same resource must be combined within a single link.</li>
+                        <li><a href="../../good-bad/home.html#annotModal13">Use links to go to another page, use buttons when you stay on the same page</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Lists, Tables and Semantics</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Visual formatting alone must not be used to convey meaning.</li>
+                        <li>Provide non-visual alternatives, such as semantic code, hidden text or accessibility labels.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>
+                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Images and Text equivalents</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Images of text should be avoided.</li>
+                        <li>Alternatives must briefly describe the editorial intent or purpose of the image, object, or element.</li>
+                        <li>Decorative images must be hidden from assistive technology.</li>
+                        <li>Visual formatting alone must not be used to convey meaning.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Process steps:</h3>                
+                <ul class="list-unstyled">
+                  <li>2.1 Heuristic analysis</li>
+                  <li>2.2 Write down possible focus points</li>
+                  <li>2.3 Start inspection</li>
+                  <li>2.4 Annotate failures</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Test Procedures & Results</h3>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/structure.html#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#testing-containers-and-landmarks-procedures" class="link-ts"><span>Containers and landmarks testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/structure.html#unique-page-screen-titles" class="link-ts"><span>Unique Titles</span></a> and <a href="../../guidelines/design/structure.html#headings" class="link-ts"><span>Headings</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#testing-unique-page-screen-titles-procedures" class="link-ts"><span>Unique page/screen titles testing</span></a></li>
+                  <li><a href="../../guidelines/design/structure.html#testing-headings-procedures" class="link-ts"><span>Headings testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/fundamentals/summary.html#links" class="link-ts"><span>Links</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/links.html#testing-descriptive-links-procedures" class="link-ts"><span>Descriptive links testing</span></a></li>
+                  <li><a href="../../guidelines/design/links.html#testing-links-to-alternative-formats-procedures" class="link-ts"><span>Links to alternative formats testing</span></a></li>
+                  <li><a href="../../guidelines/design/links.html#testing-combining-repeated-links-procedures" class="link-ts"><span>Combining repeated links testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Lists, Tables and Semantics</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/text-equivalents.html#testing-visual-formatting-procedures" class="link-ts"><span>Visual formatting testing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s"><a href="../../guidelines/design/images.html" class="link-ts"><span>Images</span></a> and <a href="../../guidelines/fundamentals/summary.html#text-equivalents" class="link-ts"><span>Text equivalents</span></a></h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/images.html#testing-images-of-text-procedures" class="link-ts"><span>Images of text testing</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#testing-alternatives-for-non-text-content-procedures" class="link-ts"><span>Alternatives for non-text content testing</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#testing-decorative-content-procedures" class="link-ts"><span>Decorative content testing</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#testing-visual-formatting-procedures" class="link-ts"><span>Visual formatting testing</span></a></li>
+                </ul>
+
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="composed-widgets" aria-labelledby="title-composed-widgets">
+      <div class="container">
+
+        <div class="gs-highway"></div>
+        <div class="badge badge-pill gs-number gs-finish"> </div>
+
+        <h2 class="full-cover-title gs-title" id="title-composed-widgets">
+          <span class="badge badge-pill bg-primary gs-number">3</span> Composed Widgets
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card gs-highway-content">
+              <div class="card-block">
+
+                <p class="lead"><strong>Composed widgets define how the outcomes from its atomic components are aggregated into a single outcome</strong></p>
+
+                <p>When multiple small components are responsible for a single user experience and function we should carefully test them in a linear and dynamic flow.</p>
+
+                <p>The grouping must be clear, the focus management must be logical and dynamic updates must communicated for everyone at all times. Never deviate from known patterns for personal gain or preferences. Don't be in the delusion you're able to adjust global conventions.</p>
+
+                <p>Examples for composed widgets are: Menu's, Sub-Menus, Modals, Carousels, Datepickers, Sliders, Collapsibles, Combo Boxes, Expanding Accordians, Error Messaging and more.</p>
+
+                <ul class="list-unstyled">
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Standards and Global conventions</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Make sure if there is a standard or specification to apply and test it accordingly, never try to make your own standard.</li>
+                        <li>If no standard is present is there a global convention to follow?</li>
+                        <li>When in doubt check the W3C, Apple, Microsoft or Google like companies and their apps as they will most likely be accessible.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Atomic rules</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>A step-by-step funtional check for each isolated component</li>
+                        <li>Atomic components test a specific, isolated type of solution.</li>
+                        <li>It contains a precise definition of what needs to be tested and when to fail.</li>
+                        <li>Meaning that atomic rules test a single "failure condition", and do so without using results from other (composed) rules.</li>
+                        <li>An example is a "next" button in a pagination which can be tested in isolation.</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="media mb-4" role="group">
+                    <span class="badge badge-pill bg-primary gs-highway-bullets mt-0"> </span>                    
+                    <div class="media-body">
+                      <h3 class="heading-s mt-0">Composed rules</h3>
+                      <ul class="list-icons list-checklist mb-0">
+                        <li>Every group of controls is labeled.</li>
+                        <li>A combined check for all options and information in a functional way.</li>
+                        <li>Composed rules test results from multiple atomic components working together</li>
+                        <li>They should be used to decide if an accessibility requirement was failed.</li>
+                        <li>When entering the composed widget, is it clear for everyone what it is?</li>
+                        <li>In a linear flow all options must be tested in a step-by-step approach.</li>
+                        <li>Focus on timing, values, boundaries and relationships.</li>
+                        <li>Current elements must be communicated as well as visual updates for ALL users</li>
+                        <li>Results must be clearly communicated, also for screen readers as well as when the task is finished</li>
+                        <li>When in error, is it logical to ALL users what the error is, where to find it and how to fix it?</li>
+                      </ul>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Process steps:</h3>
+                <ul class="list-unstyled">
+                  <li>3.1 Heuristic analysis</li>
+                  <li>3.2 Write down possible focus points</li>
+                  <li>3.3 Start inspection</li>
+                  <li>3.4 Annotate failures</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/principles.html#wcag" class="link-ts"><span>WCAG</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#wai-aria" class="link-ts"><span>WAI-ARIA</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#material-design" class="link-ts"><span>Material Design - Google</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#human-interface-guidelines" class="link-ts"><span>Human Interface Guidelines - Apple</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design-principles" class="link-ts"><span>Inclusive Design Principles - Microsoft</span></a></li>
+                  <li><a href="../../guidelines/fundamentals/principles.html#inclusive-design" class="link-ts"><span>Inclusive Design - IBM</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/wai-aria.html" class="link-ts"><span>ARIA Widgets</span></a></li>
+                  <li><a href="../../advanced/code/dynamic-updates.html" class="link-ts"><span>Dynamic Updates</span></a></li>
+                </ul>
+
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+  <script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

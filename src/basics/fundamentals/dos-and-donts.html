@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do's and Dont's - Fundamentals - Accessibility Portal</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body class="quiz" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html" aria-current="true"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../index.html" aria-current="true" id="main-menu">Fundamentals <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../index.html">Home</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/fundamentals/how-tos.html">How-To's</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/fundamentals/getting-started.html">Getting Started</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../basics/fundamentals/dos-and-donts.html" aria-current="page">Do's and Dont's <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/fundamentals/responsibilities.html">Responsibilities</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../basics/essentials/principles.html">Essentials</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../basics/videos/a11ycasts.html">Videos</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../basics/presentations/intro-to-a11y.html">Presentations</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-people"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Do's and Dont's</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+          <li><a href="#physical-or-motor" class="link-ts"><span>Physical or Motor</span></a></li>
+          <li><a href="#d-deaf-or-hard-of-hearing" class="link-ts"><span>D/deaf or hard of hearing</span></a></li>
+          <li><a href="#vision" class="link-ts"><span>Vision</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>A way of approaching accessibility from a design perspective</strong></p>
+                <p>The dos and don’ts of designing for accessibility are general guidelines, best design practices for making services accessible.</p>
+                <p>Currently, there are six different posters in the series that cater to users from these areas: low vision, D/deaf and hard of hearing, dyslexia, motor disabilities, users on the autistic spectrum and users of screen readers.</p>
+                <p>The dos, that run across various posters, include using things like good colour contrasts, legible font sizes and linear layouts. So, aren’t good design principles applicable to everyone and not just those with access needs?</p>
+                <p>While this is true, the aim of the posters is to raise awareness of various conditions through good design practice. We need to be mindful of not just designing or building for our own immediate needs.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/people-use-web/abilities-barriers/" class="link-ts"><span>Diverse Abilities and Barriers - W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.youtube.com/watch?v=hVFjS_BdZiI" class="link-ts"><span>The Dos and Don'ts of Disability - Video</span></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=Gv1aDEFlXq8" class="link-ts"><span>Disability Sensitivity Training Video - Video</span></a></li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="cognitive" aria-labelledby="title-cognitive">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-cognitive">Cognitive</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+                
+                <h3 class="card-title">Designing for users on the autistic spectrum</h3>
+                
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Use simple colours</li>
+                  <li><span class="sr-only">Pass.</span> Write in plain English</li>
+                  <li><span class="sr-only">Pass.</span> Use simple sentences and bullets</li>
+                  <li><span class="sr-only">Pass.</span> Make buttons descriptive - for example, Attach files</li>
+                  <li><span class="sr-only">Pass.</span> Build simple and consistent layouts</li>
+                </ul>
+                
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Use bright contrasting colours</li>
+                  <li><span class="sr-only">Fail.</span> Use figures of speech and idioms</li>
+                  <li><span class="sr-only">Fail.</span> Create a wall of text</li>
+                  <li><span class="sr-only">Fail.</span> Make buttons vague and unpredictable - for example: "Click here"</li>
+                  <li><span class="sr-only">Fail.</span> Build complex and cluttered layouts</li>
+                </ul>
+                
+                <h3 class="card-title">Designing for users with dyslexia</h3>
+                
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Use images and diagrams to support text</li>
+                  <li><span class="sr-only">Pass.</span> Align text to the left and keep a consistent layout</li>
+                  <li><span class="sr-only">Pass.</span> Consider producing materials in other formats (for example: audio and video)</li>
+                  <li><span class="sr-only">Pass.</span> Keep content short, clear and simple</li>
+                  <li><span class="sr-only">Pass.</span> Let users change the contrast between background and text</li>
+                </ul>
+                
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Use large blocks of heavy text</li>
+                  <li><span class="sr-only">Fail.</span> Underline words, use italics or write capitals</li>
+                  <li><span class="sr-only">Fail.</span> Force users to remember things from previous pages - give reminders and prompts</li>
+                  <li><span class="sr-only">Fail.</span> Rely on accurate spelling - use autocorrect or provide suggestions</li>
+                  <li><span class="sr-only">Fail.</span> Put too much information in one place</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/personas.html#aaldert-meinema-autism-dyslexia" class="link-ts"><span>Aaldert Meinema - Autism / Dyslexia</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#sabrina-ter-steege-cognitive-physical" class="link-ts"><span>Sabrina ter Steege - Cognitive / Physical</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#huub-schoolderma-parkinson" class="link-ts"><span>Huub Schoolderma - Parkinson</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/autism.png" alt="Part of poster with text: 'Autistic spectrum, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/autistic-spectrum.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>Autistic Spectrum poster</a>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/dyslexia.png" alt="Part of poster with text: 'Dyslexia, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/dyslexia.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>Dyslexia poster</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="physical-or-motor" aria-labelledby="title-physical-or-motor">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-physical-or-motor">Physical or Motor</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Designing for users with physical or motor disabilities</h3>
+
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Make large clickable actions</li>
+                  <li><span class="sr-only">Pass.</span> Give form fields space</li>
+                  <li><span class="sr-only">Pass.</span> Design for keyboard or speech only use</li>
+                  <li><span class="sr-only">Pass.</span> Design with mobile and touch screen in mind</li>
+                  <li><span class="sr-only">Pass.</span> Provide shortcuts</li>
+                </ul>
+
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Demand precision</li>
+                  <li><span class="sr-only">Fail.</span> Bunch interactions together</li>
+                  <li><span class="sr-only">Fail.</span> Make dynamic content that requires a lot of mouse movement</li>
+                  <li><span class="sr-only">Fail.</span> Have short time out windows</li>
+                  <li><span class="sr-only">Fail.</span> Tire users with lots of typing and scrolling</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/personas.html#sabrina-ter-steege-cognitive-physical" class="link-ts"><span>Sabrina ter Steege - Cognitive / Physical</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#huub-schoolderma-parkinson" class="link-ts"><span>Huub Schoolderma - Parkinson</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#motor" class="link-ts"><span>Motor</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/physical_motor_disabilities.png" alt="Part of poster with text: 'Physical or motor disabilities, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/mobility-issues.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>Physical or Motor Disabilities Poster</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="d-deaf-or-hard-of-hearing" aria-labelledby="title-d-deaf-or-hard-of-hearing">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-d-deaf-or-hard-of-hearing">D/deaf or hard of hearing</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Designing for users who are D/deaf or hard of hearing</h3>
+
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Write in plain English</li>
+                  <li><span class="sr-only">Pass.</span> Use subtitles or provide transcripts for video</li>
+                  <li><span class="sr-only">Pass.</span> Use a linear, logical layout</li>
+                  <li><span class="sr-only">Pass.</span> Break up content with sub-headings, images and videos</li>
+                  <li><span class="sr-only">Pass.</span> Let users ask for their preferred communication support&nbsp;when booking appointments</li>
+                </ul>
+
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Use complicated words or figures of speech</li>
+                  <li><span class="sr-only">Fail.</span> Put content in audio or video only</li>
+                  <li><span class="sr-only">Fail.</span> Make complex layouts and menus</li>
+                  <li><span class="sr-only">Fail.</span> Make users read long blocks of content</li>
+                  <li><span class="sr-only">Fail.</span> Don't make telephone the only means of contact for users</li>
+                </ul>
+
+                <h3 class="card-title">Designing for users of screen readers</h3>
+
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Describe images and provide transcripts for video</li>
+                  <li><span class="sr-only">Pass.</span> Follow a linear, logical layout</li>
+                  <li><span class="sr-only">Pass.</span> Structure content using <abbr title="hypertext markup language">HTML</abbr>5</li>
+                  <li><span class="sr-only">Pass.</span> Build for keyboard use only</li>
+                  <li><span class="sr-only">Pass.</span> Write descriptive links and heading - for example, Contact us</li>
+                </ul>
+
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Only show information in an image or video</li>
+                  <li><span class="sr-only">Fail.</span> Spread content all over a page</li>
+                  <li><span class="sr-only">Fail.</span> Rely on text size and placement for structure</li>
+                  <li><span class="sr-only">Fail.</span> Force mouse or screen use</li>
+                  <li><span class="sr-only">Fail.</span> Write uninformative links and heading - for example, Click here</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/personas.html#magreet-janssen-d-deaf" class="link-ts"><span>Magreet Janssen - D/deaf</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#maria-beuving-aging" class="link-ts"><span>Maria Beuving - Aging</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#deaf" class="link-ts"><span>Deaf</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/deaf_hard_of_hearing.png" alt="Part of poster with text: 'D/deaf of hard of hearing, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/deaf-and-hard-of-hearing.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>D/deaf or hard of hearing poster</a>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/screen_readers.png" alt="Part of poster with text: 'Screen readers, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/visually-impaired-screenreader.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>Screen Readers poster</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="vision" aria-labelledby="title-vision">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-vision">Vision</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Designing for users with low vision</h3>
+
+                <h4 class="heading-s">Do</h4>
+                <ul class="list-icons list-checklist">
+                  <li><span class="sr-only">Pass.</span> Use good contrasts and a readable font size</li>
+                  <li><span class="sr-only">Pass.</span> Publish all information on web pages (<abbr title="hypertext markup language">HTML</abbr>)</li>
+                  <li><span class="sr-only">Pass.</span> Use a combination of colour, shapes and text</li>
+                  <li><span class="sr-only">Pass.</span> Follow a linear, logical layout -and ensure text flows and is visible when text is magnified to 200%</li>
+                  <li><span class="sr-only">Pass.</span> Put buttons and notifications in context</li>
+                </ul>
+
+                <h4 class="heading-s">Don't</h4>
+                <ul class="list-icons list-crosslist">
+                  <li><span class="sr-only">Fail.</span> Use low colour contrasts and small font size</li>
+                  <li><span class="sr-only">Fail.</span> Bury information in downloads</li>
+                  <li><span class="sr-only">Fail.</span> Only use colour to convey meaning</li>
+                  <li><span class="sr-only">Fail.</span> Spread content all over a page -and force user to scroll horizontally when text is magnified to 200%</li>
+                  <li><span class="sr-only">Fail.</span> Separate actions from their context</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/personas.html#paul-holleman-blind" class="link-ts"><span>Paul Holleman - Blind</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#emre-yavuz-colour-blindness" class="link-ts"><span>Emre Yavuz - Colour Blindness</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#maria-beuving-aging" class="link-ts"><span>Maria Beuving - Aging</span></a></li>
+                  <li><a href="../../basics/essentials/personas.html#huub-schoolderma-parkinson" class="link-ts"><span>Huub Schoolderma - Parkinson</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../../images/low_vision.png" alt="Part of poster with text: 'Low vision, Designing for these users', and 'Do... and Don't...'">
+              <a href="https://accessibility.blog.gov.uk/wp-content/uploads/sites/52/2016/09/visually-impaired-low-vision.png" class="link-plug-on"><span class="icon icon-file icon-lg icon-orange mr-2" aria-hidden="true"></span>Low Vision poster</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

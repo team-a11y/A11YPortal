@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Labels, Instructions, and Validation - Design - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html" aria-current="true" id="main-menu">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/images-svg-and-canvas.html">Images</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/visual-design-and-colors.html">Visual Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/multimedia-animations-and-motion.html">Multimedia and Animations</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/design/form-labels-instructions-and-validation.html" aria-current="page">Forms <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Form Labels, Instructions, and Validation</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#inputs" class="link-ts"><span>Inputs</span></a></li>
+          <li><a href="#labels" class="link-ts"><span>Labels</span></a></li>
+          <li><a href="#group-labels" class="link-ts"><span>Group Labels</span></a></li>
+          <li><a href="#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+          <li><a href="#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+          <li><a href="#form-validation" class="link-ts"><span>Form Validation</span></a></li>
+          <li><a href="#using-forms-with-screen-readers" class="link-ts"><span>Using Forms with Screen Readers</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Why special attention to forms is important?</strong></p>
+                <p>In order for users to know how to fill out a form, the form has to be accessible. For the most part this is easy to do. Key concepts include:</p>
+                <ul>
+                  <li>Labels for form inputs</li>
+                  <li>Labels for groups of inputs</li>
+                  <li>Instructions and hints, where necessary</li>
+                  <li>Error prevention</li>
+                  <li>Form validation</li>
+                </ul>
+                <p>With all of these, information must be visible on the screen, accurate and meaningful, programmatically discernible, and programmatically associated with the appropriate form element or group.</p>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>The more interactive a form element or process is, the more attention needs to be given to accessibility with respect to:</p>
+                <ul>
+                  <li>Focus management</li>
+                  <li>Setting and updating ARIA names, roles, and values, where necessary</li>
+                  <li>ARIA live announcements, where necessary</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/forms2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=forms&amp;levels=aaa" class="link-ts"><span>Forms: WCAG Filters</span></a></li>
+                  <li><a href="http://w3c.github.io/html/sec-forms.html#sec-forms" class="link-ts"><span>Forms - HTML 5.2</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/forms/" class="link-ts"><span>Forms Tutorial - WAI W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form" class="link-ts"><span>How to structure an HTML form</span></a></li>
+                  <li><a href="https://tink.uk/understanding-screen-reader-interaction-modes/" class="link-ts"><span>Forms mode - Understanding screen reader interaction modes</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="inputs" aria-labelledby="title-inputs">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-inputs">Inputs</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Input - abstract role</h4>
+                <ul class="list-icons list-checklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#input">Input (abstract role) - ARIA</a></li>
+                </ul>
+
+                <h5 class="heading-xs">Subclass Roles:</h5>
+                <ul class="list-icons list-checklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#checkbox" class="link-ts"><span>Checkbox</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#option" class="link-ts"><span>Option</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#radio" class="link-ts"><span>Radio</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#slider" class="link-ts"><span>Slider</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#spinbutton" class="link-ts"><span>Spinbutton</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#textbox" class="link-ts"><span>Textbox</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Select - abstract role</h4>
+                <ul class="list-icons list-checklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#select" class="link-ts"><span>Select (abstract role) - ARIA</span></a></li>
+                </ul>
+
+                <h5 class="heading-xs">Subclass Roles:</h5>
+                <ul class="list-icons list-checklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#combobox" class="link-ts"><span>Combobox</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#listbox" class="link-ts"><span>Listbox</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#radiogroup" class="link-ts"><span>Radiogroup</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menu" class="link-ts"><span>(Menu)</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#tree" class="link-ts"><span>(Tree)</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Special Input Attributes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>HTML5 <code>required</code> attribute VS <code>aria-required</code></li>
+                  <li><code>disabled</code> attribute</li>
+                  <li><code>readonly</code> attribute</li>
+                  <li>HTML5 <code>placeholder</code> attribute</li>
+                  <li><code>aria-invalid</code> attribute</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/forms.html#form-inputs">Form inputs</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="labels" aria-labelledby="title-labels">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-labels">Labels</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Semantic Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Labels <span class="badge badge-success">MUST</span> be programmatically associated with their corresponding elements.</li>
+                  <li>Labels <span class="badge badge-success">MUST</span> be programmatically-discernible.</li>
+                </ul>
+
+                <h4 class="heading-s">Meaningful Label Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Labels <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Labels <span class="badge badge-danger">MUST NOT</span> rely solely on references to sensory characteristics.</li>
+                </ul>
+
+                <h4 class="heading-s">Icons as Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Icons <span class="badge badge-warning">MAY</span> be used as visual labels (without visual text) if the meaning of the icon is visually self-evident AND if there is a programmatically-associated semantic label available to assistive technologies.</li>
+                </ul>
+
+                <h4 class="heading-s">Placeholder Text as Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Placeholder text <span class="badge badge-danger">MUST NOT</span> be used as the only method of providing a label for a text input.</li>
+                </ul>
+
+                <h4 class="heading-s">Visibility of Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Labels <span class="badge badge-success">MUST</span> be visible.</li>
+                </ul>
+
+                <h4 class="heading-s">Proximity of Labels to Controls</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A label <span class="badge badge-info">SHOULD</span> be visually adjacent its corresponding element.</li>
+                  <li>A label <span class="badge badge-info">SHOULD</span> be adjacent in the DOM to its corresponding element.</li>
+                </ul>
+
+                <h4 class="heading-s">Multiple Labels for One Field</h4>
+                <ul class="list-icons list-checklist">
+                  <li>When multiple labels are used for one element, each label <span class="badge badge-success">MUST</span> be programmatically associated with the corresponding element.</li>
+                </ul>
+
+                <h4 class="heading-s">One Label for Multiple Fields</h4>
+                <ul class="list-icons list-checklist">
+                  <li>When one label is used for multiple elements, the label <span class="badge badge-success">MUST</span> be programmatically associated with each of the corresponding elements.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/labels/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Labels - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Simple Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Explicit Labels</li>
+                  <li>Make implicit <code>&lt;label&gt;</code> also explicit!</li>
+                  <li>Give Every Form Input a Label</li>
+                  <li>Labels for Radio Buttons and Checkboxes
+                    <ul>
+                      <li><code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+                      <li>Radiogroup - ARIA</li>
+                    </ul>
+                  </li>
+                  <li>Labels for Select Lists
+                    <ul>
+                      <li>Use subgroups / optgroup for long lists</li>
+                    </ul>
+                  </li>
+                  <li>Labels for Buttons
+                    <ul>
+                      <li>Always try to use self-labeling via child text node</li>
+                      <li>Informative icons needs text alternative</li>
+                      <li>Use <code>aria-label=""</code> or <code>aria-labelledby=""</code> if the default doesn't provide a proper accessible name</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">Complex Form Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li><code>aria-label=""</code> VS <code>aria-labelledby=""</code></li>
+                  <li>Don't use <code>&lt;placeholder&gt;</code> Text for a Label</li>
+                  <li>Use a <code>&lt;legend&gt;</code> for Multiple Fields with Only One Visible <code>&lt;label&gt;</code></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/editorial.html#consistent-labelling" class="link-ts"><span>Consistent labelling</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content" class="link-ts"><span>Alternatives for non-text content</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#labelling-form-controls" class="link-ts"><span>Labelling form controls</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#form-layout" class="link-ts"><span>Form layout</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.filamentgroup.com/lab/a11y-form-labels.html" class="link-ts"><span>Labels Required - Filament Group</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="group-labels" aria-labelledby="title-group-labels">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-group-labels">Group Labels</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Semantic Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Group labels <span class="badge badge-success">MUST</span> be programmatically-associated with the group if the individual labels for each element in the group are insufficient on their own.</li>
+                  <li>Group labels <span class="badge badge-success">MUST</span> be programmatically-discernible.</li>
+                </ul>
+
+                <h4 class="heading-s">Meaningful Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Group labels <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Group labels <span class="badge badge-danger">MUST NOT</span> rely solely on references to sensory characteristics.</li>
+                </ul>
+
+                <h4 class="heading-s">Proximity of Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Group labels <span class="badge badge-info">SHOULD</span> be visually adjacent to the grouped elements.</li>
+                  <li>Group labels <span class="badge badge-info">SHOULD</span> be adjacent in the DOM to the grouped elements.</li>
+                </ul>
+
+                <h4 class="heading-s">Visibility of Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Group labels <span class="badge badge-success">MUST</span> be visible.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/group-labels/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Group Labels - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Groups of Form Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Group Related Form Elements</li>
+                  <li><code>&lt;legend&gt;</code> need to be the first child element of the <code>&lt;fieldset&gt;</code></li>
+                  <li>Nested <code>&lt;fieldset&gt;</code> / <code>&lt;legend&gt;</code> will not work well on all screen readers</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/editorial.html#consistent-labelling" class="link-ts"><span>Consistent labelling</span></a></li>
+                  <li><a href="../../guidelines/design/structure.html#grouped-elements" class="link-ts"><span>Grouped elements</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#labelling-form-controls" class="link-ts"><span>Labelling form controls</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#grouping-form-elements" class="link-ts"><span>Grouping form elements</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="instructions-and-other-helpful-info" aria-labelledby="title-instructions-and-other-helpful-info">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-instructions-and-other-helpful-info">Instructions & Other Helpful Info</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Instructions for Forms, Groups, and Sections</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Instructions for groups or sections <span class="badge badge-info">SHOULD</span> be programmatically-associated with the group.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-success">MUST</span> be programmatically-discernible.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-success">MUST</span> be visible.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-info">SHOULD</span> be visually adjacent to the grouped elements.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-info">SHOULD</span> be adjacent in the DOM to the grouped elements.</li>
+                  <li>If the instructions for groups or sections are not critical, the instructions <span class="badge badge-warning">MAY</span> be hidden until the user requests them.</li>
+                  <li>Instructions for groups or sections <span class="badge badge-danger">MUST NOT</span> rely solely on references to sensory characteristics.</li>
+                </ul>
+
+                <h4 class="heading-s">Instructions for Inputs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Instructions for an element <span class="badge badge-success">MUST</span> be programmatically-associated with the element.</li>
+                  <li>Instructions for an element <span class="badge badge-success">MUST</span> be available as programmatically-discernible text.</li>
+                  <li>Instructions for an element <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Instructions for an element <span class="badge badge-success">MUST</span> be visible.</li>
+                  <li>Instructions for an element <span class="badge badge-info">SHOULD</span> be visually adjacent to the element.</li>
+                  <li>Instructions for an element <span class="badge badge-info">SHOULD</span> be adjacent in the DOM to the element.</li>
+                  <li>If the instructions for an element are not critical, the instructions <span class="badge badge-warning">MAY</span> be hidden until the user requests them.</li>
+                  <li>Instructions for an element <span class="badge badge-danger">MUST NOT</span> rely solely on references to sensory characteristics.</li>
+                </ul>
+
+                <h4 class="heading-s">Required Fields</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Required fields <span class="badge badge-info">SHOULD</span> be programmatically designated as such.</li>
+                  <li>Required fields <span class="badge badge-info">SHOULD</span> have a visual indicator that the field is required.</li>
+                  <li>The form validation process <span class="badge badge-success">MUST</span> include an error message explaining that a field is required if the field isn't identified as required both visually and programmatically in the form's initial state.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/instructions/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Instructions & Other Helpful Info - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Ensure Labels and Instructions Are Clear and Informative</li> 
+                  <li>Ensure Labels, Instructions, and Advisory Information Can Be Seen with Screen Magnification Turned On</li>
+                  <li>Make Instructions and Advisory Information Available to Screen Readers</li>
+                  <li>Clearly Disclose Constraints for Form Fields</li>
+                  <li>Clearly Identify Required Fields</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/editorial.html#instructions" class="link-ts"><span>Instructions</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#inclusive-notifications" class="link-ts"><span>Inclusive Notifications</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#standard-os-notifications" class="link-ts"><span>Standard Operating System Notifications</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#error-messages-and-correction" class="link-ts"><span>Error messages and correction</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#feedback-and-assistance" class="link-ts"><span>Feedback and assistance</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#form-inputs" class="link-ts"><span>Form inputs</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="dynamic-forms-and-custom-widgets" aria-labelledby="title-dynamic-forms-and-custom-widgets">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-dynamic-forms-and-custom-widgets">Dynamic Forms & Custom Widgets</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Changes in Context</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Focusing on an element <span class="badge badge-danger">MUST NOT</span> automatically trigger a change of context, unless the user has been adequately advised ahead of time.</li>
+                  <li>Changing an element's value <span class="badge badge-danger">MUST NOT</span> automatically trigger a change of context, unless the user is adequately advised ahead of time.</li>
+                  <li>Hovering over an element with the mouse <span class="badge badge-danger">MUST NOT</span> automatically trigger a change of context, unless the user has been adequately advised ahead of time.</li>
+                </ul>
+
+                <h4 class="heading-s">Custom Form Inputs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Native HTML form elements <span class="badge badge-info">SHOULD</span> be used whenever possible.</li>
+                  <li>Custom form elements <span class="badge badge-info">SHOULD</span> act like native HTML form elements, to the extent possible.</li>
+                  <li>Custom form elements <span class="badge badge-info">SHOULD</span> have appropriate names, roles, and values.</li>
+                  <li>Updates and state changes that cannot be communicated through HTML or ARIA methods <span class="badge badge-info">SHOULD</span> be communicated via ARIA live messages.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/dynamic-custom/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Dynamic Forms & Custom Widgets - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3> 
+                <ul class="list-icons list-checklist">
+                  <li>Avoid Shifting Focus Automatically without User Input</li> 
+                  <li>Avoid the Automatic Submission of Forms</li>
+                  <li>Utilize Standard Controls for Forms, and Use Them in the Standard Way</li>
+                  <li>Provide User Enough Time to Complete Tasks or Forms</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#actionable-elements" class="link-ts"><span>Actionable elements</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#standard-os-notifications" class="link-ts"><span>Standard Operating System Notifications</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#error-messages-and-correction" class="link-ts"><span>Error messages and correction</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#feedback-and-assistance" class="link-ts"><span>Feedback and assistance</span></a></li>
+                  <li><a href="../../guidelines/code/forms.html#form-inputs" class="link-ts"><span>Form inputs</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="form-validation" aria-labelledby="title-form-validation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-form-validation">Form Validation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Error Identification Considerations</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Error feedback <span class="badge badge-info">SHOULD</span> be made available immediately after form submission (or after an equivalent event if there is no form submission event).</li>
+                  <li>Error feedback <span class="badge badge-success">MUST</span> be programmatically-associated with the appropriate element.</li>
+                  <li>Error feedback <span class="badge badge-success">MUST</span> be programmatically-discernible.</li>
+                  <li>Error feedback <span class="badge badge-success">MUST</span> be meaningful.</li>
+                  <li>Error feedback <span class="badge badge-success">MUST</span> be visible.</li>
+
+                </ul>
+
+                <h4 class="heading-s">Success Confirmation Considerations</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Success confirmation feedback <span class="badge badge-info">SHOULD</span> be programmatically-discernible.</li>
+                  <li>Success confirmation feedback <span class="badge badge-info">SHOULD</span> be meaningful.</li>
+                  <li>Success confirmation feedback <span class="badge badge-success">MUST</span> be visible.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/form-validation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Form Validation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Help Prevent User Errors</li> 
+                  <li>General Approach to Error Handling</li>
+                  <li>Provide Clear and Actionable Information Regarding Detected Errors</li>
+                  <li>Shift Focus to Error Messages</li>
+                  <li>Ensure Errors and Alerts are Indicated the Same Way Site-wide</li>
+                  <li>Facilitate Error Repair and Resubmission</li>
+                  <li>Provide the Ability to Prevent and Correct Errors on Forms (Legal and Financial Transactions)</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/notifications.html#inclusive-notifications" class="link-ts"><span>Inclusive Notifications</span></a></li>
+                  <li><a href="../../guidelines/content/notifications.html#error-messages-and-correction" class="link-ts"><span>Error messages and correction</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="using-forms-with-screen-readers" aria-labelledby="title-using-forms-with-screen-readers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-using-forms-with-screen-readers">Using Forms with Screen Readers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Form%20Labels%2C%20Instructions%2C%20and%20Validation%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Form Labels, Instructions, and Validation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/forms2/screen-readers/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Using Forms with Screen Readers - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/forms.html#form-inputs" class="link-ts"><span>Form inputs</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

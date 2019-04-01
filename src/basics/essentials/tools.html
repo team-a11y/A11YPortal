@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools - Essentials - Accessibility Portal</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body class="quiz" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html" aria-current="true"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../basics/essentials/principles.html" aria-current="true" id="main-menu">Essentials <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/principles.html">Principles</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/personas.html">Personas</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../basics/essentials/tools.html" aria-current="page">Tools<span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/design-annotations.html">Design Annotations</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/glossary.html">Glossary</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/videos/a11ycasts.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/presentations/intro-to-a11y.html">Presentations</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-people"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Tools</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#visual-helpers" class="link-ts"><span>Visual Helpers</span></a></li>
+          <li><a href="#code-helpers" class="link-ts"><span>Code Helpers</span></a></li>
+          <li><a href="#screen-readers" class="link-ts"><span>Screen Readers</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>An accurate selection of quality tools can help you find a wide range of accessibility issues.</strong></p>
+                <p>Web accessibility evaluation tools are software programs or online services that help you determine if web content meets accessibility guidelines. This page provides a list of evaluation tools that matches your particular needs.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/ER/tools/" class="link-ts"><span>Web Accessibility Evaluation Tools List - W3C</span></a></li>
+                  <li><a href="https://www.24a11y.com/2017/accessibility-testing-tools-desktop-mobile-websites/" class="link-ts"><span>Accessibility Testing Tools for Desktop and Mobile Websites</span></a></li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="visual-helpers" aria-labelledby="title-visual-helpers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-visual-helpers">Visual Helpers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Easy to use and pratical for <span class="badge bg-fuchsia">UX</span> <span class="badge bg-lime text-default">Editor</span> <span class="badge bg-black54">CJE</span></strong></p>
+
+                <h3 class="heading-s">Browser plugins</h3>
+
+                <h4 class="heading-xs">Funkify</h4>
+                <p>Funkify is a extension for Chrome that helps you experience the web and interfaces through the eyes of extreme users with different abilities and disabilities.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.funkify.org/" class="link-ts"><span>Hello world – welcome to Funkify!</span></a></li>
+                  <li><a href="https://chrome.google.com/webstore/detail/funkify-disability-simula/ojcijjdchelkddboickefhnbdpeajdjg" class="link-ts"><span>Funkify - disability simulator extension</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">NoCoffee</h4>
+                <p>NoCoffee is a free extension which can be helpful for understanding the problems faced by people with slight to extreme vision problems</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://accessgarage.wordpress.com/2013/02/09/458/" class="link-ts"><span>NoCoffee – Vision Simulator for Chrome</span></a></li>
+                  <li><a href="https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl" class="link-ts"><span>NoCoffee - Chrome extension</span></a></li>
+                  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/nocoffee/" class="link-ts"><span>NoCoffee - Firefox extension</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs" id="wave">Wave</h4>
+                <p>WAVE is tool to help make web content more accessible. WAVE cannot tell you if your web content is accessible. Only a human can determine true accessibility. But, WAVE can help you evaluate the accessibility of your web content.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://wave.webaim.org/help">WAVE Browser Extensions</a></li>
+                  <li><a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" class="link-ts"><span>WAVE Evaluation Tool - Chrome extension</span></a></li>
+                  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/wave-accessibility-tool/" class="link-ts"><span>WAVE Accessibility Extension - Firefox extension</span></a></li>
+                </ul>
+
+                <h3 class="heading-s">Desktop applications</h3>
+
+                <h4 class="heading-xs" id="cca">Color Contrast Analyser</h4>
+                <p>The Colour Contrast Analyser (CCA) helps you determine the legibility of text and the contrast of visual elements, such as graphical controls and visual indicators.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/" class="link-ts"><span>Colour Contrast Analyser</span></a></li>
+                  <li><a href="https://github.com/ThePacielloGroup/CCA-Win/releases/" class="link-ts"><span>Colour Contrast Analyser - Windows application</span></a></li>
+                  <li><a href="https://github.com/ThePacielloGroup/CCA-OSX/releases/" class="link-ts"><span>Colour Contrast Analyser - MacOS / OS X application</span></a></li>
+                </ul>
+
+                <h3 class="heading-s">Mobile applications</h3>
+
+                <h4 class="heading-xs">Accessibility Scanner - Android</h4>
+                <p>When you design and develop an Android app, Accessibility Scanner can help you identify opportunities to improve your app for users.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://support.google.com/accessibility/android/answer/6376570" class="link-ts"><span>Get started with Accessibility Scanner</span></a></li>
+                  <li><a href="https://support.google.com/accessibility/android/answer/6376559" class="link-ts"><span>How to read Accessibility Scanner results</span></a></li>
+                  <li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en-gb" class="link-ts"><span>Accessibility Scanner - Android Application</span></a></li>
+                </ul>
+
+                <h3 class="heading-s">Online Tools</h3>
+
+                <h4 class="heading-xs">Webaim contrast checker</h4>
+                <p>Enter a foreground and background color in RGB hexadecimal format (e.g., <code>#FD3</code> or <code>#F7DA39</code>) or choose a color using the color picker. The Lightness slider can be used to adjust the selected color.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://webaim.org/resources/contrastchecker/" class="link-ts"><span>Color Contrast Checker - WebAIM</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="code-helpers" aria-labelledby="title-code-helpers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-code-helpers">Code Helpers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>A more technical approach for <span class="badge bg-indigo">Dev</span></strong></p>
+
+                <h3 class="heading-s">Inspectors</h3>
+
+                <h4 class="heading-xs">Accessibility pane - Chrome</h4>
+                <p>Use the new Accessibility pane to inspect the accessibility properties of an element, and inspect the contrast ratio of text elements in the Color Picker to ensure that they're accessible to users with low-vision impairments or color-vision deficiencies.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developers.google.com/web/updates/2018/01/devtools#a11y" class="link-ts"><span>New accessibility tools in DevTools</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Lighthouse - Chrome</h4>
+                <p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, and more. Accessibility Developer Tools from Google is replaced by the aXe Engine.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developers.google.com/web/tools/lighthouse/#devtools" class="link-ts"><span>Lighthouse</span></a></li>
+                  <li><a href="https://developers.google.com/web/tools/lighthouse/#devtools" class="link-ts"><span>Run Lighthouse in Chrome DevTools</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Accessibility Inspector - Firefox</h4>
+                <p>The Accessibility Inspector allows you to inspect your website’s exposure to assistive technologies.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/" class="link-ts"><span>Introducing the Accessibility Inspector in the Firefox Developer Tools</span></a></li>
+                  <li><a href="https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly" class="link-ts"><span>Nightly Firefox</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Accessibility - Edge</h4>
+                <p>View the accessible properties assigned to the selected element. Hover over any of the property names for a description of how it's used by assistive technologies. You can also right-click any property to copy its value to the clipboard.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://docs.microsoft.com/en-us/microsoft-edge/accessibility" class="link-ts"><span>Accessibility in Microsoft Edge</span></a></li>
+                  <li><a href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/elements/accessibility" class="link-ts"><span>Accessible properties in Edge DevTools</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Accessibility Inspector Mac</h4>
+                <p>Whether you’re designing a new app or access-enabling an existing one, you should plan to test the accessibility of your product. Testing for accessibility is a bit different than standard user interface testing, and Apple provides a couple of tools that make the process easier.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html" class="link-ts"><span>Testing for Accessibility on OS X</span></a></li>
+                </ul>
+
+                <h3 class="heading-s">Browser plugins</h3>
+
+                <h4 class="heading-xs" id="axe">aXe: the Accessibility Engine</h4>
+                <p>aXe is an open source rules library for accessibility testing. It was developed to empower developers to take automated accessibility testing into their own hands and to avoid common pitfalls of other automated accessibility tools.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.deque.com/axe/" class="link-ts"><span>aXe: the Accessibility Engine</span></a></li>
+                  <li><a href="https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd" class="link-ts"><span>aXe for Chrome</span></a></li>
+                  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/" class="link-ts"><span>aXe for Firefox</span></a></li>
+                  <li><a href="https://github.com/dequelabs/axe-core" class="link-ts"><span>aXe-core on GitHub</span></a></li>
+                  <li><a href="https://www.npmjs.com/package/axe-core" class="link-ts"><span>aXe-core on npm</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">JavaScript Accessibility Bookmarklets</h4>
+                <p>Bookmarklets for Accessibility Testing use JavaScript to highlight roles, states, and properties of accessibility elements on the page. They are accessible to screen reader users and work on any browser including mobile phones.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://pauljadam.com/bookmarklets/index.html" class="link-ts"><span>JavaScript Bookmarklets for Accessibility Testing</span></a></li>
+                  <li><a href="http://pauljadam.com/bookmarklets/aria.html" class="link-ts"><span>ARIA Bookmarklet</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="screen-readers" aria-labelledby="title-screen-readers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-screen-readers">Screen Readers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Basic functional test for <span class="badge bg-indigo">Dev</span> <span class="badge bg-fuchsia">UX</span> <span class="badge bg-lime text-default">Editor</span> <span class="badge bg-black54">CJE</span></strong></p>
+
+                <h3 class="heading-s">Desktop</h3>
+
+                <h4 class="heading-xs">VoiceOver - MacOS</h4>
+                <p>VoiceOver is a full-featured screen reader built into macOS that speaks the text in documents and windows, and describes aloud what appears on your screen. To turn on VoiceOver, press Command-F5; to turn it off, press the keys again.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://help.apple.com/voiceover/info/guide/10.13/" class="link-ts"><span>Apple Accessibility: VoiceOver Getting Started Guide</span></a></li>
+                  <li><a href="https://support.apple.com/en-us/HT206175" class="link-ts"><span>Languages supported by VoiceOve</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Narrator - Windows</h4>
+                <p>Narrator is a screen-reading app built into Windows 10. This guide describes how to use Narrator with the Windows 10 April 2018 Update on desktop PCs, providing you with enough info to start exploring Windows, using apps, and browsing the web. It’s written for those who use a screen reader regularly.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started" class="link-ts"><span>Get started with Narrator</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">NVDA - NonVisual Desktop Access</h4>
+                <p>NVDA is a free “screen reader” which enables blind and vision impaired people to use computers. It reads the text on the screen in a computerised voice. You can control what is read to you by moving the cursor to the relevant area of text with a mouse or the arrows on your keyboard.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.nvaccess.org/" class="link-ts"><span>What is NVDA?</span></a></li>
+                  <li><a href="https://www.nvaccess.org/download/" class="link-ts"><span>Download NVDA</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">Blindness Solutions: JAWS®</h4>
+                <p>JAWS, Job Access With Speech, is the world's most popular screen reader, developed for computer users whose vision loss prevents them from seeing screen content or navigating with a mouse.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.freedomscientific.com/Products/Blindness/JAWS" class="link-ts"><span>Jaws</span></a></li>
+                  <li><a href="https://www.freedomscientific.com/Downloads/JAWS" class="link-ts"><span>JAWS Free Trial</span></a></li>
+                </ul>
+
+                <h3 class="heading-s">Mobile</h3>
+
+                <h4 class="heading-xs">VoiceOver - iOS</h4>
+                <p>Because VoiceOver is integrated in iOS, it works with all the built-in iPhone apps. You can create custom labels for buttons in any app — including third-party apps.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.apple.com/accessibility/iphone/vision/" class="link-ts"><span>As accessible as it is personal.</span></a></li>
+                  <li><a href="https://help.apple.com/iphone/10/#/iph3e2e415f" class="link-ts"><span>VoiceOver - iPhone User Guide</span></a></li>
+                </ul>
+
+                <h4 class="heading-xs">TalkBack</h4>
+                <p>TalkBack is Android's built-in screen reader. When TalkBack is on, users can interact with their Android device without seeing the screen. Users with visual impairments may rely on TalkBack to use your app.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.android.com/advanced/accessibility/testing" class="link-ts"><span>Test your app's accessibility</span></a></li>
+                  <li><a href="https://support.google.com/accessibility/android/?hl=en#topic=3529932" class="link-ts"><span>Welcome to the Android Accessibility Help Center</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

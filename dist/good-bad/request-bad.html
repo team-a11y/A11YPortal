@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  
+  <title>Bad Request</title>
+
+  <link rel="stylesheet" href="../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styles-responsive.css">
+  <link rel="stylesheet" href="../styles/prism.css">
+</head>
+
+<body class="body bad" id="totop">
+
+  <div class="site-header">
+
+    <div class="site-nav bg-grey">
+      <nav class="container" role="navigation" aria-labelledby="title-site-nav">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../good-bad/home.html" aria-current="true"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="wcag-annotations" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <button class="btn btn-secondary btn-sm" id="annotations01">WCAG Annotations</button>
+
+        <div class="table-of-contents">
+
+          <h2 class="m-0" id="title-toc">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#table-of-contents" aria-expanded="false" aria-controls="table-of-contents">
+              Table of Contents
+            </button>
+          </h2>
+
+          <div class="collapse" id="table-of-contents">
+            <ul class="list-icons list-linklist toc-columns mx-2 pt-4" role="directory">
+              <li><a href="#annotModal01" class="link-ts"><span>01. Content does not provides a logical and hierarchical heading structure</span></a></li>
+              <li><a href="#annotModal02" class="link-ts"><span>02. Incorrect use of a lead heading</span></a></li>
+              <li><a href="#annotModal03" class="link-ts"><span>03. Links and Buttons are wrongly mixed for interactivity</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <div class="container">
+        
+        <a href="../" class="navbar-brand">
+          <img class="avatar-img" src="../images/a11y-logo-2.png" alt="Logo Accessibility">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <div class="navbar-nav">
+              <div class="nav-item">
+                <a class="nav-link" href="../good-bad/home.html" id="main-menu">Home</a>              
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="../good-bad/article.html">Article</a>
+              </div>
+              <div class="nav-item active">
+                <a class="nav-link" href="../good-bad/request.html">Request</a>
+                <div class="pagination pagination-navbar">
+                  <div class="page-item"><a class="page-link" href="../good-bad/request.html">Good</a></div>
+                  <div class="page-item"><a class="page-link active" href="../good-bad/request-bad.html">Bad</a></div>
+                </div>  
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-form form-inline my-2 my-lg-0">
+
+            <div class="m-0 mr-4">
+              <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal04">04</button>
+              <input class="form-control form-control-search mr-2 btn-annot-outline" type="text" placeholder="Type term...">
+              <button type="button" class="btn btn-annot btn-annot-search" data-toggle="modal" data-target="#annotModal07">07</button>
+              <button class="btn btn-tertiary search-button my-sm-0 ml-0 p-1" type="submit">
+                <img src="../images/icon-search.png">
+              </button>
+            </div>
+
+            <div class="font-reset">
+              <div class="d-inline-block p-relative">
+                <select class="form-control btn-annot-outline" name="language" id="language">
+                  <option value="english" selected>English</option>
+                  <option value="nederlands">Netherlands</option>
+                </select>
+                <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal05">05</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="main-content">
+
+    <div class="brandbar brandbar-b">
+      <div class="brandbar-image brandbar-image-request"></div>
+      <div class="container">
+        <header class="brandbar-header">          
+          <div class="brandbar-heading">
+            <span class="brandbar-title btn-annot-outline">Draft: Inaccessible Request Page</span>
+            <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal01">01</button>
+            <p class="brandbar-lead">Good and Bad Demonstration</p>
+            <span class="d-block mt-2 annot-relative">
+              <a href="https://dequeuniversity.com/class/html-css1/forms/" class="btn btn-primary">
+                Forms at Deque University
+              </a>
+            </span>
+          </div>        
+        </header>
+      </div>
+    </div>
+
+    <article class="full-cover article-main" aria-labelledby="article-main">
+      <div class="container">
+
+        <h2 id="article-main" class="sr-only">Selected for you</h2>
+
+        <div class="row">
+
+          <div class="col-md-7 col-lg-8 pr-5">
+            
+            text
+            
+          </div>
+          
+          <div class="col-md-5 col-lg-4">
+            
+            text
+
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+    
+  </div>
+  
+  <footer class="full-cover site-footer" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="pipe-links list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <span id="placeholderurl">Company link</span>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal">Github</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/">Deque University</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../about/fundamentals/contact.html">Contact</a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal fade" id="a11ycasts" tabindex="-1" role="dialog" aria-labelledby="a11ycastsHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="a11ycastsHeading">Introducing A11ycasts! -- A11ycasts #01</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" class="modal-youtube" src="https://www.youtube.com/embed/HtTyRajRuyY?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="full-cover bg-faded annotations" role="region" aria-labelledby="annotationsSection">
+    <div class="container">
+
+      <h2 class="full-cover-title" id="annotationsSection">Annotations</h2>
+
+      <div class="modal fade modal-annot" id="annotModal01" tabindex="-1" role="dialog" aria-labelledby="annotModal01Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal01Heading">01. Content does not provides a logical and hierarchical heading structure</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The page suggests styling for headings without use of the corresponding markup within the HTML code. The order and nesting of the headings used is not correct and may confuse people.</p>
+              
+              <p>Other things to consider, in order to make headings more usable for screen reader users:</p>
+              
+              <ul>
+                <li>All pages should start by using an <code>&lt;h1&gt;</code> element.</li>
+                <li>Lists and headings used together to mark up content should be avoided</li>
+                <li>Be consistent in the use of headings</li>
+              </ul>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Failure</h4>
+
+              <pre><code class="language-markup"><!-- 
+
+// Starting with a H2 element instead of a H1
+<h2 class="heading-xl">Inaccessible Article Page</h2>
+
+  // Not using H elements for headings
+  <div class="heading-m">The Baseline</div>
+  <div class="heading-m">Accessibility Champions</div>
+  <div class="heading-m">Expert section</div>
+
+  // Only using one or wrong kind of H element for styling purposes
+  <h2 class="heading-xl">...</h2>
+    <div class="heading-m">...</div>
+    ...
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/F2">F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-headings">2.4.10 Section Headings Level AAA</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G141">G141: Organizing a page using headings</a></li>
+                      <li><a href="http://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H69">H69: Providing heading elements at the beginning of each section of content</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../scripts/libs/tether/tether.min.js"></script>
+  <script src="../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../scripts/script.js"></script>
+	<script src="../scripts/prism.js"></script>
+
+</body>
+
+</html>

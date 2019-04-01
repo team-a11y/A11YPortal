@@ -1,0 +1,129 @@
+version: 2
+
+references:
+  container_config: &container_config
+    docker:
+      - image:
+          circleci/node:10
+    working_directory: ~/working_directory
+
+  workspace_root: &workspace_root /tmp/workspace
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
+  restore_repo: &restore_repo
+    restore_cache:
+      keys:
+        - v1-repo-{{ .Branch }}-{{ .Revision }}
+        - v1-repo-{{ .Branch }}
+        - v1-repo
+
+  node_modules_cache_key:
+    &node_modules_cache_key v1-node_modules-{{ checksum "package-lock.json" }}
+  node_modules_backup_cache_key: &node_modules_backup_cache_key v1-node_modules
+
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - *node_modules_cache_key
+        - *node_modules_backup_cache_key
+
+  npm_cache_key: &npm_cache_key v2-npm-{{ checksum "package-lock.json" }}
+  npm_backup_cache_key: &npm_backup_cache_key v2-npm
+
+  restore_npm_cache: &restore_npm_cache
+    restore_cache:
+      keys:
+        - *npm_cache_key
+        - *npm_backup_cache_key
+
+jobs:
+  checkout:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - checkout
+      - save_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - .
+
+  dependencies:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_npm_cache
+      - run:
+          name: install node modules
+          command: npm ci
+      - save_cache:
+          key: *npm_cache_key
+          paths:
+            - ~/.npm
+      - save_cache:
+          key: *node_modules_cache_key
+          paths:
+            - node_modules
+
+  build:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - *restore_repo
+      - *restore_node_modules
+      - run: npm run build
+      - run:
+          name: Move dist to workspace
+          command: mv dist /tmp/workspace/dist
+      - persist_to_workspace:
+          root: *workspace_root
+          paths:
+            - dist
+
+  deploy-staging:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - *restore_repo
+      - *restore_node_modules
+      - run:
+          name: Restore dist from workspace
+          command: mv /tmp/workspace/dist dist
+      - run: npm run deploy:staging --silent -- --token=${FIREBASE_TOKEN}
+
+  deploy-production:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - *restore_repo
+      - *restore_node_modules
+      - run:
+          name: Restore dist from workspace
+          command: mv /tmp/workspace/dist dist
+      - run: npm run deploy:production --silent -- --token=${FIREBASE_TOKEN}
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - checkout
+      - dependencies:
+          requires:
+            - checkout
+      - build:
+          requires:
+            - dependencies
+      - deploy-staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: develop
+      - deploy-production:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

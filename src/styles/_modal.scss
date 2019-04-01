@@ -1,0 +1,26 @@
+//----------
+// Modal-title
+//----------
+
+// Modal-title
+
+.modal-title {
+  color: #ff6200;
+}
+
+.modal-youtube {
+  height: 280px;
+  
+  @media (min-width: 576px) {
+    height: 360px;
+  }
+  
+  @media (min-width: 992px) {
+    height: 520px;
+  }
+  
+}
+
+.modal-phoebe {
+  max-width: 100%;
+}

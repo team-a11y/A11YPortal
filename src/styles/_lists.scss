@@ -1,0 +1,292 @@
+//----------
+// List-group
+// List-icons
+// List-linklist
+//----------
+
+
+ul:not([class]),
+.list-unstyled {
+
+  li {
+    padding: 8px 0;
+  }
+
+}
+
+// List-group
+
+.list-group {
+  max-width: 100%;
+}
+
+.list-group-lessons {
+  margin-bottom: 2rem;
+  color: #333333;
+  
+  a:focus,
+  a:active {
+    // border-bottom-color: transparent;
+    text-decoration: none;
+    color: #007394;
+    font-weight: bold;
+  }
+
+  ul, ol {
+    margin-top: 1em;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  p, h5, h6 {
+    margin-top: 1em;
+    margin-bottom: .5rem;
+  }
+  
+  strong {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  
+}
+
+// List-icons
+
+.list-icons {
+  list-style: none;
+  padding-left: 0;
+  
+  li:before,
+  li > .stacked-icon,
+  li > .icon {
+    position: absolute;
+    top: 14px;
+    left: 5px;
+  }
+  
+}
+
+// List-checklist
+
+.list-checklist {
+  
+  > li {
+    position: relative;
+    padding: 8px 0 8px 20px;
+    
+    &:before {
+      font-family: company-name-icons;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e92d";
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      font-size: .875rem;
+      left: 0;
+      top: 12px;
+      color: #349651;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      }
+  
+  }
+
+}
+
+// List-crosslist
+
+.list-crosslist {
+  
+  > li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: .5rem;
+    
+    &:before {
+      font-family: company-name-icons;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e965";
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      font-size: .875rem;
+      left: 0;
+      top: 5px;
+      color: #ff0000;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      }
+  
+  }
+
+}
+
+// List-linklist
+
+.list-linklist {
+  
+  > li {
+    position: relative;
+    padding-left: 20px;
+    
+    &:before {
+      font-family: company-name-icons;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e952";
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      font-size: .875rem;
+      left: 0;
+      top: 14px;
+      color: #993300;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      }
+  
+  }
+
+}
+
+.list-icons {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-icons li > a {
+  color: #0f4e73;
+  text-decoration: none;
+}
+.list-icons li > a:hover,
+.list-icons li > a:focus {
+  // text-decoration: underline;
+}
+.list-icons li li {
+  padding: 0;
+}
+.list-icons-inverse li {
+  color: #ffffff;
+}
+.list-icons-inverse li:before {
+  color: inherit !important;
+}
+.list-icons-inverse li > a {
+  color: inherit;
+}
+.list-icons .active {
+  background-color: #d5d5d5;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.list-icons.list-horizontal > li {
+  margin-top: 0;
+  margin-left: 10px;
+}
+.list-icons.list-horizontal > li:first-child {
+  margin-left: 0;
+}
+.list-icons-sm > li {
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding-left: 24px;
+}
+.list-icons-sm > li:before,
+.list-icons-sm > li .stacked-icon,
+.list-icons-sm > li .icon {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  top: 4px;
+  left: 3px;
+}
+.list-icons-sm > li.active {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.table .list-icons-sm > li {
+  font-size: inherit;
+}
+.table .list-icons-sm > li:before,
+.table .list-icons-sm > li .stacked-icon,
+.table .list-icons-sm > li .icon {
+  top: 3px;
+}
+.list-icons-lg > li {
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding-left: 34px;
+}
+.list-icons-lg > li:before,
+.list-icons-lg > li .stacked-icon,
+.list-icons-lg > li .icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  top: 5px;
+  left: 7px;
+}
+.list-icons-lg > li.active {
+  font-size: 21px;
+  font-size: 1.3125rem;
+}
+
+.toc-columns {
+  width: 100%;
+  max-width: 100%;
+  columns: 300px 3;
+  column-fill: balance;
+  
+  &.list-icons li>a {
+    color: #333333;
+  }  
+
+}
+
+.list-alpha {
+  list-style-type: upper-alpha;
+}
+
+.list-inline-item {
+  margin-bottom: 0;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: .25em;
+}

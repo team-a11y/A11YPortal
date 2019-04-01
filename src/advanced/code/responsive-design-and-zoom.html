@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design and Web - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="true" id="main-menu">Code <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/semantic-structure-and-navigation.html">Semantics and Navigation</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/code/responsive-design-and-zoom.html" aria-current="page">Responsive and Zoom <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/dynamic-updates.html">Dynamic Updates</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/wai-aria.html">WAI-ARIA</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/android.html">Android</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/ios.html">iOS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Responsive Design and Zoom</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#responsive-design" class="link-ts"><span>Responsive Design</span></a></li>
+          <li><a href="#zoom" class="link-ts"><span>Zoom</span></a></li>
+          <li><a href="#touch-click-target-size" class="link-ts"><span>Touch / Click Target Size</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>Why Focus on Responsive design and Zoom?</strong></p>
+                <p>One of the best things designers and developers can do to design for people with low vision is create responsive designs that adapt to small screens and that allow users to zoom in.</p>
+                <p>Users with low vision frequently need to magnify the content, and may use a combination of browser zoom plus a separate screen magnifier such as <a href="https://www.aisquared.com/products/zoomtext/">ZoomText</a> or <a href="http://www.freedomscientific.com/Products/LowVision/MAGic">MAGic</a>. This course explores some of the accessibility nuances of responsive designs and zoom features.</p>               
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Even though responsive design was invented primarily for small screens and mobile devices, responsive design greatly benefits people with low vision who need to zoom in on content. Zooming in reduces the amount of screen real estate available, creating conditions essentially identical to the small screens of small mobile devices.</p>
+                
+                <p>When the screen real estate is limited, it's best if the design can adapt by becoming simpler and "slimmer," fitting in a single column, rather than in two or more columns. Text should reflow to fit the smaller screen size, and horizontal scrolling should be eliminated, if possible. In short, the design should be optimized for viewing in mobile or zoom conditions.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/responsive-zoom2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Responsive%20Design%20and%20Zoom%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Responsive Design and Zoom PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="responsive-design" aria-labelledby="title-responsive-design">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-responsive-design">Responsive Design</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Responsive Design</h4>
+                <ul class="list-icons list-checklist">
+                  <li><strong>Forms</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Images</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Objects/plugins</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Tables</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Text</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>UI components</strong> <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Video</strong> elements <span class="badge badge-info">SHOULD</span> reflow to fill most of the width of the viewport, without causing any horizontal viewport overflow.</li>
+                  <li><strong>Features of the <em>content</em></strong> <span class="badge badge-warning">MAY</span> be simplified, reduced in size, or eliminated when magnified or when viewed on small viewports.</li>
+                  <li><strong>Features of the <em>interface</em></strong> <span class="badge badge-info">SHOULD</span> be simplified, reduced in size, or eliminated when magnified or when viewed on small viewports.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Responsive%20Design%20and%20Zoom%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Responsive Design and Zoom PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/responsive-zoom2/responsive/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Responsive Design - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>When using default browser zoom on a desktop, just like it happens for re-sizing the viewport, media queries are triggered showing the tablet or mobile version.</li>
+                  <li>This is often used by people with low vision so never assume the mobile version is only seen on a mobile.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#content-resizing" class="link-ts"><span>Content resizing</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/WCAG21/#reflow" class="link-ts"><span>SC 1.4.10 Reflow</span></a></li>
+                  <li><a href="https://www.w3.org/TR/css3-mediaqueries/" class="link-ts"><span>Media Queries - CSS3</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html#examples" class="link-ts"><span>Understanding SC 1.4.10 Reflow Level AA</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/low-vision-needs/#reflow-to-single-column" class="link-ts"><span>Reflow to Single Column - LVTF</span></a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/Apps/Progressive/Responsive/responsive_design_building_blocks" class="link-ts"><span>The building blocks of responsive design - MDN</span></a></li>
+                  <li><a href="https://developers.google.com/web/fundamentals/design-and-ux/responsive/" class="link-ts"><span>Responsive Web Design Basics - Google</span></a></li>                  
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>                
+                <p>Try all the ways for using a responsive web app with Good/Bad site</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html" class="link-ts"><span>Responsive Good / Bad example site - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html" class="link-ts"><span>Responsive Good / Bad example site - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="zoom" aria-labelledby="title-zoom">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-zoom">Zoom</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s"><strong>Text zoom:</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>The page <span class="badge badge-info">SHOULD</span> be functional when only the text is magnified to 200% of its initial size.</li>
+                  <li>The page <span class="badge badge-info">SHOULD</span> be readable when only the text is magnified to 200% of its initial size.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Mobile zoom:</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>The page <span class="badge badge-success">MUST</span> allow users to zoom in on mobile devices.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Magnification visual quality:</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text <span class="badge badge-info">SHOULD</span> magnify losslessly, or with minimal visual degradation, to retain readability.</li>
+                  <li>Icons and graphics <span class="badge badge-info">SHOULD</span> magnify losslessly, or with minimal visual degradation.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Responsive%20Design%20and%20Zoom%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Responsive Design and Zoom PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/responsive-zoom2/zoom/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Zoom - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>When using default browser zoom on a desktop, just like it happens for re-sizing the viewport, media queries are triggered showing the tablet or mobile version.</li>
+                  <li>This is often used by people with low vision so never assume the mobile version is only seen on a mobile.</li>
+                  <li>When people zoom in on parts of the page, with or without assistive technology, it's likely they are not aware of changes on other parts of the page. Design and code in a way to inform all users of these changes.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#content-resizing" class="link-ts"><span>Content resizing</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&tags=zoom" class="link-ts"><span>"zoom" - WCAG Filters</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html52/document-metadata.html#example-8dc32ede" class="link-ts"><span>Meta element Warning! - HTML 5.2</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html#examples" class="link-ts"><span>Understanding SC 1.4.4: Resize text</span></a></li>
+                  <li><a href="https://ebay.gitbooks.io/mindpatterns/antipatterns/disabling_pinch-to-zoom.html" class="link-ts"><span>Anti-Pattern: Disabling Pinch-to-Zoom - eBay</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag" class="link-ts"><span>Using the viewport meta tag to control layout on mobile browsers - MDN</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal02" class="link-ts"><span>02. Zooming and scaling content not prevented - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal02" class="link-ts"><span>02. Zoom and scaling prevented - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="touch-click-target-size" aria-labelledby="title-touch-click-target-size">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-touch-click-target-size">Touch / Click Target Size</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Touch / Click Target Size</h4>
+                <ul class="list-icons list-checklist">
+                  <li><strong>The click/touch target size</strong> <span class="badge badge-info">SHOULD</span> be large enough to facilitate easy use with a finger, without risking activating an adjacent link or button.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Responsive%20Design%20and%20Zoom%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Responsive Design and Zoom PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/responsive-zoom2/target-size" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Touch / Click Target Size - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#touch-target-size" class="link-ts"><span>Touch target size</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas - Essentials - Accessibility Portal</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body class="quiz" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html" aria-current="true"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../basics/essentials/principles.html" aria-current="true" id="main-menu">Essentials <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/principles.html">Principles</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../basics/essentials/personas.html" aria-current="page">Personas<span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/tools.html">Tools</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/design-annotations.html">Design Annotations</a></li>
+                  <li class="page-item"><a class="page-link" href="../../basics/essentials/glossary.html">Glossary</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/videos/a11ycasts.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/presentations/intro-to-a11y.html">Presentations</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-people"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Personas</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#paul-holleman-blind" class="link-ts"><span>Paul Holleman - Blind</span></a></li>
+          <li><a href="#magreet-janssen-d-deaf" class="link-ts"><span>Magreet Janssen - D/deaf</span></a></li>
+          <li><a href="#aaldert-meinema-autism-dyslexia" class="link-ts"><span>Aaldert Meinema - Autism / Dyslexia</span></a></li>
+          <li><a href="#emre-yavuz-colour-blindness" class="link-ts"><span>Emre Yavuz - Colour Blindness</span></a></li>
+          <li><a href="#sabrina-ter-steege-cognitive-physical" class="link-ts"><span>Sabrina ter Steege - Cognitive / Physical</span></a></li>
+          <li><a href="#maria-beuving-aging" class="link-ts"><span>Maria Beuving - Aging</span></a></li>
+          <li><a href="#huub-schoolderma-parkinson" class="link-ts"><span>Huub Schoolderma - Parkinson</span></a></li>
+        </ul>
+      
+      </div>          
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>Accessibility in User-Centered Design</strong></p>                
+                <p>Personas are hypothetical archetypes of actual users. They are not real people, but they represent real people during the design process. A persona is a fictional characterization of a user.</p>
+                <p>The purpose of personas is to make the users seem more real, to help designers keep realistic ideas of users throughout the design process. Personas have proper names that are often catchy and related to their user group name.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/people-use-web/user-stories/" class="link-ts"><span>Stories of Web Users - W3C</span></a></li>
+                  <li><a href="https://rawgit.com/w3c/coga/master/persona/persona.html" class="link-ts"><span>Proposed Personas - W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Documents</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../docs/personas/personas.pdf" class="link-ts"><span>Personas - 1 to 7 (PDF)</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.usability.gov/how-to-and-tools/methods/personas.html" class="link-ts"><span>Personas - Usability.gov.</span></a></li>
+                  <li><a href="https://rosenfeldmedia.com/a-web-for-everyone/personas-for-accessible-ux/" class="link-ts"><span>Personas for Accessible UX</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="paul-holleman-blind" aria-labelledby="title-paul-holleman-blind">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-paul-holleman-blind">Paul Holleman - Blind</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“Trying to understand a website sometimes feels like having to find my way through a labyrinth.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Paul Holleman is 46 years old and lives together with his wife and two children in Amsterdam. He has studied at University level and works as a translator for the government. He is an expert in the English and French language. Although he is blind, he performs his job very well. He enjoys helping others and likes translating official documents.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Advanced</dd>
+                  <dt>Devices</dt>
+                  <dd>Telephone, computer, laptop</dd>
+                  <dt>Tools</dt>
+                  <dd>Refreshable braille display, screen readers, keyboard navigation, voice recognition</dd>
+                  <dt>Irritations</dt>
+                  <dd>Paul dislikes it when screen readers cannot pronounce the content on a website because of mistakes or inconsistent content or code. Trying to understand a website sometimes feels to Paul like having to find your way through a labyrinth. The use of CAPTCHAs on websites is a big frustration for Paul. The option to skip navigation or long lists would be very helpful.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Ensuring all functions are available via the keyboard</li>
+                  <li>Allow skip navigation over navigation menus and long lists</li>
+                  <li>Provide alternative text descriptions and headings</li>
+                  <li>Make sure that all interactive controls have clear descriptions</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Paul Holleman - Blind</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_blind.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-blind.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Blind (PDF)</a>
+              </div>
+            </div>          
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="magreet-janssen-d-deaf" aria-labelledby="title-magreet-janssen-d-deaf">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-magreet-janssen-d-deaf">Magreet Janssen - D/deaf</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“I don’t like it when there are no captions and transcripts for video and audio.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Margreet Janssen is 62 years old and she has her own appartment in Maastricht. She is divorced with a child. She has had a higher education and she owns a flower shop in the city centre of Maastricht. Even though she is deaf since her childhood, due to the the great support of her three employees, she is able to make the
+most beautiful wedding flower arrangements in town.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Starter</dd>
+                  <dt>Devices</dt>
+                  <dd>Telephone and laptop</dd>
+                  <dt>Tools</dt>
+                  <dd>Sign language, captioning for audio and video, transcript, WhatsApp for communication</dd>
+                  <dt>Irritations</dt>
+                  <dd>Margreet doesn’t like it if captions and transcripts for video and audio are not available. Often, she regrets there is no sign language interpreter at flower decoration conferences.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Provide transcripts for audio</li>
+                  <li>Provide simultaneous captioning and transcripts for video</li>
+                  <li>Give textual feedback for audio and video</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#d-deaf-or-hard-of-hearing" class="link-ts"><span>D/deaf or hard of hearing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#deaf" class="link-ts"><span>Deaf</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Magreet Janssen - D/deaf</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_deaf.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-deaf.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - D/deaf or hard of hearing poster (PDF)</a>
+              </div>
+            </div>         
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="aaldert-meinema-autism-dyslexia" aria-labelledby="title-aaldert-meinema-autism-dyslexia">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-aaldert-meinema-autism-dyslexia">Aaldert Meinema - Autism / Dyslexia</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“I don’t like sudden surprises and I often fail to understandsarcasm, metaphors and irony.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Aaldert Meinema is 34 years old and lives in Groningen. He’s is single and works as a freelance data analyst. Due to his autism and dyslexia he is socially not very active, but he works hard and performs well. He likes computer gaming, motorcycling and racing his mountain bike.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Expert</dd>
+                  <dt>Devices</dt>
+                  <dd>Computer, telephone, tablet, laptop</dd>
+                  <dt>Tools</dt>
+                  <dd>Voice recording</dd>
+                  <dt>Irritations</dt>
+                  <dd>Aaldert does not like unclear and inconsistent information. Neither does he like sudden surprises or information that is nonliteral like sarcasm, metaphors and irony. Understanding textual clues can be challenging for him. He really dislikes it when content is too big or without any structure.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Information should be clear, unequivocal and easy to understand</li>
+                  <li>Forms and content should be partitioned into logical paragraphs and easy guidelines</li>
+                  <li>Keep interactions simple and brief</li>
+                  <li>Using well-structured content including headers, clear whitespace, bulleted lists and icons</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Aaldert Meinema - Autism / Dyslexia</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_autism_dyslexic.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-autism-dyslexic.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Autism / Dyslexia(PDF)</a>
+              </div>
+            </div>       
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="emre-yavuz-colour-blindness" aria-labelledby="title-emre-yavuz-colour-blindness">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-emre-yavuz-colour-blindness">Emre Yavuz - Colour Blindness</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“I don’t like websites that have insufficient colour contrast.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Emre Yavuz is 26 years old and he lives in Rotterdam. He is single and studies Business Administration in Rotterdam. He is originally from Turkey and moved to the Netherlands at the age of ten. His knowledge of Dutch is limited but he speaks Turkish and English fluently. He has a severe type of colour blindness called protanopia.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Advanced</dd>
+                  <dt>Devices</dt>
+                  <dd>Desktop, telephone, tablet, laptop</dd>
+                  <dt>Tools</dt>
+                  <dd>Change contrast on the computer</dd>
+                  <dt>Irritations</dt>
+                  <dd>Emre dislikes websites that have insufficient colour contrast and / or use ‘wrong colours’, especially with buttons, important text and links.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Ensuring there is sufficient contrast</li>
+                  <li>Don’t use colour alone to convey information, such as: ‘click the green button’</li>
+                  <li>Ensure that links are identifiable without using colour</li>
+                  <li>Ensure that important content is identifiable without using colour</li>
+                  <li>Use the English language besides Dutch to support non-Dutch speakers</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Emre Yavuz - Colour Blindness</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_colour_blindness.jpg" alt="">
+              </div>
+              <a href="../../docs/personas/persona-colour-blindness.pdf" class="link-plug-on">
+                <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Colour Blindness (PDF)</a>
+            </div>        
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="sabrina-ter-steege-cognitive-physical" aria-labelledby="title-sabrina-ter-steege-cognitive-physical">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-sabrina-ter-steege-cognitive-physical">Sabrina ter Steege - Cognitive / Physical</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“I don’t visit websites with rapid changes in content, pop-ups and lots of distractions.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Sabrina ter Steege is 16 years old and she lives with her parents in Emmen. She attends vocational education on health. Sabrina loves horses and she likes helping others. She wants to become a helper in a kindergarten. Due to complications at birth, Sabrina has difficulties to read and understand content. Often she needs help. She also has difficulties with eye-hand coordination.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Beginner</dd>
+                  <dt>Devices</dt>
+                  <dd>Telephone, laptop, desktop</dd>
+                  <dt>Tools</dt>
+                  <dd>Dictation software, keyboard navigation</dd>
+                  <dt>Irritations</dt>
+                  <dd>Sabrina gets frustrated when content is unclear. She does not visit websites with rapid changes in content, pop-ups, lots of distractions, no structure or minimal use of spacing.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>No rapid changes to content or surprises such as pop-up windows</li>
+                  <li>Information should be clear and easy to understand</li>
+                  <li>Forms and content should be broken down into logical and easy to understand small step by step</li>
+                  <li>Use clear whitespace and break down big text blocks into smaller ones</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#physical-or-motor" class="link-ts"><span>Physical or Motor</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#motor" class="link-ts"><span>Motor</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#multiple" class="link-ts"><span>Multiple</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Sabrina ter Steege - Cognitive / Physical</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_cognitive_physical.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-cognitive-physical.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Cognitive / Physical (PDF)</a>
+              </div>
+            </div>         
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="maria-beuving-aging" aria-labelledby="title-maria-beuving-aging">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-maria-beuving-aging">Maria Beuving - Aging</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“Content is often hard to understand and therefore I don’t like to use a computer.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Maria Beuving is 72 years old and lives with her husband in Utrecht. She has three children and two grandchildren. She used to work as a nurse in a hospital and is still working a little as volunteer at an activity centre for elderly people. In the past, she loved reading books, but as she became older, her eyesight and hearing deteriorated, so she doesn’t read anymore.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Starter</dd>
+                  <dt>Devices</dt>
+                  <dd>Telephone, desktop</dd>
+                  <dt>Tools</dt>
+                  <dd>Zoom text, change contrast on the computer, captioning for audio and video, transcript</dd>
+                  <dt>Irritations</dt>
+                  <dd>Maria gets frustrated when content is not provided with captions and transcripts. Content is often hard to understand and therefore she doesn’t like using a computer.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Use clear and consistent navigation, headers and layout</li>
+                  <li>Provide clear and descriptive icons with associated text</li>
+                  <li>Have a linear layout/scalable/responsive, so text can be easily zoomed out</li>
+                  <li>Use clear contrast for colour</li>
+                  <li>Ensuring all functions are available via the keyboard</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#vision" class="link-ts"><span>Vision</span></a></li>
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#d-deaf-or-hard-of-hearing" class="link-ts"><span>D/deaf or hard of hearing</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#vision" class="link-ts"><span>Vision</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#deaf" class="link-ts"><span>Deaf</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#multiple" class="link-ts"><span>Multiple</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Maria Beuving - Aging</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_aging.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-aging.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Aging (PDF)</a>
+              </div>
+            </div>        
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="huub-schoolderma-parkinson" aria-labelledby="title-huub-schoolderma-parkinson">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-huub-schoolderma-parkinson">Huub Schoolderma - Parkinson</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-block">
+
+                <blockquote><p class="lead"><strong>“I want websites to be more error tolerant, especially at button areas and links.”</strong></p></blockquote>
+
+                <h3 class="heading-s">Bio</h3>
+
+                <p>Huub Schoolderman is 83 years old and he lives in Tilburg. His wife died five years ago. He has two children and one grandchild. He has worked as a headmaster of a primary school. A year ago, he has been diagnosed with Parkinson’s disease. Due to his illness he is restricted in his ability to conduct day to day activities.</p>
+                
+                <h4 class="heading-s">Digital access</h4>
+                <dl class="p-0">
+                  <dt>Digital knowledge</dt>
+                  <dd>Average</dd>
+                  <dt>Devices</dt>
+                  <dd>Telephone, laptop</dd>
+                  <dt>Tools</dt>
+                  <dd>Keyboard navigation, special mouse, word prediction software, dictation software</dd>
+                  <dt>Irritations</dt>
+                  <dd>Huub gets frustrated with small and moving links, changing content, time based forms, etc. He wants websites to be more error tolerant. Because he cannot use his computer mouse accurately, button click areas are often too small for him.</dd>
+                </dl>
+                
+                <h4 class="heading-s">Top tips</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Ensure that websites can be navigated using only a keyboard</li>
+                  <li>Make websites error tolerant and without small or moving links</li>
+                  <li>Provide alternative routes for complicated website features</li>
+                  <li>Enlarge clickable areas so no mistakes can be made</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#physical-or-motor" class="link-ts"><span>Physical or Motor</span></a></li>
+                  <li><a href="../../basics/fundamentals/dos-and-donts.html#vision" class="link-ts"><span>Vision</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/disabilities.html#vision" class="link-ts"><span>Vision</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#motor" class="link-ts"><span>Motor</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#speech" class="link-ts"><span>Speech</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#cognitive" class="link-ts"><span>Cognitive</span></a></li>
+                  <li><a href="../../advanced/fundamentals/disabilities.html#multiple" class="link-ts"><span>Multiple</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Huub Schoolderma - Parkinson</h3>
+                <img class="card-img-top img-fluid border-grey-light mt-3" src="../../images/A11Y_persona_parkinson.jpg" alt="">
+              </div>
+              <div>
+                <a href="../../docs/personas/persona-parkinson.pdf" class="link-plug-on">
+                  <span class="icon icon-pdf icon-lg icon-orange mr-2" aria-hidden="true"></span>Persona - Parkinson (PDF)</a>
+              </div>
+            </div>         
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

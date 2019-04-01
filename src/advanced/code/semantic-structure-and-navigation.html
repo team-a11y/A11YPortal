@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Structure and Navigation - Web - Accessibility Champions Trainin g</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+  <link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="true" id="main-menu">Code <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="page">Semantics and Navigation <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/responsive-design-and-zoom.html">Responsive and Zoom</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/dynamic-updates.html">Dynamic Updates</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/wai-aria.html">WAI-ARIA</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/android.html">Android</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/ios.html">iOS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Semantic Structure and Navigation</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#page-title" class="link-ts"><span>Page Title</span></a></li>
+          <li><a href="#language" class="link-ts"><span>Language</span></a></li>
+          <li><a href="#landmarks" class="link-ts"><span>Landmarks</span></a></li>
+          <li><a href="#headings" class="link-ts"><span>Headings</span></a></li>
+          <li><a href="#links" class="link-ts"><span>Links</span></a></li>
+          <li><a href="#navigation-between-pages" class="link-ts"><span>Navigation Between Pages</span></a></li>
+          <li><a href="#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+          <li><a href="#tables" class="link-ts"><span>Tables</span></a></li>
+          <li><a href="#lists" class="link-ts"><span>Lists</span></a></li>
+          <li><a href="#iframes" class="link-ts"><span>Iframes</span></a></li>
+          <li><a href="#other-semantic-elements" class="link-ts"><span>Other Semantic Elements</span></a></li>
+          <li><a href="#parsing-and-validity" class="link-ts"><span>Parsing and Validity</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>Why Focus on Semantic Structure and Navigation?</strong></p>
+                <p>Semantic structure is the bedrock of accessible markup. Screen readers rely on the meaning of HTML elements and attributes to convey information to blind users.</p>
+                <p>It is through the semantic markup that browsers are able to parse accessibility cues and information through the accessibility API and pass that information on to users, through assistive technologies, such as screen readers.</p>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Screen readers and other assistive technologies rely on the underlying semantic markup to convey meaningful information about the structure and content of web pages. Main principles covered in this module:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Unique page title</li>
+                  <li>Navigation</li>
+                  <li>Real headings</li>
+                  <li>Logical outline</li>
+                  <li>Real lists</li>
+                  <li>Real data tables</li>
+                  <li>Semantic markup appropriately</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/principles.html#user-interface-controls" class="link-ts"><span>User Interface Controls</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/semantic-structure2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=structure" class="link-ts"><span>Structure: WCAG Filters</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://tink.uk/understanding-semantics/" class="link-ts"><span>Understanding semantics</span></a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML" class="link-ts"><span>HTML: A good basis for accessibility - Mozilla</span></a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" class="link-ts"><span>HTML elements reference - Mozilla</span></a></li>
+                  <li><a href="http://html5accessibility.com/" class="link-ts"><span>HTML5 Accessibility</span></a></li>
+                </ul>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="page-title" aria-labelledby="title-page-title">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-page-title">Page Title</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Title for Every Page</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The page <code>&lt;title&gt;</code> <span class="badge badge-success">MUST</span> be present and <span class="badge badge-success">MUST</span> contain text.
+                  </li>
+                  <li>The page <code>&lt;title&gt;</code> <span class="badge badge-success">MUST</span> be updated when the web address changes.</li>
+                </ul>
+
+                <h4 class="heading-s">Meaningful Page Title</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The page <code>&lt;title&gt;</code> <span class="badge badge-success">MUST</span> be accurate and informative.</li>
+                  <li>If a page is the result of a user action or scripted change of context, the text of the <code>&lt;title&gt;</code> <span class="badge badge-info">SHOULD</span> describe the result or change of context to the user.</li>
+                  <li>The <code>&lt;title&gt;</code> <span class="badge badge-info">SHOULD</span> be concise.</li>
+                  <li>The page <code>&lt;title&gt;</code> <span class="badge badge-info">SHOULD</span> be unique, if possible.</li>
+                  <li>Unique information <span class="badge badge-info">SHOULD</span> come first in the <code>&lt;title&gt;</code>.</li>
+                  <li>The page <code>&lt;title&gt;</code> <span class="badge badge-info">SHOULD</span> match (or be very similar to) the top heading in the main content.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/page-title/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Page Title - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Page Title <code>&lt;title&gt;</code>, relative to <code>&lt;h1&gt;</code>, <span class="badge badge-info">SHOULD</span> contain the generic website name</li>
+                  <li>Best text to use for a link, <code>&lt;a href=""&gt;</code>, is the title of destination page, <code>&lt;title&gt;</code> or <code>&lt;h1&gt;</code></li>
+                  <li>Most screen readers read aloud the title on screen load</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#unique-page-screen-titles" class="link-ts"><span>Unique page/screen titles</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#document-title" class="link-ts"><span>Document Title</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&tags=page-title" class="link-ts"><span>"page title" - WCAG Filter</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html52/document-metadata.html#the-title-element" class="link-ts"><span>The title element - HTML 5.2</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html#examples" class="link-ts"><span>Understanding SC 1.4.4: Resize text</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG-TECHS/H25.html" class="link-ts"><span>H25: Providing a title using the title element - W3C</span></a></li>
+                  <li><a href="https://ibma.github.io/Va11yS/WCAG_HTML/H25_example1.html" class="link-ts"><span>H25 Example 1: Providing a title using the title element - IBM</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title" class="link-ts"><span>&lt;title&gt;: The Document Title element - MDN</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal01" class="link-ts"><span>01. Page properly titled - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal01" class="link-ts"><span>01. Page unclear titled - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="language" aria-labelledby="title-language">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-language">Language</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s">Primary Language of Page</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The primary language of the page <span class="badge badge-success">MUST</span> be identified accurately on the <code>&lt;html&gt;</code> element.
+                  </li>
+                  <li>The primary language of the page <span class="badge badge-success">MUST</span> be identified with a valid value on the <code>&lt;html&gt;</code> element.</li>
+                </ul>
+
+                <h4 class="heading-s">Language of Parts within the Page</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Inline language changes <span class="badge badge-success">MUST</span> be identified with a <code>lang</code> attribute.</li>
+                </ul>
+
+                <h4 class="heading-s">Language Codes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The language code <span class="badge badge-success">MUST</span> be valid.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/language/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Language - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>You <span class="badge badge-danger">MUST NOT</span> change context on select (with a language selector) as people may not find the selector again when on another language. See also: <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html">On Input - WCAG</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/editorial.html#indicating-language" class="link-ts"><span>Indicating language</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&tags=language" class="link-ts"><span>"language" - WCAG Filter</span></a></li>
+                  <li><a href="https://www.w3.org/TR/i18n-html-tech-lang/" class="link-ts"><span>Authoring HTML: Language declarations</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html52/dom.html#the-lang-and-xmllang-attributes" class="link-ts"><span>The lang and xml:lang attributes - HTML 5.2</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/H57" class="link-ts"><span>H57: Using language attributes on the html element</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/H58" class="link-ts"><span>H58: Using language attributes to identify changes in the human language</span></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=ox5QVbZSPBk&feature=youtu.be" class="link-ts"><span>Screen reader language demo! - Video</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://webaim.org/techniques/screenreader/#language" class="link-ts"><span>Document Language - WebAim</span></a></li>
+                  <li><a href="https://developer.paciellogroup.com/blog/2016/06/using-the-html-lang-attribute/" class="link-ts"><span>Using the HTML lang attribute - TPG</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal05" class="link-ts"><span>05. Primary Language of and within the Document is provided - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal05" class="link-ts"><span>05. Omitted Language of and within the Document
+ - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="landmarks" aria-labelledby="title-landmarks">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-landmarks">Landmarks</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Creating Landmarks (HTML 5, ARIA)</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Landmarks <span class="badge badge-info">SHOULD</span> be used to designate pre-defined parts of the layout (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, etc.).</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Best Practices for Landmarks</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>All text <span class="badge badge-info">SHOULD</span> be contained within a landmark region.
+                  </li>
+                  <li>Multiple instances of the same type of landmark <span class="badge badge-info">SHOULD</span> be distinguishable by different discernible accessible names (<code>aria-label</code> or <code>aria-labelledby</code>).
+                  </li>
+                  <li>A page <span class="badge badge-info">SHOULD NOT</span> contain more than one instance of each of the following landmarks: <code>banner</code>, <code>main</code>, and <code>contentinfo</code>.
+                  </li>
+                  <li>The total number of landmarks <span class="badge badge-info">SHOULD</span> be minimized to the extent appropriate for the content.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Backward Compatibility</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Landmarks <span class="badge badge-info">SHOULD</span> be made backward compatible.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/landmarks/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Landmarks - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Be aware there are two different purposes for the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements:
+                    <ul>
+                      <li>One scoped to the body element and <span class="badge badge-info">SHOULD</span> only be used ones.</li>
+                      <li>One scoped to the main element, a sectioning content element, or a sectioning root element other than body and can be used multiple times.</li>
+                      <li>
+                        <a href="https://www.w3.org/TR/html-aam-1.0/#details-id-44">2X Header - HTML AAM</a>
+                      </li>
+                      <li>
+                        <a href="https://www.w3.org/TR/html-aam-1.0/#details-id-39">2X Footer - HTML AAM</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="https://inclusive-components.design/data-tables/">ARIA-label Is A Xenophobe</a>, translation services like Google's don't translate the <code>aria-label</code> attribute, so it's better to label using an element's text node. We can do this with <code>aria-labelledby</code>.</li>
+                  <li>Using the element AND the ARIA variant together has the best backward compatible result for older browsers.</li>
+                  <li>Adding <code>aria-labelledby</code> to <code>role="region"</code> adds it to the landmark list in certain AT.</li>
+                  <li>Landmark role <a href="https://www.w3.org/TR/wai-aria-1.1/#search">role="search"</a> is not the same as widget role <a href="https://www.w3.org/TR/wai-aria-1.1/#searchbox">role="searchbox"</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/#info-and-relationships" class="link-ts"><span>1.3.1 Info and Relationships - Level A</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/#bypass-blocks" class="link-ts"><span>2.4.1 Bypass Blocks - Level A</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html5/sections.html#sections" class="link-ts"><span>Sections - HTML 5.2</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles" class="link-ts"><span>Landmark Roles - WAI-ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#aria_landmark" class="link-ts"><span>Landmark Regions - WAI-ARIA Practices</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html-aam-1.0/" class="link-ts"><span>HTML Accessibility API Mappings 1.0</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/" class="link-ts"><span>ARIA Landmarks Example</span></a></li>
+                  <li><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/ARIA11" class="link-ts"><span>ARIA11: Using ARIA landmarks to identify regions of a page</span></a></li>
+                  <li><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/ARIA13" class="link-ts"><span>ARIA13: Using aria-labelledby to name regions and landmarks</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.html5accessibility.com/#sections" class="link-ts"><span>Sections & Grouping - HTML5 Accessibility</span></a></li>
+                  <li><a href="https://developer.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/" class="link-ts"><span>Using WAI-ARIA Landmarks – TPG</span></a></li>
+                  <li><a href="http://alistapart.com/column/wai-finding-with-aria-landmark-roles" class="link-ts"><span>WAI-finding with ARIA Landmark Roles - A List Apart</span></a></li>
+                  <li><a href="https://webaim.org/techniques/aria/#landmarks" class="link-ts"><span>Landmark Roles - WebAim</span></a></li>
+                  <li><a href="http://matatk.agrip.org.uk/landmarks/" class="link-ts"><span>Landmark Browser Extension</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal04" class="link-ts"><span>04. Landmarks and sectioning elements used - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal04" class="link-ts"><span>04. No Landmarks or sectioning elements used - Bad</span></a></li>
+                  <li><a href="../../good-bad/home.html#annotModal07" class="link-ts"><span>07. Search with NAV element, specific role attribute and a proper label - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal07" class="link-ts"><span>07. Omitted sectioning landmark, label for input and button not present - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="headings" aria-labelledby="title-headings">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-headings">Headings</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Real Headings</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text that acts as a heading visually or structurally <span class="badge badge-info">SHOULD</span> be designated as a true heading in the markup.
+                  </li>
+                  <li>Text that does not act as a heading visually or structurally <span class="badge badge-info">SHOULD NOT</span> be marked as a heading.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Meaningful Text</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Headings <span class="badge badge-success">MUST</span> be accurate and informative.</li>
+                  <li>Heading text <span class="badge badge-info">SHOULD</span> be concise and relatively brief.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Outline/Hierarchy of Content</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Headings <span class="badge badge-info">SHOULD</span> convey a clear and accurate structural outline of the sections of content of a web page.
+                  </li>
+                  <li>Headings <span class="badge badge-info">SHOULD NOT</span> skip hierarchical levels.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Heading Level 1 Best Practices</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>The beginning of the main content <span class="badge badge-info">SHOULD</span> start with an <code>&lt;h1&gt;</code> element.
+                  </li>
+                  <li>Most web pages <span class="badge badge-info">SHOULD</span> have only one <code>&lt;h1&gt;</code> element.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/headings/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Headings - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>You <span class="badge badge-info">SHOULD</span> create structure first, than style as you see fit.</li>
+                  <li>Although the <a href="https://www.paciellogroup.com/blog/2013/10/html5-document-outline/" class="link-ts"><span>The HTML5 Document Outline</span></a> is not technically implemented in graphical browsers, it is the primary way of people navigation pages, so be sure to implement.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#headings" class="link-ts"><span>Headings</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#headings" class="link-ts"><span>Headings - Content</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&tags=headings" class="link-ts"><span>"headings" - WCAG Filter</span></a></li>
+
+
+                  
+                  <li><a href="https://www.w3.org/TR/html52/dom.html#heading-content" class="link-ts"><span>Heading content - HTML 5.2</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#heading" class="link-ts"><span>Heading (role) WAI ARIA 1.1</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html-aam-1.0/#details-id-42" class="link-ts"><span>Headings - HTML AAM</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" class="link-ts"><span>Headings Tutorial - W3C</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/complete.html#G130" class="link-ts"><span>G130: Providing descriptive headings</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/complete.html#G141" class="link-ts"><span>G141: Organizing a page using headings</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/complete.html#H42" class="link-ts"><span>H42: Using h1-h6 to identify headings</span></a></li>
+                  <li><a href="https://www.w3.org/TR/WCAG20-TECHS/complete.html#ARIA12" class="link-ts"><span>ARIA12: Using role=heading to identify headings</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title" class="link-ts"><span>&lt;h1&gt;–&lt;h6&gt;: The HTML Section Heading elements - MDN</span></a></li>
+                  <li><a href="https://www.paciellogroup.com/blog/2013/10/html5-document-outline/" class="link-ts"><span>The HTML5 Document Outline</span></a></li>
+                  <li><a href="https://webaim.org/techniques/semanticstructure/#contentstructure" class="link-ts"><span>Using Headings for Content Structure</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal08" class="link-ts"><span>08. Headings marked up as such - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal08" class="link-ts"><span>08. Headings not marked up as such - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="links" aria-labelledby="title-links">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-links">Links</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Designate Links Correctly</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Links <span class="badge badge-success">MUST</span> be designated as such.
+                  </li>
+                  <li>Links and buttons <span class="badge badge-info">SHOULD</span> be designated semantically according to their functions.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Link Text</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>A link <span class="badge badge-success">MUST</span> have programmatically-discernible text, as determined by the accessible name calculation algorithm.
+                  </li>
+                  <li>The purpose of each link <span class="badge badge-info">SHOULD</span> be able to be determined from the link text alone.</li>
+                  <li>The link text <span class="badge badge-info">SHOULD NOT</span> repeat the role ("link").
+                  </li>
+                  <li>Features such as labels, names, and text alternatives for content that have the same functionality across multiple web pages <span class="badge badge-success">MUST</span> be consistently identified.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Links to External Sites, New Windows, Files</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> A link that opens in a new window or tab <span class="badge badge-info">SHOULD</span> indicate that it opens in a new window or tab.
+                  </li>
+                  <li>A link to a file or destination in an alternative or non-web format <span class="badge badge-info">SHOULD</span> indicate the file or destination type.
+                  </li>
+                  <li>A link to an external site <span class="badge badge-warning">MAY</span> indicate that it leads to an external site.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Visually Distinguishable from Text</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Links <span class="badge badge-success">MUST</span> be visually distinguishable from surrounding text.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Visual focus indicator</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> All focusable elements <span class="badge badge-success">MUST</span> have a visual focus indicator when in focus.
+                  </li>
+                  <li>Focusable elements <span class="badge badge-warning">MAY</span> have enhanced visual focus indicator styles.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/links/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Links - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul>
+                  <li>Real links</li>
+                  <li>Go to another URL</li>
+                  <li>Not empty (accessible name)</li>
+                  <li>Best link text is page title / name of destination</li>
+                  <li>
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=links">Links: WCAG Filters</a>
+                  </li>
+                  <li>
+                    <a href="https://marcysutton.com/links-vs-buttons-in-modern-web-applications/">Links vs. Buttons in Modern Web Applications</a>
+                  </li>
+                  <li>
+                    <a href="http://www.karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/">Links are not buttons. Neither are DIVs and SPANs</a>
+                  </li>
+                  <li>
+                    <a href="http://www.webaxe.org/proper-use-buttons-links/">Proper Use of Buttons and Links</a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/links.html#descriptive-links" class="link-ts"><span>Descriptive links</span></a></li>
+                  <li><a href="../../guidelines/design/links.html#links-to-alternative-formats" class="link-ts"><span>Links to alternative formats</span></a></li>
+                  <li><a href="../../guidelines/design/links.html#combining-repeated-links" class="link-ts"><span>Combining repeated links</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#actionable-elements" class="link-ts"><span>Actionable elements</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a></li>
+                  <li><a href="../../guidelines/content/editorial.html#consistent-labelling" class="link-ts"><span>Consistent labelling</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#links" class="link-ts"><span>Links - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="navigation-between-pages" aria-labelledby="title-navigation-between-pages">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-navigation-between-pages">Navigation Between Pages</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Navigation Lists</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>A navigation list <span class="badge badge-info">SHOULD</span> be designated with the <code>&lt;nav&gt;</code> element or <code>role="navigation"</code>.
+                  </li>
+                  <li>A navigation list <span class="badge badge-info">SHOULD</span> include a visible method of informing users which page within the navigation list is the currently active/visible page.
+                  </li>
+                  <li>A navigation list <span class="badge badge-info">SHOULD</span> include a method of informing blind users which page within the navigation list is the currently active/visible page.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Consistency</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Navigation patterns that are repeated on web pages <span class="badge badge-success">MUST</span> be presented in the same relative order each time they appear and <span class="badge badge-danger">MUST NOT</span> change order when navigating through the site.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/between-pages/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Navigation Between Pages - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Basics structure</h4>
+                <ul class="list-icons list-checklist">
+                  <li>In most cases a <code>&lt;nav&gt;</code> with a <code>&lt;ul&gt;</code> will be the best choice.</li>
+                  <li>Wrap <code>&lt;nav role="navigation"&gt;</code> around to the Main Menu.</li>
+                  <li>Authors <span class="badge badge-danger">MUST NOT</span> use more than 2 or 3 <code>&lt;nav&gt;</code> elements or they will loose value</li>
+                  <li>Give menu's <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-accessible-name">accessible names</a> via <code><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a></code></li>
+                  <li>Give the current link a hidden / screen reader only text of "current"</li>
+                </ul>
+
+                <h4 class="heading-s">Use of ARIA</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Authors <span class="badge badge-danger">MUST NOT</span> use <code><a href="https://www.w3.org/TR/wai-aria-1.1/#menu">role="menu"</a></code> for navigation between pages. The menu role is appropriate when presented in a manner similar to a menu on a desktop application.</li>
+                  <li>Authors <span class="badge badge-info">SHOULD</span>  only mark one element in a set of elements as current with <code><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-current">aria-current</a></code>.</li>
+                  <li>Authors <span class="badge badge-info">SHOULD NOT</span> use the <code>aria-current</code>attribute as a substitute for <code><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-selected">aria-selected</a></code> in widgets where <code>aria-selected</code> has the same meaning.</li>
+                </ul>
+
+                <h4 class="heading-s">Multiple ways</h4>
+                <p class="mb-2">Provide more than 1 way to locate a Web page</p>
+                <ul>
+                  <li>Navigation menu</li>
+                  <li>Search option</li>
+                  <li>Breadcrumbs</li>
+                  <li>Sitemap</li>
+                  <li>(List of) links</li>
+                  <li>TOC</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/focus.html#focusable-elements" class="link-ts"><span>Focusable elements</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#focus-order" class="link-ts"><span>Focus order</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+                  <li><a href="../../guidelines/design/structure.html#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#choice" class="link-ts"><span>Choice</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&amp;tags=navigation" class="link-ts"><span>"navigation" - WCAG Filter</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/#use-of-color" class="link-ts"><span>1.4.1 Use of Color - Level A</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/#multiple-ways" class="link-ts"><span>2.4.5 Multiple Ways - Level AA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#navigation" class="link-ts"><span>navigation (role) - ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-current" class="link-ts"><span>aria-current (state) - ARIA</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/menus/" class="link-ts"><span>Menu Concepts Tutorial - WAI W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://inclusive-components.design/menus-menu-buttons/" class="link-ts"><span>Menus & Menu Buttons</span></a></li>
+                  <li><a href="https://www.levelaccess.com/challenges-mega-menus-standard-menus-make-accessible/" class="link-ts"><span>Creating Accessible Menus and Mega Menus</span></a></li>
+                  <li><a href="https://adobe-accessibility.github.io/Accessible-Mega-Menu/" class="link-ts"><span>Accessible Mega Menu - Adobe</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html#annotModal06" class="link-ts"><span>06. Main menu with NAV element, a list and proper attributes - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html#annotModal06" class="link-ts"><span>06. Main menu without name, role, states and values - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="navigation-within-pages" aria-labelledby="title-within-between-pages">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-within-between-pages">Navigation Within Pages</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Skip Navigation Links</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> A keyboard-functional "skip" link <span class="badge badge-info">SHOULD</span> be provided to allow keyboard users to navigate directly to the main content.
+                  </li>
+                  <li>The "skip link" should be the first focusable element on the page.
+                  </li>
+                  <li>A skip link <span class="badge badge-success">MUST</span> be either visible at all times or visible on keyboard focus.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Table of Contents</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>A table of contents for the page <span class="badge badge-warning">MAY</span> be included at the top of the content or in the header.
+                  </li>
+                  <li>If a table of contents for the page is included, it <span class="badge badge-info">SHOULD</span> reflect the heading structure of the page.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Reading Order and Tab/Focus Order</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>The DOM order determines the reading order and tab</li>
+                  <li>The reading and navigation order <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li>The navigation order of focusable elements <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li>tabindex of positive values <span class="badge badge-info">SHOULD NOT</span> be used.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Paginated Views</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> A paginated view <span class="badge badge-info">SHOULD</span> include a method of informing blind users which view is the currently active/visible view.
+                  </li>
+                  <li>A paginated view <span class="badge badge-info">SHOULD</span> include a visible method of informing users which view is the currently active/visible view.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/within-pages/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Navigation Within Pages - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Skip Navigation Links</h4>
+                <ul class="list-icons list-checklist">
+                  <li>More than one skip link can be used, e.g.:
+                    <ul>
+                      <li>Main content</li>
+                      <li>Floating action button (FAB)</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">Paginated Views</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Indicates the element that represents the current item within a container or set of related elements by using <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-current">aria-current (state)</a></li>
+                </ul>
+
+                <h4 class="heading-s">Primary ways people navigate within pages</h4>
+                <p>Assistive technology has keyboard shortcuts to go straight to these elements!</p>
+                <ol>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#headings" class="link-ts"><span>Headings</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#landmarks" class="link-ts"><span>Landmarks</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html" class="link-ts"><span>Forms</span></a></li>
+                  <li><a href="../../advanced/design/images-svg-and-canvas.html#image-alt-text" class="link-ts"><span>Images</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#lists" class="link-ts"><span>Lists</span></a></li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/structure.html#headings" class="link-ts"><span>Headings</span></a></li>
+                  <li><a href="../../guidelines/design/structure.html#containers-and-landmarks" class="link-ts"><span>Containers and landmarks</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a></li>                  
+                  <li><a href="../../guidelines/code/focus.html" class="link-ts"><span>Focus</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&tags=navigation" class="link-ts"><span>"navigation" - WCAG Filter</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-skip" class="link-ts"><span>2.4.1 Bypass Blocks - Level A</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#directory" class="link-ts"><span>directory (role) - ARIA</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>See also all the examples for the "Primary ways people navigate within pages" at the Tips & Tricks.</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/page-structure/" class="link-ts"><span>Page Structure Tutorial - WAI W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://webaim.org/techniques/skipnav/" class="link-ts"><span>"Skip Navigation" Links - WebAim</span></a></li>
+                  <li><a href="https://tink.uk/using-the-aria-current-attribute/" class="link-ts"><span>Using the aria-current attribute - Leonie Watson</span></a></li>                  
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>Try all the examples for the "Primary ways people navigate within pages" with the Good/Bad site</p>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../good-bad/home.html" class="link-ts"><span>Navigation Within Pages Good / Bad example site - Good</span></a></li>
+                  <li><a href="../../good-bad/home-bad.html" class="link-ts"><span>Navigation Within Pages Good / Bad example site - Bad</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="tables" aria-labelledby="title-tables">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-tables">Tables</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Semantic Markup for Tabular Data</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Tabular data <span class="badge badge-info">SHOULD</span> be represented in a <code>&lt;table&gt;</code> element.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Table caption/name</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Data tables <span class="badge badge-info">SHOULD</span> have a programmatically-associated caption or name.
+                  </li>
+                  <li>The name/caption of a data table <span class="badge badge-info">SHOULD</span> describe the identity or purpose of the table accurately, meaningfully, and succinctly.
+                  </li>
+                  <li>The name/caption of each data table <span class="badge badge-info">SHOULD</span> be unique within the context of other tables on the same page.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Table Headers</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Table headers <span class="badge badge-success">MUST</span> be designated with <code>&lt;th&gt;</code>.
+                  </li>
+                  <li>Data table header text <span class="badge badge-success">MUST</span> accurately describe the category of the corresponding data cells.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Simple Header Associations</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Table data cells <span class="badge badge-success">MUST</span> be associated with their corresponding header cells.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Grouped Header Associations</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Table data group headers <span class="badge badge-success">MUST</span> be associated with their corresponding data cell groups.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Complex Header Associations</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Header/data associations that cannot be designated with <code>&lt;th&gt;</code> and scope <span class="badge badge-success">MUST</span> be designated with <code>headers</code> plus <code>id</code>.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Nested or Split Tables</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Data table headers and data associations <span class="badge badge-danger">MUST NOT</span> be referenced across nested, merged, or separate tables.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Table Summary</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>A summary <span class="badge badge-warning">MAY</span> be provided for data tables.
+                  </li>
+                  <li>A data table summary, if provided, <span class="badge badge-info">SHOULD</span> make the table more understandable to screen reader users.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Layout Tables</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Tables <span class="badge badge-info">SHOULD NOT</span> be used for the purpose of purely visual (non-data) layout.
+                  </li>
+                  <li>Layout tables <span class="badge badge-danger">MUST NOT</span> contain data table markup.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/tables/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Tables - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Table in general</h4>
+                <ul>
+                  <li>Mandatory <code>role="presentation"</code> on layout tables (better to never use layout tables!)</li>
+                  <li>Accessible Names for cells by attributes like <code>title=""</code> !!!</li>
+                  <li>Multiple <code>tbody</code> allowed</li>
+                  <li>Closing elements not needed</li>
+                </ul>
+                
+                <h4 class="heading-s">Table Caption</h4>
+                <ul>
+                  <li>The <code>&lt;caption&gt;</code> element</li>
+                  <li>The <code>&lt;figcaption&gt;</code> element and aria-labelledby attribute</li>
+                  <li>The <code>aria-label</code> attribute</li>
+                </ul>
+                
+                <h4 class="heading-s">Row and Column Headers</h4>
+                <ul>
+                  <li>The <code>&lt;th&gt;</code> element</li>
+                  <li>The <code>scope="col"</code> and <code>scope="row"</code> attributes</li>
+                </ul>
+                
+                <h4 class="heading-s">Column Groups & Row Groups</h4>
+                <ul>
+                  <li>The <code>colspan=""</code> and <code>rowspan=""</code> attributes</li>
+                  <li>The <code>scope="colgroup"</code> and <code>scope="rowgroup"</code> attributes</li>
+                </ul>
+                
+                <h4 class="heading-s">Headers + ID for Complex Data Tables</h4>
+                <ul>
+                  <li>The <code>id=""</code> and <code>headers="x y z"</code> attributes</li>
+                  <li>Do not nest tables</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#tables" class="link-ts"><span>Tables - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=tables&amp;levels=aaa" class="link-ts"><span>Tables: WCAG Filters</span></a></li>
+                  <li><a href="http://w3c.github.io/html/tabular-data.html#table-descriptions" class="link-ts"><span>Tabular data - HTML 5.2</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#table" class="link-ts"><span>Table (role) - WAI-ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#grid" class="link-ts"><span>Grid (role) - WAI-ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#treegrid" class="link-ts"><span>Treegrid (role) - WAI-ARIA</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#presentation" class="link-ts"><span>Role presentation (old, well supported)</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#none" class="link-ts"><span>Role none (new, not well supported yet)</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/tutorials/tables/" class="link-ts"><span>Tables Tutorial - WAI W3C</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.paciellogroup.com/blog/2018/03/short-note-on-what-css-display-properties-do-to-table-semantics/" class="link-ts"><span>Short note on what CSS display properties do to table semantics</span></a></li>
+                  <li><a href="https://codepen.io/aardrian/pen/eMKrWe/?editors=0010" class="link-ts"><span>Tables, JSON, CSS, ARIA, RWD, TLAs…</span></a></li>
+                </ul>                
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="lists" aria-labelledby="title-lists">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-lists">Lists</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Semantic Markup for Lists</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Lists <span class="badge badge-success">MUST</span> be constructed using the appropriate semantic markup.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/lists/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Lists - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>                
+                <ul>
+                  <li>Mark up a list as a real list</li>
+                  <li>Add relation / accessible name</li>
+                  <li>Example accessible name calculation for input type="text", input type="password”, etc.
+                    <ol class="mt-2">
+                      <li>Use aria-labelledby</li>
+                      <li>Otherwise use aria-label</li>
+                      <li>Otherwise use the associated label element</li>
+                      <li>Otherwise use the placeholder attribute</li>
+                      <li>Otherwise use the title attribute</li>
+                      <li>If none of the above yield a usable text string there is no accessible name</li>
+                    </ol>
+                  </li>
+                  <li><a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">Accessible Name and Description calculation</a></li>
+                  <li><a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name and Description: Computation</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="iframes" aria-labelledby="title-iframes">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-iframes">Iframes</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Frame titles</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Frames <span class="badge badge-success">MUST</span> have a <code>&lt;title&gt;</code> element with text.
+                  </li>
+                  <li>The iframe title <span class="badge badge-success">MUST</span> be accurate and descriptive.
+                  </li>
+                  <li>Frames <span class="badge badge-success">MUST</span> have a unique title (in the context of the page).</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Page Title Within an Iframe</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> The source page of an <code>&lt;iframe&gt;</code> <span class="badge badge-success">MUST</span> have a valid, meaningful <code>&lt;title&gt;</code>.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Semantic structure across <code>&lt;iframe&gt;</code> elements</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Screen readers allow cross-frame navigation of semantic elements.
+                  </li>
+                  <li>The heading hierarchy of an <code>&lt;iframe&gt;</code> <span class="badge badge-info">SHOULD</span> be designed to fit within the heading hierarchy of the parent document, if possible.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Hiding iframes that don't contain meaningful content</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Hidden frames or frames that do not convey content to users <span class="badge badge-info">SHOULD</span> be hidden from assistive technologies using <code>aria-hidden="true".</code></li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/iframes/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Iframes - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Frame Titles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Always provide a title using the title attribute</li>
+                  <li>Enclosed Document Also Has a Meaningful <code>&lt;title&gt;</code> Tag</li>
+                </ul>
+
+                <h4 class="heading-s">Elements & Structure Across Frames</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Is treated (almost) as if it is part of the same document that contains it</li>
+                  <li>Pay Attention to Heading Hierarchy</li>
+                </ul>
+
+                <h4 class="heading-s">Hiding Iframes</h4>
+                <ul class="list-icons list-checklist">
+                  <li><code>aria-hidden="true"</code></li>
+                  <li><code>display:none</code></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#iframes" class="link-ts"><span>Iframes - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="other-semantic-elements" aria-labelledby="title-other-semantic-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-other-semantic-elements">Other Semantic Elements</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong><code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code></strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Critical emphasis in the text <span class="badge badge-info">SHOULD</span> be conveyed through visual styling.
+                  </li>
+                  <li>Critical emphasis in the text <span class="badge badge-info">SHOULD</span> be conveyed in a text-based format.</li>
+                </ul>
+
+                <h4 class="heading-s"><code><strong>&lt;blockquote&gt;</strong></code><strong> and <code>&lt;q&gt;</code></strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>The <code>&lt;blockquote&gt;</code> element <span class="badge badge-info">SHOULD</span> be used to designate long (block level) quotations.
+                  </li>
+                  <li>The <code>&lt;blockquote&gt;</code> element <span class="badge badge-info">SHOULD NOT</span> be used for visual styling alone.
+                  </li>
+                  <li>The <code>&lt;q&gt;</code> element (for inline quotations) <span class="badge badge-info">SHOULD NOT</span> be used as the only way to designate quotations.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong><code>&lt;code&gt;</code>, <code>&lt;pre&gt;</code>, etc.</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Code <span class="badge badge-info">SHOULD</span> be marked with the <code>&lt;code&gt;</code> element.
+                  </li>
+                  <li>Blocks of code <span class="badge badge-info">SHOULD</span> be marked with the <code>&lt;pre&gt;</code> element.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Strikethrough/Delete and Insert</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Strikethrough text <span class="badge badge-info">SHOULD</span> be marked with the <code>&lt;del&gt;</code> element.
+                  </li>
+                  <li>Critical strikethrough text <span class="badge badge-success">MUST</span> be supplemented with a text-based method to convey the meaning of the strikethrough.
+                  </li>
+                  <li>Text designated for insertion <span class="badge badge-info">SHOULD</span> be marked with the <code>&lt;ins&gt;</code> element.
+                  </li>
+                  <li>Critical text designated for insertion <span class="badge badge-success">MUST</span> be supplemented with a text-based method to convey the meaning of the insertion.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Highlighting (<code>&lt;mark&gt;</code>)</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li> Highlighted text <span class="badge badge-info">SHOULD</span> be marked with the <code>&lt;mark&gt;</code> element.
+                  </li>
+                  <li>Critical highlighted text <span class="badge badge-info">SHOULD</span> be supplemented with a text-based method to convey the meaning of the highlighting.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/other-elements/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Other Semantic Elements - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Blockquote</h4>
+                <ul>
+                  <li>Jaws reads blockquote, VoiceOver not, who’s right?</li>
+                  <li><a href="https://www.w3.org/TR/html-aam-1.0/#details-id-14">blockquote - html-aam-1.0</a></li>
+                </ul>
+
+                <h4 class="heading-s">Abbreviations</h4>
+                <ul>
+                  <li>Reasonable support</li>
+                  <li>write out the full abbreviation the first time that it appears</li>
+                  <li>&lt;acronym&gt; is phased out, use &lt;abbr&gt;</li>
+                </ul>
+
+                <h4 class="heading-s">Elements NOT announced by Screen readers (but still important!)</h4>
+                <ul>
+                  <li>Reasonable support</li>
+                  <li>&lt;strong&gt; - strong emphasis</li>
+                  <li>&lt;em&gt; - emphasis</li>
+                  <li>&lt;q&gt; - inline quotation</li>
+                  <li>&lt;pre&gt; - preformatted text</li>
+                  <li>&lt;code&gt; - computer code (such as HTML, JavaScript, PHP, etc.)</li>
+                  <li>&lt;address&gt; - contact information for the creators of a document</li>
+                  <li>&lt;time&gt; - date and/or time</li>
+                  <li><a href="http://w3c.github.io/low-vision-a11y-tf/requirements#x3-5-identifying-elements">LVTF 3.5 Identifying Elements</a></li>
+                </ul>
+
+                <h4 class="heading-s">Emphasizing Content</h4>
+                <ul>
+                  <li>Good practice
+                    <ul>
+                      <li>Increase font size</li>
+                      <li>Make the font bold using &lt;em&gt; and &lt;strong&gt; or CSS</li>
+                      <li>Change the color of the font (* watch contrast and not only means of conveying important information)</li>
+                      <li>Put an outline around the content</li>
+                      <li>Put a background color behind the content</li>
+                      <li>Put an image next to the content</li>
+                      <li>Put extra "white space" around the content with CSS padding or margin</li>
+                    </ul>
+                  </li>
+                  <li>Bad practice
+                    <ul>
+                      <li>Make the font italic using &lt;i&gt; or &lt;em&gt; or CSS</li>
+                      <li>USE ALL CAPITAL LETTERS</li>
+                      <li>*Put asterisks around words or phrases*</li>
+                    </ul>
+                  </li>
+                  <li>Non-Visual Methods
+                    <ul>
+                      <li>Write the word "Important" (or similar)</li>
+                      <li>Put the word "Important" in the alt text</li>
+                      <li>Hide the word "Important" from visual users by using CSS if whished for</li>
+                      <li>Put the content in a heading</li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#emphasis" class="link-ts"><span>Emphasis</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="parsing-and-validity" aria-labelledby="title-parsing-and-validity">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-parsing-and-validity">Parsing and Validity</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+
+                <h4 class="heading-s"><strong>Conflicts and duplicates</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>IDs <span class="badge badge-success">MUST</span> be unique within a web page.
+                  </li>
+                  <li>Names of elements <span class="badge badge-info">SHOULD</span> be unique within a web page.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Parent-child relationships</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Markup <span class="badge badge-info">SHOULD</span> adhere to required parent-child relationships of elements and attributes.</li>
+                </ul>
+
+                <h4 class="heading-s"><strong>Deprecated Markup</strong></h4>
+                <ul class="list-icons list-checklist">
+                  <li>Deprecated markup <span class="badge badge-info">SHOULD NOT</span> be used.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Semantic%20Structure%20and%20Navigation%20-%20Web%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Semantic Structure and Navigation PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/semantic-structure2/parsing-and-validity/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Parsing and Validity - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+  <script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

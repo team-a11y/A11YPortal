@@ -1,0 +1,277 @@
+//----------
+// Brandbar
+//----------
+
+// brandbar
+
+.brandbar {
+  position: relative;
+  border-bottom: 1px solid #767676;
+}
+
+// Brandbar
+
+.brandbar {
+  background: #ffffff;
+  // background: #006382;
+  // background-image: url("/http://www.a11yportal.com/images/header-bg.jpg");
+  background-size: cover;
+  color: #ffffff;
+  
+  @media (min-width: 768px) {
+    background-color: #767676;
+  }
+  
+}
+
+// Brandbar-image
+
+.brandbar-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brandbar-image-kitesurf {
+  background-image: url("http://www.a11yportal.com/images/brandbarmobiel-kitesurf.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-kitesurf.jpg");   
+  }
+  
+}
+
+.brandbar-image-kitesurf2 {
+  background-image: url("http://www.a11yportal.com/images/brandbar-kitesurf2.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-kitesurf2.jpg");  
+  }
+  
+}
+
+.brandbar-image-lotte {
+  background-image: url("http://www.a11yportal.com/images/brandbarmobiel-lotte.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/Brandbar-Lotte.jpg");   
+  }
+  
+}
+
+.brandbar-image-portal {
+  background-image: url("http://www.a11yportal.com/images/brandbarmobiel-portal.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-portal.jpg");   
+  }
+  
+} 
+
+.brandbar-image-people {
+  background-image: url("http://www.a11yportal.com/images/brandbarmobiel-people.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/Brandbar-people.jpg");   
+  }
+  
+}
+
+.brandbar-image-satisfied {
+  background-image: url("http://www.a11yportal.com/images/brandbar-satisfied.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-satisfied.jpg");   
+  }
+  
+}
+
+.brandbar-image-specials {
+  background-image: url("http://www.a11yportal.com/images/brandbar-specials.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-specials.jpg");   
+  }
+  
+}
+
+.brandbar-image-article {
+  background-image: url("http://www.a11yportal.com/images/brandbar-VeelGeld.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-VeelGeld.jpg");   
+  }
+  
+}
+
+.brandbar-image-request {
+  background-image: url("http://www.a11yportal.com/images/brandbar-request.jpg");
+  
+  @media (min-width: 576px) {
+    background-image: url("http://www.a11yportal.com/images/brandbar-request.jpg");   
+  }
+  
+}
+
+.brandbar-header {
+  display: block;
+  margin-left: -15px;
+  margin-right: -15px;
+    
+  @media (min-width: 768px) {
+    padding-top: 15px;
+  }
+  
+}
+
+// Brandbar-heading
+
+.brandbar-heading {
+  position: relative;
+  color: #767676;
+  margin: 0 10px;
+  padding: 10px;  
+    
+  @media (min-width: 768px) {
+    background-color: rgba(0,0,0,.45)!important;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    color: #ffffff;
+    text-shadow: 1px 1px #767676;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  @media (min-width: 992px) {
+    width: 64%;
+  }
+  
+}
+
+.brandbar-title {
+  margin: 0 0 .5rem 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+    
+  @media (min-width: 768px) {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+  
+}
+
+.brandbar-lead {
+  margin: 0 0 1rem 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+    
+  @media (min-width: 768px) {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+  
+}
+
+// brandbar-a
+
+.brandbar-a {
+  height: 90px;
+  overflow: hidden;
+    
+    @media (min-width: 576px) {
+      height: 120px;
+    }
+    
+    @media (min-width: 768px) {
+      height: 140px;
+    }
+
+    @media (min-width: 992px) {
+      height: 163px;
+    }
+
+  // @media (min-width: 992px) {
+  //   height: 236px;
+  // }
+  
+  .brandbar-image,
+  .brandbar-link {
+    height: 118px;
+    
+    @media (min-width: 576px) {
+      height: 163px;
+    }
+    
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+    
+  }
+  
+  .brandbar-heading {
+    padding-top: 128px;
+    
+    @media (min-width: 576px) {
+      padding-top: 173px;
+    }
+    
+    @media (min-width: 768px) {
+      padding-top: 15px;
+    }
+      
+  }
+  
+}
+
+// brandbar-a
+
+.brandbar-b {
+  height: auto;
+    
+  @media (min-width: 768px) {
+    height: 196px;
+  }
+
+  // @media (min-width: 992px) {
+  //   height: 236px;
+  // }
+  
+  .brandbar-image,
+  .brandbar-link {
+    height: 118px;
+    border-bottom: 1px solid #767676;
+    
+    @media (min-width: 576px) {
+      height: 163px;
+      border-bottom-color: transparent;
+    }
+    
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+    
+  }
+  
+  .brandbar-heading {
+    padding-top: 128px;
+    
+    @media (min-width: 576px) {
+      padding-top: 173px;
+    }
+    
+    @media (min-width: 768px) {
+      padding-top: 15px;
+    }
+      
+  }
+  
+}

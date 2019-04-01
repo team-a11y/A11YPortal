@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links - Design - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html" aria-current="page">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/visual-design.html">Visual Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/images.html">Images</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/design/links.html" aria-current="page">Links <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/structure.html">Structure</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Links</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#descriptive-links" class="link-ts"><span>Descriptive links</span></a></li>
+          <li><a href="#links-to-alternative-formats" class="link-ts"><span>Links to alternative formats</span></a></li>
+          <li><a href="#combining-repeated-links" class="link-ts"><span>Combining repeated links</span></a></li>
+        </ul>
+      
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="descriptive-links" aria-labelledby="title-descriptive-links">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-descriptive-links">Descriptive links <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Link and navigation text must uniquely describe the target or function of the link or item.</strong></p>
+
+                <p>Unique links and navigation items are essential for screen reader and magnification users who may not perceive the context of a link or item. This is especially an issue for users who have not followed the content order.</p>
+
+                <p>If link text is duplicated in a page or screen (e.g. Learn more..., More info..., Continue reading...) ways of <a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content">making each link unique</a> must also be used,
+                  for example, by using labels or hidden text.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-descriptive-links" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-descriptive-links" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-descriptive-links" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-descriptive-links-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-descriptive-links-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links - Web</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#links" class="link-ts"><span>Links - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-descriptive-links">iOS</h4>
+
+            <p>If multiple links on a screen have the same visible text, labels and hints must be used to make them unique.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[dNameBtn setAccessibilityLabel: NSLocalizedString(@"Delete Name", @"Button label")];
+[dAddressBtn setAccessibilityLabel: NSLocalizedString (@"Delete Address", @"Button label")];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[dNameBtn setAccessibilityLabel:@"Delete"];
+[dAddressBtn setAccessibilityLabel:@"Delete"];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-descriptive-links">Android</h4>
+
+            <p>If multiple links on a screen have the same visible text, content descriptions must be used to make them unique.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<Button android:contentDescription="Delete Name" ...> </Button>
+<Button android:contentDescription="Delete Address" ...></Button>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<Button android:contentDescription="Delete" ...> </Button>
+<Button android:contentDescription="Delete" ...> </Button>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-descriptive-links">HTML</h4>
+
+            <p>If multiple links on a page have the same visible text, alt text associated with an image element, on-screen text, or off-screen text can be used to make them unique.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<style>
+  .sr-only {
+    position: absolute; /* required for clip style */
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+</style>
+...
+<p>Content 1 title and description.
+  <a href="page1.html">More info <span class="sr-only">on content 1</span></a>
+</p>
+<p>Content 2 title and description.
+  <a href="page2.html">More info <span class="sr-only">on content 2</span></a>
+</p>
+<p>Content 3 title and description.
+  <a href="page3.html">More info <span class="sr-only">on content 3</span></a>
+</p>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<p>Content 1 title and description.
+  <a href="page1.html">More info</a>
+</p>
+<p>Content 2 title and description.
+  <a href="page2.html">More info</a>
+</p>
+<p>Content 3 title and description.
+  <a href="page3.html">More info</a>
+</p>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-descriptive-links-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate the link, button or navigation item.</li>
+                  <li>Determine if the link or item by itself is sufficient to describe the component uniquely and clearly indicates its purpose.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-descriptive-links-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Links, buttons, or navigational items are sufficiently described via text (on or off-screen), or by alternative text to clearly indicate their purpose.</li>
+                </ul>
+
+                <p>Note: Off-screen text can most easily be verified by using a screen reader. This text if created correctly will be announced by a screen reader but does not appear on screen.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="links-to-alternative-formats" aria-labelledby="title-links-to-alternative-formats">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-links-to-alternative-formats">Links to alternative formats <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Links to alternative formats must indicate that an alternative is opening.</strong></p>
+
+                <p>Unexpectedly opening an item in another format and/or application could cause any user to become disoriented. This is especially relevant for users with cognitive impairments or using assistive technology.</p>
+
+                <p>It is important to inform the user that they will be going to a different format and/or application and what that will be, so that they know what to expect and where they are.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title" id="title-links-to-alternative-formats-jump">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-links-to-alternative-formats" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-links-to-alternative-formats" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-links-to-alternative-formats" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-links-to-alternative-formats-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-links-to-alternative-formats-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links - Web</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#links" class="link-ts"><span>Links - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-links-to-alternative-formats">iOS</h4>
+
+            <p>Display a message box before launching the external app or put this information in the label or hint text. Equally an ‘external link’ icon could also be used to indicated to users that a link leaves the app. Links out of an app are typically
+              given a trait of link while links within an app are given a trait of button.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Example 1
+UIAlertView *messageBox = [[UIAlertView alloc] initWithTitle: NSLocalizedString (@"Alert!", @"Message box title") message: NSLocalizedString (@"This will open in your browser", @"Message box content") delegate:nil cancelButtonTitle: NSLocalizedString (@"OK", @"Agree to message button title") otherButtonTitles:nil];
+    [messageBox show];
+    // Launch the app in the handler for the alert view once the user presses the button
+
+// Example 2
+UIButton *pdfButton = [UIButton buttonWithType:UIButtonTypeCustom];
+[pdfButton setTitle: NSLocalizedString("View annual report in PDF", Object.nil)]
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <ul class="list-icons list-checklist">
+                  <li>Launch the app without a warning.</li>
+                  <li>No indication that a button opens a document in a different format.</li>
+                  <li>The link out of the app is coded as a button.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-links-to-alternative-formats">Android</h4>
+
+            <p>Display a message box informing the user of the application switch or include this information in the control <code class="code-badge">contentDescription</code>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+  @Override
+  public void onClick(DialogInterface dialog, int which) {
+    switch (which){
+    case DialogInterface.BUTTON_POSITIVE:
+      //Yes button clicked
+      break;
+
+    case DialogInterface.BUTTON_NEGATIVE:
+      //No button clicked
+      break;
+    }
+  }
+};
+
+AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+  .setNegativeButton("No", dialogClickListener).show();
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Failure to launch a message box or failure to place information about the alternative in the <code>contentDescription</code> attribute.</p>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-links-to-alternative-formats">HTML</h4>
+
+            <p>This may be done at the end of the link text, as text or an icon with a <a href="../../guidelines/content/text-equivalents.html#alternatives-for-non-text-content">text alternative</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<a href="...">Annual report <img src="html.jpg" alt="[External link]" /></a>
+<a href="...">Annual report <img src="pdf.jpg" alt="[PDF / 86kB]" /></a>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// HTML version
+<a href="...">Annual report </a>
+                // PDF version
+<a href="...">Annual report </a>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-links-to-alternative-formats-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app.</li>
+                  <li>Verify that a single interface is provided to allow access by all individuals.</li>
+                  <li>If an alternative format is provided, verify that a warning and link is provided to the alternative.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-links-to-alternative-formats-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>Either of the following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The app provides a single interface to be accessed by all users;</li>
+                  <li>A warning and link is provided to an alternative.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="combining-repeated-links" aria-labelledby="title-combining-repeated-links">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-combining-repeated-links">Combining repeated links <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Repeated links to the same resource must be combined within a single link.</strong></p>
+
+                <p>Grouping adjacent links to the same page or resource into a single link helps all users to navigate quickly, especially those using assistive technology, such as switch devices or screen readers. It reduces the number of elements to navigate,
+                  reduces screen reader verbosity, and also helps to increase <a href="../../guidelines/design/visual-design.html#touch-target-size">touch target size</a>.</p>
+
+                <p>Repeated links, for example, could be an adjacent image, title and topic that all link to the same page or resource.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-combining-repeated-links" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-combining-repeated-links" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-combining-repeated-links" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-combining-repeated-links-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-combining-repeated-links-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links - Web</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#links" class="link-ts"><span>Links - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-combining-repeated-links">iOS</h4>
+
+            <p>When an image and text appear adjacent and have the same target - the link and text should be combined into the same actionable element. The accessibility properties must be on the grouped element and not on the individual image and text object.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[aFNLabel setText:NSLocalizedString(@"First Name", @"Text label for the text entry field")];
+[aFNLabel setIsAccessibilityElement:NO]; // We hide the label element since it is announced as part of the field
+[aFNField setPlaceholder:NSLocalizedString(@"Required", @"Placeholder text put in text entry field")];
+[aFNField setAccessibilityLabel:NSLocalizedString(@"First name required", @"A11y label for combined label + field entry")]; // Not constructing a string from label name + placeholder to avoid translation problems of constructed strings
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Example 1
+[FNLabel setText:NSLocalizedString(@"First Name", nil)];
+[FNField setPlaceholder:NSLocalizedString(@"Required", nil)];
+[FNField setAccessibilityLabel:[NSString stringWithFormat:@"%@ %@", FNLabel.accessibilityLabel, FNField.placeholder]];
+
+// Example 2 - an UIImageView and UILabel
+imageView.image = [UIImage imageNamed:@"addBookmark"];
+ImageView.accessibilityLabel = @"Add";
+textLabel.text = @"Add";
+textLabel.accessibilityLabel = @"Add";
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-combining-repeated-links">Android</h4>
+
+            <p>Set redundant elements to non-focusable and ensure contentDescription includes all required information in the remaining focusable element.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//On-screen text followed by button, the contentDescription for the button component is a repetition of the on-screen text. The on-screen text is not focusable.
+
+<TextView android:id="@+id/add_label" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Add"></TextView>
+
+<Button android:id="@+id/add" android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="Add"></Button>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//On-screen text followed by button, the contentDescription for the button component is a repetition of the on-screen text. The on-screen text is focusable.
+
+<TextView android:id="@+id/add_label" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Add"
+          android:focusable="true"></TextView>
+
+<Button android:id="@+id/add" android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="Add"></Button>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-combining-repeated-links">HTML</h4>
+
+            <p>Place images requiring alt text but with a redundant associated text link into one anchor element and set the <code class="code-badge">alt</code> attribute of the image to null.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<a href="..."><img src="search.jpg" alt=""/>Search</a>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<a href="..."><img src="search.jpg" alt="Search"/></a><a href="...">Search</a>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-combining-repeated-links-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Identify the active screen objects, elements, and controls that have textual and image components.</li>
+                  <li>Navigate to the items.</li>
+                  <li>Verify that the text is not announced twice.</li>
+                  <li>Verify that there are not two equivalent actionable items announced for each item.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-combining-repeated-links-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Objects, elements, and controls with image and text labels are only announced once;</li>
+                  <li>Objects, elements, and controls that with image and text labels are grouped in such a way that they only announced as one component.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia, Animations, and Motion - Design - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html" aria-current="true" id="main-menu">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/images-svg-and-canvas.html">Images</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/visual-design-and-colors.html">Visual Design</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/design/multimedia-animations-and-motion.html" aria-current="page">Multimedia and Animations <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/form-labels-instructions-and-validation.html">Forms</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Multimedia, Animations, and Motion</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#multimedia-accessibility-decision-matrix" class="link-ts"><span>Multimedia Accessibility Decision Matrix</span></a></li>
+          <li><a href="#captions" class="link-ts"><span>Captions</span></a></li>
+          <li><a href="#transcripts" class="link-ts"><span>Transcripts</span></a></li>
+          <li><a href="#audio-descriptions" class="link-ts"><span>Audio Descriptions</span></a></li>
+          <li><a href="#sign-language-interpretation" class="link-ts"><span>Sign Language Interpretation</span></a></li>
+          <li><a href="#media-player-accessibility" class="link-ts"><span>Media Player Accessibility</span></a></li>
+          <li><a href="#background-sounds" class="link-ts"><span>Background Sounds</span></a></li>
+          <li><a href="#seizure-inducing-flashes" class="link-ts"><span>Seizure-Inducing Flashes</span></a></li>
+          <li><a href="#animations-and-motion" class="link-ts"><span>Animations and Motion</span></a></li>
+          <li><a href="#auto-play" class="link-ts"><span>Auto-Play</span></a></li>
+          <li><a href="#legal-requirements" class="link-ts"><span>Legal Requirements</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Methods of making video and audio accessible</strong></p>
+                <p>There are four main methods of making video and audio accessible to audiences with sensory disabilities (deaf or hard of hearing, blind or low vision, and deafblind):</p>
+                <ul>
+                  <li><strong>Captions:</strong> Text synchronized with the media, for people who cannot hear the spoken words.</li>
+                  <li><strong>Transcripts:</strong> The full text of the spoken words and important visual information in the media file, to read as an alternative to watching or listening to the media file.</li>
+                  <li><strong>Audio descriptions:</strong> A version of the media file with a narrator explaining important visual information (such as unspoken actions and events) for the benefit of people who cannot see what's happening.</li>
+                  <li><strong>Sign language interpretation:</strong> Video of an interpreter, synchronized with the media file (or in the same video frame), for the benefit of people who know sign language.</li>
+                </ul>
+                <p>There are additional considerations:</p>
+                <ul>
+                  <li><strong>Clear audio:</strong> Prominent background sounds make it difficult for people who are hard of hearing to understand the spoken words.</li>
+                  <li><strong>Preventing seizures:</strong> Flashing visual effects in videos can cause seizures in some people.</li>
+                  <li><strong>Preventing dizziness:</strong> Some people with vestibular disorders can become dizzy, nauseous, or disoriented when there is excessive motion in video or animated content.</li>
+                  <li><strong>Accessible media player:</strong> The media player itself has to be keyboard-accessible and needs to communicate the names, roles, and values of the controls and the states of the controls.</li>
+                  <li><strong>Preventing auto-play audio interference with screen readers:</strong> Media players that auto-play can interfere with screen reader users' ability to hear their screen reader.</li>
+                </ul>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Four main methods of making video and audio accessible:</p>
+                <ul>
+                  <li><strong>Captions:</strong> Text synchronized with the media, for people who cannot hear the spoken words.</li>
+                  <li><strong>Transcripts:</strong> The full text of the spoken words and important visual information in the media file, to read as an alternative to watching or listening to the media file.</li>
+                  <li><strong>Audio descriptions:</strong> A version of the media file with a narrator explaining important visual information (such as unspoken actions and events) for the benefit of people who cannot see what's happening.</li>
+                  <li><strong>Sign language interpretation:</strong> Video of an interpreter, synchronized with the media file (or in the same video frame), for the benefit of people who know sign language.</li>
+                </ul>
+                <p>Additional considerations:</p>
+                <ul>
+                  <li><strong>Clear audio:</strong> Prominent background sounds make it difficult for people who are hard of hearing to understand the spoken words.</li>
+                  <li><strong>Preventing seizures:</strong> Flashing visual effects in videos can cause seizures in some people.</li>
+                  <li><strong>Preventing dizziness:</strong> Some people with vestibular disorders can become dizzy, nauseous, or disoriented when there is excessive motion in video or animated content.</li>
+                  <li><strong>Accessible media player:</strong> The media player itself has to be keyboard-accessible and needs to communicate the names, roles, and values of the controls and the states of the controls.</li>
+                  <li><strong>Preventing auto-play audio interference with screen readers:</strong> Media players that auto-play can interfere with screen reader users' ability to hear their screen reader.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/multimedia2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/images-svg-and-canvas.html#multimedia-plug-ins-and-documents" class="link-ts"><span>Multimedia, Plug-ins, and Documents</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#multimedia" class="link-ts"><span>Multimedia</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/UAAG20/" class="link-ts"><span>User Agent Accessibility Guidelines (UAAG) 2.0</span></a></li>
+                  <li><a href="https://www.w3.org/TR/media-accessibility-reqs/" class="link-ts"><span>Media Accessibility User Requirements</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://w3c.github.io/wai-tutorials/accessible-media/" class="link-ts"><span>Accessible Media Tutorial - WAI W3C (Editor’s draft)</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.iheni.com/accessible-media-player-resources/" class="link-ts"><span>Accessible media player resources and demos</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="multimedia-accessibility-decision-matrix" aria-labelledby="title-multimedia-accessibility-decision-matrix">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-multimedia-accessibility-decision-matrix">Multimedia Accessibility Decision Matrix</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/decision-matrix" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Multimedia Accessibility Decision Matrix - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="captions" aria-labelledby="title-captions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-captions">Captions</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">When Captions Are Needed</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Prerecorded multimedia (video plus audio) files <span class="badge badge-success">MUST</span> include synchronized captions.</li>
+                  <li>All live multimedia (video plus audio) events that contain dialog and/or narration <span class="badge badge-success">MUST</span> be accompanied by synchronized captions.</li>
+                  <li>All live audio-only content that contains dialog and/or narration <span class="badge badge-info">SHOULD</span> be accompanied by text-based synchronized captions.</li>
+                </ul>
+
+                <h4 class="heading-s">What to Include in Captions and Transcripts</h4>
+                <ul class="list-icons list-checklist">
+                  <li><strong>Captions</strong> <span class="badge badge-success">MUST</span> be verbatim for scripted content (except when intentionally creating simplified captioning for a relevant target audience, e.g. people with cognitive disabilities).</li>
+                  <li><strong>Transcripts</strong> <span class="badge badge-success">MUST</span> be verbatim for scripted content.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> be verbatim for unscripted or live content (with the optional exception of stuttering or filler words -- like "um" -- when captioning
+                    the filler words reduces reading comprehension of the <strong>captions</strong> or <strong>transcript</strong>).</li>
+                  <li>Important visual events <span class="badge badge-success">MUST</span> be described in the <strong>transcript</strong>.</li>
+                  <li>Important background sounds <span class="badge badge-success">MUST</span> be conveyed in <strong>captions</strong> and <strong>transcripts</strong>, preferably in [brackets] or (parentheses).</li>
+                  <li>Speech that is spoken off-screen <span class="badge badge-success">MUST</span> be captured in <strong>captions</strong> and <strong>transcripts</strong>.</li>
+                  <li>The identity of the person speaking <span class="badge badge-success">MUST</span> be identified in <strong>captions</strong> and <strong>transcripts</strong>.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> use punctuation to convey emphasis whenever possible, rather than write extra text to explain the emphasis.</li>
+                  <li><strong>Captions</strong> <span class="badge badge-info">SHOULD</span> use conventional spelling, rather than attempt to write words phonetically, except when phonetic spelling is essential to the meaning of the content.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-danger">MUST NOT</span> reveal intentionally-withheld information in the content before the appropriate time.</li>
+                  <li>Music <span class="badge badge-info">SHOULD</span> be identified by title and artist whenever possible in <strong>captions</strong> and <strong>transcripts</strong>, unless doing so would be inappropriate to the content.</li>
+                  <li>Important music lyrics <span class="badge badge-info">SHOULD</span> be included in <strong>captions</strong> and <strong>transcripts</strong>, if relevant to the meaning of the content.</li>
+                  <li>When speech is inaudible or difficult to perceive clearly, <strong>captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> say so, using neutral language.</li>
+                  <li>Strong language <span class="badge badge-info">SHOULD</span> be retained and not edited out of <strong>captions</strong> and <strong>transcripts</strong>, whenever possible, OR <span class="badge badge-info">SHOULD</span> be bleeped
+                    or muted to match style or content requirements of the intended audience or context.
+                  </li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> indicate when speech is whispered or mouthed.</li>
+                  <li><strong>Captions</strong> <span class="badge badge-info">SHOULD</span> describe sounds in terms of the sounds themselves, not the actions causing the sounds.</li>
+                </ul>
+
+                <h4 class="heading-s">Visual Presentation of Captions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Captions <span class="badge badge-info">SHOULD NOT</span> exceed three lines on the screen at a time.</li>
+                  <li>Caption line breaks, when necessary, <span class="badge badge-info">SHOULD</span> be inserted at logical points between phrases, rather than in the middle of a phrase.</li>
+                  <li>Captions <span class="badge badge-info">SHOULD</span> be typed in mixed case.</li>
+                  <li>The default font for captions <span class="badge badge-info">SHOULD</span> be a sans-serif font.</li>
+                  <li>The maximum number of characters per line of captions <span class="badge badge-info">SHOULD NOT</span> exceed 32 characters.</li>
+                  <li>Captions <span class="badge badge-info">SHOULD</span> remain on the screen for a minimum of 1 second under all circumstances, AND <span class="badge badge-info">SHOULD</span> take into account the number of words, at 0.3 seconds per
+                    word, if possible.</li>
+                  <li>Captions <span class="badge badge-info">SHOULD</span> be positioned to not obscure on-screen text, people's faces, or other important visual information.</li>
+                  <li>Captions <span class="badge badge-info">SHOULD</span> be precisely synchronized to the audio, except when doing so would make captions difficult to read.</li>
+                  <li>The default color combination <span class="badge badge-info">SHOULD</span> be white text on a black background.</li>
+                  <li>The default caption font color and background <span class="badge badge-success">MUST</span> be a minimum of 3:1 (assuming a minimum font size of 18 point).</li>
+                  <li>The default font size for captions <span class="badge badge-info">SHOULD</span> be at least 22pt.</li>
+                  <li>The default font weight for captions <span class="badge badge-info">SHOULD</span> be normal (not bold).</li>
+                  <li>Colors in captions <span class="badge badge-success">MUST</span> not be used as the only way to convey meaning.</li>
+                  <li>Italics or all caps <span class="badge badge-warning">MAY</span> be used for emphasis in captions when punctuation alone does not convey the full meaning.</li>
+                  <li>Quotation marks (or optionally italics or underline, if supported in the caption format) and mixed case capitalization <span class="badge badge-info">SHOULD</span> be used to designate titles (e.g. of books or movies) when appropriate
+                    in captions.</li>
+                  <li>The last caption frame <span class="badge badge-info">SHOULD</span> be removed from the screen during long silent intervals.</li>
+                  <li>Any gaps in captions <span class="badge badge-info">SHOULD</span> be a minimum of 1.5 seconds.</li>
+                  <li>Periods of silence <span class="badge badge-info">SHOULD</span> be noted as such when the visual content gives the impression that there may be important sounds or speech.</li>
+                  <li>Additional on-screen time for a caption frame <span class="badge badge-info">SHOULD</span> be added when the caption contains unfamiliar or uncommon words or phrases.</li>
+                  <li>Additional on-screen time for a caption frame <span class="badge badge-info">SHOULD</span> be added when there is a lot happening visually on the screen.</li>
+                </ul>
+
+                <h4 class="heading-s">Visual Customizability of Captions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Users <span class="badge badge-info">SHOULD</span> be able to customize the visual appearance of captions.</li>
+                </ul>
+
+                <h4 class="heading-s">Caption File Format</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Multiple caption file formats <span class="badge badge-info">SHOULD</span> be provided.</li>
+                  <li>At least one of the file formats <span class="badge badge-info">SHOULD</span> be in a WebVTT file format.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/captions/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Captions - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Complete dialog, whom is speaking and non speech info</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html" class="link-ts"><span>Alternatives for audio and visual content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://w3c.github.io/wai-tutorials/accessible-media/decision-tree/" class="link-ts"><span>Captions and descriptions decision trees - WAI W3C (Editor’s draft)</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="transcripts" aria-labelledby="title-transcripts">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-transcripts">Transcripts</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">When Transcripts Are Needed</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A text transcript <span class="badge badge-info">SHOULD</span> be provided for multimedia (video plus audio) content.</li>
+                  <li>Prerecorded audio-only content <span class="badge badge-success">MUST</span> be accompanied by an easily-reachable text transcript.</li>
+                  <li>A text transcript describing the visual aspects of the video <span class="badge badge-info">SHOULD</span> be provided for video-only content.</li>
+                </ul>
+
+                <h4 class="heading-s">What to Include in Captions and Transcripts</h4>
+                <ul class="list-icons list-checklist">
+                  <li><strong>Captions</strong> <span class="badge badge-success">MUST</span> be verbatim for scripted content (except when intentionally creating simplified captioning for a relevant target audience, e.g. people with cognitive disabilities).</li>
+                  <li><strong>Transcripts</strong> <span class="badge badge-success">MUST</span> be verbatim for scripted content.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> be verbatim for unscripted or live content (with the optional exception of stuttering or filler words -- like "um" -- when captioning
+                    the filler words reduces reading comprehension of the <strong>captions</strong> or <strong>transcript</strong>).</li>
+                  <li>Important visual events <span class="badge badge-success">MUST</span> be described in the <strong>transcript</strong>.</li>
+                  <li>Important background sounds <span class="badge badge-success">MUST</span> be conveyed in <strong>captions</strong> and <strong>transcripts</strong>, preferably in [brackets] or (parentheses).</li>
+                  <li>Speech that is spoken off-screen <span class="badge badge-success">MUST</span> be captured in <strong>captions</strong> and <strong>transcripts</strong>.</li>
+                  <li>The identity of the person speaking <span class="badge badge-success">MUST</span> be identified in <strong>captions</strong> and <strong>transcripts</strong>.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> use punctuation to convey emphasis whenever possible, rather than write extra text to explain the emphasis.</li>
+                  <li><strong>Captions</strong> <span class="badge badge-info">SHOULD</span> use conventional spelling, rather than attempt to write words phonetically, except when phonetic spelling is essential to the meaning of the content.</li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-danger">MUST NOT</span> reveal intentionally-withheld information in the content before the appropriate time.</li>
+                  <li>Music <span class="badge badge-info">SHOULD</span> be identified by title and artist whenever possible in <strong>captions</strong> and <strong>transcripts</strong>, unless doing so would be inappropriate to the content.</li>
+                  <li>Important music lyrics <span class="badge badge-info">SHOULD</span> be included in <strong>captions</strong> and <strong>transcripts</strong>, if relevant to the meaning of the content.</li>
+                  <li>When speech is inaudible or difficult to perceive clearly, <strong>captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> say so, using neutral language.</li>
+                  <li>Strong language <span class="badge badge-info">SHOULD</span> be retained and not edited out of <strong>captions</strong> and <strong>transcripts</strong>, whenever possible, OR <span class="badge badge-info">SHOULD</span> be bleeped
+                    or muted to match style or content requirements of the intended audience or context.
+                  </li>
+                  <li><strong>Captions</strong> and <strong>transcripts</strong> <span class="badge badge-info">SHOULD</span> indicate when speech is whispered or mouthed.</li>
+                  <li><strong>Captions</strong> <span class="badge badge-info">SHOULD</span> describe sounds in terms of the sounds themselves, not the actions causing the sounds.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/transcripts/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Transcripts - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Via a link or inpage</li>
+                  <li>Must be equivalent information</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html" class="link-ts"><span>Alternatives for audio and visual content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="audio-descriptions" aria-labelledby="title-audio-descriptions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-audio-descriptions">Audio Descriptions</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">When Audio Descriptions Are Needed</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Prerecorded multimedia (video plus audio) <span class="badge badge-success">MUST</span> include audio descriptions.</li>
+                  <li>Prerecorded video-only files <span class="badge badge-success">MUST</span> include audio descriptions.</li>
+                  <li>Audio descriptions <span class="badge badge-warning">MAY</span> be provided for live multimedia (audio plus video) content.</li>
+                  <li>Audio descriptions <span class="badge badge-warning">MAY</span> be provided for live video-only content.</li>
+                </ul>
+
+                <h4 class="heading-s">Extended Audio Descriptions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Where pauses in foreground audio are insufficient to allow audio descriptions to convey the sense of the video, extended audio description <span class="badge badge-info">SHOULD</span> be provided for all prerecorded multimedia (video plus audio) content.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/audio-descriptions/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Audio Descriptions - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Narrator + complete dialog, whom is speaking and non speech info</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html" class="link-ts"><span>Alternatives for audio and visual content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="sign-language-interpretation" aria-labelledby="title-sign-language-interpretation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-sign-language-interpretation">Sign Language Interpretation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Sign Language Interpretation</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Determining When Sign Language Interpretation is Needed</li>
+                  <li>Sign language interpretation <span class="badge badge-warning">MAY</span> be provided for prerecorded multimedia (video plus audio).</li>
+                  <li>Sign language interpretation <span class="badge badge-warning">MAY</span> be provided for prerecorded audio-only content.</li>
+                  <li>Sign language interpretation <span class="badge badge-warning">MAY</span> be provided for live multimedia (video plus audio) content.</li>
+                  <li>Sign language interpretation <span class="badge badge-warning">MAY</span> be provided for live audio-only content.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/sign-language/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Sign Language Interpretation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html" class="link-ts"><span>Alternatives for audio and visual content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="media-player-accessibility" aria-labelledby="title-media-player-accessibility">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-media-player-accessibility">Media Player Accessibility</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Keyboard Accessibility</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All functionality of a media player <span class="badge badge-success">MUST</span> be available to keyboard users</li>
+                </ul>
+
+                <h4 class="heading-s">Screen Reader Accessibility</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All controls of a media player <span class="badge badge-success">MUST</span> present the correct names, roles, and values to screen reader users.</li>
+                </ul>
+
+                <h4 class="heading-s">Captions, Transcripts, and Audio Descriptions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Media players <span class="badge badge-info">SHOULD</span> allow users to access captions, transcripts, and audio descriptions.</li>
+                </ul>
+
+                <h4 class="heading-s">Customizability</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Media players <span class="badge badge-info">SHOULD</span> allow visual customization of captions.</li>
+                  <li>Media players <span class="badge badge-info">SHOULD</span> remember user preferences.</li>
+                  <li>Media players <span class="badge badge-info">SHOULD</span> allow full screen video.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/media-player-accessibility/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Media Player Accessibility - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Ensure access to, through and past all embedded content</li>
+                  <li>WCAG 2.1.2 No keyboard trap</li>
+                  <li>Include labels, instructions recommended</li>
+                  <li>All controls keyboard accessible</li>
+                  <li>Name, state, Role, value</li>
+                  <li>Cross browser / platform testing</li>
+                  <li>Ensure captions</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html#volume-control" class="link-ts"><span>Volume control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="background-sounds" aria-labelledby="title-background-sounds">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-background-sounds">Background Sounds</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Background Sounds in Media</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Background sounds in prerecorded audio-only and prerecorded multimedia content <span class="badge badge-info">SHOULD</span> be minimized (20dB lower than foreground sounds, except for occasional sounds of no more than 2 seconds) or eliminated
+                    during narration or dialog, or a method must be available to turn off background sounds.</li>
+                  <li>Background sounds in live audio-only and live multimedia content <span class="badge badge-info">SHOULD</span> be minimized (20dB lower than foreground sounds, except for occasional sounds of no more than 2 seconds) or eliminated during
+                    narration or dialog, or a method must be available to turn off background sounds.</li>
+                </ul>
+
+                <h4 class="heading-s">Background Audio on Web Pages</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A mechanism <span class="badge badge-success">MUST</span> be provided to stop, pause, mute, or adjust volume for audio that automatically plays on a page for more than 3 seconds.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/background-sounds/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Background Sounds - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html#volume-control" class="link-ts"><span>Volume control</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="seizure-inducing-flashes" aria-labelledby="title-seizure-inducing-flashes">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-seizure-inducing-flashes">Seizure-Inducing Flashes</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Flashing Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A page <span class="badge badge-danger">MUST NOT</span> contain content that flashes more than 3 times per second unless that flashing content is sufficiently small, the flashes are of low contrast, and do not violate general flash thresholds.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/seizure-inducing-flashes/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Seizure-Inducing Flashes - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#flicker" class="link-ts"><span>Flicker</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="animations-and-motion" aria-labelledby="title-animations-and-motion">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-animations-and-motion">Animations and Motion</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Parallax Effects</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Parallax effects <span class="badge badge-info">SHOULD</span> be kept to a minimum, in terms of the total number of parallax effects, the amount of parallax within each individual effect, and the size of the area affected.</li>
+                  <li>All content and features within parallax scrolling content <span class="badge badge-success">MUST</span> be accessible by keyboard.</li>
+                  <li>The contrast of the text against all parts of a moving background <span class="badge badge-success">MUST</span> be a minimum of 4.5 to 1 for small text or 3 to 1 for large or bold text.</li>
+                </ul>
+
+                <h4 class="heading-s">Background Videos and Animations</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Important content <span class="badge badge-danger">MUST NOT</span> be conveyed through background videos and animations, unless users have full control over playback, and full access to any required captions, transcripts, and audio descriptions.</li>
+                  <li>A method <span class="badge badge-success">MUST</span> be provided to pause, stop, or hide any background videos or animations that begin playing automatically and which last 5 seconds or more.</li>
+                  <li>A method <span class="badge badge-info">SHOULD</span> be provided to pause and restart background videos and animations.</li>
+                  <li>The contrast of the text against background videos and animations <span class="badge badge-success">MUST</span> be a minimum of 4.5 to 1 for small text or 3 to 1 for large or bold text.</li>
+                  <li>Movement within background videos and animations <span class="badge badge-info">SHOULD</span> be minimal.</li>
+                  <li>Background videos and animations <span class="badge badge-info">SHOULD NOT</span> contain sounds.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/animations-motion/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Animations and Motion - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#controlling-media" class="link-ts"><span>Controlling media</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="auto-play" aria-labelledby="title-auto-play">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-auto-play">Auto-Play</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Auto-Play</h4>
+                <ul class="list-icons list-checklist">
+                  <li>A method <span class="badge badge-success">MUST</span> be provided to pause, stop, or hide any media content that begins playing automatically and which lasts 5 seconds or more.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/auto-play" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Auto-Play - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Ends within three seconds</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/code/audio-and-video.html#autoplay" class="link-ts"><span>Autoplay</span></a></li>
+                  <li><a href="../../guidelines/code/audio-and-video.html#volume-control" class="link-ts"><span>Volume control</span></a></li>
+                  <li><a href="../../guidelines/code/scripts-and-dynamic-content.html#controlling-media" class="link-ts"><span>Controlling media</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="legal-requirements" aria-labelledby="title-legal-requirements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-legal-requirements">Legal Requirements</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Introduction category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Audio%2C%20Video%2C%20Animations%2C%20and%20Motion%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Multimedia, Animations, and Motion PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/multimedia2/legal/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Legal Requirements - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

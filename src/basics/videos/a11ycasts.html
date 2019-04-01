@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A11Ycasts - Videos - Accessibility Questions</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body class="quiz" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html" aria-current="true"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/essentials/principles.html">Essentials</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../basics/videos/a11ycasts.html" aria-current="page">Videos <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../basics/videos/a11ycasts.html" aria-current="page">A11Ycasts <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../basics/presentations/intro-to-a11y.html">Presentations</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-people"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">A11Ycasts</h1>
+
+        <h2 id="title-toc">
+          <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#table-of-contents" aria-expanded="false" aria-controls="table-of-contents">
+            Table of Contents
+          </button>
+        </h2>
+        <div class="collapse" id="table-of-contents">
+          <ul class="list-icons list-linklist toc-columns mx-2 pt-4" role="directory">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#1" class="link-ts"><span>1. Introducing A11ycasts!</span></a></li>
+            <li><a href="#2" class="link-ts"><span>2. Inert Polyfill</span></a></li>
+            <li><a href="#3" class="link-ts"><span>3. What is Focus?</span></a></li>
+            <li><a href="#4" class="link-ts"><span>4. Controlling focus with tabindex</span></a></li>
+            <li><a href="#5" class="link-ts"><span>5. Just use button</span></a></li>
+            <li><a href="#6" class="link-ts"><span>6. Roving tabindex</span></a></li>
+            <li><a href="#7" class="link-ts"><span>7. Screen Reader Basics: VoiceOver</span></a></li>
+            <li><a href="#8" class="link-ts"><span>8. Why do semantics matter?</span></a></li>
+            <li><a href="#9" class="link-ts"><span>9. Screen Reader Basics: NVDA</span></a></li>
+            <li><a href="#10" class="link-ts"><span>10. Alerts!</span></a></li>
+            <li><a href="#11" class="link-ts"><span>11. How I do an accessibility check</span></a></li>
+            <li><a href="#12" class="link-ts"><span>12. The art of labeling</span></a></li>
+            <li><a href="#13" class="link-ts"><span>13. Intro to ARIA</span></a></li>
+            <li><a href="#14" class="link-ts"><span>14. States and Properties in ARIA</span></a></li>
+            <li><a href="#15" class="link-ts"><span>15. Automated testing with aXe</span></a></li>
+            <li><a href="#16" class="link-ts"><span>16. Focus Ring!</span></a></li>
+            <li><a href="#17" class="link-ts"><span>17. How to check for accessible colors</span></a></li>
+            <li><a href="#18" class="link-ts"><span>18. Why headings and landmarks are so important</span></a></li>
+            <li><a href="#19" class="link-ts"><span>19. Accessible Modal Dialogs</span></a></li>
+            <li><a href="#20" class="link-ts"><span>20. How to Label Shadow DOM</span></a></li>
+            <li><a href="#21" class="link-ts"><span>21. Does reordering content affect accessibility?</span></a></li>
+            <li><a href="#22" class="link-ts"><span>22. Managing Focus</span></a></li>
+            <li><a href="#23" class="link-ts"><span>23. The new way to test accessibility with Chrome DevTools</span></a></li>
+            <li><a href="#24" class="link-ts"><span>24. How to Label Custom Elements</span></a></li>
+            <li><a href="#25" class="link-ts"><span>25. How to build a toggle button</span></a></li>
+            <li><a href="#26" class="link-ts"><span>26. Testing Shadow DOM with aXe Coconut</span></a></li>
+            <li><a href="#27" class="link-ts"><span>27. Assistive Tech: TalkBack</span></a></li>
+            <li><a href="#28" class="link-ts"><span>28. Assistive Tech: VoiceOver on iOS</span></a></li>
+            <li><a href="#29" class="link-ts"><span>29. Assistive Tech: Switch Device</span></a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Introducing A11ycasts</strong></p>
+                <p>Hey folks! Accessibility is a topic very near and dear to my heart. And as I've spent the past year speaking about it I've realized that so many developers WANT to build accessible apps, but they're just not sure how to go about it. To help teach those fundamentals I thought it would be great to have a series dedicated entirely to the art of accessibility. Meet A11ycasts!</p>
+                <p>A11ycasts is short for AccessibilityCasts (a11y is a common shortening of the term accessibility because there are 11 letters in between the ""A"" and the ""Y""). The goal of A11ycasts is to teach developers how accessibility works all the way down at the platform level, while also demonstrating real world accessibility problems and solutions to fix them. If you want to follow along be sure to click the subscribe button to be notified every time we roll out a new episode.</p>
+                <p>Thanks and enjoy the show!  -- Rob Dodson - Google</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  
+    <section class="full-cover bg-faded" role="region" aria-labelledby="videos">
+      <div class="container">
+
+        <h2 class="full-cover-title sr-only" id="videos">Videos</h2>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="1">1. Introducing A11ycasts!</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/HtTyRajRuyY?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Introducing A11ycasts! -- A11ycasts #01"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="2">2. Inert Polyfill</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/fGLp_gfMMGU?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Inert Polyfill -- A11ycasts #02"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="3">3. What is Focus?</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/EFv9ubbZLKw?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="What is Focus? -- A11ycasts #03"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="4">4. Controlling focus with tabindex</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/Pe0Ce1WtnUM?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Controlling focus with tabindex -- A11ycasts #04"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="5">5. Just use button</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/CZGqnp06DnI?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Just use button -- A11ycasts #05"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="6">6. Roving tabindex</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/uCIC2LNt0bk?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Roving tabindex -- A11ycasts #06"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="7">7. Screen Reader Basics: VoiceOver</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/5R-6WvAihms?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Screen Reader Basics: VoiceOver -- A11ycasts #07"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="8">8. Why do semantics matter?</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/g2tzEil5TL0?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Why do semantics matter? -- #A11ycasts 08"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="9">9. Screen Reader Basics: NVDA</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/Jao3s_CwdRU?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Screen Reader Basics: NVDA -- A11ycasts #09"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="10">10. Alerts!</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/5lzAj1ahRSI?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Alerts! -- A11ycasts #10"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="11">11. How I do an accessibility check</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/cOmehxAU_4s?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="How I do an accessibility check -- A11ycasts #11"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="12">12. The art of labeling</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/8dCUzOiMRy4?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="The art of labeling -- A11ycasts #12"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="13">13. Intro to ARIA</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/g9Qff0b-lHk?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Intro to ARIA -- A11ycasts #13"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="14">14. States and Properties in ARIA</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/88tfx3jLV_M?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="States and Properties in ARIA -- A11ycasts #14"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="15">15. Automated testing with aXe</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/jC_7NnRdYb0?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Automated testing with aXe -- A11ycasts #15"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="16">16. Focus Ring!</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/ilj2P5-5CjI?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Focus Ring! -- A11ycasts #16"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="17">17. How to check for accessible colors</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/LBmLspdAtxM?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="How to check for accessible colors -- A11ycasts #17"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="18">18. Why headings and landmarks are so important</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/vAAzdi1xuUY?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Why headings and landmarks are so important -- A11ycasts #18"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="19">19. Accessible Modal Dialogs</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/JS68faEUduk?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Accessible Modal Dialogs -- A11ycasts #19"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="20">20. How to Label Shadow DOM</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/rr3c62Wnaeo?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="How to Label Shadow DOM - A11ycasts #20"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="21">21. Does reordering content affect accessibility?</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/8MAvH6vYbDo?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Does reordering content affect accessibility? - A11ycasts #21"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="22">22. Managing Focus</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/srLRSQg6Jgg?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Managing Focus - A11ycasts #22"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="23">23. The new way to test accessibility with Chrome DevTools</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/b0Q5Zp_yKaU?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="The new way to test accessibility with Chrome DevTools - A11ycasts #23"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="24">24. How to Label Custom Elements</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/7a6bLXw2lqQ?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="How to Label Custom Elements - A11ycasts #24"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="25">25. How to build a toggle button</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/16gvkPfPIx4?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="How to build a toggle button - A11ycasts #25"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="26">26. Testing Shadow DOM with aXe Coconut</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/1uyQdC3LqLo?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Testing Shadow DOM with aXe Coconut - A11ycasts #26"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="27">27. Assistive Tech: TalkBack</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/0Zpzl4EKCco?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Assistive Tech: TalkBack - A11ycasts #27"></iframe>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading-m" id="28">28. Assistive Tech: VoiceOver on iOS</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/bCHpdjvxBws?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Assistive Tech: VoiceOver on iOS - A11ycasts #28"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <div class="text-right">
+              <a href="#totop" class="link-ts"><span>To Top</span></a>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="heading-m" id="29">29. Assistive Tech: Switch Device</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/V1yoOLhx_qA?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Assistive Tech: Switch Device"></iframe>
+              </div>
+              <!--div class="col-md-6">
+                <h3 class="heading-m" id="28">28. Assistive Tech: VoiceOver on iOS</h3>
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/bCHpdjvxBws?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&amp;ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Assistive Tech: VoiceOver on iOS - A11ycasts #28"></iframe>
+              </div-->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

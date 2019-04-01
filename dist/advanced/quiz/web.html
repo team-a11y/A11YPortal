@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web - Quiz - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="https://bit.ly/a11y-portal" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html" aria-current="true" id="main-menu">Quiz <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/fundamentals.html" aria-current="page">Fundamentals </a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/design.html">Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/content.html">Content</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/quiz/web.html">Code<span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/testing.html">Testing</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/various.html">Various</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Web Quiz</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Content</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#semantics-and-navigation" class="link-ts"><span>Semantics and Navigation</span></a></li>
+          <li><a href="#responsive-design-and-zoom" class="link-ts"><span>Responsive Design and Zoom</span></a></li>
+          <li><a href="#dynamic-updates" class="link-ts"><span>Dynamic Updates</span></a></li>
+          <li><a href="#javascript-and-aria" class="link-ts"><span>WAI-ARIA</span></a></li>
+          <li><a href="#ios" class="link-ts"><span>iOS</span></a></li>
+          <li><a href="#android" class="link-ts"><span>Android</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="semantics-and-navigation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="semantics-and-navigation">Semantics and Navigation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>What do most screen readers do with the page title? (Open question)</p>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: Most screen readers read aloud the title on screen load.</p>
+                </div>
+
+                <hr>
+
+                <p>What is the best text to use for a link?</p>
+                <ol class="list-alpha">
+                  <li>More information...</li>
+                  <li>The title of the destination page</li>
+                  <li>Click here</li>
+                  <li>The current article heading containing the link</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>Can you use HTML5 and ARIA landmarks together?</p>
+                <ol class="list-alpha">
+                  <li>Yes</li>
+                  <li>No</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A</p>
+                </div>
+
+                <hr>
+
+                <p>Should you use ARIA landmarks and skip links together?</p>
+                <ol class="list-alpha">
+                  <li>Yes, it is recommended</li>
+                  <li>No, using HTML 5 and ARIA landmarks are supplementary "skip navigation" mechanisms
+                  </li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A</p>
+                </div>
+
+                <hr>
+
+                <p>What is a disadvantage of using aria label for Landmarks? (Open question)</p>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: Translation services like Google's don't translate the aria-label attribute</p>
+                </div>
+
+                <hr>
+
+                <p>Content within an <code>&lt;em&gt;</code> will be ignored by screenreaders</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B, The content is not ignored, but the semantic value of the <code>&lt;em&gt;</code> is.</p>
+                </div>
+
+                <hr>
+
+                <p>Content can be styled so that it is hidden for the visual user. What techniques do screen readers ignore the content?</p>
+                <ol class="list-alpha">
+                  <li>visibility:hidden, width: 0px; height: 0px;</li>
+                  <li>width: 0px; height: 0px;</li>
+                  <li>text-indent: -10000px;</li>
+                  <li>display: none</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A and D</p>
+                </div>
+
+                <hr>
+
+                <p>Which element(s) can get focus? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Links</li>
+                  <li>Form fields</li>
+                  <li>Element(s) with tabindex="-1"</li>
+                  <li>Buttons</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: All, but element(s) with tabindex="-1" only programmatic / via JavaScript</p>
+                </div>
+
+                <hr>
+
+                <p>What elements receive browser focus by default (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Links</li>
+                  <li>Tables</li>
+                  <li>Elements with onclick event defined</li>
+                  <li>Images</li>
+                  <li>Form fields</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the difference between 'programmatic focus' and 'visible focus'? (open question)</p>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: Visible focus is what you 'see' in the browser, programmatic focus can be the same but may also be on an element not visually distinct, like on a heading.</p>
+                </div>
+
+                <hr>
+
+                <p>User visual focus has no effect on the programmatic focus</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>If a form field has a specific data format it must be visibly noted next to the field.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Users must be able to access and operate all information and function using only the keyboard.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Mac has default keyboard control only on textboxes and lists?</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>CSS can cause problems in the taborder.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What does tabindex="-1" do?</p>
+                <ol class="list-alpha">
+                  <li>Nothing</li>
+                  <li>Makes your element focusable</li>
+                  <li>Makes your element unfocusable</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B and C. "B" because is makes an element programmatically focussable. "C" because it takes it out of the Tab order.</p>
+                </div>
+
+                <hr>
+
+                <p>Is the following a recommended syntax for links to open in a new tab? (Open question)</p>
+                <p>href="http://www.deque.com" onclick="window.open(this.href); return false;"</p>
+                
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: Placing a valid link in the href attribute, plus a JavaScript function is recommended
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Why shouldn't you use 'display:none' or 'visibility:hidden' on skip links? (Open question)</p>
+
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: In this way they will be ignored by the screen reader. Try using the 'sr-only' approach which crops the content to 'zero', so that the user will not see it, but the browser interprets it as visible content.</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>If a person types "vegetarian recipes" in a site search, which of the following is the best page title on the search result page?</p>
+                <ol class="list-alpha">
+                  <li>Search</li>
+                  <li>Search results</li>
+                  <li>Search results for "vegetarian recipes"</li>
+                  <li>Vegetarian recipes</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: On a so-called single-page application — in which AJAX is used to bring in new content without refreshing or loading the entire web page — any time that the URL changes, the page title should be updated accordingly.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following would be the best &lt;title&gt; for a page describing the autocorrect features of a software product called &quot;Tri-coil&quot; by a company named &quot;Bob's Brilliant Software?&quot;</p>
+                <ol class="list-alpha">
+                  <li>Autocorrect features in Tri-coil, by Bob's Brilliant Software</li>
+                  <li>Bob's Brilliant Software: Tri-coil - autocorrect features</li>
+                  <li>Features</li>
+                  <li>All of the above are equally good</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Identifying the language of a document or part of a document is important for users of:</p>
+                <ol class="list-alpha">
+                  <li>Voice recognition software</li>
+                  <li>Screen readers</li>
+                  <li>Screen magnifiers</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The correct language code for German web content is:</p>
+                <ol class="list-alpha">
+                  <li>lang="en"</li>
+                  <li>lang="German"</li>
+                  <li>lang="german"</li>
+                  <li>lang="deutch"</li>
+                  <li>lang="de"</li>
+                  <li>lang="d"</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The correct location to identify the main language of an entire page is:</p>
+                <ol class="list-alpha">
+                  <li>On the &lt;!doctype&gt; element</li>
+                  <li>On the &lt;html&gt; element</li>
+                  <li>On the &lt;body&gt; element</li>
+                  <li>In a &lt;meta&gt; element in the &lt;head&gt; of the document</li>
+                  <li>On every block level element in the content</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If the user has the screen reader language set to French and a web page is written in English but does NOT specify the language of the document in the markup, how will the screen reader read the text?</p>
+                <ol class="list-alpha">
+                  <li>It will translate the text to French</li>
+                  <li>It will notify the user that there is a mismatch in languages</li>
+                  <li>It will read the English words using French pronunciation rules</li>
+                  <li>It will detect the language automatically and read the text with the correct pronunciation</li>
+                  <li>It will cause the screen reader to turn off</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following is/are valid ARIA landmark role(s) (multiple answers possible)</p>
+                <ol class="list-alpha">
+                  <li>banner</li>
+                  <li>navigation</li>
+                  <li>main</li>
+                  <li>end</li>
+                  <li>search</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,C,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>A page with 47 landmarks:</p>
+                <ol class="list-alpha">
+                  <li>Shows a high level of dedication to accessibility best practices</li>
+                  <li>Probably has too many landmarks to be optimally useful to screen reader users</li>
+                  <li>Demonstrates the popularity of the web page</li>
+                  <li>Is using deprecated markup, and should be updated with more modern methods</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If there are multiple navigation landmarks in the same page:</p>
+                <ol class="list-alpha">
+                  <li>Each landmark should have its own unique title attribute</li>
+                  <li>Screen readers will ignore all but the first one</li>
+                  <li>The markup is invalid: there should be only one navigation landmark per page</li>
+                  <li>The screen reader is likely to crash, especially older versions</li>
+                  <li>Each landmark should have its own aria-label or aria-labelledby attribute</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following does NOT represent best practice, in terms of creating a structured outline of the content with headings?</p>
+                <ol class="list-alpha">
+                  <li>&lt;h1&gt;
+&lt;h2&gt;
+&lt;h2&gt;
+&lt;h3&gt;
+&lt;h4&gt;
+&lt;h2&gt;</li>
+                  <li>&lt;h1&gt;
+&lt;h2&gt;
+&lt;h2&gt;
+&lt;h2&gt;
+&lt;h3&gt;
+&lt;h4&gt;</li>
+                  <li>&lt;h1&gt;
+&lt;h3&gt;
+&lt;h4&gt;
+&lt;h3&gt;
+&lt;h4&gt;
+&lt;h3&gt;</li>
+                  <li>&lt;h1&gt;
+&lt;h2&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If the heading level 1 (&lt;h1&gt;) at the beginning of the main content says &quot;How to hang ten on a surfboard,&quot; the most appropriate &lt;title&gt; for the page from among the options below would be:</p>
+<ol class="list-alpha">
+                  <li>How to ride a surfboard</li>
+                  <li>Surfing tutorial</li>
+                  <li>Summers in California</li>
+                  <li>How to hang ten on a surfboard</li>
+                  <li>An article describing how o hang ten on a surfboard, describing the techniques and circumstances in which it is possible to do it</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                </div>
+
+                <hr>
+
+                <p>Which of the following will be recognized as valid headings by screen readers? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>&lt;h1&gt;&lt;/h1&gt;</li>
+                  <li>&lt;h1&gt;The desert tortoise&lt;/h1&gt;</li>
+                  <li>&lt;h7&gt;Legal disclaimer&lt;/h7&gt;</li>
+                  <li>&lt;div role=&quot;heading&quot; aria-level=&quot;3&quot;&gt;The secrets beneath the ocean's surface&lt;/div&gt;</li>
+                  <li>&lt;p class=&quot;heading level2&quot; style=&quot;font-size: 200%; font-weight: bold&quot;&gt;Understand yourself&lt;/p&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: WCAG 2.0 level double A (AA) requires headings to be in a valid hierarchy under all circumstances. A heading 4 (&lt;h4&gt;) cannot directly follow a heading 2 (&lt;h2&gt;), for example. The next subheading under the heading 2 (&lt;h2&gt;) MUST be a heading 3 (&lt;h3&gt;).</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: Screen readers will read the alt text of an image within a heading as part of the heading text.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What is the official character limit within a heading?</p>
+                <ol class="list-alpha">
+                  <li>256 characters</li>
+                  <li>140 characters</li>
+                  <li>1024 characters</li>
+                  <li>It depends on the level of the heading</li>
+                  <li>There is no official limit</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following statements are TRUE (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Users should be warned if a link opens a new window</li>
+                  <li>Link text should include words like "link" or "click" so screen reader users know it is a link</li>
+                  <li>Images alone should not be used as links</li>
+                  <li>Links with the same text should go to the same place</li>
+                  <li>Links must be identified by changing the background color behind the text</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Links must be visually distinguishable from the surrounding non-link text</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Links can be the same color as the surrounding non-link text as long as an underline appears on mouse hover and on keyboard focus.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The main navigation menu should:</p>
+                <ol class="list-alpha">
+                  <li>Be consistently located</li>
+                  <li>Be consistently ordered</li>
+                  <li>Be positioned horizontally</li>
+                  <li>Include drop-down submenus</li>
+                  <li>A and B</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Links on the same page that go to the same destination should have the same text within the link.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The correct way to designate a navigation list as a navigation landmark is:</p>
+                <ol class="list-alpha">
+                  <li>Wrap the navigation list in a &lt;nav&gt; container or in a container marked with role=&quot;navigation&quot;</li>
+                  <li>Set role=&quot;navigation&quot; on every link in the navigation list, or wrap each link in &lt;nav&gt; elements</li>
+                  <li>There is no need to add anything to the markup. Screen readers automatically detect navigation lists and announce them to users</li>
+                  <li>Wrap the navigation list in a &lt;navlist&gt; container</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Screen readers can identify the current location within a navigation menu based on the visual styles</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>A skip link should (Select all that apply):</p>
+                <ol class="list-alpha">
+                  <li>Be placed just before the main navigation menu</li>
+                  <li>Be placed right after the opening &lt;body&gt; tag</li>
+                  <li>Be accessible to keyboard-only users</li>
+                  <li>Be accessible to screen reader users</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Sighted keyboard users can navigate by headings, landmarks, and other semantic features, just like blind screen reader users.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following methods could be used to mark the current location within a paginated view? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>hidden text</li>
+                  <li>aria-label</li>
+                  <li>aria-labelledby</li>
+                  <li>aria-describedby</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,C,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: Layout tables are not permitted by WCAG standards.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>he title for a data table should be contained in what element?</p>
+                <ol class="list-alpha">
+                  <li>&lt;title&gt;</li>
+                  <li>&lt;tabletitle&gt;</li>
+                  <li>&lt;caption&gt;</li>
+                  <li>&lt;summary&gt;</li>
+                  <li>&lt;name&gt;</li>
+                  <li>The first row of the table (the columns of that row should be merged into a single cell)</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The correct way to code a table cell that is a column header cell is: </p>
+                <ol class="list-alpha">
+                  <li>&lt;td scope=&quot;col&quot;&gt;</li>
+                  <li>&lt;td scope=&quot;column&quot;&gt;</li>
+                  <li>&lt;th scope=&quot;col&quot;&gt;</li>
+                  <li>&lt;th scope=&quot;column&quot;&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>In a table with two header cells in the first row ("Male" and "Female"), and with 5 header cells under each of them, the header cells in the first row should be marked as:</p>
+                <ol class="list-alpha">
+                  <li>&lt;td scope=&quot;colgroup&quot;&gt;</li>
+                  <li>&lt;td scope=&quot;columngroup&quot;&gt;</li>
+                  <li>&lt;th scope=&quot;colgroup&quot;&gt;</li>
+                  <li>&lt;th scope=&quot;columngroup&quot;&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>In complex tables, each data cell must be explicitly associated with each corresponding header cell by which method?</p>
+                <ol class="list-alpha">
+                  <li>scope + header</li>
+                  <li>id + header</li>
+                  <li>id + scope</li>
+                  <li>Merging table cells</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Complex tables with merged cells are easy for screen readers to understand, as long as the table has all the necessary accessible markup.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Screen readers will announce the number of items in a bulleted list if the list is marked up properly.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Screen readers do not read nested lists (lists within lists) properly.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Screen readers will recognize the following code as a list:
+&lt;p&gt;1. First item&lt;br&gt;2. Second item&lt;br&gt;3. Third item&lt;/p&gt;</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>One of the main ways to make an &lt;iframe&gt; accessible is to add:</p>
+                <ol class="list-alpha">
+                  <li>a title attribute</li>
+                  <li>an alt attribute</li>
+                  <li>a name attribute</li>
+                  <li>a &lt;title&gt; element</li>
+                  <li>tabindex=&quot;0&quot;</li>
+                  <li>a &lt;label&gt; element</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What does the JAWS screen reader read with regard to the name/label of an &lt;iframe&gt;?</p>
+                <ol class="list-alpha">
+                  <li>The name attribute on the &lt;iframe&gt; element</li>
+                  <li>The title attribute on the &lt;iframe&gt; element</li>
+                  <li>The &lt;title&gt; element of the page within the iframe</li>
+                  <li>The title attribute of the page within the iframe</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If a page has 3 headings, and an &lt;iframe&gt;, and if the page within the &lt;iframe&gt; has 2 headings, how many headings total will show up in the screen reader's list of headings on the parent</p>
+                <ol class="list-alpha">
+                  <li>3</li>
+                  <li>5</li>
+                  <li>7</li>
+                  <li>13</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If an &lt;iframe&gt; contains only JavaScript that is not meant to be read by the user, what is the best way to address this &lt;iframe&gt; in terms of accessibility?</p>
+                <ol class="list-alpha">
+                  <li>Hide it from screen reader users with aria-hidden="true" </li>
+                  <li>Hide it with display:none in the CSS</li>
+                  <li>add aria-describedby="JavaScript only"</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following elements will most screen readers announce to users (in terms of the semantic meaning of the element itself)?</p>
+                <ol class="list-alpha">
+                  <li>q</li>
+                  <li>del</li>
+                  <li>ins</li>
+                  <li>mark</li>
+                  <li>code</li>
+                  <li>pre</li>
+                  <li>B and C</li>
+                  <li>D and E</li>
+                  <li>All of the above/li>
+                  <li>None of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: J
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If you want to highlight text on a web page, when is it necessary to add additional text so that screen reader users know the text is important?</p>
+                <ol class="list-alpha">
+                  <li>Always</li>
+                  <li>Never</li>
+                  <li>When the emphasis in the highlighting changes the meaning of the text</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Screen readers announce emphasized text when it is marked with:</p>
+                <ol class="list-alpha">
+                  <li>b</li>
+                  <li>i</li>
+                  <li>em</li>
+                  <li>strong</li>
+                  <li>mark</li>
+                  <li>The word "Important: " (or similar) in front of the emphasized text</li>
+                  <li>None of the above</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: F
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What will a screen reader say when it comes across code marked as follows?
+&lt;p&gt;Twin mattress &lt;del&gt;$300&lt;/del&gt; &lt;ins&gt;$250&lt;/ins&gt;!&lt;/p&gt;</p>
+                <ol class="list-alpha">
+                  <li>Twin mattress $300 $250!</li>
+                  <li>Twin mattress deleted $300, inserted $250!</li>
+                  <li>Twin mattress was $300, now $250!</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following are recommended ways to emphasize text accessibly (Select all that apply)?</p>
+                <ol class="list-alpha">
+                  <li>Add a graphic element with "Important" as its alt text</li>
+                  <li>Use all capital letters</li>
+                  <li>Add the word "Important: " in front of the content</li>
+                  <li>Increase the font size</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: The concept of robust technology compatibility is to support compatibility of web content with current and future user agents — especially assistive technologies.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Markup is considered well-formed when: (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Elements are properly nested</li>
+                  <li>Content has been spell-checked</li>
+                  <li>Forms have been validated</li>
+                  <li>All id attributes are unique</li>
+                  <li>Elements do not contain duplicate attributes</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which statement(s) is/are TRUE about deprecated HTML elements or attributes? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>They have been replaced by newer constructs such as CSS</li>
+                  <li>They are typically structural in nature</li>
+                  <li>They may cause users to be unable to override the deprecated items with their own style sheets</li>
+                  <li>They are disallowed by WCAG 2.0 standards</li>
+                  <li>They are outdated or obsolete</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following HTML elements are deprecated in HTML5? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>&lt;applet&gt;</li>
+                  <li>&lt;span&gt;</li>
+                  <li>&lt;center&gt;</li>
+                  <li>&lt;frame&gt;</li>
+                  <li>&lt;font&gt;</li>
+                  <li>&lt;div&gt;</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D,E
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="responsive-design-and-zoom">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="responsive-design-and-zoom">Responsive Design and Zoom</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                
+                <p>What happens when you use browser zoom to zoom in on a responsive website?</p>
+                <ol class="list-alpha">
+                  <li>The website keeps scaling up</li>
+                  <li>Nothing, the website stays the same to keep the design consistent</li>
+                  <li>The website scales up and switches to the table/mobile version</li>
+                  <li>The font size increases</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C</p>
+                </div>
+
+                <hr>
+
+                <p>What MUST be prevented when building a mobile site? (select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>Resizable text</li>
+                  <li>Horizontal scrolling</li>
+                  <li>user-scalable="no" in the meta tags</li>
+                  <li>Pinch-to-zoom support</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following go hand-in-hand? (select two)</p>            
+                <ol class="list-alpha">
+                  <li>Responsive design</li>
+                  <li>Gestures</li>
+                  <li>Video transcripts</li>
+                  <li>Landmarks</li>
+                  <li>Low vision design</li>
+                  <li>Layout tables</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A, E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which viewport units causes a failure in WCAG when used for text scaling, and why? (Open question)</p>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: The Viewport-percentage lengths unit (vw) causes a failure. As these units are relative to the viewport, it means they cannot be resized by zooming or adjusting text-size.</p>
+                </div>
+
+                <hr>
+
+                <p>Which size should you use for the most consistent measurements across OSses and devices?</p>            
+                <ol class="list-alpha">
+                  <li>sp</li>
+                  <li>dp</li>
+                  <li>pt</li>
+                  <li>CSS Pixels</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <p>In what ways does responsive design make web apps more usable? (Open question)</p>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: Responsive design helps users with low vision. It helps support multiple devices and the use of browser zoom.</p>
+                </div>
+
+                <hr>
+
+                <p>What level of text magnification SHOULD be supported?</p>            
+                <ol class="list-alpha">
+                  <li>150%</li>
+                  <li>200%</li>
+                  <li>300%</li>
+                  <li>400%</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>               
+
+                <hr>
+
+                <p>What should be avoided to properly support zooming? (select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>Floating objects</li>
+                  <li>Horizontal scrolling/panning</li>
+                  <li>Fixed widths</li>
+                  <li>Minimal heights</li>
+                  <li>Font sizes</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,C,D
+                  </p>
+                </div>
+
+                <hr>       
+
+                <p>Why is it a best practice to use big sized graphics while they use more bandthwidth? (Open question)</p>            
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: The larger size of the graphics cause minimal visual degradation (pixeling) when zoomed.
+                  </p>
+                </div>
+
+                <hr>          
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  
+    <section class="full-cover bg-grey" role="region" aria-labelledby="dynamic-updates">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="dynamic-updates">Dynamic Updates</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>Which of the following methods for notifying users of new content does not require JavaScript?</p>            
+                <ol class="list-alpha">
+                  <li>Moving focus within a page or to another element such as a dialog</li>
+                  <li>Loading or reloading a page</li>
+                  <li>ARIA live announcements</li>
+                  <li>All methods require JavaScript</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>When moving focus to an element that is not focusable, it is important to include which one of the following attributes on the container:</p>            
+                <ol class="list-alpha">
+                  <li>tabindex="-1"</li>
+                  <li>tabindex="0"</li>
+                  <li>tabindex="1"</li>
+                  <li>aria-focus="true"</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following is NOT a consideration when moving focus to new content:</p>            
+                <ol class="list-alpha">
+                  <li>The container on which focus is set must not be empty.</li>
+                  <li>Focus should not move unexpectedly.</li>
+                  <li>The element that triggers the focus change must include aria-haspopup="true".</li>
+                  <li>Sending focus to AJAX content must be the last event.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: ARIA live announcements are an effective way to notify users of new content without moving the user's focus.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Valid aria-live values include: (select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>aria-live="assertive"</li>
+                  <li>aria-live="rude"</li>
+                  <li>aria-live="polite"</li>
+                  <li>aria-live="true"</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The ARIA live region must be present on the page and must be empty before inserting the content to be announced.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>If one of your pages employs a time-limit, which of the following are recommended?</p>            
+                <ol class="list-alpha">
+                  <li>Ensure the time limit is greater than four hours</li>
+                  <li>Provide a warning when the time limit is about to expire</li>
+                  <li>Provide an option to extend the session</li>
+                  <li>A and B</li>
+                  <li>B and C</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: When a user allows a session to time out, it is not necessary to save data because the user would have extended the session if they intended to continue.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: ARIA live announcements should be used to announce the the time left on a countdown timer every time the visible time remaining changes.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Accessibility problems associated with automatically refreshing or reloading a page include:</p>            
+                <ol class="list-alpha">
+                  <li>Users may not have time to read content before it disappears</li>
+                  <li>Users may lose their place on the page</li>
+                  <li>Users may have a seizure</li>
+                  <li>A and B</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: If refreshing page content is important for a web site, it is recommended that users be notified that new content is available using a dialog or an ARIA alert message depending on the urgency of the update.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Regarding portions of content in a page that load more slowly than the main page itself, which of the following statements are true? (select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>This technique is often referred to as "lazy loading."</li>
+                  <li>Loading the main page content and AJAX content at a different rates detracts from the overall user experience.</li>
+                  <li>Placeholders (graphic or textual) should be used to inform users when the content is still being loaded.</li>
+                  <li>Content should be automatically announced by screen readers as it is loaded.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Infinite scrolling may prevent a user from accessing information that comes after the infinite scrolling area.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Infinite scrolling can be implemented accessibly if it: (select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>Has a screen-reader only method for skipping past the scrolling content.</li>
+                  <li>Is the last feature on the page, i.e., no content follows it.</li>
+                  <li>Can be activated (i.e., turned on) by the user.</li>
+                  <li>Infinite scrolling can not be implemented accessibly.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Interstitial views are intended to be temporary and therefore it is not required to make screen reader users aware of their presence.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Regarding single-page applications, which of the following statements is FALSE?</p>            
+                <ol class="list-alpha">
+                  <li>Screen reader users must be made aware of new content loaded on the page.</li>
+                  <li>Focus management is often an essential part of making a single-page application accessible.</li>
+                  <li>The &lt;title&gt; of a single-page application should not be updated when the user has selected a link that causes an AJAX event.</li>
+                  <li>User must be able to use the browser's back and forward functionality as would be expected in a non-single-page application.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="javascript-and-aria">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="javascript-and-aria">WAI-ARIA</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>True or false: ARIA is a programming language that communicates information like names, roles, and values to screen readers.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following ARIA attributes can be used to communicate the names of elements? (Select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>aria-labelledby</li>
+                  <li>aria-describedby</li>
+                  <li>role="name"</li>
+                  <li>aria-label</li>
+                  <li>alt</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>aria-label and aria-labelledby will work best on which kinds of elements listed below? (Select all that apply)</p>            
+                <ol class="list-alpha">
+                  <li>Paragraphs (&lt;p&gt;)</li>
+                  <li>Links (&lt;a&gt;)</li>
+                  <li>Text Inputs (&lt;input type=&quot;text&quot;&gt;)</li>
+                  <li>Containers (&lt;div&gt;)</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The purpose of ARIA roles is to:</p>            
+                <ol class="list-alpha">
+                  <li>Provide the name of the element.</li>
+                  <li>Define what the element is.</li>
+                  <li>Identify the state of the element.</li>
+                  <li>None of the above.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>hich type of ARIA roles are used to convey the layout of a web page?</p>            
+                <ol class="list-alpha">
+                  <li>Landmark roles</li>
+                  <li>Abstract roles</li>
+                  <li>Pseudo HTML roles</li>
+                  <li>Widget roles</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: It is best to use actual HTML elements instead Pseudo HTML roles so developers don't always have to create functionality for elements by using JavaScript.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: Assigning role="application" to a region disables most screen reader keystrokes within the region to allow developers to create custom keystrokes.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which role should be assigned within an application region to give screen readers access to regular text in the region?</p>            
+                <ol class="list-alpha">
+                  <li>Presentation role</li>
+                  <li>Main role</li>
+                  <li>Note role</li>
+                  <li>Document role</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>ARIA attributes like aria-expanded, aria-checked, and aria-busy convey what information to screen reader users?</p>            
+                <ol class="list-alpha">
+                  <li>The names of elements.</li>
+                  <li>The states of elements.</li>
+                  <li>The roles of elements.</li>
+                  <li>None of the above.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which ARIA attribute is used to provide additional information about an element?</p>            
+                <ol class="list-alpha">
+                  <li>aria-labelledby</li>
+                  <li>aria-describedby</li>
+                  <li>role="description"</li>
+                  <li>aria-label</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or false: The difference between aria-live="assertive" and aria-live="polite" is that aria-live="assertive" waits for a screen reader to finish its current statement before announcing new content.</p>            
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="ios" aria-labelledby="title-ios">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-ios">iOS</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="android" aria-labelledby="title-android">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-android">Android</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

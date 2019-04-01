@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Content - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/content/editorial.html" aria-current="page">Content <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/content/editorial.html">Editorial</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/content/notifications.html" aria-current="page">Notifications <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/content/text-equivalents.html">Text Equivalents</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Notifications</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#inclusive-notifications" class="link-ts"><span>Inclusive Notifications</span></a></li>
+          <li><a href="#standard-os-notifications" class="link-ts"><span>Standard Operating System Notifications</span></a></li>
+          <li><a href="#error-messages-and-correction" class="link-ts"><span>Error message and correction</span></a></li>
+          <li><a href="#feedback-and-assistance" class="link-ts"><span>Feedback and assistance</span></a></li>
+        </ul>
+      
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="inclusive-notifications" aria-labelledby="title-inclusive-notifications">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-inclusive-notifications">Inclusive Notifications <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Notifications must be both visible and audible.</strong></p>
+
+                <p>All users benefit when notifications are communicated clearly and can be perceived in multiple ways. Some users may only perceive in one way, while others will benefit from a combination.</p>
+
+                <p>Make notifications visible using standard operating system alerts, inline messages or icons. Make notifications audible using sound bites or ensuring they can be read by assistive technology. And, where possible, make notifications felt
+                  by using haptic feedback when appropriate to do so.</p>
+
+                <p>Notifications inform and guide users. They can be error messages, alerts, instructions, changes of state, responding to an interaction or a range of other cues.</p>
+
+                <p>Content elements change state when their meaning changes during interaction, for example, 'selected/not selected', 'add/added', or 'delete/deleted'. Populating an autosuggest, or similar dynamic area, would also be a change of state. Hover
+                  and focus states indicate an element is interactive. Icons and avatars are visual cues, and should have supporting audio cues (or "earcons") when appropriate.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-inclusive-notifications" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-inclusive-notifications" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-inclusive-notifications" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-inclusive-notifications-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-inclusive-notifications-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#form-validation" class="link-ts"><span>Form Validation</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-inclusive-notifications">iOS</h4>
+
+            <p>To provide notifications in an inclusive way, combine a displayed message or image with an accessibility label, vibration, an audio tone and perhaps a screen flash.</p>
+
+            <p>Where available a trait should be used to indicate state. If a custom state is desired it should be added to the accessibility label. Standard objects will set state automatically for states that are known, however if a state is unknown to
+              the control or used in a non-standard way an accessibility trait must be explicitly set, for example a checkbox could have the trait of 'selected' assigned to it.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Required Name field that must be 8 characters or less
+UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(30, 10, 400, 50)];
+[textField setAccessibilityLabel:@"Username (8 character maximum)"];
+UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 400, 50)];
+[label setText: NSLocalizedString(@"Username", @"Label title")];
+[textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents: UICOntrolEventEditingChanged];
+...
+(void) textFieldDidChange:(id)sender {
+  // change label
+  [label setText: NSLocalizedString(@"Username must be 8 characters or less", @"Error message put into label")];
+  // play sound
+  // vibrate
+}
+...
+[aCheckBox setAccessibilityLabel:NSLocalizedString(@"One", @"Button title")];
+[aCheckBox setAccessibilityTraits:UIAccessibilityTraitSelected | UIAccessibilityTraitButton];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(30, 10, 400, 50)]];
+[textField setAccessibilityLabel:@"Username (8 character maximum)"];
+UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 400, 50)];
+[label setText:@"Username"];
+[textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents: UICOntrolEventEditingChanged];
+...
+(void) textFieldDidChange:(id)sender {
+  // play sound
+}
+...
+[aCheckBox setAccessibilityLabel:NSLocalizedString(@"One", @"Button title")];
+[aCheckBox setAccessibilityTraits: UIAccessibilityTraitButton]; 
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-inclusive-notifications">Android</h4>
+
+            <p>To provide notifications in an inclusive way, combine a displayed message or image with an accessibility label, vibration, and audio tone and perhaps flash the screen.</p>
+
+            <p>An updated <code>contentDescription</code> should be used to provide state information for custom elements. States are provided for standard platform elements but must be set for custom or compound elements.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Username" />
+<EditText android:id="@+id/editText" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" android:focusable="true"></EditText>
+// ...
+editText.addTextChangedListener(new TextWatcher(){
+public void afterTextChanged(Editable e) {
+  if (e.length() > 8) {
+   // play sound
+   // change label
+   label.text = "Username must be 8 characters or less";
+  }
+}
+...
+<Button android:id="@+id/btnMute"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/mute"
+        android:onClick="toggle"></button>
+...
+public void toggle(View v) {
+...
+  if (v.isPressed()) {
+    view.setContentDescription("Muted");
+  }
+  else
+  {
+    view.setContentDescription("Mute");
+  }
+}
+
+--></code></pre>
+              </div>
+
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Username" />
+<EditText android:id="@+id/editText" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" android:focusable="true"></EditText>
+// ...
+editText.addTextChangedListener(new TextWatcher(){
+public void afterTextChanged(Editable e) {
+  if (e.length() > 8) {
+    // play sound
+    // change label
+    label.text = "Username must be 8 characters or less";
+  }
+}
+...
+<Button android:id="@+id/btnMute"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/mute"
+        android:onClick="toggle"></Button>
+...
+public void toggle(View v) {
+...
+  if (v.isPressed()) {
+    view.setContentDescription("Muted");
+  }
+  else
+  {
+    view.setContentDescription("Mute");
+  }
+}  
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-inclusive-notifications">HTML</h4>
+
+            <p>To provide notifications in an inclusive way, combine a visual cue with audio and haptic cues. For example, if the user types too many characters in a form field, display an error in the label of the form field in addition to a sound and/or
+              vibration.</p>
+
+            <p>For standard controls such as radio buttons or checkboxes created with the input element these state changes are automatically provided by the browser. However, for images and other custom controls these changes must be provided visually,
+              textually, and could also be provided through ARIA. With a change of state there should be a new text alternative for an image. ARIA can also be used but not solely relied upon. Non-ARIA fallback options must be available.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script type="text/javascript">
+Function checkLength(obj) {
+  Var str = obj.value
+  if (str.length >= 8)
+  {
+    document.getElementById("l1").textContent = "Create Username (max 8 characters): ERROR - must be 8 characters or less";
+    document.getElementById("audio1").play();
+  }
+}</script>
+...
+<audio id="audio1" autostart="">
+  <source src="beep.mp3" type="audio/mp3" />
+  <embed id="audio2" src="beep.mp3" autostart="false" loop="false"></embed>
+</audio>
+...
+<label id="l1" for="uname">Create Username (max 8 characters):</label>
+<input type="text" id="uname" onblur="checkLength(this);" /> 
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script type="text/javascript">
+Function checkLength(obj) {
+  Var str = obj.value
+  if (str.length >= 8)
+  {
+    document.getElementById("audio1").play();
+  }
+}</script>
+...
+<audio id="audio1" autostart="">
+  <source src="beep.mp3" type="audio/mp3" />
+  <embed id="audio2" src="beep.mp3" autostart="false" loop="false"></embed>
+</audio>
+...
+<label id="l1" for="uname">Create Username (max 8 characters):</label>
+<input type="text" id="uname" onblur="checkLength(this);" /> 
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-inclusive-notifications-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app without a screen reader.</li>
+                  <li>Complete forms and trigger error messages within the app.</li>
+                  <li>Locate any cues used to signal error states or form completion.</li>
+                  <li>Verify that additional cues exist (text or visual, audio, or vibration) to provide the same information that was conveyed.</li>
+                  <li>Start the screen reader.</li>
+                  <li>Focus on an individual object, element, or control that can change state.</li>
+                  <li>Verify that the announced item label matches the on-screen text or contains additional supplementary information to assist with non-visual access of the item.</li>
+                  <li>Verify that the state of the element is announced properly.</li>
+                  <li>If applicable, toggle the state of the item and verify that the screen reader announces the correct state change.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-inclusive-notifications-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The app provides both visible and audible cues for each alert or notification used to convey information or errors;</li>
+                  <li>Object, elements, or controls including their labels, roles, values, states and state changes are correctly announced by a screen reader.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="standard-os-notifications" aria-labelledby="title-standard-os-notifications">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-standard-os-notifications">Standard Operating System Notifications <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Standard operating system notifications should be used where available and appropriate.</strong></p>
+
+                <p>Standard operating system (OS) methods for alerts and messages can often be more accessible than something custom made, in particular for users of assistive technology. This is because standard controls:</p>
+
+                <ul class="list-icons list-checklist">
+                  <li>Have traits that are understood by assistive technology such as screen readers,</li>
+                  <li>Generally appear in a consistent location, and</li>
+                  <li>Follow the user-defined options for font and colour.</li>
+                </ul>
+                <p>App level and browser level errors and alerts should use operating system methods of notification. However, page/screen or content level errors and alerts may use either OS or custom notifications. Custom <a href="#inclusive-notifications">notifications</a>  must be perceivable.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-standard-os-notifications" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-standard-os-notifications" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-standard-os-notifications" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-standard-os-notifications-procedures" class="link-ts"><span>Testing"Procedures</span></a></li>
+                  <li><a href="#testing-standard-os-notifications-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-standard-os-notifications">iOS</h4>
+
+            <p>Use a <code>UIAlertView</code> to display a message box dialog that contains the error message.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+UIAlertView *messageBox = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Error", @"Alert box title") message: NSLocalizedString(@"You must enter an email address", @"Alert box message" delegate:nil cancelButtonTitle: NSLocalizedString(@"OK", @"Accept button title") otherButtonTitles:nil];
+[messageBox show]; 
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+ // Display an error message in some other way.
+[emailField setAccessibilityLabel:@"ERROR:  Email (required)"]; 
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-standard-os-notifications">Android</h4>
+
+            <p>Use the <code>AlertDialog</code> to display error messages. As long as this is used, error messages and their associated functions will be accessible.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//Use an Android standard alert dialog to display error messages
+AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+builder.setMessage(//Error Message String)
+builder.setCancelable(true);
+builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+  public void onClick(DialogInterface dialog, int id) {
+    dialog.cancel();
+  }
+});
+AlertDialog alert = builder.create(); 
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A error on the screen causes a Toast notification on field validation
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/email_label" android:text="Email"></TextView>
+<EditText android:id="@+id/email" android:inputType="text" android:hint="@string/email_field" android:layout_height="wrap_content" android:layout_width="wrap_content"></EditText>
+<Button android:text="Submit" android:id="@+id/submit_form_button" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+final EditText emailField = (EditText) findViewById(R.id.email);
+final Button button = (Button) findViewById(R.id.submit_form_button);
+button.setOnClickListener(new OnClickListener() {
+  public void onClick(View v) {
+    String email = emailField.getText().toString();
+    if(...) {
+      Toast.makeText(getApplicationContext(), "Email fields does not match", Toast.LENGTH_SHORT).show();
+    } else {
+      submitForm(email);
+    }
+  }
+});  
+--></code></pre>
+              </div>
+            </div>
+            <h4 class="heading-s" id="html-standard-os-notifications">HTML</h4>
+
+            <p>A JavaScript alert is one option for HTML to meet this standard.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script>
+  alert('Status message');
+</script>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// HTML version
+<a href="...">Annual report </a>
+// PDF version
+<a href="...">Annual report </a>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-standard-os-notifications-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Trigger an alert or error on at the app level e.g.
+                    <ul>
+                      <li>Time out,</li>
+                      <li>Update notice,</li>
+                      <li>Error contacting the server,</li>
+                      <li>Other app level errors or alerts.</li>
+                    </ul>
+                  </li>
+                  <li>Verify that the alerts or error notifications are announced by assistive technologies.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-standard-os-notifications-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The app uses operating system standard methods for providing app level or non-action triggered alerts and indicating errors to users which are announced by assistive technologies.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="error-messages-and-correction" aria-labelledby="title-error-messages-and-correction">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-error-messages-and-correction">Error messages and correction <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Clear error messages must be provided</strong></p>
+
+                <p>Clear error messages help everyone to input and interact with content correctly. It is important to provide <a href="../../guidelines/content/notifications.html#inclusive-notifications">inclusive error messages</a> that users of assistive technology
+                  can perceive. Keep in mind that not everyone sees visual cues, such as colour or icons. And people with cognitive impairments may have difficulty in understanding how to correct errors.</p>
+
+                <p>When errors can be detected programmatically, provide clear informative messages that succinctly tell the user where the error is and suggestions, tips or instructions on how to correct it. Ensure it is easy for the user to return to the
+                  input/control that needs correcting, and other content.</p>
+
+                <p>For example, on a form submission, a list of all fields needing correction could be added to an <code>aria-live</code> area above the form, with <code>aria-invalid</code> and inline visual cues to provide guidance. Be careful to avoid
+                  a <a href="../../guidelines/code/focus.html#keyboard-trap">keyboard trap</a> and use ARIA or <a href="../../guidelines/content/notifications.html#standard-os-notifications">standard operating system notifications</a> for users of assistive technology, such
+                  as screen readers.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-error-messages-and-correction" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-error-messages-and-correction" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-error-messages-and-correction" class="link-ts"><span>HTML</span></a></li></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-error-messages-and-correction-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-error-messages-and-correction-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#form-validation" class="link-ts"><span>Form Validation</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-error-messages-and-correction">iOS</h4>
+
+            <p>Display an error message at the top of a form with indication of fields in error. Move focus to the error message on form submit or display an alert pop-up. Make the error label a first responder and display the errors below.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[errorLabel setText(NSLocalizedString(@"Errors were found", @"Label text"));
+UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, errorLabel); [errorLabel1 setText(NSLocalizedString(@"Email address fields do not match", @â��Error explanation textâ��));
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>After the form is submitted focus the error label:</p>
+
+                <pre><code class="language-markup"><!--
+[errorLabel setText(@"Check your form again");
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-error-messages-and-correction">Android</h4>
+
+            <p>Display an error message at the top of a form with indication of fields in error. Move focus to the error message on form submit or display an alert pop-up.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Use of <code>setError</code> with <code>contentDescription</code> display errors:</p>
+
+                <pre><code class="language-markup"><!--
+// use of setError with contentDescription display errors
+public void btnClick(View v)
+  {
+    if(...)
+    {
+      editText.setError("Email fields do not match");
+      editText.hint("Re-enter the email address: it must match the other email address you entered");
+      editText.requestFocus();
+    }
+  }
+--></code></pre>
+              </div>
+
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Use of <code>setError</code> only to display error:</p>
+
+                <pre><code class="language-markup"><!--
+public void btnClick(View v)
+{
+  if(...)
+  {
+    editText.setError("Email fields do not match");
+  }
+} 
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-error-messages-and-correction">HTML</h4>
+
+            <p>Display an error message at the top of the form, with an appropriate level heading and indication of the fields in error. Move focus to the error message after a failed submission.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// added and given focus on submission
+<h? id="errors">Errors were found</h?>
+<ul>
+  <li>"Re-type email address" field does not match "email address".</li>
+  <li>"I agree" checkbox is not checked.</li>
+</ul>
+<form>...</form> 
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// added on submission
+Fix the items marked below in red
+<form>...</form>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-error-messages-and-correction-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app.</li>
+                  <li>Trigger an alert or error on an object, element, or control in the app.</li>
+                  <li>Verify that an alert or error indicates there is an error.</li>
+                  <li>Verify that the alert or error notification clearly indicates the fields needing correction.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-error-messages-and-correction-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are all true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The presence of an error or alert is indicated;</li>
+                  <li>Alerts and error notifications provide sufficient information to allow users to identify which form controls contain errors.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="feedback-and-assistance" aria-labelledby="title-feedback-and-assistance">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-feedback-and-assistance">Feedback and assistance <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Non-critical feedback or assistance should be provided when appropriate.</strong></p>
+
+                <p>Occasional feedback and assistance can help people learn how to use something unfamiliar. It can be especially helpful for young children and people with cognitive impairments.</p>
+
+                <p>When someone is not completing an objective correctly and/or does not progress multiple times, support and encouragement can motivate them to continue or keep trying. For example, in a game or other interactive content this could include
+                  hints, tips or the option to pass and move on to other content.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-feedback-and-assistance" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-feedback-and-assistance" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-feedback-and-assistance" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-feedback-and-assistance-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-feedback-and-assistance-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#instructions-and-other-helpful-info" class="link-ts"><span>Instructions & Other Helpful Info</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-feedback-and-assistance">iOS</h4>
+
+            <p>Don't rely on a single form of feedback, use visual cues, sounds and haptics, and avoid overwhelming the user with too much feedback. There are many ways this could be done, but try not to use an alert as the user must acknowledge it. Refer
+              to <a href="https://developer.apple.com/ios/human-interface-guidelines/interaction/feedback/">Human Interface Guidelines - Feedback</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Add a label to the bottom toolbar:</p>
+                <pre><code class="language-markup"><!--
+// In a ViewController that is hosted in a UINavigation controller provide feedback on the bottom toolbar as follows
+UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+aLabel.text = @"Some helpful info";
+// Configure the label with font, size etc.
+
+UIBarButtonItem *labelBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
+self.toolbarItems = @[labelBarButtonItem];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-feedback-and-assistance">Android</h4>
+
+            <p>Don't rely on a single form of feedback, use visual cues, sounds and haptics, and avoid overwhelming the user with too much feedback. Refer to <a href="https://material.io/guidelines/patterns/help-feedback.html">Material Design - Help &amp; Feedback</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>For simple feedback you could use a Toast or a Snackbar:</p>
+
+                <pre><code class="language-markup"><!--
+// Example 1 - a toast
+Toast.makeText(context, "Hello, I'm a hint!", Toast.LENGTH_SHORT).show();
+
+// Example 2 - a snackbar
+Snackbar.make(parentView, "Hello, I'm a hint!", Snackbar.LENGTH_SHORT).show();
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-feedback-and-assistance">HTML</h4>
+
+            <p>Don't rely on a single form of feedback, use visual cues supported by text that assistive technology can perceive, and avoid overwhelming the user with too much feedback.</p>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-feedback-and-assistance-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Start the screen reader.</li>
+                  <li>Activate the app or game.</li>
+                  <li>Locate or activate any feedback, hints or help.</li>
+                  <li>Verify that this assistance is both visual and available to the screen reader.</li>
+                  <li>Verify that this assistance is appropriate and not over-bearing.</li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-feedback-and-assistance-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Assistance provided is appropriate and inclusive.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

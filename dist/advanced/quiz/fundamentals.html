@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentals - Quiz - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html" aria-current="true" id="main-menu">Quiz <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../../advanced/quiz/fundamentals.html" aria-current="page">Fundamentals <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/design.html">Design</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/content.html">Content</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/code.html">Code</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/testing.html">Testing</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/quiz/various.html">Various</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Fundamentals Quiz</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#disabilities" class="link-ts"><span>Disabilities</span></a></li>
+          <li><a href="#ux" class="link-ts"><span>Accessible UX</span></a></li>
+          <li><a href="#myths" class="link-ts"><span>Myths</span></a></li>
+          <li><a href="#guidelines" class="link-ts"><span>Guidelines</span></a></li>
+          <li><a href="#laws" class="link-ts"><span>Laws</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>Text</strong></p>
+                <p>Text</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Create Question</h3>
+                <p><a href="http://codepen.io/Jake-Abma/details/XMQqbY/">Create your own quiz question</a></p>
+
+              </div>              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="disablities">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="disabilities">Disabilities</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>Is an insole AT? (radio)</p>
+                <ol class="list-alpha">
+
+                  <li>True</li>
+                  <li>False</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A</p>
+                </div>
+
+                <hr>
+
+                <p>Name 4 benefits of accessibility (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Accessibility Improves People's Lives</li>
+                  <li>Accessibility Improves Public Perception</li>
+                  <li>Accessibility Increases Compatibility</li>
+                  <li>Accessibility Improves Search Engine Optimization</li>
+                  <li>Accessibility Increases Your Customer Base</li>
+                  <li>Accessibility Increases Your Eligibility for Funding</li>
+                  <li>Accessibility Helps You Avoid Lawsuits</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,D,G
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which of the following are tools to aid visually impaired users (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Talkback</li>
+                  <li>aXe</li>
+                  <li>Wave Toolbar</li>
+                  <li>JAWS</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What do Dutch government websites need to comply to? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Government websites must comply with web accessibility guidelines, based on WCAG 1, Level A</li>
+                  <li>Government websites must comply with web accessibility guidelines, based on WCAG 2, Level AA</li>
+                  <li>EN 301 549: "Accessibility requirements suitable for public procurement of ICT products and services in Europe"</li>
+                  <li>EN 334 768: "Accessibility requirements European WCAG Uniform standard</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C
+                  </p>
+                </div>
+                <hr>
+                <p>What percentage of the population has a disability</p>
+                <ol class="list-alpha">
+                  <li>5%</li>
+                  <li>10%</li>
+                  <li>15%</li>
+                  <li>20%</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+                <hr>
+                <p>Which Success Criteria Level has the COMPANY-NAME.com website?</p>
+                <ol class="list-alpha">
+                  <li>AAA</li>
+                  <li>AA</li>
+                  <li>A</li>
+                  <li>B</li>
+                  <li>None</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+                <hr>
+                <p>A screen reader can be used with a touch screen.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+                <hr>
+                <p>Are glasses and contacts AT?</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+                <hr>
+                <p>Accessibility is required by law in The Netherlands</p>
+                <ol class="list-alpha">
+                  <li>Yes, since 2015</li>
+                  <li>No</li>
+                  <li>No, but it will be with new EU regulations</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+                <hr>
+                <p>What would be a good title for the webpage for payment accounts?</p>
+                <ol class="list-alpha">
+                  <li>COMPANY NAME - Betaalrekening aanvragen</li>
+                  <li>Betaalrekening aanvragen - COMPANY NAME</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+                <hr>
+                <p>People with low vision always use screen magnification</p>
+                <ol class="list-alpha">
+                  <li>False</li>
+                  <li> True</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A, some people with low vision use screen magnification, while others might use other tools or none at all.
+                  </p>
+                </div>
+                <hr>
+                <p>Is an insole AT?</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+                <hr>
+                <p>You can make dynamic interactions accessible using digital text.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+                <hr>
+                <p>What is meant by 'Operable'?</p>
+                <ol class="list-alpha">
+                  <li>Web content can be accessed on different devices, including through assistive technology. </li>
+                  <li>The web content output is available in different sensory ways (sight, sound, touch).</li>
+                  <li>The web content input methods are available through different input devices (keyboard, mouse, speech recognition, etc.).</li>
+                  <li>Web content and interfaces are understandable.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+                <hr>
+                <p>How many guidelines and success criteria are under the principles?</p>
+                <ol class="list-alpha">
+                  <li>14 guidelines, 39 success criteria</li>
+                  <li>13 guidelines, 40 success criteria</li>
+                  <li>12 guidelines, 38 success criteria</li>
+                  <li>16 guidelines, 36 success criteria</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+                <hr>
+                <p>What does the acronym POUR stand for? It is important because they are the guiding principles for structuring and discussing web accessibility issues.</p>
+                <ol class="list-alpha">
+                  <li>Persistant, obsolete, Unreliable and Robust</li>
+                  <li>Perceivable, Operable, Understandable and Robust</li>
+                  <li>Pour implementation of Accessibility</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+                <hr>
+                <p>What are the four principles of web accessibility?</p>
+                <ol class="list-alpha">
+                  <li>Perfect, Outstanding, UX-proof and Radically new.</li>
+                  <li>Have a great look and feel, Have smooth scrolling, Have readable text and Have not too many objects inside the viewport</li>
+                  <li>Perceivable, Operable, Understandable and Robust</li>
+                  <li>Programmatically correct, Ordered, Usable and Readable</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+                <hr>
+                <p>Why is using Flash generally a bad idea in terms of keyboard accessibility?</p>
+                <ol class="list-alpha">
+                  <li>Flash objects cannot deal with the arrow keys</li>
+                  <li>Only pro users know how to work around the keyboard flaws in Flash, in contradiction to beginner users, the so called Flash Lights.</li>
+                  <li>Flash objects only respond to combinations of the ctrl-key with a number of other keys.</li>
+                  <li>Flash objects have a tendency to trap the keyboard focus once the user tabs into the objects.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+                <hr>
+                <p>The correct order is:</p>
+                <ol class="list-alpha">
+                  <li>Principles, Succes Criteria, Guidelines</li>
+                  <li>Succes Criteria, Principles, Guidelines</li>
+                  <li>Principles, Guidelines, Succes Criteria</li>
+                  <li>Succes Criteria, Guidelines, Principles</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+                <hr>
+                <p>"If a certain color combination scores 'Failed on level AAA', we cannot use it."</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                  <li>It depends on how this color combination scores on Level AA/li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>Which statements are true? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>For people with disabilities, the Internet is an obstacle that cannot be overcome even with assistive technology.</li>
+                  <li>The term “assistive technology” applies only to computer use and Internet access.</li>
+                  <li>The Internet is an important part of the solution for disability access.</li>
+                  <li>Making a website accessible to people with disabilities makes it less accessible for other users.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C</p>
+                </div>
+                <hr>
+                <p>Who uses assistive technology? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Only people who use handicapped entrances to buildings</li>
+                  <li>People who wear glasses or contact lenses</li>
+                  <li>People who wear hearing aids</li>
+                  <li>People with motor disabilities</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,C,D</p>
+                </div>
+                <hr>
+                <p>True or False: There are many forms of disabilities that are not obvious to an observer.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+                <hr>
+                <p>Which is NOT an example of assistive technology that helps with using the Internet?</p>
+                <ol class="list-alpha">
+                  <li>Screen readers</li>
+                  <li>Screen magnifiers</li>
+                  <li>Refreshable braille devices</li>
+                  <li>Wheelchair</li>
+                  <li>Mouth stick</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+                <hr>
+                <p>True or False: Screen readers will interpret color-coded text and announce changes in color.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+                <hr>
+                <p>For someone with low vision, what are ways to make text more readable? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Zoom or magnify text on the screen</li>
+                  <li>Use synchronized video captions</li>
+                  <li>Change text and background colors for better contrast</li>
+                  <li>Use a screen reader</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,C,D
+                  </p>
+                </div>
+                <hr>
+                <p>Which type of disability is the most common?</p>
+                <ol class="list-alpha">
+                  <li>Blindness or low vision</li>
+                  <li>Color blindness</li>
+                  <li>Auditory disabilities</li>
+                  <li>Motor disabilities</li>
+                  <li>Cognitive Disabilities</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+                <hr>
+                <p>The most important consideration for designing web content for someone with motor disabilities is the inability to use:</p>
+                <ol class="list-alpha">
+                  <li>The hands</li>
+                  <li>The legs</li>
+                  <li>The eyes</li>
+                  <li>The mouth</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="ux">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="ux">Accessible UX</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>To make a PDF accessible you use Adobe Acrobat Reader?</p>
+                <ol class="list-alpha">
+                  <li>Yes</li>
+                  <li>No</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Universal design is part of accessible design for people with disabilities.</p>
+                <ol class="list-alpha">
+                  <li>Yes</li>
+                  <li>No</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Universal Design for the Web is meant to produce websites accessible for?</p>
+                <ol class="list-alpha">
+                  <li>Older people</li>
+                  <li>People without disabilities</li>
+                  <li>People with disabilities</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>PDF documents can be made more accessible with the following method</p>
+                <ol class="list-alpha">
+                  <li>Tagging Choice</li>
+                  <li>PDF's are already sufficiently accessible</li>
+                  <li>Using HTML-headings Choice</li>
+                  <li>Sufficient contrast in the document</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>Which of the following is an example of good link text?</p>
+                <ol class="list-alpha">
+                  <li>Click Here</li>
+                  <li>Read More…</li>
+                  <li>Products and Services</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Using good link text is important because:</p>
+                <ol class="list-alpha">
+                  <li>Poorly labeled link text will take users to the wrong page.</li>
+                  <li>Poorly labeled links won’t be clickable.</li>
+                  <li>When screen reader users hear poor link text out of context they won’t know where the link goes.</li>
+                  <li>Good link text will entice users to click it.</li>
+                  <li>A link is only as good as its link text.</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What are examples of ways that audio can be made accessible to a deaf person? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Audio Descriptions</li>
+                  <li>Captions</li>
+                  <li>Color Coding</li>
+                  <li>Transcripts</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B,D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What are examples of video and images made accessible to a blind person? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Images have descriptions in alt text</li>
+                  <li>Video with audio descriptions, describing what happens on-screen</li>
+                  <li>Including captions of speech in the video</li>
+                  <li>Images with descriptive text overlayed on top of the image</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which accessibility design feature should be visible to sighted keyboard users when the item receives keyboard focus?</p>
+                <ol class="list-alpha">
+                  <li>Alt text for images</li>
+                  <li>The code that links a form element to its form label</li>
+                  <li>Skip Navigation Links</li>
+                  <li>The code that links a data cell in a table to its table header(s)</li>
+                  <li>ARIA landmark roles</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="myths">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="myths">Myths</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+                <hr>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" aria-labelledby="guidelines">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="guidelines">Guidelines</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>What will be the next version of WCAG?</p>
+                <ol class="list-alpha">
+
+                  <li>WCAG 1.1</li>
+                  <li>WCAG 2.1</li>
+                  <li>WCAG 2.2</li>
+                  <li>WCAG 3.0</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>What is NOT one of the main accessibility principles?</p>
+                <ol class="list-alpha">
+
+                  <li>Operable</li>
+                  <li>Reproducable</li>
+                  <li>Robust</li>
+                  <li>Perceivable</li>
+                  <li>E. Understandable</li>
+
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+                <hr>
+
+                <p>Universal Design for the Web is meant to produce websites accessible for?</p>
+                <ol class="list-alpha">
+                  <li>Older people</li>
+                  <li>People without disabilities</li>
+                  <li>People with disabilities</li>
+                  <li>All of the above</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>ARIA means:</p>
+                <ol class="list-alpha">
+                  <li>Accessible Rich Internet Architecture</li>
+                  <li>Accessible Rich Internet Access</li>
+                  <li>Accessible Rich Internet Applications</li>
+                  <li>Accessible Right Internet Application</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>When were WCAG 1.0 and WCAG 2.0 published?</p>
+                <ol class="list-alpha">
+                  <li>WCAG 1.0 in 1996 and WCAG 2.0 in 1999</li>
+                  <li>WCAG 1.0 in 1996 and WCAG 2.0 in 2008</li>
+                  <li>WCAG 1.0 in 1999 and WCAG 2.0 in 2008</li>
+                  <li>WCAG 1.0 in 1999 and WCAG 2.0 in 2009</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To which of the main 4 principles does the guideline "Make Web pages appear and operate in predictable ways." belong to?</p>
+                <ol class="list-alpha">
+                  <li>Robust</li>
+                  <li>Perceivable</li>
+                  <li>Operable</li>
+                  <li>Understandable</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What principles do developers have to take into account when creating web content?</p>
+                <ol class="list-alpha">
+                  <li>WCAG 1.0</li>
+                  <li>WCAG 2.0</li>
+                  <li>WAI-ARIA</li>
+                  <li>ATAG</li>
+                  <li>UAAG</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>WCAG recommends to use a font design for people that have dyslexia.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>ATAG is about?</p>
+                <ol class="list-alpha">
+                  <li>principles to create accessible pages</li>
+                  <li>principles for tools in order to facilitate the creation accessible content</li>
+                  <li>principles for accessible software, like screenreaders should follow</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Facebook is also a Web authoring tool?</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <>What is ATAG and who should use it? (Open question)
+                  <p>Answer: Authoring Tool Accessibility Guidelines. Web authoring tools (Dreamweaver, SharePoint, etc.) should follow ATAG in order to facilitate the creation of accessible web content.</p>
+
+                  <hr>
+
+                  <p>Creating a separate web page for screenreader is generally a great idea, which save a lot of time in the future.</p>
+                  <ol class="list-alpha">
+                    <li>Yes, it is the only way to deliver a great experience</li>
+                    <li>No, there are many brands of screen reader and detecting them is hard./li>
+                  </ol>
+                  <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                  <div hidden>
+                    <p class="pt-2 mx-2">Answer: B
+                    </p>
+                  </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque questions</h3>
+
+                <hr>
+
+                <p>Which of the five senses are used to perceive web content? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Sight</li>
+                  <li>Sound</li>
+                  <li>Taste</li>
+                  <li>Smell</li>
+                  <li>Touch</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: Digital text is considered a universal format because it can be converted into other formats by assistive technology.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The four basic accessibility principles are:</p>
+                <ol class="list-alpha">
+                  <li>Perceivable, Operational, Understandable, and Recognizable</li>
+                  <li>Purposeful, Operational, Understandable, and Recognizable</li>
+                  <li>Purposeful, Operable, Understandable, and Robust</li>
+                  <li>Perceivable, Operable, Understandable, and Robust</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>True or False: Using multiple formats -- such as text, images, and multimedia -- helps make content more universally understandable.</p>
+                <ol class="list-alpha">
+                  <li>True</li>
+                  <li>False</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What are ways that content can be made more understandable? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>Using images and multimedia in addition to text</li>
+                  <li>Simplifying vocabulary and terminology</li>
+                  <li>Breaking up long passages of text</li>
+                  <li>Putting lines of text close together</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,B,C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>In order to meet the guideline for robustness, you must ensure your web content is compatible with the following (select all that apply):</p>
+                <ol class="list-alpha">
+                  <li>Current versions of modern browsers</li>
+                  <li>Netscape 1.0</li>
+                  <li>“WorldWideWeb” (the world’s first web browser, created by Tim Berners-Lee)</li>
+                  <li>Modern mobile devices</li>
+                  <li>Slightly older versions of browsers that are still commonly used today</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A,D,E
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>What are the rules or checklist of items upon which the guidelines of WCAG 2.0 are based?</p>
+                <ol class="list-alpha">
+                  <li>Level AAA</li>
+                  <li>Success Criteria</li>
+                  <li>Sufficient Techniques</li>
+                  <li>Advisory Techniques</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>WCAG 2.0 differs from WCAG 1.0 in what way?</p>
+                <ol class="list-alpha">
+                  <li>Guidelines and success criteria have been separated from technology-specific techniques</li>
+                  <li>The sufficient techniques were changed to advisory techniques</li>
+                  <li>There is a higher level of success criteria</li>
+                  <li>Each guideline lists at least one sufficient technique with its success criteria</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="laws">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="laws">Laws</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Questions</h3>
+
+                <hr>
+
+                <p>What are benefits of an accessible website? (Select all that apply)</p>
+                <ol class="list-alpha">
+                  <li>A higher score in search engine</li>
+                  <li>Compliance with government rules</li>
+                  <li>Website can be read on many different devices</li>
+                  <li>You get a tax discount when you comply with the laws</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A, B, C
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>To what legislation do Dutch website comply to?</p>
+                <ol class="list-alpha">
+                  <li>Government websites must comply with web accessibility guidelines, based on WCAG 1, Level AA</li>
+                  <li>Government websites must comply with web accessibility guidelines, based on WCAG 1, Level A</li>
+                  <li>All company websites, who do business with the goverment must comply with web accessibility guidelines, based on WCAG 2, Level A</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Deque Questions</h3>
+
+                <hr>
+                <p>Who is directly affected by the laws of Section 508 of the Rehabilitation Act in addition to the U.S. federal government?</p>
+                <ol class="list-alpha">
+                  <li>All organizations that do business with the federal government</li>
+                  <li>Everyone seeking to make technologies accessible to people with disabilities</li>
+                  <li>Anyone who uses the Internet</li>
+                  <li>All U.S. citizens</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Who is directly affected by the Accessibility for Ontarians with Disabilities Act (AODA)?</p>
+                <ol class="list-alpha">
+                  <li>All citizens of Canada</li>
+                  <li>Every person and organization in the Province of Ontario who provides goods, services, facilities, or employment</li>
+                  <li>U.S. citizens visiting the Province of Ontario</li>
+                  <li>Anyone who uses the Internet</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>Which European mandate is similar to Section 508 in the United States?</p>
+                <ol class="list-alpha">
+                  <li>The European Standard for Disability Equality</li>
+                  <li>EU ADA - European Union Access to Disabilities Act</li>
+                  <li>EN Section 508</li>
+                  <li>EN 301 549: Accessibility requirements suitable for public procurement of ICT (Information and Communication Technology) products and services in Europe</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: D
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>The Americans with Disabilities Act is an example of which type of accessibility law?</p>
+                <ol class="list-alpha">
+                  <li>Civil rights law</li>
+                  <li>Procurement law</li>
+                  <li>Industry-specific law</li>
+                  <li>Administrative law</li>
+                  <li>Constitutional law</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: A
+                  </p>
+                </div>
+
+                <hr>
+
+                <p>EN 301 549 is an example of which type of accessibility law?</p>
+                <ol class="list-alpha">
+                  <li>Civil rights law</li>
+                  <li>Procurement law</li>
+                  <li>Industry-specific law</li>
+                  <li>Administrative law</li>
+                  <li>Constitutional law</li>
+                </ol>
+                <button class="btn btn-secondary answer-button" type="button" aria-expanded="false">Answer</button>
+                <div hidden>
+                  <p class="pt-2 mx-2">Answer: B
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

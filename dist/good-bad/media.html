@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Good Media - A11Y Champions Developer Training</title>
+
+  <link rel="stylesheet" href="../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styles-responsive.css">
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <div class="site-nav bg-grey">
+      <nav class="container" role="navigation" aria-labelledby="title-site-nav">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <div class="container">
+          <ul class="pipe-links list-inline">
+            <li class="list-inline-item"><a href="../index.html"><span>1. Basics</span></a></li>
+            <li class="list-inline-item"><a href="../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+            <li class="list-inline-item"><a href="../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+            <li class="list-inline-item"><a href="../good-bad/home.html" aria-current="true"><span>4. Good / Bad</span></a></li>
+            <li class="list-inline-item"><a href="../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+            <li class="list-inline-item"><a href="../about/fundamentals/contact.html"><span>About</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="#" class="navbar-brand">
+          <img class="avatar-img" src="../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../good-bad/home.html" id="main-menu">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../good-bad/article.html">Article</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../good-bad/media.html" aria-current="page">Media <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link active" href="../good-bad/media.html" aria-current="page">Good <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../good-bad/media-bad.html">Bad</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../good-bad/request.html">Request</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-inline my-2 my-lg-0">
+            <form class="form-inline" role="search">
+              <label for="search">Search</label>
+              <input class="form-control form-control-search mr-2" type="text" id="search">
+              <button class="btn btn-tertiary search-button my-2 my-sm-0 ml-0" type="submit">
+                <span class="icon icon-search icon-lg text-orange" aria-hidden="true"></span>
+                <span class="sr-only">Search</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar">
+      <div class="container">
+        <h1 class="heading-xl">DRAFT: Accessible Media Page</h1>
+        <div class="sr-only" id="second-nav">Secondary Menu</div>
+        <p class="lead">Good and Bad Demonstration</p>
+      </div>
+    </div>
+
+    <section class="full-cover bg-faded" role="region" aria-labelledby="cards-main">
+      <div class="container">
+
+        <h2 class="full-cover-title">Time-based Media</h2>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-block">
+                <h3 class="card-title">Audio-only / Video-only</h3>
+                <img class="card-img-top img-fluid" src="../images/audio_only.jpg" alt="">
+                <p class="card-text mt-4">The intent of this Success Criterion is to make information conveyed by prerecorded audio-only and prerecorded video-only content available to all users.
+                  <span class="d-block">
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal">
+              More on Audio-only
+                    </button>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../images/video_caption.jpg" alt="">
+              <div class="card-block">
+                <h3 class="card-title">Captions (Prerecorded)</h3>
+                <p class="card-text">The intent of this Success Criterion is to enable people who are deaf or hard of hearing to watch synchronized media presentations.
+                  <span class="d-block">
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal2">
+              More on Captions
+                    </button>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <img class="card-img-top img-fluid" src="../images/audio-descriptions-hunger-games.jpg" alt="">
+              <div class="card-block">
+                <h3 class="card-title">Audio Description or Media Alternative (Prerecorded)
+                </h3>
+                <p class="card-text">An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.
+                  <span class="d-block">
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal3">
+              More on Descriptions
+                    </button>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <blockquote class="blockquote">
+          <p class="mb-0">Through this lens, it’s possible to conceive that if all barriers could be removed, disability would cease to exist.</p>
+          <footer class="blockquote-footer p-0">Someone famous in <cite title="Source Title">Accessibility</cite></footer>
+        </blockquote>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-a" role="region" aria-labelledby="quote">
+      <div class="container">
+
+        <h2 id="quote" class="sr-only">Quote</h2>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <img class="card-img img-fluid mb-4" src="../images/jake-quote2.jpg" alt="">
+          </div>
+
+          <div class="col-md-4">
+            <blockquote class="l-mb-0">
+              <span class="blockquote-text display-5">The mapping of HTML to the Accessibility Api by browsers is pretty straight forward.</span>
+              <footer class="blockquote-footer">
+                <cite class="blockquote-attribution">Jake Abma</cite>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <span class="hidden-sm-down">HTML elements with default WAI-ARIA role semantics MUST be mapped to platform accessibility APIs according to those WAI-ARIA roles' mappings.</span>
+              <span class="d-block mt-4">
+                <a href="https://www.w3.org/TR/html-aam-1.0/#details-id-149" class="text-white">
+                  HTML Accessibility API Mappings 1.0 - Role list
+                </a>
+              </span>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <section class="full-cover bg-faded" role="region" aria-labelledby="cards-main">
+    <div class="container">
+
+      <h2 class="full-cover-title">Graphics</h2>
+
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card">
+            <div class="card-block">
+              <img class="card-img-top img-fluid" src="../images/chart.png" alt="">
+              <h3 class="card-title">Accessible Chart</h3>
+              <p class="card-text">Charts, graphs, and other complex images often require extensive description to be made accessible to users who are blind or have visual impairments.
+                <span class="d-block">
+                    <a href="https://www.highcharts.com/demo/area-stacked-percent" class="link-primary mt-4">
+                      More on Charts
+                    </a>
+                  </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <aside class="full-cover btn-annot-outline site-aside bg-faded" role="complementary">
+    <div class="container btn-annot-outline">
+      <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal03">03</button>
+
+      <h2 class="full-cover-title">We like to help you</h2>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">
+                Accessibility APIs
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="#">Accessibility Tree</a>
+                </li>
+                <li>
+                  <a href="#">Accessible Name</a>
+                </li>
+                <li>
+                  <a href="#">Role, state and properties</a>
+                </li>
+                <li>
+                  <a href="#">Keyboards API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">
+                Assistive Technologies
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="#">Text To Speech</a>
+                </li>
+                <li>
+                  <a href="#">Object relations</a>
+                </li>
+                <li>
+                  <a href="#">Page Navigation</a>
+                </li>
+                <li>
+                  <a href="#">Web Spots</a>
+                </li>
+                <li>
+                  <a href="#">Speech to Text</a>
+                </li>
+                <li>
+                  <a href="#">Basic screen reader test</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">
+                Any questions?
+              </h3>
+              <dl>
+                <dt id="contact">Contact Team A11Y<p></p></dt>
+                <dd role="definition" aria-labelledby="contact">Phone: 020 22 888 88</dd>
+                <dd role="definition" aria-labelledby="contact">Monday - Friday: 8.00 - 21.00 hours</dd>
+                <dd role="definition" aria-labelledby="contact">Saturday: 9.00 - 17.00 hours</dd>
+                <dd role="definition" aria-labelledby="contact">E-mail address: info@company-name.nl</dd>
+              </dl>
+              <p>
+                <span class="icon icon-pdf icon-md text-orange"></span>
+                <a href="&#9;https://s3.eu-central-1.amazonaws.com/jirodica-docs/Accessible+PDF.pdf">Contact possibilities (353KB)
+                    <span class="sr-only">PDF</span>
+                  </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Audio-only</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <a href="https://s3.eu-central-1.amazonaws.com/jirodica-media/audio/audio-only.m4a">Listen to audio-file</a>
+          </p>
+          <p>
+            <a href="https://s3.eu-central-1.amazonaws.com/jirodica-docs/transcript.docx">Audio-only transcript file</a>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Captions (Prerecorded)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('demoCaption').pause();">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">
+            <video id="demoCaption" width="100%" height="100%" controls aria-label="Rob Lennartz: A video with captions">
+              <source src="https://s3.eu-central-1.amazonaws.com/jirodica-media/video/Video+with+captions.mp4" type="video/mp4" transcript="#transcript">
+              Your browser does not support HTML5 video.
+            </video>
+            <h6 id="transcript">Video transcript</h6>
+            <p>Hello this is a video with captions so that people who are deaf or of hard hearing can also watch and understand this video. Thank you.
+            </p>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('demoCaption').pause();">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Descriptions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('demoVideo').pause();">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">
+            <video id="demoVideo" width="100%" height="100%" controls aria-label="Rob Lennartz: A video with captions">
+              <source src="https://s3.eu-central-1.amazonaws.com/jirodica-media/video/video_description.mp4" type="video/mp4" transcript="#transcript">
+              Your browser does not support HTML5 video.
+            </video>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button id="demoVideo" type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('demoVideo').pause();">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="full-cover site-footer" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="pipe-links list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <span id="placeholderurl">Company link</span>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal">Github</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/">Deque University</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../about/fundamentals/contact.html">Contact</a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../scripts/libs/tether/tether.min.js"></script>
+  <script src="../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../scripts/script.js"></script>
+	<script src="../scripts/prism.js"></script>
+
+</body>
+
+</html>

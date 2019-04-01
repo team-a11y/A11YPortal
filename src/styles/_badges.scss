@@ -1,0 +1,237 @@
+//----------
+// 
+//----------
+
+.badges {
+	font-size: 1rem;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.badge {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+[class*="example-badge-"]:before,
+.example-badge-full-cover .container:before {
+	display: inline-block;
+	position: absolute;
+	clear: both;
+	left: 0.5em;
+
+	border-radius: 4px;
+
+	background: #FF6200;
+
+	color: #fff;
+	line-height: 1;
+
+	padding: 4px 8px;
+
+	z-index: 2;
+}
+
+.example-badge-full-cover:before {
+	content: 'full-cover <section> →';
+	top: 0.4em;
+}
+
+.example-badge-full-cover .container:before {
+	content: 'container <div> ↓';
+	top: -1.9em;
+	left: 45%;
+}
+
+.example-badge-row:before {
+	content: 'row <div> →';
+	top: 0.4em;
+	left: 1em;
+}
+
+.example-badge-row-aside:before {
+	content: 'row <aside> →';
+	top: 0.4em;
+	left: 1em;
+}
+
+.example-badge-col:before {
+	content: 'col <div> ↓';
+	top: 0.4em;
+	left: 45%;
+}
+
+.example-badge-article:before {
+	content: 'col <article> ↓';
+	top: 0.4em;
+	left: 45%;
+}
+
+.example-badge-aside:before {
+	content: 'col <aside> ↓';
+	top: 0.4em;
+	left: 45%;
+}
+
+.example-badge-full-cover-header:before {
+	content: '<header> →';
+	top: 0.5em;
+	left: 0.4em;
+}
+
+/* BADGE COLORS */
+/* ---------------------- */
+
+.badge-danger {
+  background-color: #EB0000;
+}
+
+.badge-info {
+  background-color: #2B79B6;
+}
+
+.badge-success {
+  background-color: #2E8548;
+}
+
+.badge-warning {
+  background-color: #CC4E00;
+}
+
+/* DASHED */
+/* ---------------------- */
+
+.example-dashed-header-top {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #f5f5f5 !important;
+}
+
+.example-dashed-header-bottom {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #ffffff !important;
+
+	padding-bottom: 24px;
+}
+
+.example-dashed-header-mobile {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #ffffff !important;
+}
+
+.example-dashed-full-cover {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #f5f5f5 !important;
+}
+
+.example-dashed-header {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #ffffff !important;
+}
+
+.example-dashed-footer {
+	position: relative;
+	outline: 1px dashed #FF6200;
+
+	background: #ececec !important;
+
+	padding: 32px 0;
+}
+
+[class*="example-dashed-"] .container {
+	outline: 1px dashed #77726c;
+}
+
+/* FILLED */
+/* ---------------------- */
+
+[class*="example-dashed-"] [class^="row"]  {
+	position: relative;
+	background: rgba(255,255,255,0.5);
+}
+
+[class*="example-dashed-"] [class*="col-"] {
+	position: relative;
+	background: rgba(255,255,255,0.5);
+}
+
+.example-full-cover-header {
+	position: relative;
+	background: rgba(255,255,255,0.9);
+	height: 42px;
+
+	border: 1px dotted blue;
+}
+
+// /* GRID */
+// /* ---------------------- */
+
+// .container  {
+// 	position: relative;
+// 	background-image: url("/examples/templates/grid-bg-xs.png");
+// }
+
+// .example-button-bar .container {
+// 	background-image: none !important;
+// }
+
+// @media (min-width: 480px) {
+// 	.container {
+// 		background-image: url("/examples/templates/grid-bg-xs.png");
+// 	}
+// }
+
+// @media (min-width: 680px) {
+// 	.container {
+// 		background-image: url("/examples/templates/grid-bg-sm.png");
+// 	}
+// }
+
+// @media (min-width: 768px) {
+// 	.container {
+// 		background-image: url("/examples/templates/grid-bg-md.png");
+// 	}
+// }
+
+// @media (min-width: 992px) {
+// 	.container {
+// 		background-image: url("/examples/templates/grid-bg-lg.png");
+// 	}
+// }
+
+// @media (min-width: 1200px) {
+// 	.container {
+// 		background-image: url("/examples/templates/grid-bg-xl.png");
+// 	}
+// }
+
+// [class*="example-flex-"] {
+//   display: flex !important; /* or inline-flex */
+//   align-items: stretch;
+//   flex-flow: row wrap;
+//   /*-webkit-flex-flow: row wrap;*/
+// }
+
+// .example-flex-lg {
+//   min-height: 200px;
+// }
+
+// .example-flex-md {
+//   min-height: 240px;
+// }
+
+// .example-col-padding {
+// 	display: block;
+// 	width: 100%;
+
+// 	border: 1px dotted blue;
+// }

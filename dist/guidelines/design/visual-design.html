@@ -1,0 +1,2636 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Design - Design - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html" aria-current="page">Design
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item">
+                    <a class="page-link active" href="../../guidelines/design/visual-design.html" aria-current="page">Visual Design
+                    <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/images.html">Images</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/links.html">Links</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/design/structure.html">Structure</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+      <div class="container">
+      </div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Visual Design</h1>
+
+        <h2 class="sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#colour-contrast" class="link-ts"><span>Colour contrast</span></a></li>
+          <li><a href="#colour-and-meaning" class="link-ts"><span>Colour and meaning</span></a></li>
+          <li><a href="#styling-and-readability" class="link-ts"><span>Styling and readability</span></a></li>
+          <li><a href="#touch-target-size" class="link-ts"><span>Touch target size</span></a></li>
+          <li><a href="#spacing" class="link-ts"><span>Spacing</span></a></li>
+          <li><a href="#content-resizing" class="link-ts"><span>Content resizing</span></a></li>
+          <li><a href="#actionable-elements" class="link-ts"><span>Actionable elements</span></a></li>
+          <li><a href="#visible-focus" class="link-ts"><span>Visible focus</span></a></li>
+          <li><a href="#consistency" class="link-ts"><span>Consistency</span></a></li>
+          <li><a href="#choice" class="link-ts"><span>Choice</span></a></li>
+          <li><a href="#adjustable" class="link-ts"><span>Adjustable</span></a></li>
+          <li><a href="#flicker" class="link-ts"><span>Flicker</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="colour-contrast" aria-labelledby="title-colour-contrast">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-colour-contrast">Colour contrast <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>The colour of text and background content must have sufficient contrast.</strong>
+                </p>
+
+                <p>Good colour contrast assists people with vision impairment, including colour blindness, and cognitive impairments when viewing content. It also accommodates lower specification devices with poor colour support and assists all users in
+                  a brightly lit environment.</p>
+
+                <p>Good colour contrast is also essential when using colour as a differentiator, for example, when colour is used to indicate the presence of a link or a selected tab with text. The colour difference between the link text and non-link text
+                  must have sufficient contrast.</p>
+
+                <p>In lieu of a proven colour contrast standard for mobile devices, the
+                  <a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0 Level AA </a>contrast ratio must be met or ideally exceeded. It requires a contrast of at least 4.5:1 for non-bold text smaller than 18pt.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-colour-contrast" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-colour-contrast" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-colour-contrast" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-colour-contrast-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-colour-contrast-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#contrast" class="link-ts"><span>Contrast - Design</span></a></li>
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#color" class="link-ts"><span>Color - Design</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#color" class="link-ts"><span>Color - Content</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#contrast" class="link-ts"><span>Contrast - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-colour-contrast">iOS</h4>
+
+            <p>Use standard iOS colours for buttons, text, and other user interface objects or ensure the foreground and background provide sufficient contrast.</p>
+
+            <h4 class="heading-s" id="android-colour-contrast">Android</h4>
+
+            <p>Use standard Android OS colours for buttons, text, and other user interface elements or ensure the foreground and background colours provide sufficient contrast.</p>
+
+            <h4 class="heading-s" id="html-colour-contrast">HTML</h4>
+
+            <p>Key recommendations are:</p>
+            <ul class="list-icons list-checklist">
+              <li>For text or images of text avoid background colours or use background colours that have sufficient contrast from the foreground colour;</li>
+              <li>If background colours are used, apply the 4.5:1 contrast ratio to foreground colours.</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-colour-contrast-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app.</li>
+                  <li>Locate samples of text with background colours.
+                  </li>
+                  <li>Identify the colour values:
+                    <ul>
+                      <li>Open the module in the app</li>
+                      <li>Take a screen shot of the module (home+power button on iOS)</li>
+                      <li>Email or sync the picture to a desktop PC</li>
+                      <li>View the image of the page to be tested</li>
+                      <li>Determine the foreground and background colour of the content using an eye dropper tool to obtain the colour values for the background and foreground colours.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Manually inspect the element's colour definition.</li>
+                  <li>Use a reliable tool, such as
+                    <a href="http://snook.ca/technical/colour_contrast/colour.html">Snook.ca colour contrast check</a>,
+                    <a href="http://webaim.org/resources/contrastchecker/">Webaim color contrast checker</a>&nbsp;or
+                    <a href="https://www.paciellogroup.com/resources/contrastanalyser/">TPG colour contrast analyser</a>, to check if contrast is sufficient.
+                  </li>
+                  <li>Enter the foreground and background values into the colour contrast analyser.</li>
+                  <li>Verify the luminosity requirements are met and that the colour contrast meets the minimum ratio requirements of 4.5:1 for standard size and non-bolded text.
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-colour-contrast-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Contrast between text and background meet minimum colour contrast (luminosity) ratio requirements indicated by WCAG 2.0 of 4.5:1 for standard font size that is not in bold.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="colour-and-meaning" aria-labelledby="title-colour-and-meaning">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-colour-and-meaning">Colour and meaning
+          <span class="badge badge-danger">Must not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Information or meaning must not be conveyed by colour only.</strong></p>
+
+                <p>Colours can be difficult to distinguish in bright sunlight and cannot be perceived by users who are colour blind, or vision impaired. Screen readers do not detect colour and some users will change colour settings for their whole computer.
+                  For example, setting their computer to grayscale or applying a tint to help with reading. Lower specification mobile devices also offer poor colour support.</p>
+
+                <p>Colour is often used to show:</p>
+                <ul class="list-icons list-checklist">
+                  <li>a tab is selected,</li>
+                  <li>a link is available,</li>
+                  <li>text is an error message,</li>
+                  <li>emphasis,</li>
+                  <li>charts and graphics, or</li>
+                  <li>other meaningful information.</li>
+                </ul>
+
+                <p>Additional visual and non-visual methods of identifying information or meaning must be applied to support the use of colour:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Visual cues could be text attributes with suitable mark up (such as underline, bold or italic), patterns, or icons with suitable alternative text;</li>
+                  <li>Non-visual cues, which are programmatically available to assistive technologies, could be element tags, hidden text or suitable labels, for example ARIA or UlLabel.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-colour-and-meaning" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-colour-and-meaning" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-colour-and-meaning" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-colour-and-meaning-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-colour-and-meaning-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#contrast" class="link-ts"><span>Contrast - Design</span></a></li>
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#color" class="link-ts"><span>Color - Design</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#color" class="link-ts"><span>Color - Content</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#contrast" class="link-ts"><span>Contrast - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-colour-and-meaning">iOS</h4>
+
+            <p>Use visual clues and icons with text equivalents to reinforce meaning. Refer to
+              <a href="https://developer.apple.com/ios/human-interface-guidelines/">iOS Human Interface Guidelines</a></p>
+
+            <h4 class="heading-s" id="android-colour-and-meaning">Android</h4>
+
+            <p>Use visual clues and icons with text equivalents to reinforce meaning. Use the android:contentDescription property to provide short and concise alternatives. The exception is on EditText fields; these must be coded using the android:hint attribute. This helps users understand what content is expected when the text field is empty. When the field is filled, TalkBack reads the entered content to the user, instead of the hint text.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageView ... android:contentDescription="Save"/>
+<EditText ... android:hint="Surname (required)"/>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageView .../> 	[an image with no contentDescription attribute]
+<EditText ... android:hint="Surname"/>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-colour-and-meaning">HTML</h4>
+
+            <p>If colour is used to convey meaning ensure accessible alternatives are provided. This could be underlined text for links, visible text on buttons, alt text labels and so on.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-colour-and-meaning-procedures">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app with a screen reader.</li>
+                  <li>Locate objects, images, or elements that use colour.</li>
+                  <li>Determine if colour is the sole means of communicating information.</li>
+                  <li>Verify that there is an alternative visual means of obtaining the same information.</li>
+                  <li>Verify that the screen reader announces the meaning conveyed by the colour.</li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-colour-and-meaning-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Colour used to convey meaning is also indicated by an additional non-colour visual;</li>
+                  <li>Colour used to convey meaning is announced by the screen reader.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="styling-and-readability" aria-labelledby="title-styling-and-readability">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-styling-and-readability">Styling and readability
+          <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead">
+                  <strong> Core content must still be accessible when styling is unsupported or removed.</strong></p>
+
+                <p>Older mobile devices may have poor support for fonts, colours and styles. Additionally, assistive technology cannot draw meaning from styling. And some users will change settings (fonts, styles, colours, etc.) to suit their needs.</p>
+
+                <p>A user must still be able to complete the core purpose of a page or screen, whether reading or taking action, when background colours, images, layout or features are missing. For example, read a news article, play a radio station or navigate
+                  elsewhere.</p>
+
+                <p>If embedded media is not supported then a suitable message should be displayed instead.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-styling-and-readability" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-styling-and-readability" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-styling-and-readability" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-styling-and-readability-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-styling-and-readability-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-styling-and-readability">iOS</h4>
+
+            <p>Not applicable.</p>
+
+            <h4 class="heading-s" id="android-styling-and-readability">Android</h4>
+
+            <p>Not applicable.</p>
+
+            <h4 class="heading-s" id="html-styling-and-readability">HTML</h4>
+
+            <p>Content must be separated from presentation. Content and functionality must still work without CSS or with CSS disabled. When using ARIA or HTML 5 techniques, use fallback techniques such as CSS off-screen text to identify custom controls,
+              these must still be readable with CSS disabled.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// ARIA used in addition to visible text
+<div>
+    <label for="t1">E-mail (required):</label>
+    <input type="text" aria-required="true" id="t1"/>
+</div>
+
+// ARIA tab list supported with hidden '(selected)' text for no CSS or ARIA support cases
+<style>
+    .tabs li {
+      float: left;
+    }
+
+    .tabs a {
+      display: block;
+      padding: 0.5em;
+      border: 1px solid #000;
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* Add visual selected style */
+    .tabs .selected {
+      background: #def;
+    }
+
+    .hidden-offscreen {
+      position: absolute;
+      left: -999em;
+    }
+</style>
+
+<ul class="tabs" role="tablist">
+    <li role="presentation"><a href="#" role="tab" aria-controls="tab-1" aria-selected="false">Tab 1</a></li>
+    <li role="presentation"><a href="#" role="tab" aria-controls="tab-2" aria-selected="false">Tab 2</a></li>
+    <li role="presentation"><a href="#" role="tab" aria-controls="tab-3" aria-selected="true" class="selected">Tab 3<span class="hidden-offscreen"> (selected)</span></a></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-styling-and-readability-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Identify styles that are not supported by older devices or assistive technologies.
+                  </li>
+                  <li>Verify that all content is available on older devices and assistive technology that do not support these styles:
+                    <ul>
+                      <li>alternatives for background images</li>
+                      <li>colours</li>
+                      <li>fonts</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-styling-and-readability-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All content is available and readable.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="touch-target-size" aria-labelledby="title-touch-target-size">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-touch-target-size">Touch target size
+          <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Touch targets must be large enough to touch accurately.</strong></p>
+                <p>All users benefit from larger touch targets. For young users, and users with motor and/or vision impairments, this is even more important as accuracy can be difficult.</p>
+                <p>Content touch targets must be large enough to read and have a large enough interactive target area to tap comfortably with one finger.</p>
+                <p>The recommended size of touch targets is 7 – 10mm. This size is equivalent to the smallest average finger. An interactive target area should be at least 7 x 7 mm. If not, it must be no smaller than 5 x 5 mm inside an exclusion zone of at least 7 x 7 mm that does not overlap with any other touch target. The recommendation is to provide a bigger touch target where possible.</p>
+                <p>Sometimes text that is big enough to read is too small to touch. For example, a linked letter in an A-Z listing would be too fine to touch accurately and should be placed in a linked container to increase the target area.</p>
+                <strong>Tip</strong>
+                <p>
+                  <a href="../../guidelines/design/links.html#combining-repeated-links">Group adjacent related elements that link to the same resource</a> as a single linked touch target. This increases the touch area and simplifies the interface.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-touch-target-size" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-touch-target-size" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-touch-target-size" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-touch-target-size-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-touch-target-size-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/responsive-design-and-zoom.html#touch-click-target-size" class="link-ts"><span>Touch / Click Target Size</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-touch-target-size">iOS</h4>
+
+            <p>For text elements include some white space around the text in the element frame. The autoResizingMask property can be set to ensure that if an object is resized it still meets the requirements. Use larger controls or increase the padding around
+              content to ensure a large touch area.</p>
+
+            <p>All actionable controls must be 44pt x 44pt or larger. This sits within the comfortable hit area size for touch screen finger touch (7-10mm). See
+              <a href="https://developer.apple.com/ios/human-interface-guidelines/visual-design/adaptivity-and-layout/">iOS Human Interface Guidelines</a> for details.
+            </p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[AButton setFrame:CGRectMake(50, 50, 10, 10)];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-touch-target-size">Android</h4>
+
+            <p>Include white space around text elements in the element frame using <code>setPadding</code> . Use
+              <code>layout_width</code> and <code>layout_height</code> attributes of a
+              <code>LayoutParams</code> object to set an appropriate width and height for the targeted device. Use larger controls or increase the padding around content to ensure a large touch area.
+            </p>
+
+            <p>All actionable controls must be 48dp x 48dp or larger. This sits within the comfortable hit area size for touch screen finger touch (7-10mm). See
+              <a href="https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-touch-target-size">Android Material Design</a> guidelines for details.
+            </p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example (padding)
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+//A large enough element with sufficient area to tap.
+setPadding(10, 10, 10, 10);
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example (targets)
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<ImageView android:id="@+id/addBookmark" android:layout_width="50dp" android:layout_height="50dp"/>
+
+// or
+
+int dimensionInPixels = 50 * context.getResources().getDisplayMetrics().density
+LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams (dimensionInPixels, dimensionInPixels);
+addBookmarkImageView.setLayoutParams(layoutParams);
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageView android:id="@+id/addBookmark" android:layout_width="25dp" android:layout_height="25dp"/>
+
+// or
+
+int dimensionInPixels = 25 * context.getResources().getDisplayMetrics().density
+LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams (dimensionInPixels, dimensionInPixels);
+addBookmarkImageView.setLayoutParams(layoutParams);
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-touch-target-size">HTML</h4>
+
+            <p>Provide padding around links to ensure all actionable controls are at least 7mm across. Use larger controls, i.e. 9mm, or increase the padding around the content to ensure a large touch area.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Use elements such as lists to provide structure to page content such as navigation, and CSS to add padding and margins around each touch target:</p>
+                <pre><code class="language-markup"><!--
+<style>
+  .main-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .main-nav li {
+    float: left;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0 0.2em;
+    padding: 0.5em 1em;
+  }
+</style>
+
+<ul class="main-nav">
+  <li><a href="/user-experience">User Experience</a></li>
+  <li><a href="/developers">Developers</a></li>
+  <li><a href="/editors">Editors</a></li>
+  <li><a href="/product-owners">Product Owners</a></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Don't use white space and printable characters to create spacing within or around touch targets:</p>
+                <pre><code class="language-markup"><!--
+<a href="/user-experience">User Experience</a> | <a href="/developers">Developers</a> | <a href="/editors">Editors</a>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-touch-target-size-procedures">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the app.</li>
+                  <li>Locate all touch targets/actionable items.</li>
+                  <li>Measure the size.</li>
+                  <li>Verify the size is larger than 9.6mm.</li>
+                </ol>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-touch-target-size-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All touch targets/actionable items are larger than 9.6mm across.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="spacing" aria-labelledby="title-spacing">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-spacing">Spacing <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                <p class="lead"><strong>An inactive space should be provided around actionable elements.</strong></p>
+
+                <p>Anyone can find it challenging to interact with small controls that are closely grouped together, in particular users with motor or vision impairment.</p>
+
+                <p>Actionable elements should not touch or overlap, and there should be an inactive space between actionable elements in order to reduce the risk of activating the wrong control. The minimum space possible to set on any device or screen resolution
+                  is 1 pixel, preferably the space would be larger.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-spacing" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-spacing" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-spacing" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-spacing-procedrues" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-spacing-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-spacing">iOS</h4>
+
+            <p>When placing targets/actionable items ensure there is at least one (1) pixel between targets and that the edges of targets do not touch unless the space is non-actionable.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>A touch target that is up against another touch target with 1 pixel of inactive space between them.</p>
+
+                <pre><code class="language-markup"><!--
+[AButton setFrame:CGRectMake(50, 50, 50, 50)];
+[BButton setFrame:CGRectMake(101, 50, 50, 50)];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>A touch target that overlaps another touch target with no inactive space between the two targets.</p>
+
+                <pre><code class="language-markup"><!--
+[AButton setFrame:CGRectMake(50, 50, 50, 50)];
+[BButton setFrame:CGRectMake(99, 50, 50, 50)];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-spacing">Android</h4>
+
+            <p>Use the <code>layout_margin</code> attribute or set the margin programmatically using the
+              <code>setMargins</code> method.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageButton android:id="@+id/addBookmarkBtn" android:layout_margin="1"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_width="wrap_content"
+                                                   android:src="@drawable/addBMK"/>
+
+// or
+
+LinearLayout layout = new LinearLayout(...);
+LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(...);
+params.setMargins(1, 1, 1, 1);
+ImageButton addBookmarkBtn = new ImageButton(...);
+layout.addView(addBookmarkBtn, params);
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<ImageButton android:id="@+id/addBookmarkBtn" android:layout_margin="0"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_width="wrap_content"
+                                                   android:src="@drawable/addBMK"/>
+
+// or
+
+LinearLayout layout = new LinearLayout(...);
+LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(...);
+params.setMargins(0, 0, 0, 0);
+ImageButton addBookmarkBtn = new ImageButton(...);
+layout.addView(addBookmarkBtn, params);
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-spacing">HTML</h4>
+
+            <p>Ensure that borders, margins or some other mechanism for spacing exists around each target/actionable item.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Add borders or margins around touch targets to add at least 1px of inactive space.</p>
+
+                <pre><code class="language-markup"><!--
+<style>
+    .main-nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .main-nav li {
+      float: left;
+    }
+
+    .main-nav a {
+      display: block;
+      margin: 0 0.2em;
+      padding: 0.5em 1em;
+      border: 1px solid #333;
+    }
+</style>
+
+<ul class="main-nav">
+    <li><a href="/user-experience">User Experience</a></li>
+    <li><a href="/developers">Developers</a></li>
+    <li><a href="/editors">Editors</a></li>
+    <li><a href="/product-owners">Product Owners</a></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>In this example there are no margins or borders around each link so there is no inactive space between them.</p>
+
+                <pre><code class="language-markup"><!--
+<style>
+    .main-nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .main-nav li {
+      float: left;
+    }
+
+    .main-nav a {
+      display: block;
+      margin: 0;
+      padding: 0.5em 1em;
+    }
+</style>
+
+<ul class="main-nav">
+    <li><a href="/user-experience">User Experience</a></li>
+    <li><a href="/developers">Developers</a></li>
+    <li><a href="/editors">Editors</a></li>
+    <li><a href="/product-owners">Product Owners</a></li>
+</ul>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-spacing-procedrues">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <p>Because 1 pixel of space is very small it may be difficult to verify this item visually unless there is a visual separator between the two targets. In the case of no visual separation such as when a consistent background image is used
+                  around toolbar icons the code or .nib/.xib file may need to be inspected.</p>
+
+                <ol>
+                  <li>Activate the app.</li>
+                  <li>Locate all touch targets/actionable items.</li>
+                  <li>Verify that there appears to be inactive space between every touch target/actionable item.
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block" id="testing-spacing-results">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>All touch targets/actionable items have inactive space between them.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="content-resizing" aria-labelledby="title-content-resizing">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-content-resizing">Content resizing <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                <p class="lead"><strong>Users must be able to control font sizing and user interface (UI) scaling.</strong></p>
+
+                <p>All users benefit when they can adapt the size of content to see and read it. This may be a constant or temporary adaption due, for example, to screen size, screen glare, or vision impairment.</p>
+
+                <p>Ensure that content responds to platform native text resizing, and that scaling (or "zoom") is supported.</p>
+
+                <p>Users who magnify or zoom in on content only see part of the screen. Try to keep on-screen changes close to the point of interaction. For example, if a user completes an input field incorrectly add a visual cue above, below or inside the
+                  field, rather than out to the side.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-content-resizing" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-content-resizing" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-content-resizing" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-content-resizing-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-content-resizing-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/principles.html#platform-accessibility" class="link-ts"><span>Platform accessibility</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/responsive-design-and-zoom.html#responsive-design" class="link-ts"><span>Responsive Design</span></a></li>
+                  <li><a href="../../advanced/code/responsive-design-and-zoom.html#zoom" class="link-ts"><span>Zoom</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-content-resizing">iOS</h4>
+
+            <p>iOS settings provide a means for users to enlarge text and increase system level zoom. As an additional feature, apps may provide font switchers, gradients, and other settings to facilitate easier reading. This is useful in apps that contain
+              a lot of text.</p>
+
+            <h4 class="heading-s" id="android-content-resizing">Android</h4>
+
+            <p>Android settings provide a means for users to enlarge text and increase system level zoom. As an additional feature, apps may provide font switchers, gradients and other settings to facilitate easier reading. This is useful in apps that contain
+              a lot of text.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>When specifying text size ideally use scale-independent pixels:</p>
+
+                <pre><code class="language-markup"><!--
+<TextView android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="20sp"/>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-content-resizing">HTML</h4>
+
+            <p>Using relative size units helps to ensure content is responsive to screen size and scaling ("zoom") without becoming unavailable or cut-off.</p>
+            <p>Key recommendations include:</p>
+            <ol>
+              <li>Ensure the viewport meta tag is set to permit scaling;</li>
+              <li>Do not disable horizontal or vertical scrolling;</li>
+              <li>Support font resizing by using relative size units.</li>
+            </ol>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Do not disable user scaling:</p>
+
+                <pre><code class="language-markup"><!--
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Disable scaling and/or scrollbars:</p>
+
+                <pre><code class="language-markup"><!--
+<meta name="viewport" content="user-scalable=no"/>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=1;">
+
+<style>
+body {
+  overflow: hidden;
+}
+</style>
+
+<iframe scrolling="no"></iframe>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-content-resizing-procedrues">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <p>Most devices support pinch-zoom, or the browser has a Zoom in/out setting. Most devices and some browsers also have a way to adjust the default text size within the settings.</p>
+                <ol>
+                  <li>Open the web page or activate the app.</li>
+                  <li>Verify that UI scaling ("zoom") is not disabled.</li>
+                  <li>Verify that content can still be accessed when scaled up ("zoom in").</li>
+                  <li>Change the device default text size.</li>
+                  <li>Verify text resizes and properly reflows on the page/screen.</li>
+                  <li>Verify that scrolling is not disabled.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-content-resizing-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>It is possible to change the UI scale without losing access to content.</li>
+                  <li>The default text size is respected.</li>
+                  <li>Content properly reflows and scrolls as required when resized (no extra horizontal scrolling)</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="actionable-elements" aria-labelledby="title-actionable-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-actionable-elements">Actionable elements <span class="badge badge-success">Must</span>
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Links and other actionable elements must be clearly distinguishable.</strong></p>
+
+                <p>All users must be able to determine if an element is actionable or if it is static content. Actionable elements are links, buttons, navigation and other control features, including swipe areas on touch devices that might be less obvious.</p>
+
+                <p>Actionable elements must be identified visually, by convention, and by information provided to assistive technologies. This can be achieved using platform native elements such as links, buttons, inputs, etc. All elements should have clear
+                  labels and, when applicable, a suitable role or trait. See '<a href="../../guidelines/content/text-equivalents.html#roles-traits-properties">Roles, traits and properties</a>' for further information.
+                </p>
+                <p>Users should be able to control interfaces naturally and intuitively. Where realistic controls are used, such as toggle-buttons and sliders, users expect to interact with them in a literal and familiar way. In a game where the objective
+                  is to find an actionable element, it does not need to be obvious at the beginning of play but must be clearly distinguishable when it is located.</p>
+                <p>Hover states should only act as confirmation that an element is actionable.</p>
+                <strong>Tip</strong>
+                <p>When styling actionable elements consider using:</p>
+                <ul class="list-icons list-checklist">
+                  <li>underlines for links inline with text,</li>
+                  <li>colour highlights and weight variants to make inline actionable elements clear,</li>
+                  <li>visible state changes to indicate focus (can be same as hover),</li>
+                  <li>arrows to indicate direction of swipe areas.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-actionable-elements" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-actionable-elements" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-actionable-elements" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-actionable-elements-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-actionable-elements-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links</span></a></li>
+                  <li><a href="../../advanced/design/form-labels-instructions-and-validation.html#dynamic-forms-and-custom-widgets" class="link-ts"><span>Dynamic Forms & Custom Widgets</span></a></li>
+                  
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-actionable-elements">iOS</h4>
+
+            <p>In addition to visual cues, ensure that traits are set properly and the correct control types are used to display elements. Buttons by default will come with the correct accessibility traits (UIAccessibilityTraitButton). Most controls in iOS
+              already do.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Custom control acts like a button and can be tapped by the user
+[customControl setTitle:NSLocalizedString(@"Smile", @"Button title")];
+[customControl setAccessibilityTraits:UIAccessibilityTraitButton];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Custom control acts like a button but does not have the correct traits so will be confusing for a VoiceOver user
+[customControl setTitle:NSLocalizedString(@"Smile", @"Button title")];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-actionable-elements">Android</h4>
+
+            <p>In addition to visual cues ensure that the correct widget type is used and contentDescription is set.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// use of a button with a background image rather than a clickable image
+<button android:background="@drawable/add" android:contentDescription="Add"></button>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-actionable-elements">HTML</h4>
+
+            <p>For all actionable elements, the CSS cursor property should not be overwritten to something that doesn't appear actionable such as the value of "text".</p>
+            <p>For simulated controls, the appropriate CSS cursor property must be set, for example, pointer, or some other action for drag and drop, etc.</p>
+            <p>Links could have an underline, however multiple underlined links on mobile can sometimes be hard to read. Font weight changes, borders or other visual attributes indicating action can also be used.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<style>
+  body {
+    background: #fff;
+  }
+
+  a {
+    background: #def;
+  }
+
+  button {
+    cursor: pointer;
+  }
+</style>
+
+<a href="../../index.html">Home</a>
+
+<button type="submit">Search</button>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<style>
+  a {
+    cursor: text;
+    text-decoration: none;
+  }
+</style>
+
+<a href="../../index.html">Home</a>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-actionable-elements-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Locate all actionable items.</li>
+                  <li>Verify that the actionable items can be visually distinguished from non-actionable ones.</li>
+                  <li>Verify that the actionable status is indicated by a screen reader.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-actionable-elements-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Actionable items can be visually distinguished from non-actionable ones.</li>
+                  <li>Actionable items are announced in a way that indicates they are actionable by a screen reader.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="visible-focus" aria-labelledby="title-visible-focus">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-visible-focus">Visible focus <span class="badge badge-success">Must</span>
+        </h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>When focused, all actionable and focusable elements must have a visible state change.</strong></p>
+
+                <p>Visible focus helps all users track where they are within the content. Sighted keyboard and switch device users track progress as they navigate focusable elements, similar to using a remote control with a TV interface. Touch users also receive confirmation that an element is interactive.</p>
+
+                <p>Visible focus states happen when hover, focus or touch interactions occur. Do not depend on a browser's default visible states for hover, focus, or touch, as they may not work with the design. Do not inadvertently remove any default visible states for hover, focus, or touch unless providing an alternative. The visible focus state for all three interactions may look the same.</p>
+
+                <p>Hover, focus and touch states should not be used to convey information that is not available elsewhere.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-visible-focus" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-visible-focus" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-visible-focus" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-visible-focus-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-visible-focus-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#visual-layout" class="link-ts"><span>Visual Layout</span></a></li>
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#links" class="link-ts"><span>Links</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-visible-focus">iOS</h4>
+
+            <p>iOS provides visible state change for elements when input is provided by the onscreen keyboard.</p>
+            <p>Focus for other actionable and focusable elements is provided by Voice Over via assistive technology.</p>
+            <p>Accessibility focus is determined by the property which is provided for all subclasses of UIView. Ensure that objects do not override the visual focus indication or set the accessibilityFrame property to nil.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// gbutton is a simulated button to provide accessible touch to a graph. It has already been initialized as a UIAccessibilityElement
+gbutton.accessibilityLabel = NSLocalizedString(@"1st quarter results", @"Button title");
+gbutton.accessiiblityTraits = UIAccessibilityTraitButton;
+gbutton.accessiiblityFrame = CGRectMake(x, y, w, h); // We set the accessibilityFrame here so we know where the object is and can draw a focus rectangle around it.
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// gbutton is a simulated button to provide accessible touch to a graph. It has already been initialized as a UIAccessibilityElement, button title not translateable
+gbutton.accessibilityLabel = @"1st quarter results";
+gbutton.accessiblityTraits = UIAccessibilityTraitButton;
+gbutton.accessiiblityFrame = nil;
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-visible-focus">Android</h4>
+
+            <p>Developers should provide a visible indication when an element has focus. This is done by default for standard elements but for custom elements that have their own style sheets the focus style must be set in the style sheet when state_focused="true".</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// A custom element that is drawn differently when it has focus via the stylesheet
+<CustomButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/my_button"></CustomButton>
+
+// the my_button.xml file in res/drawable
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@android:drawable/btn_default_focused"></item>
+    <item android:drawable="@drawable/btn_default_my"></item>
+</selector>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A custom element that is only drawn one way
+<CustomButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/my_button"></CustomButton>
+
+//the my_button.xml file in res/drawable
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/btn_default_my">
+    </item>
+</selector>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-visible-focus">HTML</h4>
+
+            <p>By default, standard HTML elements have a visual focus indicator provided by the browser. Therefore all links and focusable elements must not have their outline suppressed via CSS changes with the <code class="code-badge">:focus</code> pseudo
+              class or the outline property unless a custom focus is provided. If using a custom focus give elements the same visible focus on <code class="code-badge">:focus</code> as on <code class="code-badge">:hover</code> and provide visible focus
+              for form fields.</p>
+            <p>Note, mobile browsers don't have good support for the CSS pseudo property hover.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// example 1, no CSS property changes will automatically produce desired visual focus in supporting user agents
+<a href="..."> Next </a>
+
+// example 2, use of the CSS outline property
+<style type="text/css">
+a {
+  outline: black dotted thin;
+}
+</style>
+...
+<a href="..."> Next </a>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<style type="text/css">
+a {
+  outline: none;
+}
+</style>
+...
+<a href="..."> Next </a>
+--></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-visible-focus-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Navigate through the active on-screen components.</li>
+                  <li>For each active element that receives focus:
+                    <ul>
+                      <li>Verify where the text input location is;</li>
+                      <li>Verify that the focus location is indicated at all times and follows traversal of the user interface;
+                      </li>
+                      <li>Verify that the focus indicator can be clearly distinguished from other on-screen elements.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-visible-focus-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The text input location is indicated;</li>
+                  <li>When switching page tabs, the focused tab is indicated visually and announced by a screen reader;</li>
+                  <li>The object, element, or control that has focus is indicated in a clear, visually distinguishable manner that meets the <a href="../../guidelines/design/visual-design.html#colour-contrast">colour contrast requirements</a>.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="consistency" aria-labelledby="title-consistency">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-consistency">Consistency <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>A user's experience should be consistent.</strong></p>
+
+                <p>Consistency allows all users to predict where to find information and how to use it. This is particularly helpful for users with cognitive impairments, in particular autistic users.</p>
+                <p>Consistent and logical <em>structure and language</em> help all users understand where they are and how to navigate or perform a task. Consistent and logical <em>layout</em> helps both sighted and non-sighted users predict where they should
+                  touch or interact.</p>
+                <p>For example, navigational aids such as back buttons should consistently move the user back to the previous step and act as a breadcrumb trail.</p>
+                <p>The look and sound of a control, object or element should inform the user how to interact with it.</p>
+                <p>For example, unless there is a recognised convention, such as for navigation, do not use links that are styled to look like buttons. This can be confusing for users of assistive technology, such as voice control or screen readers.</p>
+                <p>Additionally, use common gestures alongside other controls for commonly used design patterns:</p>
+                <ul class="list-icons list-checklist">
+                  <li>swipe gestures for slideshows and carousels,</li>
+                  <li>drag gestures for toggle and slider elements,</li>
+                  <li>and, where available, support native inertia for scrolling.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-consistency" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-consistency" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-consistency" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-consistency-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-consistency-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-consistency">iOS</h4>
+
+            <p>Ensure <code>accessibilityFrame</code>, <code>traits</code>, and <code>accessibilityLabels</code> correctly indicate the purpose and function of the object to users who cannot see. Use standard controls to indicate the purpose of objects to
+              users who can see. Refer to <a href="https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/">iOS Human Interface Guidelines design principles</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[AButton setImage:[UIImage imageNamed:@"play.jpg"] forState:UIControlStateNormal];
+[AButton setTitle:NSLocalizedString(@"Play clip", nil) forState:UIControlStateNormal];
+[AButton setAccessibilityTraits: UIAccessibilityTraitButton];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// an image that doesn't look like a button
+UIImageView* aImage = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+[aImage imageNamed:@"playbtn"];
+[aImage setTitle:NSLocalizedString(@"Play clip", nil) forState:UIControlStateNormal];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-consistency">Android</h4>
+
+            <p>Use standard controls to indicate the purpose of objects to users who can and cannot see. There is no ability to change accessibility role or trait information on the Android platform. Refer to <a href="https://material.io/guidelines/layout/principles.html">Android Material Design principles</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A custom element that doesn't look like a button uses the default button theme and indicate visual focus
+<CustomButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/my_button"></CustomButton>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@android:drawable/btn_default"></item>
+    <item android:drawable="@drawable/btn_default"></item>
+</selector>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A custom button element that is drawn in a non-standard way
+<CustomButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/my_button"></CustomButton>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/btn_custom">
+    </item>
+</selector>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-consistency">HTML</h4>
+
+            <p>Use visual styling to indicate that an item is actionable. Links should be different from static text for example a different font weight, outline, or some other visual styling that doesn't rely on colour alone. Use of standard elements without
+              custom styling will automatically provide this for links and buttons, although multiple or long links can become illegible on small screens.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<a href="..."> Next story</a>
+<button>Next story</button>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div onclick="openStory();"> Next story </div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-consistency-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Navigate through actionable items.</li>
+                  <li>Verify that the visual appearance of the screen and control, elements, and objects indicate their purpose and action status.</li>
+                  <li>Verify that the purpose of elements, objects, and control is announced.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-consistency-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The visual layout and style of elements, object, and controls indicates their action;</li>
+                  <li>The actionable status and purpose of elements, controls, and objects is announced.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="choice" aria-labelledby="title-choice">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-choice">Choice <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Interfaces must provide multiple ways to interact with content.</strong></p>
+
+                <p>Providing multiple ways to interact with content gives users choice and increases inclusivity. This supports different user expectations on how to interact with elements, and users who have difficulty with one type of interaction can use
+                  another.</p>
+
+                <p>Some elements provide multiple types of interaction. For example, a button element can be navigated to via mouse, touch, keyboard, or switch device, and then clicked, tapped or otherwise activated. Swipe gestures, which only cover touch
+                  interaction, must be supported by alternatives that perform the same actions. Additionally custom controls must be consistent with similar native controls, providing multiple ways to interact with them to cover all types of user interaction.</p>
+
+                <p>Avoid describing gestures in an alternative, tooltip, or hint, as the gesture or action might be different for users with assistive technology enabled.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-choice" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-choice" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-choice" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-choice-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-choice-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-choice">iOS</h4>
+
+            <p>Use standard controls when possible and set accessibility traits for custom controls.</p>
+
+            <h4 class="heading-s" id="android-choice">Android</h4>
+
+            <p>Use standard controls when possible and set appropriate focus states, descriptions and roles on custom controls.</p>
+
+            <h4 class="heading-s" id="html-choice">HTML</h4>
+
+            <p>Using standard elements will most often provide choice of interaction as this is already built in.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>Use terms for actions that are not device or control specific:</p>
+
+                <pre><code class="language-markup"><!--
+<form>
+    <p>Select the day do you prefer?</p>
+    <label><input type="radio" name="day" id="mon" value="Monday">Monday</label>
+    <label><input type="radio" name="day" id="fri" value="Friday">Friday</label>
+    <label><input type="radio" name="day" id="sat" value="Saturday">Saturday</label>
+    <input type="submit" value="Submit">
+</form>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-choice-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Identify the different actionable elements.</li>
+                  <li>Verify they can be accessed and controlled, as appropriate for the device, by:
+                    <ul>
+                      <li>mouse</li>
+                      <li>touch</li>
+                      <li>keyboard</li>
+                      <li>with or without screen reader enabled</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-choice-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Actionable elements can be controlled in multiple ways.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="adjustable" aria-labelledby="title-adjustable">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-adjustable">Adjustable <span class="badge badge-info">Should</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Interactive media, including games, should be adjustable for user ability and preference.</strong></p>
+
+                <p>Users of interactive media have differing abilities and preferences. Where appropriate, adjustment should be offered to make an experience inclusive and enable everyone to join in.</p>
+
+                <p>For example, users in bright sunlight, experiencing a migraine, or with vision impairment may choose to adjust the <a href="../../guidelines/design/visual-design.html#colour-contrast">contrast</a> and <a href="../../guidelines/design/visual-design.html#content-resizing">text size</a>, or enable a <a href="../../guidelines/design/visual-design.html#colour-and-meaning">colour blind mode</a>. Users in a noisy environment, needing quiet, or with hearing impairment may wish to adjust the <a href="../../guidelines/code/audio-and-video.html#volume-control">volume</a> or enabled <a href="../../guidelines/code/audio-and-video.html#alternatives-for-audio-and-visual-content">subtitles</a>. Users carrying something, nursing a hand injury, or with motor impairment may want to adjust the <a href="../../guidelines/code/scripts-and-dynamic-content.html#input-control">controls</a> and <a href="../../guidelines/code/scripts-and-dynamic-content.html#timeouts">pace</a>. Younger users, those less familiar with technology, or with a cognitive impairment may adjust a difficulty level, use <a href="../../guidelines/content/editorial.html#instructions">tutorials</a> or enable <a href="../../guidelines/content/notifications.html#feedback-and-assistance">hints</a>.</p>
+
+                <strong>Tip</strong>
+                <p>Consider the following:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Avoid complex controls and interactions.</li>
+                  <li>Provide multiple ways to control interactions.</li>
+                  <li>Provide means to adjust the number of choices.</li>
+                  <li>Give the user control over speed and timeouts.</li>
+                  <li>Provide means to adjust target area sizes.</li>
+                  <li>Provide a specific accessible control scheme.</li>
+                  <li>Respect device settings, such as text size.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-adjustable" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-adjustable" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-adjustable" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-adjustable-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-adjustable-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-adjustable">iOS</h4>
+
+            <p>None documented</p>
+
+            <h4 class="heading-s" id="android-adjustable">Android</h4>
+
+            <p>None documented</p>
+
+            <h4 class="heading-s" id="html-adjustable">HTML</h4>
+
+            <p>None documented</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-adjustable-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Verify that settings work as required.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-adjustable-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="flicker" aria-labelledby="title-flicker">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-flicker">Flicker <span class="badge badge-danger">Must not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Content must not visibly or intentionally flicker or flash more than three times in any one-second period.</strong></p>
+
+                <p>Visual flicker, flashing and strobe lighting can affect anyone, but some users will be more susceptible than others. Symptoms may include eyestrain, dizziness, fatigue, headaches, migraine, and nausea. Users with medical conditions such
+                  as Ménière's or photosensitive epilepsy can be severely affected, experiencing vertigo, hearing loss and seizures.</p>
+
+                <p>A well-documented example of the effects of flicker is <a href="http://news.bbc.co.uk/1/hi/sci/tech/40269.stm">Pokémon Shock</a>.</p>
+
+                <p>If flicker is unavoidable, the user must be warned before they reach the content.</p>
+
+                <p>Where editorially appropriate, provide an alternative version of content that does not flicker but is as close to the original as possible.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-flicker" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-flicker" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-flicker" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-flicker-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-flicker-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/multimedia-animations-and-motion.html#seizure-inducing-flashes" class="link-ts"><span>Seizure-Inducing Flashes</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-flicker">iOS</h4>
+
+            <p>None documented</p>
+
+            <h4 class="heading-s" id="android-flicker">Android</h4>
+
+            <p>None documented</p>
+
+            <h4 class="heading-s" id="html-flicker">HTML</h4>
+
+            <p>None documented</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-flicker-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <p>Use a tool or app, such as <a href="https://itunes.apple.com/td/app/flicker-tester/id893931726?mt=8">Flicker Tester</a>, to determine the rate of flicker.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-flicker-results">
+              <div class="card-block">
+
+                <h3 class="card-title">Testing results</h3>
+
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

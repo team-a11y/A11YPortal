@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android - Native - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="true" id="main-menu">Code <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/semantic-structure-and-navigation.html">Semantics and Navigation</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/responsive-design-and-zoom.html">Responsive and Zoom</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/dynamic-updates.html">Dynamic Updates</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/wai-aria.html">WAI-ARIA</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/code/android.html" aria-current="page">Android <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/ios.html">iOS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Android</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#getting-started" class="link-ts"><span>Getting Started</span></a></li>
+          <li><a href="#android-accessibility-features" class="link-ts"><span>Android Accessibility Features</span></a></li>
+          <li><a href="#user-interaction" class="link-ts"><span>User Interaction</span></a></li>
+          <li><a href="#ui-controls" class="link-ts"><span>UI Controls</span></a></li>
+          <li><a href="#notifications" class="link-ts"><span>Notifications</span></a></li>
+          <li><a href="#custom-elements" class="link-ts"><span>Custom Elements</span></a></li>
+          <li><a href="#form-labels-and-validation" class="link-ts"><span>Form Labels and Validation</span></a></li>
+          <li><a href="#navigation" class="link-ts"><span>Navigation</span></a></li>
+          <li><a href="#device-orientation" class="link-ts"><span>Device Orientation</span></a></li>
+          <li><a href="#semantic-structure-and-meaning" class="link-ts"><span>Semantic Structure and Meaning</span></a></li>
+          <li><a href="#color-and-contrast" class="link-ts"><span>Color and Contrast</span></a></li>
+          <li><a href="#audio-and-video" class="link-ts"><span>Audio and Video</span></a></li>
+          <li><a href="#text-content" class="link-ts"><span>Text Content</span></a></li>
+          <li><a href="#images" class="link-ts"><span>Images</span></a></li>
+          <li><a href="#accessibility-evaluation-methods-and-tools" class="link-ts"><span>Accessibility Evaluation Methods and Tools</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Android Native Mobile App Accessibility</strong></p>
+                <p>The modern accessible approach to mobile development is to integrate accessibility requirements into the earliest phases of design and development, and all stages of testing.</p>
+                <p>This training will teach you how to identify accessibility problems in native Android apps and how to code them with accessibility in mind. You'll learn how to use the Android Accessibility API to add all the necessary accessibility properties
+                  and keyboard support to your apps.</p>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Native Android apps are easy to make accessible once you've learned the Android Accessibility API. Accessibility testing with TalkBack and a keyboard are easy ways to check if your app is accessible. Google's Accessibility Scanner app
+                  is a great testing tool that also checks for low-contrast text.
+                </p>
+                <p>Accessibility testing and requirements have to be included in all stages of design and development, starting at the beginning in wireframes and user interface specifications. When accessibility is included early and tested often, it will
+                  be less work to develop accessible apps because most problems will be discovered before they reach QA testing. Always keeping accessibility in mind during design and development will ensure that users with disabilities will have an accessible
+                  experience when they interact with the application.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/android2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="getting-started" aria-labelledby="title-getting-started">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-getting-started">Getting Started</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/getting-started/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Getting Started - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="android-accessibility-features" aria-labelledby="title-android-accessibility-features">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-android-accessibility-features">Android Accessibility Features</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/features/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Android Accessibility Features - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">ANDROID: Accessibility features</h3>
+                <p>Different versions vary but accessibility include:</p>
+                <ul>
+                  <li>Talkback - speech output</li>
+                  <li>Voice search</li>
+                  <li>Captions on/off</li>
+                  <li>Magnification gestures - triple tap to zoom</li>
+                  <li>Large text</li>
+                  <li>Auto rotate screen</li>
+                  <li>Speak passwords</li>
+                  <li>Accessibility shortcut - accessed via the power button</li>
+                  <li>Test-to-speech output</li>
+                </ul>
+                <h4 class="heading-s">Talkback</h4>
+                <p>Talkback, screen reader output for Android, is supported in versions 2.2 upwards and is available from the Android Marketplace. Version 4, Ice Cream Sandwich, comes with Talkback, Kickback (haptic feedback) and SoundBack (audio feedback) bundled with the OS.</p>
+                <p>You will need to ensure that Web Scripts are enabled in the Settings and the Eyes-Free-Keyboard is installed in order to navigate web content.</p>  
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="user-interaction" aria-labelledby="title-user-interaction">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-user-interaction">User Interaction</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Category</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/user-interaction/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> User Interaction - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="ui-controls" aria-labelledby="title-ui-controls">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-ui-controls">UI Controls</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Buttons</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Buttons <span class="badge badge-success">MUST</span> be keyboard operable and show keyboard focus visibility.</li>
+                  <li>Buttons <span class="badge badge-success">MUST</span> convey their accessible name, role, value, and state to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Links</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Links <span class="badge badge-info">SHOULD</span> convey a meaningful link purpose.</li>
+                </ul>
+
+                <h4 class="heading-s">Progress Bar</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Progress bars <span class="badge badge-success">MUST</span> convey their accessible name, role, and current value to TalkBack users.</li>
+                  <li>When progress spinners appear, they <span class="badge badge-success">MUST</span> be conveyed to TalkBack users either through focus management or screen reader announcements.</li>
+                </ul>
+
+                <h4 class="heading-s">Slider</h4>
+                <ul class="list-icons list-checklist">
+                  <li>SeekBar sliders <span class="badge badge-success">MUST</span> have TextView labels connected using android:labelFor.</li>
+                </ul>
+
+                <h4 class="heading-s">Switch</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Switch controls <span class="badge badge-success">MUST</span> have android:text labels spoken to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/ui-controls/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> UI Controls - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="notifications" aria-labelledby="title-notifications">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-notifications">Notifications</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Notifying Users of Changes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>TalkBack users <span class="badge badge-success">MUST</span> be notified of dynamic content changes either through spoken accessibility announcements OR focus management.</li>
+                </ul>
+
+                <h4 class="heading-s">Time Limits</h4>
+                <ul class="list-icons list-checklist">
+                  <li>User login sessions <span class="badge badge-danger">MUST NOT</span> timeout the user or kick the user out without first providing an accessible timeout warning and session extension method.</li>
+                </ul>
+
+                <h4 class="heading-s">Alert</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Alerts <span class="badge badge-success">MUST</span> be conveyed through TalkBack or grab the TalkBack user's focus.</li>
+                </ul>
+
+                <h4 class="heading-s">Dialog</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Modal dialogs <span class="badge badge-success">MUST</span> trap keyboard and screen reader focus and <span class="badge badge-success">MUST</span> prevent focus of the grayed-out content.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/notifications/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Notifications - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="custom-elements" aria-labelledby="title-custom-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-custom-elements">Custom Elements</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Accordion</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Accordion components <span class="badge badge-success">MUST</span> announce their accessible name and their expanded or collapsed state.</li>
+                </ul>
+
+                <h4 class="heading-s">Autocomplete</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Autocomplete suggestions <span class="badge badge-success">MUST</span> be announced to TalkBack users when they appear and <span class="badge badge-success">MUST</span> be operable for TalkBack and keyboard-only users.</li>
+                </ul>
+
+                <h4 class="heading-s">Carousels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Carousels <span class="badge badge-success">MUST</span> have a method to stop their movement.</li>
+                </ul>
+
+                <h4 class="heading-s">Rating</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Rating controls <span class="badge badge-success">MUST</span> convey their accessible name and current rating value to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Sortable Table</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Sortable table column headers <span class="badge badge-success">MUST</span> convey their sorted state to TalkBack users.</li>
+                </ul>
+                <h4 class="heading-s">Toggle</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Toggle buttons <span class="badge badge-success">MUST</span> convey their toggled state and accessible name to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/custom-elements/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Custom Elements - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="form-labels-and-validation" aria-labelledby="title-form-labels-and-validation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-form-labels-and-validation">Form Labels and Validation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Label text <span class="badge badge-success">MUST</span> be visible at all times.</li>
+                  <li>Label and instruction text <span class="badge badge-success">MUST</span> be programmatically associated with the input.</li>
+                </ul>
+
+                <h4 class="heading-s">Group Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Groups of related inputs <span class="badge badge-success">MUST</span> convey their group legend text to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Checkboxes</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Checkboxes <span class="badge badge-success">MUST</span> convey their label text and checked state to TalkBack.</li>
+                  <li>Checkboxes inside a group <span class="badge badge-success">MUST</span> convey their legend text to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Date Picker</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Native date picker controls <span class="badge badge-info">SHOULD</span> be used over plain text inputs or custom date picker controls.</li>
+                </ul>
+
+                <h4 class="heading-s">Radio Buttons</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Radio buttons <span class="badge badge-success">MUST</span> convey their individual label, group legend, and checked state to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Select</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Select dropdown controls <span class="badge badge-success">MUST</span> have a programmatically associated visible text label.</li>
+                </ul>
+
+                <h4 class="heading-s">Text Fields</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text Fields <span class="badge badge-info">SHOULD</span> have the correct keyboard input type specified.</li>
+                </ul>
+
+                <h4 class="heading-s">Validation Feedback</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Form validation error messages <span class="badge badge-success">MUST</span> be conveyed to TalkBack users when errors are displayed and when user is focused on invalid inputs.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/form-labels-validation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Form Labels and Validation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="navigation" aria-labelledby="title-navigation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-navigation">Navigation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Page Titles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Each page <span class="badge badge-success">MUST</span> have a meaningful title that describes its purpose.</li>
+                </ul>
+
+                <h4 class="heading-s">Tab Panel</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Tab controls <span class="badge badge-success">MUST</span> convey their selected state to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Menu</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Menus <span class="badge badge-success">MUST</span> be operable with both TalkBack and the keyboard, and focus order for both TalkBack and the keyboard <span class="badge badge-success">MUST</span> be logical.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/navigation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Navigation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="device-orientation" aria-labelledby="title-device-orientation">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-device-orientation">Device Orientation</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Landscape & Portrait Orientation
+                </h4>
+                <ul class="list-icons list-checklist">
+                  <li>The orientation of the user interface and content <span class="badge badge-danger">MUST NOT</span> be locked to either landscape or portrait unless a specific orientation is essential for the functionality of the app.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/device-orientation" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Device Orientation - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="semantic-structure-and-meaning" aria-labelledby="title-semantic-structure-and-meaning">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-semantic-structure-and-meaning">Semantic Structure and Meaning</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Tables</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Data tables <span class="badge badge-success">MUST</span> have a logical reading order, and data cells <span class="badge badge-success">MUST</span> convey row and column header text to TalkBack users.</li>
+                </ul>
+
+                <h4 class="heading-s">Reading Order and Focus Order</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Reading order and focus order <span class="badge badge-success">MUST</span> follow a meaningful sequence for TalkBack and keyboard users.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/semantic-structure-meaning/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Semantic Structure and Meaning - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/principles.html#user-interface-controls">User Interface Controls</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="color-and-contrast" aria-labelledby="title-color-and-contrast">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-color-and-contrast">Color and Contrast</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Colors that Convey Information</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Color <span class="badge badge-danger">MUST NOT</span> be the only method used to convey information.</li>
+                </ul>
+
+                <h4 class="heading-s">Contrast</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Small text (under 18 point regular font or 14 point bold font) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 4.5 to 1 with the background.</li>
+                  <li>Large text (at or over 18 point or 14 point bold) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 3 to 1 with the background.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/color-and-contrast/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Color and Contrast - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="audio-and-video" aria-labelledby="title-audio-and-video">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-audio-and-video">Audio and Video</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Captions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Videos <span class="badge badge-success">MUST</span> include captions for deaf and hard of hearing users.</li>
+                </ul>
+
+                <h4 class="heading-s">Audio Descriptions</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Videos <span class="badge badge-success">MUST</span> include audio descriptions or a separate audio-described version for users who have vision disabilities.</li>
+                </ul>
+                <h4 class="heading-s">Transcripts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Audio files <span class="badge badge-success">MUST</span> include text transcripts for users who are deaf or deafblind.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/audio-and-video/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Audio and Video - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="text-content" aria-labelledby="title-text-content">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-text-content">Text Content</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Language Settings</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The primary language of the app <span class="badge badge-success">MUST</span> be specified, and languages that differ from the primary language within the app <span class="badge badge-success">MUST</span> be identified.</li>
+                </ul>
+
+                <h4 class="heading-s">Text Resize</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Text <span class="badge badge-success">MUST</span> be resizable at least up to 200% larger.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/text-content/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Text Content - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="images" aria-labelledby="title-images">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-images">Images</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Alternative Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images <span class="badge badge-success">MUST</span> have a contentDescription unless they are decorative or redundant.</li>
+                  <li>ImageButton controls <span class="badge badge-success">MUST</span> have a contentDescription.</li>
+                  <li>Dynamic ImageButton controls <span class="badge badge-success">MUST</span> update contentDescription when image changes.</li>
+                  <li>Images that do not convey content, are decorative, or contain redundant content <span class="badge badge-danger">MUST NOT</span> be given an alternative text equivalent and <span class="badge badge-success">MUST</span> be hidden from screen readers.</li>
+                  <li>Complex images <span class="badge badge-success">MUST</span> include full text alternatives or extended text alternatives.</li>
+                </ul>
+
+                <h4 class="heading-s">Text in Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images of text <span class="badge badge-danger">MUST NOT</span> be used, unless the design is not possible using real text.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/images/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Images - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="accessibility-evaluation-methods-and-tools" aria-labelledby="title-accessibility-evaluation-methods-and-tools">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-accessibility-evaluation-methods-and-tools">Accessibility Evaluation Methods and Tools</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Alternative Text</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Images that convey information <span class="badge badge-success">MUST</span> have a descriptive accessibility label that serves the same purpose and presents the same information as the image.</li>
+                  <li>Images that are active <span class="badge badge-success">MUST</span> have an accessibility label that describes the purpose or function of the image.</li>
+                  <li>Images that are too complex to be fully described in a short text alternative <span class="badge badge-success">MUST</span> have their purpose described using an extended text alternative.</li>
+                  <li>Images that do not convey content, are decorative, or with content that is already conveyed in the text <span class="badge badge-danger">MUST NOT</span> be given an alternative text equivalent that is exposed to assistive technology.</li>
+                </ul>
+
+                <h4 class="heading-s">Text in Images</h4>
+                <ul class="list-icons list-checklist">
+                  <li>An image <span class="badge badge-danger">MUST NOT</span> include informative text if an equivalent visual presentation of the text can be rendered using real text.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Android%20Application%20Accessibility%20-%20Native%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Android Application Accessibility PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/android2/accessibility-evaluation/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility Evaluation Methods and Tools - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

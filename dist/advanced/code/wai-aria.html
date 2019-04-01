@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom JavaScript / ARIA Widgets - Web - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html" aria-current="true" id="main-menu">Code <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/semantic-structure-and-navigation.html">Semantics and Navigation</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/responsive-design-and-zoom.html">Responsive and Zoom</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/dynamic-updates.html">Dynamic Updates</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/code/wai-aria.html" aria-current="page">WAI-ARIA <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/android.html">Android</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/code/ios.html">iOS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Custom JavaScript / ARIA Widgets</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#aria-concepts" class="link-ts"><span>ARIA Concepts</span></a></li>
+          <li><a href="#name-label" class="link-ts"><span>Name Vs. Label</span></a></li>
+          <li><a href="#roles" class="link-ts"><span>Roles</span></a></li>
+          <li><a href="#aria-widget-examples" class="link-ts"><span>ARIA Widget Examples</span></a></li>
+        </ul>
+      
+      </div>          
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>When Focus on Custom JavaScript/ARIA Widgets?</strong></p>
+                <p>This module covers a wide range of topics related to creating custom widgets with ARIA (accessible rich internet applications) methods. In order to create a custom widget successfully, you have to know techniques related to ARIA itself (such as name, role, value, description, and live regions), and keyboard accessibility (all the basic concepts, plus an understanding of the ARIA keyboard model).</p>
+
+                <blockquote class="blockquote" id="first-rule-aria">
+                  <p>"<a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>: Don't use ARIA unless you have to."</p>
+                </blockquote> 
+
+                <p>The section entitled "ARIA Widget Examples" shows live examples of these principles in action. The accessibility features of the widgets are explained in detail. You may copy and use the code in your own web development, or just learn from the accessibility patterns in the widgets.</p>            
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Creating accessible custom JavaScript widgets can be tricky. There are lots of little things to pay attention to, including keyboard interaction, touch interaction, ARIA authoring practices, and even the question of whether a custom JavaScript widget is the right approach in the first place. It's always best to start with the assumption that native HTML widgets are the best approach. They are natively accessible, and people are more used to them. They don't have to learn how to use them in the same way they have to learn how to use a custom control they've never encountered before.</p>
+                <p>Study the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Authoring Practices.</a> Whenever you start on the path of creating a custom widget, find an ARIA widget that already accomplishes your goals. If there isn't one quite like what you want, first ask if what you want is really necessary, because it will be unfamiliar to users. If you decide it is necessary, identify the closest ARIA widget match, and use those ARIA roles and design patterns as the basis for your design. It's okay to make compound widgets consisting of design patterns from 2 or more ARIA widgets, as long as the end result is intuitive to use and all of the names, roles, and properties are communicated properly to screen reader users.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/fundamentals/principles.html#wai-aria" class="link-ts"><span>WAI-ARIA</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/fundamentals/guidelines.html#wai-aria" class="link-ts"><span>Accessible Rich Internet Applications - Guidelines</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria/" class="link-ts"><span>Accessible Rich Internet Applications (WAI-ARIA) 1.1</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-practices/" class="link-ts"><span>WAI-ARIA Authoring Practices 1.1</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-implementation/" class="link-ts"><span>WAI-ARIA 1.0 User Agent Implementation Guide</span></a></li>
+                  <li><a href="https://www.w3.org/TR/graphics-aria-1.0/" class="link-ts"><span>WAI-ARIA Graphics Module</span></a></li>
+                  <li><a href="https://www.w3.org/TR/core-aam-1.1/" class="link-ts"><span>Core Accessibility API Mappings 1.1</span></a></li>
+                  <li><a href="https://www.w3.org/TR/html-aam-1.0/" class="link-ts"><span>HTML Accessibility API Mappings 1.0</span></a></li>
+                  <li><a href="https://www.w3.org/TR/accname-aam-1.1/" class="link-ts"><span>Accessible Name and Description: Computation and API Mappings 1.1</span></a></li>
+                  <li><a href="https://www.w3.org/TR/svg-aam-1.0/" class="link-ts"><span>SVG Accessibility API Mappings</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="aria-concepts" aria-labelledby="title-aria-concepts">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-aria-concepts">ARIA Concepts</h2>
+        
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">ARIA Concepts category</h4>
+                <p>None documented</p>
+                
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/custom-widgets2/concepts/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> ARIA Concepts - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                
+                <ul class="list-icons list-checklist">
+                  <li>The Roles Model
+                    <ul>
+                      <li>Abstract Roles</li>
+                      <li>Widget Roles</li>
+                      <li>Document Structure</li>
+                      <li>Landmark Roles</li>
+                    </ul>
+                  </li>
+                  <li>Supported States and Properties</li>
+                  <li>Managing Focus</li>
+                  <li>Conformance</li>
+                </ul>
+
+                <h4 class="heading-s">What Is ARIA?</h4>              
+                <ul class="list-icons list-checklist">
+                  <li>Accessible Rich Internet Applications</li>
+                  <li>Without ARIA it's impossible for AT to fully understand all components</li>
+                  <li>ARIA is to provide information for the A11Y APIs</li>
+                  <li>ARIA changes everything</li>
+                  <li>For interactive widgets, and applications</li>
+                  <li>The work of web accessibility advocates</li>
+                  <li>For names, roles, states and properties</li>
+                  <li>ARIA Allows Real-Time Live Announcements</li>
+                </ul>
+                
+               <h4 class="heading-s">ARIA Concepts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                   ARIA allows you to communicate the following information to screen readers:
+                    <ul>
+                      <li>Labels</li>
+                      <li>Roles</li>
+                      <li>States</li>
+                      <li>Properties</li>
+                      <li>Relationships</li>
+                    </ul>
+                  </li>
+                  <li>ARIA is Useful Only to Assistive Technologies</li>
+                  <li>ARIA is Not a Programming Language</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/content/text-equivalents.html#roles-traits-properties" class="link-ts"><span>Roles, traits and properties</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>                
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="name-label" aria-labelledby="title-name-label">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-name-label">Name Vs. Label</h2>
+        
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Label Examples category</h4>
+                <p>None documented</p>
+                
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/custom-widgets2/concepts/name" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> ARIA Name - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                
+                <h4 class="heading-s">Non-ARIA Names and Labels</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The <code>&lt;label&gt;</code> tag designates the label for a form <code>&lt;input&gt;</code> element.</li>
+                  <li>The <code>&lt;legend&gt;</code> labels <code>&lt;fieldset&gt;</code> elements (groups of form elements).</li>
+                  <li>The <code>&lt;th&gt;</code> tag designates a table header cell (as opposed to <code>&lt;td&gt;</code> for table data cells).</li>
+                  <li>The text inside the opening and closing <code>&lt;button&gt;</code> elements is the label for that button.</li>
+                  <li>The <code>value</code> attribute on a submit button serves as the label for that button.</li>
+                  <li>The <code>alt</code> attribute serves as the name, or text replacement, for an image.</li>
+                  <li>The <code>&lt;title&gt;</code> tag designates the name of a web page.</li>
+                  <li>The <code>title</code> attribute designates the name of an <code>&lt;iframe&gt;</code> element.</li>
+                  <li>A visible label for a component not programmatically related like adjecent button for an input or an icon with screen reader only text</li>
+                </ul>
+                
+                <h4 class="heading-s">Descriptions - Aria-describedby</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The Purpose is to provide extra information</li>
+                  <li>Works in the same way as aria-labelledby</li>
+                  <li>Refers to the id of another object</li>
+                  <li>More verbose, can contain entire paragraphs, best to keep text brief</li>
+                  <li>Support in Jaws very good</li>
+                  <li>Long delay VoiceOver OSX, but can be shortened</li>
+                  <li>Short delay VoiceOver iOS</li>
+                  <li>Isn't read on most types of elements (div, paragraph, list item, etc.) by either NVDA or VoiceOver</li>
+                  <li>Placing same elements inside an application region, NVDA and VoiceOver on Mac OSX (not iOS) will read them</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/TR/WCAG20/#namedef" class="link-ts"><span>Name definition - WCAG 2.0</span></a></li> 
+                  <li><a href="https://www.w3.org/TR/WCAG20/#labeldef" class="link-ts"><span>Label definition - WCAG 2.0</span></a></li> 
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-accessible-name" class="link-ts"><span>Accessible Name - ARIA 1.1</span></a></li> 
+                  <li><a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation" class="link-ts"><span>Accessible Name and Description calculation</span></a></li>                  
+                  <li><a href="https://www.w3.org/TR/accname-aam-1.1/" class="link-ts"><span>Accessible Name and Description: Computation</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" class="link-ts"><span>Aria-labelledby</span></a></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" class="link-ts"><span>Aria-label</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.levelaccess.com/how-the-w3c-text-alternative-computation-works/" class="link-ts"><span>How the W3C Text Alternative Computation Works - Level Access</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="roles" aria-labelledby="title-roles">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-roles">Roles</h2>
+        
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Roles category</h4>
+                <p>None documented</p>
+                
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/custom-widgets2/concepts/role/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Role - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                
+                <h4 class="heading-s">Widgets and Simulated Controls</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    The Basics of Accessible Simulated Controls
+                    <ul>
+                      <li>All controls must be keyboard accessible and keyboard operable</li>
+                      <li>Focus must be managed when using non-standard controls</li>
+                      <li>Ensure that important information and relationships are explicitly defined</li>
+                    </ul>
+                  </li>
+                  <li>
+                    The Basics of Accessible Simulated Controls
+                    <ul>
+                      <li>Programmatic focus</li>
+                      <li>Keyboard tab order</li>
+                      <li>Visual focus indicator</li>
+                      <li>Keyboard trap</li>
+                    </ul>
+                  </li>
+                  <li>Ensure that Users Can Navigate To, Through, and Past All Simulated Controls</li>
+                  <li>Avoid Applying Events to Elements which are Typically not Able to Receive Focus</li>
+                </ul>
+
+                <h4 class="heading-s">HTML5 and ARIA Landmarks</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles">5.3.4 Landmark Roles - WAI-ARIA 1.1</a>
+                  </li>
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#aria_landmark">3. Landmark Regions - WAI-ARIA Authoring Practices 1.1</a>
+                  </li>
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html">ARIA Landmarks Example (W3C)</a>
+                  </li>
+                  <li>General Principles of Landmark Design
+                    <ul>
+                      <li>Step 1: Identify the logical structure</li>
+                      <li>Step 2: Assign landmark roles to each area</li>
+                      <li>Step 3: Label areas</li>
+                    </ul>
+                  </li>
+                  <li>Always give landmarks an accessible name when they appear more than once</li>
+                  <li>Adding aria-labelledby to role="region" adds it to the landmark list</li>
+                  <li>Landmark role <a href="https://www.w3.org/TR/wai-aria-1.1/#search">role="search"</a> is not the same as widget role <a href="https://www.w3.org/TR/wai-aria-1.1/#searchbox">role="searchbox"</a></li>
+                  <li>
+                    <a href="https://www.w3.org/TR/html-aam-1.0/#details-id-44">2X Header - HTML AAM</a>
+                  </li>
+                  <li>
+                    <a href="https://www.w3.org/TR/html-aam-1.0/#details-id-39">2X Footer - HTML AAM</a>
+                  </li>
+                  <li>How to use landmarks
+                    <ul>
+                      <li>
+                        <a href="https://dequeuniversity.com/screenreaders/">Screen Reader Keyboard Shortcuts - Deque</a>
+                      </li>
+                      <li>
+                        <a href="http://matatk.agrip.org.uk/landmarks/">Landmark Browser Extension</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">5.3 Categorization of Roles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#roles_categorization">Categorization of Roles - WAI-ARIA</a>
+                  </li>
+                  <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rdf_model">WAI-ARIA Taxonomy
+  </button>
+                  </li>
+                  <li><strong>Roles are categorized as follows:</strong>
+                    <ol>
+                      <li>Abstract Roles</li>
+                      <li>Widget Roles</li>
+                      <li>Document Structure Roles</li>
+                      <li>Landmark Roles</li>
+                      <li>Live Region Roles</li>
+                      <li>Window Roles</li>
+                    </ol>
+                  </li>
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#widget_roles">5.3.2 Widget Roles</a>
+                    <ol>
+                      <li>
+                        Roles act as <strong>standalone</strong> user interface widgets or as part of larger, composite widgets.
+                        <div>Example:</div>
+                        <ul>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menuitem">menuitem</a></li>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menuitemcheckbox">menuitemcheckbox</a></li>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menuitemradio">menuitemradio</a></li>
+                        </ul>
+                      </li>
+                      <li>Roles act as <strong>composite</strong> user interface widgets. These roles typically act as containers that manage other, contained widgets.
+                        <div>Example:</div>
+                        <ul>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menu">menu</a></li>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#menubar">menubar</a></li>
+                        </ul>
+                      </li>
+                      <li>5. The Roles Model e.g.:
+                        <ul>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#inheritedattributes">5.2.4 Inherited States and Properties</a></li>
+                          <li><a href="https://www.w3.org/TR/wai-aria-1.1/#supportedState">5.2.3 Supported States and Properties</a></li>
+                        </ul>
+                      </li>
+                      <li>WAI-ARIA Authoring Practices Example:
+                        <ul>
+                          <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menu">2.16 Menu or Menu bar</a></li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">User Agent Implementation Guide</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-implementation/#mapping_role">5.4. Role mapping</a>
+                  </li>
+                  <li><strong>The following rules describe how to expose WAI-ARIA roles using the accessibility API:</strong>
+                    <ol>
+                      <li>
+                        <ul>
+                          <li>User agent MUST use the first token in the sequence</li>
+                          <li>WAI-ARIA over HTML</li>
+                          <li>WAI-ARIA roles override host language semantics, no changes in the DOM, only in accessibility tree</li>
+                          <li>User agents MUST map WAI-ARIA roles even in the absence of author-supplied scripts!!!</li>
+                        </ul>
+                      </li>
+                      <li>If no role attribute present, or contains no matching non-abstract WAI-ARIA role, the user agent MUST fall back on base markup</li>
+                      <li>When explicit or inherited role of presentation is applied, user agent MUST implement the rules for presentation role</li>
+                      <li>User agents MUST expose the WAI-ARIA role string if the API supports a mechanism</li>
+                      <li>
+                        <ul>
+                          <li>Platform A11Y APIs typically don't provide a way to notify a role has changed</li>
+                          <li>So assistive technologies are unlikely to process a change in role</li>
+                          <li>When changing a rol, delete associated element and its children and replace with new element having new role</li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">The Document Role</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#document">document (role) - ARIA</a>
+                  </li>
+                  <li>
+                    <ul>
+                      <li>In a document region, keyboard shortcuts to navigate headings, landmarks, tables, lists, etc.</li>
+                      <li>Access all aspects text, including spelling of words</li>
+                      <li>Default role for <code>body</code> element is "document"</li>
+                      <li><a href="https://www.w3.org/TR/html-aam-1.0/#details-id-15">body - HTML AAM</a></li>
+                      <li>Only reason using <code>role="document"</code> is inside other region such as application</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">The Application Role</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#application">application (role) - ARIA</a>
+                  </li>
+                  <li><ul>
+                    <li>Nearly all keyboard shortcuts are turned off in application regions</li>
+                    <li>Need to be able to control the logic of keyboard interactions within web applications</li>
+                    <li>Only focusable elements will be possible to read</li>
+                    <li><code>tabindex="1"</code> for focus possible BUT use sparingly as functionality lacks!</li>
+                    <li>Never wrap entire web page in application region, only around widgets</li>
+                  </ul>
+                  </li>
+                  <li>Keyboard features NOT disabled e.g.
+                    <ul>
+                      <li><code>Tab</code> key</li>
+                      <li><code>Enter</code> or <code>Return</code> key</li>
+                      <li><code>space bar</code> key</li>
+                      <li><code>arrow</code> keys</li>
+                    </ul>
+                  </li>
+                  <li>Roles who trigger application mode automatically
+                    <ul>
+                      <li><code>role="dialog"</code></li>
+                      <li><code>role="alertdialog"</code></li>
+                      <li><code>role="tablist"</code></li>
+                      <li><code>role="tree"</code></li>
+                      <li><code>role="slider"</code></li>
+                      <li><code>role="toolbar"</code></li>
+                      <li><code>role="grid"</code></li>
+                      <li><code>role="menu"</code></li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">The Presentation Role</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#presentation">presentation (role) - ARIA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#presentation">none (role) - ARIA = NEW synonym!</a>
+                  </li>
+                  <li>
+                    <ul>
+                      <li>Essentially cancels the native role and turns it into the equivalent of a <code>span</code> or <code>div</code></li>
+                      <li>Technically the object is removed from the accessibility tree / API</li>
+                      <li>It's the opposite of adding a specific role to an element</li>
+                      <li>Adding role="presentation" does NOT hide the element of textual content from anyone</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">Other Semantic Roles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <h5 class="heading-xs">The Math Role</h5>
+                    <ul>
+                      <li>Screen reader support is still not robust</li>
+                      <li>Use <code>aria-labe</code> as a back-up</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h5 class="heading-xs">The Definition Role</h5>
+                    <ul>
+                      <li>Use <code>role="definition"</code> and <code>aria-labelledby="example"</code> with <code>id="example"</code></li>
+                      <li>Support for definition lists (<code>dl</code>) is not good so add the ARIA example</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h5 class="heading-xs">The Note Role</h5>
+                    <ul>
+                      <li>Similar in concept to HTML 5 <code>&lt;aside&gt;</code> or the ARIA <code>role="complementary"</code></li>
+                      <li>But <code>role="note"</code> is not a landmark region like the other two</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h5 class="heading-xs">The Directory Role</h5>
+                    <ul>
+                      <li>For designating a table of contents (TOC) or other similar directory structures</li>
+                      <li>Whether the items are links or not</li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>                
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="aria-widget-examples" aria-labelledby="title-aria-widget-examples">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-aria-widget-examples">ARIA Widget Examples</h2>
+        
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">ARIA Widget Examples category</h4>
+                <p>None documented</p>
+                
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/custom-widgets2/examples/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> ARIA Widget Examples - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3> 
+                
+                <h4 class="heading-s">Widgets and Simulated Controls</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    The Basics of Accessible Simulated Controls
+                    <ul>
+                      <li>All controls must be keyboard accessible and keyboard operable</li>
+                      <li>Focus must be managed when using non-standard controls</li>
+                      <li>Ensure that important information and relationships are explicitly defined</li>
+                    </ul>
+                  </li>
+                  <li>
+                    The Basics of Accessible Simulated Controls
+                    <ul>
+                      <li>Programmatic focus</li>
+                      <li>Keyboard tab order</li>
+                      <li>Visual focus indicator</li>
+                      <li>Keyboard trap</li>
+                    </ul>
+                  </li>
+                  <li>Ensure that Users Can Navigate To, Through, and Past All Simulated Controls</li>
+                  <li>Avoid Applying Events to Elements which are Typically not Able to Receive Focus</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>                
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal fade" id="rdf_model" tabindex="-1" role="dialog" aria-labelledby="rdf_modelHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="rdf_modelHeading">WAI-ARIA Taxonomy</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="../../images/rdf_model.png" class="img-fluid" alt="WAI-ARIA Class diagram of the relationships described in the role data model">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

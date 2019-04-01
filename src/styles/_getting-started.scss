@@ -1,0 +1,147 @@
+//----------
+// gs-title
+// gs-number
+// gs-highway
+// gs-highway-bullets
+// gs-highway-content
+// gs-lead
+// gs-media
+// gs-image
+//----------
+
+// gs-title
+
+.gs-title {
+  position: relative;
+  padding-left: 60px;
+  
+  @media (min-width: 992px) {
+    padding-left: 4rem;
+  }
+  
+}
+
+// gs-number
+
+.gs-number {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  border: 2px solid #ffffff;
+  width: 3rem;
+  height: 3rem;
+  font-size: 120%;
+  padding: 0;
+  line-height: 1.4;
+  z-index: 1;
+  
+  @media (min-width: 992px) {
+    left: -39px;
+    top: -32px;
+    border-width: 3px;
+    width: 5rem;
+    height: 5rem;
+    font-size: 200%;  
+  }
+  
+}
+
+.gs-finish {
+  display: none;
+  top: auto;
+  bottom: -32px;
+  background: #ffffff;
+  border-color: #767676;
+  margin-left: 15px;
+  background-image: linear-gradient(45deg, #000 26%, transparent 25%),
+    linear-gradient(-45deg, #000 26%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(-45deg, transparent 75%, #000 75%);
+
+  background-size: 60px 60px;
+  -webkit-background-size: 40px 40px; /* override value for webkit */
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+  
+}
+
+// gs-highway
+
+.gs-highway {
+  
+  @media (min-width: 992px) {
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    width: 31px;
+    height: calc(100% + 3rem);
+    background: url("http://www.a11yportal.com/images/highway.png") repeat-y;
+    z-index: 1;
+  }
+  
+}
+
+// gs-highway-bullets
+
+.gs-highway-bullets {
+  display: none;
+  
+  @media (min-width: 992px) {
+    display: inline-block;
+    border: 2px solid #ffffff;
+    padding: 0;
+    line-height: 1.4;
+    z-index: 1;
+    position: absolute;
+    left: -14px;
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: 30px;  
+  }
+  
+}
+
+// gs-highway-content
+
+.gs-highway-content {
+  
+  @media (min-width: 992px) {
+    padding-left: 2.75rem !important; 
+  }
+  
+}
+
+// gs-lead
+
+.gs-lead {
+  margin-bottom: 1.5rem !important;
+  
+  @media (min-width: 480px) {
+    margin-bottom: 3rem !important;
+  }
+  
+}
+
+// gs-media
+
+.gs-media {
+  margin-bottom: 2rem !important;
+  
+  @media (min-width: 480px) {
+    margin-bottom: 4.5rem !important;
+  }
+  
+}
+
+// gs-image
+
+.gs-image {
+  
+  @media (max-width: 480px) {
+    display: none !important;
+  }
+  
+}

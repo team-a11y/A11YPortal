@@ -1,0 +1,247 @@
+//----------
+// Annotations
+// Btn-annot
+// Modal-annot
+// Body-annot
+//----------
+
+// Annotations
+
+.annotations {
+  display: none;
+  
+   .full-cover-title {
+      margin: 0;
+    }
+
+  &.annotation-on {
+    display: block;
+  }
+  
+}
+
+.annot-relative {
+  position: relative;
+}
+
+// Btn-annot
+
+.btn-annot {
+  display: none;
+  position: absolute;
+  top: -2px;
+  left: -44px;
+  background: red;
+  text-align: center;
+  color: #fff;
+  line-height: 2;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 2px;
+
+  &.annotation-on {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  
+  .btn-annot {
+    top: -44px;
+    left: -2px;
+  }
+  
+}
+  
+.btn-annot-outline {
+  position: relative;
+  outline-width: 0;
+   
+   &:focus {
+     outline-width: 5px;
+   }
+
+  &.annotation-on {
+    outline: red dashed 2px; 
+  }
+   
+}
+
+// Modal-annot
+
+.modal-annot {
+  display: none;
+
+  &.annotation-on {
+    display: block !important;
+    position: static;
+    opacity: 1;
+    
+    .close,
+    .modal-footer {
+      display: none;
+    }
+    
+    .modal-content {
+      border-width: 0;
+    }
+    
+    &.fade {
+      
+      .modal-dialog {
+        transform: translate(0, 0);
+      }
+      
+      .modal-lg {
+        max-width: initial;
+      }
+    
+      &.show {
+        position: fixed;
+
+        .close,
+        .modal-footer {
+          display: block;
+        }
+
+        .modal-content {
+          border-width: 1px;
+        }
+
+      }
+      
+    } 
+    
+  }
+  
+}
+
+@media (max-width: 576px) {
+  
+  .modal-annot {
+  
+    .modal-dialog {
+      margin: 20px auto;
+
+      .show {
+        margin: 10px;
+      }
+
+    }
+
+    &.annotation-on {
+
+      &.show {
+
+        .modal-dialog {
+          margin: 10px;
+        }
+
+      }
+
+    }
+
+  }
+  
+}
+
+@media (min-width: 576px) {
+  
+  .modal-annot.annotation-on.fade.show .modal-lg {
+    max-width: 500px;
+  }
+    
+}
+
+@media (min-width: 992px) {
+  
+  .modal-annot.annotation-on.fade.show .modal-lg {
+    max-width: 800px;
+  }
+    
+}
+
+// Body-annot
+
+.annotation-on {
+  
+  .btn-annot-title {
+    top: 0;
+    left: 45%;
+  }
+  
+  .btn-annot-meta {
+    top: 0;
+    left: 55%;
+  }
+  
+  .btn-annot-search {
+    top: -2px;
+    left: 147px;
+    
+    @media (min-width: 992px) {
+      top: 38px;
+    }
+    
+  }
+    
+  .btn-annot-image {
+    top: 4px;
+    left: 4px;
+  }
+
+  .btn-annot-secondary {
+    top: 46px;
+  }
+
+  .btn-annot-tertiary {
+    top: 94px;
+  }
+  
+  .skip-links a {
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;    
+    padding: 10px 20px;
+    background: #ff6200;
+    color: white;
+    font-size: 1.3	rem;
+    font-weight: normal;
+    line-height: 1.125;
+    text-decoration: underline;    
+  }
+  
+  .btn-annot-skip {
+    top: 0;
+    left: 150px;
+  }
+  
+  &.bad {
+    
+    .btn-annot-skip {
+      left: 0;
+    }
+
+  }
+  
+}
+
+@media (max-width: 992px) {
+  
+  .annotation-on.bad {
+    
+    .btn-annot-skip {
+      left: 64px;;
+    }
+
+  }
+  
+}

@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Readers - Testing - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html" aria-current="true" id="main-menu">Testing <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing Methods and Tools</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/testing/screen-reader-testing.html" aria-current="page">Screen Reader Testing <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Accessibility Testing: Screen Readers</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#screen-reader-basics" class="link-ts"><span>Screen Reader Basics</span></a></li>
+          <li><a href="#characteristics-of-screen-readers" class="link-ts"><span>Characteristics of Screen Readers</span></a></li>
+          <li><a href="#accessibility-apis" class="link-ts"><span>Accessibility APIs</span></a></li>
+          <li><a href="#wayfinding-and-reading-content-with-screen-readers" class="link-ts"><span>Wayfinding and Reading Content with Screen Readers</span></a></li>
+          <li><a href="#screen-reader-modes" class="link-ts"><span>Screen Reader Modes</span></a></li>
+          <li><a href="#jaws-windows" class="link-ts"><span>JAWS (Windows)</span></a></li>
+          <li><a href="#nvda-windows" class="link-ts"><span>NVDA (Windows)</span></a></li>
+          <li><a href="#voiceover-ios" class="link-ts"><span>VoiceOver (iOS)</span></a></li>
+          <li><a href="#talkback-android" class="link-ts"><span>TalkBack (Android)</span></a></li>
+          <li><a href="#voiceover-mac-os-x" class="link-ts"><span>VoiceOver (Mac OS X)</span></a></li>
+          <li><a href="#narrator-windows" class="link-ts"><span>Narrator (Windows)</span></a></li>
+          <li><a href="#window-eyes-windows" class="link-ts"><span>Window-Eyes (Windows)</span></a></li>
+          <li><a href="#chromevox" class="link-ts"><span>ChromeVox</span></a></li>
+          <li><a href="#printable-resources" class="link-ts"><span>Printable Resources</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Why Test with Screen Readers?</strong></p>
+                <p>Testing with screen readers is the only way to know if you've actually achieved screen reader compatibility, especially when it comes to dynamic content and custom widgets. Automated tools and checklists are important, but they have inherent
+                  limitations.</p>
+                <p>Learning a screen reader can seem intimidating at first, but by learning a few keystrokes and understanding how people use screen readers, you'll be able to test web content accessibility accurately and completely. </p>
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Screen readers have revolutionized the way people with disabilities can access computers and the internet, but screen readers can't magically make web pages accessible if they weren't designed to be accessible in the first place. Dynamic content, in particular, can be tricky to make accessible to screen readers. Testing with screen readers is essential.</p>
+                <p>Learning a screen reader can be a bit intimidating at first, but with a few basic keystrokes (see the <a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Desktop%20Screen%20Readers%20Basic%20Keyboard%20Commands%20-%20Various%20-%20Summary%20and%20Checklist.pdf">Desktop Screen Readers Basic Keyboard Commands</a> handout), you can know enough to do basic accessibility testing. With practice, you can have a deep understanding of the challenges and solutions relevant to people who use screen readers.</p>
+
+                <h4 class="heading-s">Testing reasons for Screen Readers</h4>
+                <ul class="list-icons list-checklist">
+                  <li>To ensure content is accessible with today's technology</li>
+                  <li>Especially with dynamic content, JavaScript, and ARIA</li>
+                  <li>You can't just implement the ARIA specs without testing for garanties</li>
+                  <li>Add creative alternative methods when needed</li>
+                  <li>Helps identify problems with alt text, reading order, table markup, form elements</li>
+                  <li>Finds mistakes that you won't detect by automatic testing alone</li>
+                  <li>Compatible with screen readers also often work well for people with physical disabilities</li>
+                  <li>Not using a mouse, use a single-switch device instead of a keyboard, navigate in similar ways</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="/guidelines/fundamentals/testing.html" class="link-ts"><span>Testing</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/screenreaders2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Desktop%20Screen%20Readers%20Basic%20Keyboard%20Commands%20-%20Various%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Desktop Screen Readers Basic Keyboard Commands PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="screen-reader-basics" aria-labelledby="title-screen-reader-basics">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-screen-reader-basics">Screen Reader Basics</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/basics/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Screen Reader Basics - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">What are Screen Readers?</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Convert digital text into speech or Braille output</li>
+                  <li>Reads operating systems, software, web sites, and other digital assets</li>
+                  <li>Blind people use computers independently, no help from anyone!!!</li>
+                  <li>Means blind person can get jobs that require computer use</li>
+                  <li>Send emails, read about current events on the internet, play games, and anything else</li>
+                  <li>Help make the digital world an equal opportunity</li>
+                  <li>Can read many languages</li>
+                  <li>Can also output to refreshable Braille devices</li>
+                </ul>
+
+                <h4 class="heading-s">Who Uses Screen Readers?</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Blind individuals</li>
+                  <li>Individuals who are deaf and blind</li>
+                  <li>People with reading disabilities</li>
+                  <li>Persons who are illiterate</li>
+                  <li>People with dyslexia</li>
+                  <li>People sitting in a car</li>
+                  <li>Persons who prefer the text to be read to them</li>
+                  <li>Web accessibility testers</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="characteristics-of-screen-readers" aria-labelledby="title-characteristics-of-screen-readers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-characteristics-of-screen-readers">Characteristics of Screen Readers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/characteristics/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Characteristics of Screen Readers - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Can Web Sites Detect Screen Readers?</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Yes, You can Sort of Detect Some Screen Readers, But... No, Not Really</li>
+                  <li>Concerns is it will result in entirely separate and unequal designs</li>
+                  <li>Fear is it will result in a worse experience for screen reader users</li>
+                  <li>Objection is that people don't want the web site to know they use them</li>
+                </ul>
+
+                <h4 class="heading-s">No Visual Interface</h4>
+                <ul class="list-icons list-checklist">
+                  <li>No graphical user interface</li>
+                  <li>For blind, low vision and cognitive disabilities</li>
+                  <li>Memorize quite a few keyboard shortcuts</li>
+                  <li><a href="https://dequeuniversity.com/class/screenreaders1/characteristics/">Keyboard shortcuts</a></li>
+                </ul>
+
+                <h4 class="heading-s">Screen (may also!) Readers Read the DOM</h4>
+                <ul class="list-icons list-checklist">
+                  <li><a href="https://www.w3.org/TR/wai-aria-1.1/#contractmodel">Figure 1: The contract model with accessibility APIs</a></li>
+                  <li>User agent conveys relevant information to OS accessibility API</li>
+                  <li>Accessibility information found in the accessibility API</li>
+                  <li>Name, role, state, selection, event notification, relationship information, and descriptions</li>
+                  <li>Some screen readers may also look at the DOM</li>
+                </ul>
+
+                <h4 class="heading-s">(Often) No Mouse, Just Keyboard</h4>
+                <ul class="list-icons list-checklist">
+                  <li>All elements and controls must be available to keyboard</li>
+                  <li>Mouse may also be used for speech output</li>
+                  <li>You must learn keyboard shortcuts for browsers</li>
+                  <li>You must learn shortcuts specific for different screen readers</li>
+                </ul>
+
+                <h4 class="heading-s">No Visual Styles</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Screen readers ignore pretty much everything about visual styles via CSS.</li>
+                  <li>Effect in place for: <code>display: block/none;</code> <code>visibility: visible/hidden;</code> pseudo classes <code>:before</code><code>:after</code> + <code>content:</code> property</li>
+                </ul>
+
+                <h4 class="heading-s">Linear Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Screen reader users cannot glance at a web page, and cannot intuitively understand the page's layout quickly.</li>
+                  <li>Read through the entire page, it will start at the first element in the DOM and proceed until the last element in the DOM</li>
+                  <li>This is often NOT the way they create a mental map of the web site</li>
+                  <li>Screen Readers Require a Logical Linear Reading Order in the DOM</li>
+                </ul>
+
+                <h4 class="heading-s">Non-Linear Navigation</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Linear experience by reading complete page will take a long time</li>
+                  <li>For yourself you also don't read complete pages</li>
+                  <li>Blind users want to skip parts of web pages too</li>
+                  <li>Navigate through the structural and semantic elements is common</li>
+                  <li>Landmark regions, headings, links, tables, form elements, frames, lists, and other items</li>
+                </ul>
+
+                <h4 class="heading-s">Reading Page Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>When a page is loaded screen readers announce the page <code>&lt;title&gt;</code>element</li>
+                  <li>Acronyms and Abbreviations may be pronounced</li>
+                  <li>Reading letter by letter is possible with distinguishes between upper and lower case</li>
+                  <li>Proper announcing for Typographic Symbols can't be relied on</li>
+                  <li>Images always need proper <code>alt</code> attribute</li>
+                  <li>If link destination is on same page, "same page link" often announced</li>
+                  <li>Heading levels are announced and most important for navigating</li>
+                  <li>Table headers, captions and relations need to be in place for proper understanding</li>
+                  <li>Words that are spelled the same yet have different meanings are difficult for SR</li>
+                  <li>Option to navigate forms in or out of form navigation mode</li>
+                  <li>Screen readers can switch languages while reading</li>
+                  <li>Ability to read all, none or just a bit of punctuation</li>
+                </ul>
+
+                <h4 class="heading-s">Virtual Buffer VS Browsers VS A11Y APIs</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Virtual buffer will disappear</li>
+                  <li>Browsers must take over this role</li>
+                  <li>APIs will be more and more important</li>
+                  <li>Tabbing through all tab-navigable elements on the page, or</li>
+                  <li>Jumping from heading to heading, or</li>
+                  <li>Jumping from paragraph to paragraph to hear the first sentence or two,</li>
+                  <li>By skipping repetitive navigation elements, and</li>
+                  <li>By accessing a list of all of the forms, buttons, links, lists, tables and other content on a page</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="accessibility-apis" aria-labelledby="title-accessibility-apis">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-accessibility-apis">Accessibility APIs</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/accessibility-apis/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Accessibility APIs - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="wayfinding-and-reading-content-with-screen-readers" aria-labelledby="title-wayfinding-and-reading-content-with-screen-readers">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-wayfinding-and-reading-content-with-screen-readers">Wayfinding and Reading Content with Screen Readers</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/wayfinding-reading-content/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Wayfinding and Reading Content with Screen Readers - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="screen-reader-modes" aria-labelledby="title-screen-reader-modes">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-screen-reader-modes">Screen Reader Modes</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/modes/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Screen Reader Modes - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Document Mode</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The default mode of screen readers</li>
+                  <li>Document navigation keyboard shortcuts are available</li>
+                  <li>Read the text, including reading each character individually, if necessarys</li>
+                  <li><code>T</code> key to navigate from one table to the next, or the <code>G</code> key to navigate from graphic to the next, and so on</li>
+                  <li>Generally read from the virtual buffer, a copy of the original text</li>
+                </ul>
+
+                <h4 class="heading-s">Document Mode</h4>
+                <ul class="list-icons list-checklist">
+                  <li>
+                    <a href="http://accessibleculture.org/articles/2012/09/aria-widgets-and-focus-forms-mode-support/">ARIA Widgets and Focus/Forms Mode Support in JAWS and NVDA</a>
+                  </li>
+                  <li>
+                    <ul>
+                      <li>All keyboard shortcuts associated with letters and numbers disabled</li>
+                      <li>To allow you to type the letters and numbers</li>
+                      <li>Generally automatically switch to forms mode when focussed</li>
+                      <li>So it won't land on paragraphs, spans, headings, divs, or anything else that is not focusable</li>
+                      <li>Native form elements and <code>aria-label</code>, <code>aria-labelledby</code> and <code>aria-describedby</code> as well as <code>tabindex="0"</code> on elements will be read</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h4 class="heading-s">Application Mode</h4>
+                <ul class="list-icons list-checklist">
+                <li>
+                  <a href="https://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/">If you use the WAI-ARIA role “application”, please do so wisely!</a>
+                </li>
+                <li>
+                  <ul>
+                      <li>Allow to implement all keyboard functionality needed to make an application work</li>
+                      <li>Disables nearly all regular keyboard shortcuts and gives a blank slate</li>
+                      <li>Regular text is not readable</li>
+                      <li>Similar to forms mode, only the focusable elements will be read</li>
+                      <li>Wrap only a small portion of the page in an application region</li>
+                      <li>A technique for text to be read is to add <code>role="document"</code> inside the application region</li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.marcozehe.de/2017/09/29/rethinking-web-accessibility-on-windows/" class="link-ts"><span>Rethinking Web Accessibility On Windows</span></a></li>
+                  <li><a href="https://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/" class="link-ts"><span>If you use the WAI-ARIA role “application”, please do so wisely! - Marco Zehe</span></a></li>
+                  <li><a href="https://tink.uk/understanding-screen-reader-interaction-modes/" class="link-ts"><span>Understanding screen reader interaction modes - Léonie Watson</span></a></li>
+                  <li><a href="https://webaim.org/blog/three-things-voiceover/" class="link-ts"><span>Three things you should know before using VoiceOver for testing - WebAIM</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="jaws-windows" aria-labelledby="title-jaws-windows">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-jaws-windows">JAWS (Windows)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/jaws/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> JAWS (Windows) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>From Freedom Scientific, now part of <a href="http://www.vfogroup.com/">VFO</a></li>
+                  <li>Works best with Internet Explorer</li>
+                  <li>Expensive, around $1000,-, also updates pricey</li>
+                  <li>40-Minute Demo Version, forbidden for regular testing!</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.freedomscientific.com/Products/Blindness/JAWS" class="link-ts"><span>JAWS official web page</span></a></li>
+                  <li><a href="https://dequeuniversity.com/class/screenreaders1/jaws-keyboard-shortcuts" class="link-ts"><span>JAWS keyboard shortcuts relevant to web accessibility testing</span></a></li>
+                  <li><a href="http://www.freedomscientific.com/advanced/training-JAWS-keystrokes.htm" class="link-ts"><span>Full list of JAWS keyboard shortcuts by Freedom Scientific</span></a></li>
+                  <li><a href="http://www.freedomscientific.com/Content/Documents/Manuals/JAWS/JAWS-Quick-Start-Guide.pdf" class="link-ts"><span>JAWS Quick Start Guide - PDF 545KB</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="nvda-windows" aria-labelledby="title-nvda-windows">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-nvda-windows">NVDA (Windows)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/nvda/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> NVDA (Windows) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Open-source screen reader</li>
+                  <li>Works best with Firefox</li>
+                  <li>Free</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.nvaccess.org/" class="link-ts"><span>NV Access and NVDA official web page</span></a></li>
+                  <li><a href="https://dequeuniversity.com/class/screenreaders1/nvda-keyboard-shorcuts" class="link-ts"><span>NVDA keyboard shortcuts relevant to web accessibility testing</span></a></li>
+                  <li><a href="http://www.freedomscientific.com/advanced/training-JAWS-keystrokes.htm" class="link-ts"><span>NVDA user guide</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="voiceover-ios" aria-labelledby="title-voiceover-ios">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-voiceover-ios">VoiceOver (iOS)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/voiceover-ios/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> VoiceOver (iOS) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Pre-installed on all iOS devices (phones and tablets</li>
+                  <li>Small differences from OSX version</li>
+                  <li>iOS slightly better support</li>
+                  <li>Third-party apps need to follow guidelines</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.apple.com/accessibility/iphone/vision/" class="link-ts"><span>VoiceOver iOS</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/TPG-Mobile-Testing-Guide.pdf" class="link-ts"><span>TPG Mobile Testing Guide Android & iOS - PDF 2.6MB</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="talkback-android" aria-labelledby="title-talkback-android">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-talkback-android">TalkBack (Android)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/talkback-android/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> TalkBack (Android) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Pre-installed or downloadable from Google Play</li>
+                  <li>Works best on Google products</li>
+                  <li>Third-party apps need to follow guidelines</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://developer.android.com/advanced/accessibility/testing.html#talkback" class="link-ts"><span>TalkBack on Android Devices</span></a></li>
+                  <li><a href="https://support.google.com/accessibility/android/?hl=en#topic=3529932" class="link-ts"><span>TalkBack user documentation</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/TPG-Mobile-Testing-Guide.pdf" class="link-ts"><span>TPG Mobile Testing Guide Android & iOS - PDF 2.6MB</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="voiceover-mac-os-x" aria-labelledby="title-voiceover-mac-os-x">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-voiceover-mac-os-x">VoiceOver (Mac OS X)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/voiceover-osx/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> VoiceOver (Mac OS X) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Built-in screen reader called VoiceOver</li>
+                  <li>Limited support for software like Word, PDF etc.</li>
+                  <li>On-Screen Subtitles and Menus</li>
+                  <li>Works best with Safari</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.apple.com/accessibility/mac/vision/" class="link-ts"><span>VoiceOver official page on Apple.com</span></a></li>
+                  <li><a href="https://help.apple.com/voiceover/info/guide/10.12/" class="link-ts"><span>Apple Accessibility: VoiceOver Getting Started Guide
+  </span></a></li>
+                  <li><a href="https://dequeuniversity.com/class/screenreaders1/voiceover-keyboard-shortcuts" class="link-ts"><span>VoiceOver Keyboard Shortcuts</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="narrator-windows" aria-labelledby="title-narrator-windows">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-narrator-windows">Narrator (Windows)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/narrator/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Narrator (Windows) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <ul class="list-icons list-checklist">
+                  <li>Free for all Window users</li>
+                  <li>Mature version for Window 10</li>
+                </ul>
+
+              </div>
+            </div>
+  
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started" class="link-ts"><span>Get started with Narrator - Microsoft</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="window-eyes-windows" aria-labelledby="title-window-eyes-windows">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-window-eyes-windows">Window-Eyes (Windows)</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/window-eyes/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Window-Eyes (Windows) - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="chromevox" aria-labelledby="title-chromevox">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-chromevox">ChromeVox</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/chromevox" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> ChromeVox - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="printable-resources" aria-labelledby="title-printable-resources">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-printable-resources">Printable Resources</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist Deque</h3>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/screenreaders2/printable" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Printable Resources - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

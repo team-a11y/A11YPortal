@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus - Code - Accessibility Guidelines</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a> <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="/guidelines/fundamentals/home.html" aria-current="true"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+        <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+      </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span> <span class="sr-only">Toggle main menu</span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/fundamentals/home.html" id="main-menu">Fundamentals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/design/visual-design.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../guidelines/code/audio-and-video.html" aria-current="page">Code
+                <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/audio-and-video.html">Audio and Video</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../guidelines/code/focus.html" aria-current="page">Focus <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/forms.html">Forms</a></li>
+                  <li class="page-item"><a class="page-link" href="../../guidelines/code/scripts-and-dynamic-content.html">Scripts and Dynamic Content</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../guidelines/e-documents/pdf.html">E-Documents</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-satisfied"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Focus</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#focusable-elements" class="link-ts"><span>Focusable elements</span></a></li>
+          <li><a href="#keyboard-trap" class="link-ts"><span>Keyboard trap</span></a></li>
+          <li><a href="#content-order" class="link-ts"><span>Content order</span></a></li>
+          <li><a href="#focus-order" class="link-ts"><span>Focus order</span></a></li>
+          <li><a href="#user-interactions" class="link-ts"><span>User interactions</span></a></li>
+          <li><a href="#alternative-input-methods" class="link-ts"><span>Alternative input methods</span></a></li>
+        </ul>
+      
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="focusable-elements" aria-labelledby="title-focusable-elements">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-focusable-elements">Focusable elements <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>All interactive elements must be focusable and non-interactive elements must not be focusable.</strong></p>
+
+                <p>Some people may only use a keyboard, switch device or voice control for navigation and input. For example, astronauts in space struggle to use a mouse, track pad, or touch screen because these require gravity.</p>
+
+                <p>In order to operate an interactive element, a user must first be able to move focus to the element via any input device (keyboard, mouse, touch, voice, switch device etc.).</p>
+
+                <p>Focus is defined differently depending on the platform. For example, iOS focus is limited to elements that support keyboard input and VoiceOver focus also requires accessibility to be enabled and proper frames defined</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-focusable-elements" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-focusable-elements" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-focusable-elements" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-focusable-elements-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-focusable-elements-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#visual-layout" class="link-ts"><span>Visual Layout</span></a></li>
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-focusable-elements">iOS</h4>
+
+            <p>Ensure accessibility for all content that has meaning and functionality. Assistive technologies provide focus to all objects that have accessibility enabled. This standard supports input methods based on iOS platform level assistive technologies
+              such as Assistive Touch, Switch Support and VoiceOver. It relates back to the principle of supporting platform accessibility settings and features.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[somethingAccessible setIsAccessibilityElement:YES];
+[somethingAccessible setAccessibilityLabel:NSLocalizedString(@"Description of thing", @"Accesibility label for thing")];
+[somethingDecorative setIsAccessibilityElement:NO];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[somethingInteractive setIsAccessibilityElement:NO];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-focusable-elements">Android</h4>
+
+            <p>Ensure all active elements can receive focus from assistive technology and accessible input methods by setting the focusable attribute for the field to ‘true’.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A text input that can be accessed directly by touch and is focusable using the keyboard
+<EditText
+        android:id="@+id/editText"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:focusable="true"></EditText>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A text input that cannot be focused using the keyboard
+<EditText
+        android:id="@+id/editText"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:focusable="false"></EditText> 
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-focusable-elements">HTML</h4>
+
+            <p>Use standard HTML elements that provided keyboard access automatically. For simulated element ensure keyboard focus is set using tabindex.</p>
+
+            <p>For inactive elements, ensure focus is disabled for controls that supported the disabled attribute.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// standard element that is interactive by default
+<a href="..."><img src="back.jpg" alt="back" /></a>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// clickable image that is not keyboard accessible
+<img src="back.jpg" alt="back" onclick="myClickEvent();" />
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-focusable-elements-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <h4 class="heading-s">iOS</h4>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Verify that each actionable object can be accessed directly (by touch) and appears in the focus order of the view.</li>
+                  <li>Verify that each actionable object can be focused with a screen reader by navigation (swipe gestures).</li>
+                </ol>
+                <h4 class="heading-s">Android</h4>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Verify that each actionable element can be navigated to directly (by touch Android 4+).</li>
+                  <li>Verify that each actionable element can be navigated to using the keyboard or d-pad.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-focusable-elements-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <h4 class="heading-s">iOS</h4>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Each actionable object can be accessed directly (by touch) and appears in the focus order of the view;</li>
+                  <li>Each actionable object can be focused with a screen reader via swipe gestures.</li>
+                </ul>
+                <h4 class="heading-s">Android</h4>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Each actionable element can be focused directly (by touch);</li>
+                  <li>Each actionable element can focused/navigated to using the keyboard or d-pad.</li>
+                </ul>
+                <p>Note: Android OS’s below 4 do not trap touch events so users of some assistive technologies such as Talkback cannot directly touch the screen without activating elements. Use a d-pad, trackball or keyboard to test the sequence order for all Android OS’s.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="keyboard-trap" aria-labelledby="title-keyboard-trap">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-keyboard-trap">Keyboard trap <span class="badge badge-danger">Must not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>There must not be a keyboard trap.</strong></p>
+
+                <p>If using a keyboard or other non-pointer input, user focus must be allowed to progress and not become trapped. All focusable elements must be accessible.</p>
+
+                <p>Any modal components that open from a user action should keep focus within the component and must provide a means to close or dismiss the component, which would return focus to the trigger element. For example, on-screen keyboards, information
+                  panels, or full-screen media.</p>
+
+                <p>Any menu or drawer component that opens from a user action may follow the modal pattern, or may automatically close or dismiss the component and return focus to the trigger element after the user moves focus onward from the last element.
+                  For example, a drop-down menu, side-drawer menu, or accordion panel.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-keyboard-trap" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-keyboard-trap" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-keyboard-trap" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-keyboard-trap-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-keyboard-trap-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/various/input-methods.html#keyboard-input" class="link-ts"><span>Keyboard Input</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-keyboard-trap">iOS</h4>
+
+            <p>Controls should freely receive focus and allow the user to move to another control. The user must be able to move focus into and away from the control as much as needed while the user is reviewing the screen contents.</p>
+
+            <p>On-screen keyboards or other pop-up components that appear when a control gains focus should be dismissible to ensure the user can navigate to other controls that may have been covered by the objects.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// Dismiss the keyboard on return
+  - (IBAction)returnKey:(id)sender {
+  [sender resignFirstResponder];
+}
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// not dismissing the keyboard thus blocking other components
+  (IBAction)returnKey:(id)sender{
+    // Validate the field
+    if (someValidCondition) {
+       [sender resignFirstResponder]; // Dismiss the keyboard
+       // Do something with the field contents
+    } else {
+      return;
+      // the keyboard doesn't close
+  }
+}
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-keyboard-trap">Android</h4>
+
+            <p>Controls should freely receive focus and allow the user to move to another control. The user must be able to move focus into and away from the control as much as needed while the user is reviewing the screen contents. On-screen keyboards or
+              other on-screen components that appear when a control gains focus should be dismissible to ensure the user can navigate to other controls that may have been blocked by on-screen elements.</p>
+
+            <p>Note: HTML content within an app (banner adds, Terms and Conditions, Maps etc.) can create a focus trap for screen reader users with Android 4 or earlier where support for HTML is poor.</p>
+
+            <h4 class="heading-s" id="html-keyboard-trap">HTML</h4>
+
+            <p>Do not trap focus via JavaScript, <code>onBlur</code>, <code>onChange</code>, <code>onFocus</code>, or other custom focus code, or using embedded elements that may trap focus.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// JavaScript updates field label to indicate an error but does not trap focus
+<script type="text/javascript">
+function check() {
+  if (isValid()) {
+    // update field label to explain that field is in error but do not trap focus
+    var s = createElement("span");
+    s.innerText = "(Invalid name)";
+    document.getElementById("l1").appendChild(s);
+  }
+}
+</script>
+<label id="l1" for="name1"> First name</label>
+<input onBlur="check();" type="text" id="name1">
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+// JavaScript keeps returning focus to a field until a user enters data correctly
+<script type="text/javascript">
+function check() {
+  if (isValid()) {
+    document.getElementById("name1").focus();
+  }
+}
+</script>
+<label for="name1"> First name</label>
+<input onBlur="check();" type="text" id="name1">
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-keyboard-trap-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader.</li>
+                  <li>Navigate to an actionable object, element, or control.</li>
+                  <li>Attempt to navigate away from the item via a navigation method when focus is on the item.</li>
+                  <li>Ensure that the focus moves out of the item.</li>
+                  <li>If focus does not move out of the item with the standard gesture or method, ensure that a method for moving the focus away from the item is described visually and by a screen reader.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-keyboard-trap-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Object, elements, or controls can be navigated away from, through or over with a standard navigation method;</li>
+                  <li>A method to navigate away from the item is described in a visible fashion and through a screen reader and the method works to move focus past or over the keyboard trap.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="content-order" aria-labelledby="title-content-order">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-content-order">Content order <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Content order must be logical.</strong></p>
+
+                <p>All users benefit when content is logically ordered, in particular users of assistive technology that follows the flow of the page or screen.</p>
+
+                <p>Assistive technology such as screen readers will read through a page or screen in content order, regardless of the layout. However, expert users may jump between elements such as headings and move forward or backward from that point.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-content-order" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-content-order" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-content-order" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-content-order-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-content-order-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-content-order">iOS</h4>
+
+            <p>iOS sets reading order internally based upon screen layout. Developers must override <code>accessibilityElementAtIndex</code>, <code>accessibilityElementCount</code> and <code>indexOfAccessibilityElement</code> to change the order. This is the <code>UIAccessibilityContainer</code>              informal protocol. All elements presented by it must be direct sub views of the main view, but it can contain other views that conform to the protocol and thus the developer can implement an ordering of elements of their own choice.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+view.accessibilityElements = @[moduleButton, followLabel, buttonContainer];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+A custom view that lacks an implementation of <code>accessibilityElements</code>.
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-content-order">Android</h4>
+
+            <p>The ordering of the focus movement is based on an algorithm which finds the nearest neighbour in a given direction. If the default algorithm does not match the intended behaviour explicit overrides can be by provided using XML attributes in
+              the layout file:</p>
+
+            <ul class="list-icons list-checklist">
+              <li><code>nextFocusDown</code></li>
+              <li><code>nextFocusLeft</code></li>
+              <li><code>nextFocusRight</code></li>
+              <li><code>nextFocusUp</code></li>
+            </ul>
+
+            <p>or use <code>setNextFocusDownId()</code> and <code>setNextFocusRightId()</code>, etc.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+<EditText
+android:hint="@string/text_2_desc"
+android:nextFocusDown="@+id/edit3"
+android:nextFocusUp="@+id/edit1"
+android:nextFocusLeft="@+id/edit1"
+android:nextFocusRight="@+id/edit3" />
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-content-order">HTML</h4>
+
+            <p>Screen reader software renders content in the order in which it appears in the document object model (DOM). Place content in the DOM in the correct order either through source code or inserting nodes in the DOM. If content must be presented
+              different visually from the logical reading order then use CSS to change the position of the content.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div>Banner</div>
+<div>
+  <div style="float:left;">
+    <div><h1>Main story</h1></div>
+    <div>Story content</div>
+  </div>
+  <div style="float:right;">Supplementary info</div>
+</div>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div>Banner</div>
+<div>
+  <div><h1>Main story</h1></div>
+  <div style="position:relative; left:50%;top:-50%;">Supplementary info</div>
+  <div>Story content</div>
+</div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-content-order-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader software.</li>
+                  <li>Navigate using standard commands for next and previous.</li>
+                  <li>Verify that the content is announced in a meaningful sequence.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-content-order-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following check is true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The content is announced in a meaningful sequence.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="focus-order" aria-labelledby="title-focus-order">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-focus-order">Focus order <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Actionable content must be navigable in a meaningful sequence.</strong></p>
+
+                <p>Mouse or touch users determine the order in which they interact with actionable elements. Keyboard and screen reader users depend on the focus order provided by the content. For example, navigating a form can be disorientating if the sequence jumps between unrelated elements.</p>
+
+                <p><a href="../../guidelines/code/focus.html#content-order">Content order</a> will normally dictate focus order. However, this may not always be the case. Actionable content must follow a logical sequence that will maintain the meaning and operation of the content.</p>
+
+                <p>Consideration should be given to anything that programmatically moves the focus for customised or enhanced features, e.g. menu drawers that close after moving focus onward from the last item.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-focus-order" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-focus-order" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-focus-order" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-focus-order-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-focus-order-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-focus-order">iOS</h4>
+
+            <p>Focus order in iOS is determined by physical layout of controls/views. Developers can reorder code, or control and change focus order by using the <code>UIAccessibilityContainer</code> protocol if they need to.</p>
+
+            <h4 class="heading-s" id="android-focus-order">Android</h4>
+
+            <p>The focus order will fall to the nearest, neighbouring, focusable element by default. Sometimes this may not match what is intended and as such explicit overrides may need to be provided.</p>
+
+            <p>This can be done by using the following:</p>
+
+            <ul class="list-icons list-checklist">
+              <li><code>android:nextFocusDown</code> defines the next view to receive focus when the user navigates down</li>
+              <li><code>android:nextFocusLeft</code> defines the next view to receive focus when the user navigates left,</li>
+              <li><code>android:nextFocusRight</code> defines the next view to receive focus when the user navigates right,</li>
+              <li><code>android:nextFocusUp</code> defines the next view to receive focus when the user navigates up.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+// focus moves from button 1 to 2 and then 3 and then back around to 1
+<LinearLayout android:orientation="vertical" ... >
+  <Button android:id="@+id/btn1" android:nextFocusUp="@+id/btn3" android:nextFocusDown="@+id/btn2"... />
+  <Button android:id="@+id/btn3" android:nextFocusUp="@+id/btn2" android:nextFocusDown="@+id/btn1" ... />
+  <Button android:id="@+id/btn2" android:nextFocusUp="@+id/btn1" android:nextFocusDown="@+id/btn3" ... />
+</LinearLayout>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-focus-order">HTML</h4>
+
+            <p>The following will ensure a logical content order:</p>
+
+            <ul class="list-icons list-checklist">
+              <li>Code according to tab order;</li>
+              <li>Be aware <code>tabIndex</code> (positive, '0' and negative) may not be supported in mobile browsers;</li>
+              <li>Do not use tables for layout purposes.</li>
+            </ul>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<div>
+  <h3>Shipping Address</h3>
+  <label for="n1">Name</label><input type="text">
+  <label for="a1">Address</label><input type="text">
+  ...
+</div>
+<div>
+  <h3>Billing Address</h3>
+  <label for="n2">Name</label><input type="text">
+  <label for="a2">Address</label><input type="text">
+  ...
+</div>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<table>
+ <tr>
+  <td>Shipping Address</td>
+  <td>Billing Address</td>
+ </tr>
+ <tr>
+  <td><label for="n2">Name</label><input type="text"></td>
+  <td><label for="n1">Name</label><input type="text"></td>
+ </tr>
+ <tr>
+  <td><label for="a1">Address</label><input type="text"></td>
+  <td><label for="a2">Address</label><input type="text"></td>
+ </tr>
+</table>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-focus-order-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate the application with a screen reader.</li>
+                  <li>Navigate through the active on-screen object, elements, and controls.</li>
+                  <li>Verify that the focus order is equivalent to the intuitive visual reading order of the page.</li>
+                  <li>Select radio buttons, checkboxes and other actionable object, elements, and controls.</li>
+                  <li>If additional item appear or become enabled, determine if these items are later in the focus order. Newly appearing fields should appear later in the focus order.</li>
+                  <li>Ensure focus moves forward and backward in an intuitive manner.</li>
+                </ol>
+
+                <p>Note: Android has a <a href="https://developer.android.com/training/keyboard-input/navigation.html">focus emulator</a> that can be used in the absence of a directional controller.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-focus-order-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>The focus order is equivalent to the intuitive visual reading order of the page;</li>
+                  <li>When additional items appear or become enabled, these items appear after the item that activated them;</li>
+                  <li>Focus moves forward and backward in an intuitive manner.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="user-interactions" aria-labelledby="title-user-interactions">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-user-interactions">User interactions <span class="badge badge-success">Must</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Actions must be triggered when appropriate for the type of user interaction.</strong></p>
+
+                <p>Users will use a variety of input methods, sending different signals that can be listened for programmatically to trigger actions. This could be moving a mouse, touching a screen or pressing a key. It could also be using other controllers
+                  or assistive technology to mimic these interactions.</p>
+
+                <p>For mouse, touch and other pointer style interactions the most appropriate trigger will be a high level “click” event or an event at the end of the interaction. This allows users to change their mind and adjust focus, without being forced
+                  to commit to an action until the clicked mouse, or touch is removed.</p>
+
+                <p>For keyboard style interactions the most appropriate trigger will be a high level “keypress” event or an event at the start of the interaction. These users have already chosen focus.</p>
+
+                <p>Which trigger is most appropriate may vary for some interactive content.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-user-interactions" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-user-interactions" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-user-interactions" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-user-interactions-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-user-interactions-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/various/input-methods.html#mouse-input" class="link-ts"><span>Mouse Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#keyboard-input" class="link-ts"><span>Keyboard Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#touch-input" class="link-ts"><span>Touch Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#voice-input" class="link-ts"><span>Voice Input</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-user-interactions">iOS</h4>
+
+            <p>By default standard objects will not respond when first touched and will only respond on touch being removed from an object this is mostly therefore an issue for custom controls implementing multiple touches. Controls that contain multiple
+              touches have the ability to respond to and take action upon receiving a <code>touchesBegan:withEvent</code>. Developers should avoid taking action in this method.</p>
+
+            <p>A Multiple touch enabled view that does not take action upon receiving the <code>touchesBegan:withEvent</code> method is preferred over a multiple touch enabled view that does take immediate action upon the user touching the display in the
+              <code>touchesBegan:withEvent</code> method.</p>
+
+            <h4 class="heading-s" id="android-user-interactions">Android</h4>
+
+            <p>Care must be taken to avoid triggering touch controls on ACTION_DOWN, and instead trigger them on ACTION_UP.</p>
+
+            <p>On pointing devices with source class <code>SOURCE_CLASS_POINTER</code> such as touchscreens, the pointer coordinates specify absolute positions such as a view's x and y coordinates. Each complete gesture is represented by a sequence of motion
+              events with actions that describe pointer state transitions and movements. A gesture starts with an <code>ACTION_DOWN</code> motion event that provides the location of the first pointer touch. As each additional pointer action goes down
+              or up, the framework will generate a motion event with <code>ACTION_POINTER_DOWN</code> or <code>ACTION_POINTER_UP</code> accordingly. Pointer movements are described by motion events with <code>ACTION_MOVE</code> motion event. A gesture
+              will end either when the final pointer goes up as represented by the <code>ACTION_UP</code> motion event or when the gesture is cancelled with <code>ACTION_CANCEL</code>. For more information, reference the <a href="https://developer.android.com/reference/android/view/MotionEvent.html">Android Developer Reference – MotionEvent</a>.</p>
+
+            <p>Each key press on the Android platform is described by a sequence of key events. A key press starts with the <code>ACTION_DOWN</code> key event. If the key is held sufficiently long that it repeats, then the initial down is followed by additional
+              <code>ACTION_DOWN</code> key events and a non-zero value for <code>getRepeatCount()</code> . The last key event is an <code>ACTION_UP</code> for the key up. If the key press is cancelled, the key up event will have the <code>FLAG_CANCELED</code>              flag set. For more information, reference the <a href="https://developer.android.com/reference/android/view/KeyEvent.html">Android Developer Reference - KeyEvent</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A touch event listener attached to an element to perform an action on ACTION_UP
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+  int action = event.getAction();
+  if(action == MotionEvent.ACTION_UP){
+    ...
+  }
+  
+  return false;
+}
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A touch event listener attached to an element to perform an action on ACTION_DOWN
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+  int action = event.getAction();
+  if(action == MotionEvent.ACTION_DOWN){
+    ...
+  }
+  
+  return false;
+}
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-user-interactions">HTML</h4>
+
+            <p>If not defaulting to <code>onClick</code> or <code>onKeyPress</code> events, use <code>onTouchEnd</code> or <code>onKeyDown</code> event handlers to trigger actions, rather than <code>onTouchStart</code> and <code>onKeyUp</code>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script type="text/javascript">
+  function startGesture(e) {
+    // store touch start source
+  }
+  function endGesture(e) {
+    // if touch end source is different from touch start source return, else perform action
+  }
+</script>
+...
+<div onTouchStart="startGesture(this);" onTouchEnd="endGesture(this);"> Swipe area </div>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script type="text/javascript">
+  function startGesture(e) {
+    // perform action
+  }
+</script>
+...
+<div onTouchStart="startGesture(this);"> Swipe area </div> 
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-user-interactions-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Navigate the app using the touchscreen.</li>
+                  <li>Navigate to the on-screen objects, elements, or controls.</li>
+                  <li>Begin to activate an item (touch it without lifting your finger or stylus).</li>
+                  <li>Verify that the item does not immediately trigger an action/event.</li>
+                  <li>Finish activating the item (remove your finger or stylus from the screen).</li>
+                  <li>Verify that the item now triggers the action/event.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-user-interactions-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Objects, elements, or controls do not trigger actions/events at the start of activation (when touched);</li>
+                  <li>Objects, elements, or controls trigger actions/events when the user finishes activation (touch is removed).</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="alternative-input-methods" aria-labelledby="title-alternative-input-methods">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-alternative-input-methods">Alternative input methods <span class="badge badge-success">Must not</span></h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row mb-4">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <p class="lead"><strong>Alternative input methods must be supported.</strong></p>
+
+                <p>Some users do not use the input control provided with a device, such as the touch screen, or mouse. Instead, they may use a switch device, keyboard or braille display.</p>
+
+                <p>Alternative methods of input and navigation that work with the platform must be supported to facilitate the needs of the user.</p>
+
+                <p>Interactive content must not rely on a single input method. For example, a carousel must not support only touch interaction, it must also support alternative inputs via visible <a href="../../guidelines/code/focus.html#focusable-elements">focusable elements</a>.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+                
+                <h4 class="heading-s">Examples</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#ios-alternative-input-methods" class="link-ts"><span>iOS</span></a></li>
+                  <li><a href="#android-alternative-input-methods" class="link-ts"><span>Android</span></a></li>
+                  <li><a href="#html-alternative-input-methods" class="link-ts"><span>HTML</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Testing</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="#testing-alternative-input-methods-procedures" class="link-ts"><span>Testing Procedures</span></a></li>
+                  <li><a href="#testing-alternative-input-methods-results" class="link-ts"><span>Testing Results</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Basics</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../basics/essentials/principles.html#platform-accessibility" class="link-ts"><span>Platform accessibility</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/various/input-methods.html#mouse-input" class="link-ts"><span>Mouse Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#keyboard-input" class="link-ts"><span>Keyboard Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#touch-input" class="link-ts"><span>Touch Input</span></a></li>
+                  <li><a href="../../advanced/various/input-methods.html#voice-input" class="link-ts"><span>Voice Input</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+
+            <h3 class="card-title">Examples</h3>
+
+            <h4 class="heading-s" id="ios-alternative-input-methods">iOS</h4>
+
+            <p>The Accessibility API provides alternative input methods for standard touch events. Focus control to elements is provided via the <code>isAccessibilityElement</code> property - this property should be set to <code>YES</code> to allow accessible
+              input. VoiceOver also has some special gestures to consider, in particular the Escape and Magic Tap gestures. Refer to <a href="https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/SupportingAccessibility.html">Apple Developer - Supporting Accessibility</a>.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[_view setIsAccessibilityElement:YES];
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>iOS Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+[_view setIsAccessibilityElement:NO];
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="android-alternative-input-methods">Android</h4>
+
+            <p>Developers must ensure that all active elements can receive focus from assistive technology and alternative input methods. This can typically be accomplished by setting the <code>focusable</code> attribute for the field to <code>true</code>.
+              For editable or read-only custom text elements that are developed by extending standard text elements you must ensure a system caret is set to indicate focus for the element.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A text input field that can be accessed directly by touch and is focusable using the keyboard
+<EditText android:id="@+id/editTextP" android:inputType="textPassword" android:layout_height="wrap_content" android:layout_width="wrap_content" android:focusable="true"></EditText>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>Android Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-clike"><!--
+//A text input that cannot be focused using the keyboard
+<EditText android:id="@+id/editTextP" android:inputType="textPassword" android:layout_height="wrap_content" android:layout_width="wrap_content" android:focusable="false"></EditText>
+--></code></pre>
+              </div>
+            </div>
+
+            <h4 class="heading-s" id="html-alternative-input-methods">HTML</h4>
+
+            <p>Any HTML gestures must be supplemented with standard navigation methods such as keyboard focus, key presses, links, buttons, or other controls. For example, a drag and drop operation may be supplemented by <code>select</code> elements allowing
+              the user to choose multiple combinations.</p>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Example
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <p>A carousel that supports swiping left and right touch events such as touchstart, touchend, and touchmove can supplement these gestures with keyboard access using buttons, or by watching key presses:</p>
+
+                <pre><code class="language-markup"><!--
+<a href="...">Previous</a>
+<a href="...">Next </a>
+--></code></pre>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <h5 class="collapsible-control">
+                <button aria-expanded="false">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                  <rect class="vert" height="8" width="2" y="1" x="4"/>
+                  <rect height="2" width="8" y="4" x="1"/>
+                </svg>HTML Failure
+                </button>
+              </h5>
+              <div class="collapsible-target" hidden>
+                <pre><code class="language-markup"><!--
+<script type="text/javascript">
+// perform some action on touch
+</script>
+...
+<div ontouchstart="touchStart(event);" ontouchmove="touchMove(event);" ontouchend="touchEnd(event);" ontouchcancel="touchCancel(event);"></div>
+--></code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-alternative-input-methods-procedures">
+              <div class="card-block">
+                <h3 class="card-title">Testing procedures</h3>
+                <ol>
+                  <li>Activate a screen reader and physical keyboard.</li>
+                  <li>Identify the active screen objects, elements, and controls.</li>
+                  <li>Ensure that all items can be navigated to via alternative input methods.</li>
+                  <li>Ensure that the items can be activated via alternative input methods.</li>
+                  <li>Activate the item.</li>
+                  <li>For items with complex functionality, check for equivalent methods of action support such the arrow keys to instead of swipe up and down gestures to move a slider.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="card" id="testing-alternative-input-methods-results">
+              <div class="card-block">
+                <h3 class="card-title">Testing results</h3>
+                <p>The following checks are true:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Objects, elements, and controls can be navigated to via alternative input methods;</li>
+                  <li>Items can be activated and manipulated via alternative input methods.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

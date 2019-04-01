@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laws - Fundamentals - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html" aria-current="true" id="main-menu">Fundamentals <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/home.html">Home</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/disabilities.html">Disabilities</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/designing-an-accessible-user-experience.html">Accessible UX</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/myths.html">Myths</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/fundamentals/guidelines.html">Guidelines</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/fundamentals/laws.html" aria-current="page">Laws <span class="sr-only">(current)</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html">Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Laws</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#usa" class="link-ts"><span>United States</span></a></li>
+          <li><a href="#europe" class="link-ts"><span>Europe</span></a></li>
+          <li><a href="#other" class="link-ts"><span>Other regions</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h2 class="card-title" id="title-introduction">Introduction</h2>
+                <p class="lead"><strong>Laws</strong></p>
+
+                <p>Legislation is a strong expression of the political and societal awareness and will to implement accessibility as a fundamental human right. This chapter presents some basic information about web accessibility laws and their impact on
+                  everyday practice of web design, development and usage. The explanations offered in this section are for informative purposes only and do not represent legal advice. Contact your team's CELA representative for official guidance around
+                  the legal landscape for accessibility.</p>
+
+                <p>Web accessibility laws tend to fit into the following categories:</p>
+                <ul>
+                  <li><strong>Civil rights laws: </strong>These are laws that emphasize equal rights for people with disabilities, often making it illegal to discriminate against people with disabilities under certain defined conditions, such as employment,
+                    access to buildings, government services, or "places of public accommodation" such as restaurants, retail, entertainment, etc. Sometimes these laws include technical standards. Other times they do not. The Americans with Disabilities
+                    Act is an example of a civil rights law.</li>
+                  <li><strong>Procurement laws: </strong>These laws require that accessibility be taken into account when making a purchase or when contracting for services. For example, the law could state that if there are three potential products and two of them meet accessibility standards, only the products that meet the standards should be considered for purchase. It would be against the law to buy the product that does not meet accessibility standards. The most prominent procurement laws (like Section 508 of the Rehabilitation Act in the United States, and EN 301 549 in the European Union) apply only to government entities, but it is possible that a future law could impact private businesses.</li>
+                  <li><strong>Industry-specific laws: </strong>Sometimes an industry is so important to accessibility that the government writes a law just for that industry. Examples include telecommunications and airplane travel, both of which have
+                    accessibility-related laws in the United States, which are the 21st Century Communications and Video Accessibility Act (CVAA) and the Air Carrier Access Act (ACAA), respectively.
+                  </li>
+                </ul>
+                <p>Disclaimer: Again, the legal information provided here is presented in an abbreviated format for informational purposes only, and—though provided in good faith that it represents accurate information—should not be construed as authorized
+                  legal advice. Contact your team's CELA representative for official guidance around the legal landscape for accessibility.</p>
+                <p>By studying this section and completing the quiz, you should be able to:</p>
+                <ul>
+                  <li>Present an overview of national, federal and international web accessibility legislation</li>
+                  <li>Explain the differences in scope, implications and demands of legislation</li>
+                  <li>Analyze the applicable legal framework for each web project and for different roles</li>
+                </ul>
+
+                <h3 class="card-title">Summary</h3>
+                <p class="lead"><strong>The goal is to use accessibility to drive innovation</strong></p>
+                <p>There are real challenges to solve in accessibility. Let those challenges drive innovation. Let them be the inspiration that lifts the design to the next level. Don't be satisfied with "good enough" or compliant. Think creatively. Think
+                  inclusively. Always design with accessibility in mind.</p>
+
+                <p class="lead"><strong>Accessibility matters a lot to people with disabilities</strong></p>
+                <p>Compliance does not equate to a great user experience; your creativity and commitment to accessibility will be the deciding factor in how we raise the bar for what customers expect when using our products and services. Inaccessible web
+                  sites are not just inconvenient for people with disabilities, they are blocking. You have the power to make your product better by making it usable by all people, and giving everyone equal access to information.</p>
+                <p>Failing to make a web site accessible has real consequences for real people. Inaccessible web sites take away freedoms that people with disabilities would otherwise enjoy, reducing quality of life, and making day-to-day tasks difficult or impossible. Let's do our part to design a more inclusive and more welcoming experience for all our customers.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/fundamentals2/laws/" class="link-ts"><span>Laws - Deque University</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="usa" aria-labelledby="title-usa">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-usa">United States</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">United States</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/laws/united-states" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> United States - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s"><a href="https://www.ada.gov/">The Americans with Disabilities Act (ADA)</a></h4>
+
+                <h5 class="heading-s">The ADA applies to:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Private entities that own, operate, lease, or lease to places of public accommodation</li>
+                  <li>Federal and state government entities</li>
+                </ul>
+
+                <h5 class="heading-s">The ADA is enforced by:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Consumers (people with disabilities) filing formal complaints</li>
+                </ul>
+
+                <h4 class="heading-s"><a href="https://www.section508.gov/">Section 508 of the Rehabilitation Act</a></h4>
+
+                <h5 class="heading-s">Section 508 applies to:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>US federal government entities only</li>
+                </ul>
+
+                <h5 class="heading-s">Section 508 is enforced by:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Consumers (people with disabilities) filing formal complaints</li>
+                </ul>
+
+                <h4 class="heading-s"><a href="https://www.fcc.gov/consumers/guides/21st-century-communications-and-video-accessibility-act-cvaa">21st Century Communications and Video Accessibility Act (CVAA)</a></h4>
+
+                <h5 class="heading-s">The CVAA applies to:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>All entities already covered by FCC regulations</li>
+                </ul>
+
+                <h5 class="heading-s">The CVAA is enforced by:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Consumers (people with disabilities) filing formal complaints</li>
+                </ul>
+
+                <h4 class="heading-s"><a href="https://www.transportation.gov/airconsumer/passengers-disabilities">Air Carrier Access Act (ACAA)</a></h4>
+
+                <h5 class="heading-s">The ACAA applies to:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>All entities already covered by FCC regulations</li>
+                </ul>
+
+                <h5 class="heading-s">The ACAA is enforced by:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Consumers (people with disabilities) filing formal complaints</li>
+                </ul>
+
+                <h4 class="heading-s">State Web Accessibility Laws</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Many U.S. States have their own web accessibility laws, usually aimed at state and local government, which can include K-12 schools and universities.</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="europe" aria-labelledby="title-europe">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-europe">Europe</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Europe</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/laws/europe" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Europe - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s"><a href="https://ec.europa.eu/digital-single-market/news/proposal-directive-european-parliament-and-council-accessibility-public-sector-bodies-websites">European Union - EN 301 549</a></h4>
+
+                <h5 class="heading-s">The EN 301 549:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>The original mandate was for use in public procurement of ICT</li>
+                  <li>Aims to improve the functioning of the internal market for accessible products and services</li>
+                  <li>Removing barriers created by divergent legislation</li>
+                  <li>This will facilitate the work of companies</li>
+                  <li>EU may decide to apply EN 301 549 to both public and private sectors</li>
+                </ul>
+
+                <h5 class="heading-s">Special attention for “banking services”:</h5>
+                <ul class="list-icons list-checklist">
+                  <li>The accessibility of ATM’s</li>
+                  <li>Information, instruction and warnings on labels</li>
+                  <li>Promoting Universal design</li>
+                  <li>Web accessibility, (WCAG 2.0)</li>
+                </ul>
+
+                <h5 class="heading-s">European Countries</h5>
+                <ul class="list-icons list-checklist">
+                  <li>Several European countries already have their own web accessibility laws</li>
+                  <li>All laws are being aligned with the European Standard</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="other" aria-labelledby="title-other">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-other">Other regions</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Other regions</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/fundamentals2/laws/other-regions" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Other regions - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <p>Many other countries have their own web accessibility policies, often based on the Web Content Accessibility Guidelines WCAG 2.0 AA, like:</p>
+                <ul class="list-icons list-checklist">
+                  <li>Australia</li>
+                  <li>Hong Kong</li>
+                  <li>India</li>
+                  <li>China</li>
+                  <li>Japan</li>
+                  <li>New Zealand</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+
+  <aside class="full-cover site-aside bg-grey" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>

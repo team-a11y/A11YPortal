@@ -1,0 +1,45 @@
+{
+  "name": "a11yportal",
+  "version": "1.0.0",
+  "description": "A central hub for accessibility information. It features all basics, guidelines, training material and good/bad examples.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "axe": "gulp axe",
+    "build": "gulp build",
+    "deploy:production": "firebase deploy --project ing-a11y",
+    "deploy:staging": "firebase deploy --project ing-a11y-staging",
+    "start:dev": "gulp start:dev",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-a11y/A11YPortal.git"
+  },
+  "author": "Erik Kroes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/team-a11y/A11YPortal/issues"
+  },
+  "homepage": "https://github.com/team-a11y/A11YPortal#readme",
+  "contributors": [
+    {
+      "name": "Jake Abma",
+      "url": "http://github.com/jake-abma"
+    }
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "del": "^3.0.0",
+    "firebase-tools": "^4.2.1",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "node-sass": "^4.9.3"
+  }
+}

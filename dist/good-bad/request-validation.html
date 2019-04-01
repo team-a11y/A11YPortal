@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>3 form errors - Validated Accessible Request Page - Good and Bad Demonstration - COMPANY NAME</title>
+
+  <link rel="stylesheet" href="../styles/libs/bootstrap/bootstrap.processed.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styles-responsive.css">
+  <link rel="stylesheet" href="../styles/prism.css">
+</head>
+
+<body class="body" id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <div class="site-nav bg-grey">
+      <nav class="container" role="navigation" aria-labelledby="title-site-nav">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+          <ul class="pipe-links list-inline">
+            <li class="list-inline-item"><a href="../index.html"><span>1. Basics</span></a></li>
+            <li class="list-inline-item"><a href="../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+            <li class="list-inline-item"><a href="../advanced/fundamentals/home.html"><span>3. Advanced</span></a></li>
+            <li class="list-inline-item"><a href="../good-bad/home.html" aria-current="true"><span>4. Good / Bad</span></a></li>
+            <li class="list-inline-item"><a href="../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+            <li class="list-inline-item"><a href="../about/fundamentals/contact.html"><span>About</span></a></li>
+          </ul>
+      </nav>
+    </div>
+
+    <nav class="wcag-annotations" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <button class="btn btn-secondary btn-sm" id="annotations01">WCAG Annotations</button>
+
+        <div class="table-of-contents">
+
+          <h2 class="m-0" id="title-toc">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#table-of-contents" aria-expanded="false" aria-controls="table-of-contents">
+              Table of Contents
+            </button>
+          </h2>
+
+          <div class="collapse" id="table-of-contents">
+            <ul class="list-icons list-linklist toc-columns mx-2 pt-4" role="directory">
+              <li><a href="#annotModal01" class="link-ts"><span>01. Page properly titled</span></a></li>
+              <li><a href="#annotModal02" class="link-ts"><span>02. Zooming and scaling content not prevented</span></a></li>
+              <li><a href="#annotModal03" class="link-ts"><span>03. Skip-links to bypass repeated content</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../" class="navbar-brand">
+          <img class="avatar-img" src="../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav" aria-labelledby="main-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../good-bad/home.html" id="main-menu">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../good-bad/article.html">Article</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../good-bad/request.html" aria-current="page">Request <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar" aria-label="Sub navigation Main Menu">
+                  <li class="page-item"><a class="page-link active" href="../good-bad/request.html" aria-current="page">Good <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../good-bad/request-bad.html">Bad</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-form form-inline my-2 my-lg-0">
+
+            <form class="m-0 mr-4" role="search">
+              <label for="search">Search</label>
+              <input class="form-control form-control-search mr-1" type="text" id="search">
+              <button class="btn btn-tertiary btn-icon my-sm-0 ml-0" type="submit">
+                <span class="icon icon-search icon-lg text-orange" aria-hidden="true"></span>
+                <span class="sr-only">Search</span>
+              </button>
+            </form>
+
+            <div class="font-reset">
+              <label class="mr-1" for="language">Language</label>
+              <div class="d-inline-block p-relative">
+                <select class="form-control" name="language" id="language">
+                  <option value="english" selected>English</option>
+                  <option value="nederlands" lang="nl">Nederlands</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-b">
+      <div class="brandbar-image brandbar-image-request"></div>
+      <div class="container">
+        <div class="brandbar-header">
+          <div class="brandbar-heading">
+            <h1 class="brandbar-title btn-annot-outline">Draft: Accessible Request Page</h1>
+            <button type="button" class="btn btn-annot" data-toggle="modal" data-target="#annotModal01">01</button>
+            <p class="brandbar-lead">Good and Bad Demonstration</p>
+            <span class="d-block mt-2 annot-relative">
+              <a href="https://dequeuniversity.com/class/html-css1/forms/" class="link-primary">
+                Forms at Deque University
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="alert alert-danger alert-block" id="formSummary" accesskey="0" role="group" aria-labelledby="formSummaryHeading" tabindex="-1">
+        <span class="stacked-icon" role="img" aria-label="Errors: ">
+          <span class="icon"></span>
+          <span class="icon"></span>
+        </span>
+        <div class="body-box body-box-sm">
+          <h2 class="heading-m" id="formSummaryHeading">There are 3 errors in this form.</h2>
+          <ul>
+            <li>
+              <a href="#initials">'<strong>Initials</strong>': No initials is entered, please enter up to 6 initials</a>
+            </li>
+            <li>
+              <a href="#insertion">'<strong>Insertion</strong>': An abbreviations is used. Write the insertion completely like 'van der' and not 'v/d'</a>
+            </li>
+            <li>
+              <a href="#csn">'<strong>Citizen service number</strong>': Only 8 numbers are entered</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p>With this form, you will request a Credit Card. Within 5 business days you'll receive an answer for acceptance. On the <a href="#">Credit Card page</a> you can find more information about the impact of the application for your account.</p>
+
+      <strong>Before filling in the form please make sure you have the following items ready:</strong>
+
+      <ul class="list-icons list-checklist mt-3" aria-label="Checklist items needed">
+        <li>Digital copy Passport</li>
+        <li>Citizen service number</li>
+        <li>Bank account number</li>
+        <li>Data partner</li>
+      </ul>
+
+      <p>NOTE: All fields in this form are required, unless otherwise specified.</p>
+
+      <h2 class="sr-only" id="navigator-title">Request a credit card in 2 steps</h2>
+
+      <h3 class="sr-only" id="steps-title">Personal information (Step 1 of 2)</h3>
+
+      <div class="card">
+
+        <div class="steps steps-arrow steps-a steps-sm steps-md steps-lg" ing-mq-classes="{zero:'steps-sm', md:'steps-md', lg:'steps-lg'}" aria-labelledby="steps-title">
+          <div class="steps-indicator">
+            <ol class="steps-indicator-list">
+              <li class="steps-indicator-item active">
+                <a href="#" class="steps-indicator-element" aria-current="page">
+                  <span class="sr-only">Current step</span>
+                  <span class="steps-indicator-type">1</span>
+                  <span class="steps-indicator-text">Personal information</span>
+                  <span class="arrow steps-indicator-arrow"></span>
+                </a>
+              </li>
+              <li class="steps-indicator-item">
+                  <span class="steps-indicator-element">
+                    <span class="steps-indicator-type">2</span>
+                    <span class="steps-indicator-text">Additional information</span>
+                    <span class="arrow steps-indicator-arrow"></span>
+                  </span>
+              </li>
+            </ol>
+          </div>
+          <div class="steps-complete">
+            <div class="steps-complete-item">
+              <div class="steps-complete-element">
+                <span class="sr-only">Steps completion page</span>
+                <span class="steps-complete-icon">
+                  <span aria-hidden="true" class="icon icon-print"></span>
+                </span>
+                <span class="steps-complete-text">Print</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="m-0" aria-labelledby="form-title">
+          <div class="card-block">
+
+            <h4 class="card-title" id="form-title">Personal information</h4>
+
+            <div class="form-group has-error invalid">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="initials">
+                  Initials
+                </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-sm-5 col-lg-4">
+                    <input type="text" name="initials" id="initials" class="form-control" maxlength="12" aria-required="true" aria-invalid="true" aria-describedby="initials-message">
+                  </div>
+                </div>
+                <div class="form-control-help message" id="initials-message" role="group">
+                  <span class="stacked-icon" role="img" aria-label="Error: ">
+                    <span class="icon"></span>
+                    <span class="icon"></span>
+                  </span>
+                  No initials have been entered. Please enter up to 6 initials.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="name">
+                  First Name
+                </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-md-10">
+                    <input type="text" name="name" id="name" class="form-control" aria-required="true">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group has-error invalid">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="insertion">
+                  Insertion <span class="label-help">(not required)</span>
+                </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-sm-5 col-lg-4">
+                    <input type="text" name="insertion" id="insertion" class="form-control" maxlength="12" aria-describedby="insertion-description" aria-invalid="true" value="v/d">
+                  </div>
+                </div>
+                <div class="form-control-help" id="insertion-description">Full writing<span class="sr-only">.</span></div>
+                <div class="form-control-help message" id="initials-message" role="group">
+                    <span class="stacked-icon" role="img" aria-label="Error: ">
+                      <span class="icon"></span>
+                    <span class="icon"></span>
+                    </span>
+                  An abbreviations is used. Write the insertion completely like 'van der' and not 'v/d'
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="surname">
+                  Last Name
+                </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-md-10">
+                    <input type="text" name="surname" id="surname" class="form-control" aria-required="true">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="dateOfBirth">
+                    Birth date
+                  </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-sm-5 col-lg-4">
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control" aria-describedby="dateOfBirth-description" aria-required="true">
+                  </div>
+                </div>
+                <div class="form-control-help" id="dateOfBirth-description">
+                  Write as dd-mm-yyyy
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group has-error invalid">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="csn">
+                    Citizen service number
+                  </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-sm-5 col-lg-4">
+                    <input type="text" name="csn" id="csn" class="form-control" maxlength="9" aria-required="true" aria-describedby="csn-description csn-message" value="12345678">
+                  </div>
+                </div>
+                <div class="form-control-help" id="csn-description">
+                  Consists of 9 numbers<span class="sr-only">.</span>
+                </div>
+                <div class="form-control-help message" id="csn-message" role="group">
+                    <span class="stacked-icon" role="img" aria-label="Error: ">
+                      <span class="icon"></span>
+                    <span class="icon"></span>
+                    </span>
+                  Only 8 numbers are entered while 9 are required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="control-label col-sm-4 col-lg-3">
+                <label for="homeland">
+                    Country of birth
+                  </label>
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <div class="row">
+                  <div class="col-sm-12 col-md-10">
+                    <select class="form-control" name="homeland" id="homeland" aria-required="true">
+                        <option value="">Choose a country of birth</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Åland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AI">Anguilla</option>
+                        <option value="AQ">Antarctica</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <hr>
+
+            <fieldset>
+              <legend class="legend"><h5>Financial information</h5></legend>
+
+              <fieldset>
+                <legend class="sr-only" id="employmentLegend">Employment</legend>
+                <div class="fieldset-row">
+                  <div class="legend control-label col-sm-4 col-lg-3" aria-hidden="true">
+                    Employment
+                  </div>
+                  <div class="col-sm-8 col-lg-6">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="radio-inline radio-custom">
+                          <label for="employmentEmployed">
+                            <input type="radio" name="employment" id="employmentEmployed" value="employed" aria-required="true">
+                            <span class="radio-custom-input" aria-hidden="true"></span>
+                            <span>Employed</span>
+                          </label>
+                        </div>
+                        <div class="radio-inline radio-custom">
+                          <label for="employmentUnemployed">
+                            <input type="radio" name="employment" id="employmentUnemployed" value="employed" aria-required="true">
+                            <span class="radio-custom-input" aria-hidden="true"></span>
+                            <span>Unemployed</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <div class="control-label col-sm-4 col-lg-3">
+                  <label for="funds">
+                    Funds
+                  </label>
+                </div>
+                <div class="col-sm-8 col-lg-6">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-10">
+                      <select class="form-control" name="funds" id="funds" aria-required="true" disabled>
+                        <option value="limited">Limited</option>
+                        <option value="unlimited">Unlimited</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="control-label col-sm-4 col-lg-3">
+
+              </div>
+              <div class="col-sm-8 col-lg-6">
+                <a href="../good-bad/request-02.html" class="link link-primary">Next</a>
+                <a href="../good-bad/request-validated.html" class="link link-secondary ml-3">Go validate</a>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="full-cover site-footer" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="pipe-links list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <span id="placeholderurl">Company link</span>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal">Github</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/">Deque University</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../about/fundamentals/contact.html">Contact</a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="a11ycasts" tabindex="-1" role="dialog" aria-labelledby="a11ycastsHeading">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="a11ycastsHeading">Introducing A11ycasts! -- A11ycasts #01</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" class="modal-youtube" src="https://www.youtube.com/embed/HtTyRajRuyY?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="full-cover bg-faded annotations" role="region" aria-labelledby="annotationsSection">
+    <div class="container">
+
+      <h2 class="full-cover-title" id="annotationsSection">Annotations</h2>
+
+      <div class="modal fade modal-annot" id="annotModal01" tabindex="-1" role="dialog" aria-labelledby="annotModal01Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal01Heading">01. Content provides a logical and hierarchical heading structure</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>A good heading structure enables people to scan a page/screen quickly and understand the structure of the content. Screen reader users can also use headings to quickly navigate within a page or screen.</p>
+
+              <p>Other things to consider, in order to make headings more usable for screen reader users:</p>
+
+              <ul>
+                <li>Lists and headings used together to mark up content should be avoided</li>
+                <li>For a correct heading outline it is sometimes necessary to hide them visually</li>
+                <li>Headings should be coded around content that doesn’t change, i.e. a category name such as ‘Banking News’ rather than a news item that will update frequently</li>
+                <li>Headings should not overwhelm a page as this can undermine their usefulness for screen reader users when navigating, a maximum of 7-9 headings should suffice</li>
+              </ul>
+
+              <div class="alert alert-info">
+                <p>
+                  <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+                </p>
+              </div>
+
+              <h4 class="heading-s">HTML Example</h4>
+
+              <pre><code class="language-markup"><!--
+
+<h1>Accessible Article Page</h1>
+
+  <h2>Why we promote accessibility</h2>
+  
+  <h2>How we strive for accessibility</h2>
+    <h3>Training material</h3>
+    
+  <h2>What we deliver for accessibility</h2>
+    <h3>Add these steps to your DoD</h3>
+    ...
+
+  // Optional hidden heading
+  <h2 class="sr-only">Selected for you</h2>
+  <h3>...</h3>
+    <h4>...</h4>
+    ...
+    
+  // Optional with ARIA
+  <div role="heading" aria-level="2">...</div>
+    <div role="heading" aria-level="3">...</div>
+  ...
+--></code></pre>
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#content-structure-separation-programmatic">1.3.1 Info and Relationships Level A</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/H42">H42: Using h1-h6 to identify headings</a></li>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G141">G141: Organizing a page using headings</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-headings">2.4.10 Section Headings Level AAA</a>
+                    <ul>
+                      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G141">G141: Organizing a page using headings</a></li>
+                      <li><a href="http://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H69">H69: Providing heading elements at the beginning of each section of content</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+
+      <div class="modal fade modal-annot" id="annotModal02" tabindex="-1" role="dialog" aria-labelledby="annotModal02Heading">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="annotModal02Heading">02. Text</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Text <code>code</code> </p>
+
+              <div class="alert alert-info">
+                <strong>Note!</strong> Improvements on the template are propagated throughout the entire website
+              </div>
+
+              <h4 class="heading-s">HTML Example</h4>
+
+              <pre><code class="language-markup"><!--
+
+example code
+--></code></pre>
+
+              <h4 class="heading-s">WCAG Success Criteria</h4>
+
+              <ul class="list-group list-group-lessons">
+                <li class="list-group-item">
+                  <div class="w-100">
+                    <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-title">2.4.2 Page Titled Level A</a>
+                    <ul>
+                      <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G88.html">G88: Providing descriptive titles for Web pages</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../scripts/libs/tether/tether.min.js"></script>
+  <script src="../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../scripts/script.js"></script>
+	<script src="../scripts/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Design and Colors - Design - Accessibility Champions Training</title>
+
+  <link rel="stylesheet" href="../../styles/libs/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/styles-responsive.css">
+	<link rel="stylesheet" href="../../styles/prism.css">
+</head>
+
+<body id="totop">
+
+  <header class="site-header" role="banner">
+
+    <div class="skip-links">
+      <a href="#main-menu">Skip to Main Menu</a>
+      <a href="#main-content">Skip to Main Content</a>
+    </div>
+
+    <nav class="site-nav bg-grey" role="navigation" aria-labelledby="title-site-nav">
+      <div class="container">
+        <div class="sr-only" id="title-site-nav">Site Menu</div>
+        <ul class="pipe-links list-inline">
+          <li class="list-inline-item"><a href="../../index.html"><span>1. Basics</span></a></li>
+          <li class="list-inline-item"><a href="../../guidelines/fundamentals/home.html"><span>2. Guidelines</span></a></li>
+          <li class="list-inline-item"><a href="../../advanced/fundamentals/home.html" aria-current="true"><span>3. Advanced</span></a></li>
+          <li class="list-inline-item"><a href="../../good-bad/home.html"><span>4. Good / Bad</span></a></li>
+          <li class="list-inline-item"><a href="../../sitemap/sitemap-basics.html"><span>Sitemap</span></a></li>
+          <li class="list-inline-item"><a href="../../about/fundamentals/contact.html"><span>About</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar navbar-toggleable-md navbar-light">
+      <nav class="container" role="navigation" aria-labelledby="main-nav">
+
+        <div class="sr-only" id="main-nav">Main Menu</div>
+
+        <a href="../../" class="navbar-brand">
+          <img class="avatar-img" src="../../images/a11y-logo-2.png" alt="Accessibility Portal">
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle main menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mr-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/fundamentals/home.html">Fundamentals</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../../advanced/design/images-svg-and-canvas.html" aria-current="true" id="main-menu">Design <span class="sr-only">(current)</span></a>
+                <ul class="pagination pagination-navbar">
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/images-svg-and-canvas.html">Images</a></li>
+                  <li class="page-item"><a class="page-link active" href="../../advanced/design/visual-design-and-colors.html" aria-current="page">Visual Design <span class="sr-only">(current)</span></a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/multimedia-animations-and-motion.html">Multimedia and Animations</a></li>
+                  <li class="page-item"><a class="page-link" href="../../advanced/design/form-labels-instructions-and-validation.html">Forms</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/content/editorial.html">Content</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/code/semantic-structure-and-navigation.html">Code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/testing/testing-methods-and-tools.html">Testing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/various/input-methods.html">Various</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../advanced/quiz/fundamentals.html">Quiz</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" id="main-content" tabindex="-1">
+
+    <div class="brandbar brandbar-a">
+      <div class="brandbar-image brandbar-image-kitesurf2"></div>
+    </div>
+
+    <nav class="full-cover" role="navigation" aria-labelledby="title-toc">
+      <div class="container">
+
+        <h1 class="main-heading">Visual Design and Colors</h1>
+
+        <h2 class="full-cover-title sr-only" id="title-toc">Table of Contents</h2>
+        <ul class="list-icons list-linklist toc-columns" role="directory">
+          <li><a href="#introduction" class="link-ts"><span>Introduction</span></a></li>
+          <li><a href="#color" class="link-ts"><span>Color</span></a></li>
+          <li><a href="#contrast" class="link-ts"><span>Contrast</span></a></li>
+          <li><a href="#visual-layout" class="link-ts"><span>Visual Layout</span></a></li>
+          <li><a href="#reading-order-focus-order" class="link-ts"><span>Reading Order, Focus Order</span></a></li>
+          <li><a href="#typography" class="link-ts"><span>Typography</span></a></li>
+          <li><a href="#css-generated-content-and-hidden-content" class="link-ts"><span>CSS-Generated Content and Hidden Content</span></a></li>
+        </ul>
+
+      </div>
+    </nav>
+    
+    <section class="full-cover bg-grey" role="region" id="introduction" aria-labelledby="title-introduction">
+      <div class="container">
+
+        <div class="text-right to-top to-top-z">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+                
+                <h2 class="card-title" id="title-introduction">Introduction</h2>                
+                <p class="lead"><strong>What about Visual Design and Colors?</strong></p>
+                <p>Other modules discuss techniques for making web content accessible to people who can't see it. This module takes somewhat of an opposite perspective. It focuses on visual accessibility techniques for people who can see, but perhaps not with perfect acuity or color perception.</p>
+                <p>There are people who need to magnify the screen, or who need high contrast colors, or who have a form of color-blindness. There are also people with reading disabilities or certain kinds of cognitive disabilities who may have good vision, but whose brains may process the visual signals in ways that make things difficult to distinguish or understand unless the elements on the screen are laid out clearly. This module is all about the visual side of accessibility.</p>                
+
+                <h3 class="heading-s">Summary</h3>
+                <p>Visual content must be presented so that is it perceivable and understandable by people of differing abilities, including people who are color blind or have low vision, or people who have cognitive, language and learning disabilities. </p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Deque University</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://dequeuniversity.com/class/visual-design2/intro" class="link-ts"><span>Introduction - Deque University</span></a></li>
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="color" aria-labelledby="title-color">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-color">Color</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Color</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Any information conveyed by color <span class="badge badge-success">MUST</span> be accompanied by a programmatically-discernible text alternative.</li>
+                  <li>The text alternative for information conveyed by color <span class="badge badge-success">MUST</span> accurately convey the same information without color.</li>
+                  <li>Any information conveyed by color <span class="badge badge-success">MUST</span> be accompanied by a visible alternative (text, image, etc.) that does not depend on color for meaning.</li>
+                  <li>Color alone <span class="badge badge-danger">MUST NOT</span> be used to distinguish links from surrounding text unless the color contrast between the link and the surrounding text is at least 3:1 and an additional differentiation (e.g. underline, outline, etc.) is provided
+                    when the link is hovered or receives focus.</li>
+                  <li>Color <span class="badge badge-info">SHOULD NOT</span> be used as the sole method of distinguishing UI components and/or their surrounding content, unless the color contrast between the UI components and/or surrounding content is at least 3:1.</li>
+                  <li>Visible text <span class="badge badge-info">SHOULD</span> be standard text in the markup (not images or graphic versions of text), to allow user customization of text color and contrast.</li>
+                  <li>Visible UI components <span class="badge badge-info">SHOULD</span> use native controls and features (not images or graphic versions of controls) where available, to allow user customization of interface color and contrast.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/color/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Color - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Color</h4>
+
+                <ul class="list-icons list-checklist">
+                  <li>Shouldn't be only means of communication</li>
+                  <li>Supplements experience</li>
+                  <li>Beware of color blindness</li>
+                  <li>Test inverted and monochrome</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#colour-and-meaning" class="link-ts"><span>Colour and meaning</span></a></li>
+                  <li><a href="../../guidelines/content/text-equivalents.html#visual-formatting" class="link-ts"><span>Visual formatting</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#contrast" class="link-ts"><span>Contrast - Design</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#contrast" class="link-ts"><span>Contrast - Content</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#color" class="link-ts"><span>Color - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=color" class="link-ts"><span>Colors: WCAG Filters</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://brilliantmaps.com/colour-blind-tube-map/" class="link-ts"><span>Brilliant Maps - Making Sense Of The World, One Map At A Time</span></a></li>
+                  <li><a href="https://toolness.github.io/accessible-color-matrix/" class="link-ts"><span>Accessible Color Palette Builder</span></a></li>
+                  <li><a href="http://contrast-grid.eightshapes.com/?background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23F2F2F2%0D%0A%23DDDDDD%0D%0A%23CCCCCC%0D%0A%23888888%0D%0A%23404040%2C%20Charcoal%0D%0A%23000000%2C%20Black%0D%0A%232F78C5%2C%20Effective%20on%20Extremes%0D%0A%230F60B6%2C%20Effective%20on%20Lights%0D%0A%23398EEA%2C%20Ineffective%0D%0A&es-color-form__tile-size=compact" class="link-ts"><span>Contrast Grid</span></a></li>
+                  <li><a href="https://webaim.org/resources/contrastchecker/" class="link-ts"><span>WebAIM’s Color Contrast Checker</span></a></li>
+                  <li><a href="https://github.com/getflourish/Sketch-Color-Contrast-Analyser" class="link-ts"><span>Color Contrast Analyser for Sketch</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="contrast" aria-labelledby="title-contrast">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-contrast">Contrast</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Contrast</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Small text (under 18 point regular font or 14 point bold font) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 4.5 to 1 with the background.</li>
+                  <li>Small text (under 18 point regular font or 14 point bold font) <span class="badge badge-info">SHOULD</span> have a contrast ratio of at least 7 to 1 with the background.</li>
+                  <li>Large text and images of large text (at or over 18 point or 14 point bold) <span class="badge badge-success">MUST</span> have a contrast ratio of at least 3 to 1 with the background.</li>
+                  <li>The contrast of all small visual focus indicators (smaller than 3px by 3px) against the background <span class="badge badge-info">SHOULD</span> be at least 4.5 to 1.</li>
+                  <li>The contrast of all large visual focus indicators (at least 3px by 3px) against the background <span class="badge badge-info">SHOULD</span> be at least 3 to 1.</li>
+                  <li>The contrast of UI control boundaries compared to adjacent areas <span class="badge badge-info">SHOULD</span> be sufficient (3 to 1 for UI control boundaries measuring at least 3px by 3px, and 4.5 to 1 for all other UI controls) to distinguish the UI control from the adjacent
+                    areas.</li>
+                  <li>Web content <span class="badge badge-success">MUST</span> retain all essential visual information in Windows High Contrast Mode.</li>
+                  <li>The design <span class="badge badge-danger">MUST NOT</span> override Windows High Contrast Mode.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/contrast/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Contrast - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#colour-contrast" class="link-ts"><span>Colour Contrast</span></a></li>
+                </ul>
+                
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/design/visual-design-and-colors.html#color" class="link-ts"><span>Color - Design</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#color" class="link-ts"><span>Color - Content</span></a></li>
+                  <li><a href="../../advanced/content/editorial.html#contrast" class="link-ts"><span>Contrast - Content</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+                
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&tags=contrast" class="link-ts"><span>Contrast: WCAG Filters</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://brilliantmaps.com/colour-blind-tube-map/" class="link-ts"><span>Brilliant Maps - Making Sense Of The World, One Map At A Time</span></a></li>
+                  <li><a href="https://toolness.github.io/accessible-color-matrix/" class="link-ts"><span>Accessible Color Palette Builder</span></a></li>
+                  <li><a href="http://contrast-grid.eightshapes.com/?background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23F2F2F2%0D%0A%23DDDDDD%0D%0A%23CCCCCC%0D%0A%23888888%0D%0A%23404040%2C%20Charcoal%0D%0A%23000000%2C%20Black%0D%0A%232F78C5%2C%20Effective%20on%20Extremes%0D%0A%230F60B6%2C%20Effective%20on%20Lights%0D%0A%23398EEA%2C%20Ineffective%0D%0A&es-color-form__tile-size=compact" class="link-ts"><span>Contrast Grid</span></a></li>
+                  <li><a href="https://webaim.org/resources/contrastchecker/" class="link-ts"><span>WebAIM’s Color Contrast Checker</span></a></li>
+                  <li><a href="https://github.com/getflourish/Sketch-Color-Contrast-Analyser" class="link-ts"><span>Color Contrast Analyser for Sketch</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="visual-layout" aria-labelledby="title-visual-layout">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-visual-layout">Visual Layout</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Visual Layout</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Blocks of content <span class="badge badge-info">SHOULD</span> be visually separated and distinct from each other, via margins, padding, or other methods of achieving visual "white space."</li>
+                  <li>Labels <span class="badge badge-info">SHOULD</span> be visually adjacent to their controls.</li>
+                  <li>The layout <span class="badge badge-info">SHOULD</span> have only one main visual focus.</li>
+                  <li>The design <span class="badge badge-info">SHOULD</span> draw attention to the intended visual focus.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/layout/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Visual Layout - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#focusable-elements" class="link-ts"><span>Focusable elements</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+                
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="reading-order-focus-order" aria-labelledby="title-reading-order-focus-order">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-reading-order-focus-order">Reading Order, Focus Order</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Reading Order, Focus Order</h4>
+                <ul class="list-icons list-checklist">
+                  <li>The reading and navigation order (determined by code order in the DOM) <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li>The navigation order of focusable elements (links, form elements, etc.) <span class="badge badge-success">MUST</span> be logical and intuitive.</li>
+                  <li><code>tabindex</code> of positive values <span class="badge badge-info">SHOULD</span> be avoided.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/order/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Reading Order, Focus Order - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Different ways</h4>
+                <ul>
+                  <li>Interactive elements</li>
+                  <li>DOM elements via screen reader</li>
+                </ul>
+
+                <h4 class="heading-s">Watch out when using</h4>
+                <ul>
+                  <li>Floating properties</li>
+                  <li>Position properties</li>
+                  <li>ARIA owns</li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Guidelines</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../guidelines/design/visual-design.html#visible-focus" class="link-ts"><span>Visible focus</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#focusable-elements" class="link-ts"><span>Focusable elements</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#content-order" class="link-ts"><span>Content order</span></a></li>
+                  <li><a href="../../guidelines/code/focus.html#focus-order" class="link-ts"><span>Focus order</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/code/semantic-structure-and-navigation.html#navigation-within-pages" class="link-ts"><span>Navigation Within Pages</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-faded" role="region" id="typography" aria-labelledby="title-typography">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-typography">Typography</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">Typography</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Fonts <span class="badge badge-info">SHOULD</span> be easily readable by sighted users.</li>
+                  <li>Line spacing <span class="badge badge-info">SHOULD</span> be at least 1.5 within paragraphs.</li>
+                  <li>Paragraph spacing <span class="badge badge-info">SHOULD</span> be at least 1.5 times larger than the line spacing.</li>
+                  <li>The number of characters or glyphs per line in any section or column of text <span class="badge badge-info">SHOULD NOT</span> exceed 80 (40 characters in Chinese, Japanese, or Korean)</li>
+                  <li>Text <span class="badge badge-info">SHOULD NOT</span> be full justified.</li>
+                  <li>Fonts <span class="badge badge-info">SHOULD</span> be user-customizable. </li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/typography/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Typography - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+
+                <h4 class="heading-s">Two types</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Serif</li>
+                  <li>Sans-serif (better for dyslexia)</li>
+                </ul>
+
+                <h4 class="heading-s">Best Practices</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Use relative Units (%, rem even better than em)</li>
+                  <li>Use underline for regular links (only)</li>
+                  <li>Don't use Strikethrough or insert</li>
+                  <li>Can be resized without loss of content or functionality</li>
+                  <li>Text Zoom VS Page Zoom</li>
+                  <li>Don't justify</li>
+                  <li>Don't center</li>
+                  <li>Beware of maximum paragraph width</li>
+                  <li>Use proper text direction</li>
+                </ul>
+
+                <h4 class="heading-s">Icon fonts</h4>
+                <ul class="list-icons list-checklist">
+                  <li>Strongly discouraged, use SVG instead</li>
+                  <li>A11Y problems when fonts are replaced</li>
+                  <li><a href="http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/">Ten reasons we switched from an icon font to SVG</a></li>
+                  <li><a href="https://speakerdeck.com/ninjanails/death-to-icon-fonts">Death to Icon Fonts</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Jump to:</h3>
+
+                <h4 class="heading-s">Advanced</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="../../advanced/content/editorial.html#text-and-typography" class="link-ts"><span>Text and Typography</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="http://www.bbc.co.uk/gel/guidelines/typography" class="link-ts"><span>Typography - BBC</span></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-cover bg-grey" role="region" id="css-generated-content-and-hidden-content" aria-labelledby="title-css-generated-content-and-hidden-content">
+      <div class="container">
+
+        <h2 class="full-cover-title" id="title-css-generated-content-and-hidden-content">CSS-Generated Content and Hidden Content</h2>
+
+        <div class="text-right to-top">
+          <a href="#totop" class="link-ts"><span>To Top</span></a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Checklist - Deque</h3>
+
+                <h4 class="heading-s">CSS Generated Content and Hidden Content</h4>
+                <ul class="list-icons list-checklist">
+                  <li>CSS-generated content <span class="badge badge-info">SHOULD</span> be avoided.</li>
+                  <li>A text alternative for informative CSS-generated content <span class="badge badge-success">MUST</span> be provided, AND the CSS-generated text <span class="badge badge-info">SHOULD</span> be set to <code>aria-hidden="true"</code>.</li>
+                  <li>Decorative or redundant CSS-generated content <span class="badge badge-info">SHOULD</span> be set to <code>aria-hidden="true"</code>.</li>
+                  <li>Visually hidden and inactive content <span class="badge badge-success">MUST</span> be hidden from screen reader users until that content is made visible and active for sighted users.</li>
+                </ul>
+
+                <h4 class="heading-s">Download Summary & Checklist</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://github.com/team-a11y/A11YPortal/blob/master/docs/summary-checklists/Visual%20Design%20and%20Colors%20-%20Design%20-%20Summary%20and%20Checklist.pdf" class="link-ts"><span>Visual Design and Colors PDF</span></a></li>
+                </ul>
+
+              </div>
+              <div>
+                <a href="https://dequeuniversity.com/class/visual-design2/css/" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> CSS-Generated Content and Hidden Content - Deque University</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Tips & Tricks</h3>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Resources</h3>
+
+                <h4 class="heading-s">Specifications</h4>
+                <ul class="list-icons list-linklist">
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=content" class="link-ts"><span>Content: WCAG Filters</span></a></li>
+                  <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_customize&amp;tags=hidden-content" class="link-ts"><span>Hidden content: WCAG Filters</span></a></li>
+                </ul>
+
+                <h4 class="heading-s">Examples</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Miscellaneous</h4>
+                <p>None documented</p>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-block">
+
+                <h3 class="card-title">Practice</h3>
+
+                <h4 class="heading-s">WCAG Annotations</h4>
+                <p>None documented</p>
+
+                <h4 class="heading-s">Design Annotations</h4>
+                <p>None documented</p>
+
+              </div>
+              <div>
+                <a href="https://github.com/team-a11y/A11YPortal" class="link-plug-on">
+                  <span class="icon icon-college icon-xl icon-gray-dark mr-2" aria-hidden="true"></span> Good / Bad - Github</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="full-cover site-aside bg-faded" role="complementary">
+    <div class="container">
+
+      <h2 class="full-cover-title">Are you new to accessibility?</h2>
+
+      <div class="text-right to-top">
+        <a href="#totop" class="link-ts"><span>To Top</span></a>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/tile-ForwardPlanning.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Training!</h3>
+              <p class="lead"><strong>We would also like YOU to become a champ</strong></p>
+            </div>
+            <div>
+              <a href="../../advanced/fundamentals/home.html#champ-training" class="link-plug-on">
+              <span class="icon icon-like icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> Become a champ
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid border-grey-light" src="../../images/getting-started2.png" alt="Cutout of infographic for the 9 step Getting Started with accessibility part. Step 1, roles and responsibilities, and partly step 2, personas, is shown.">
+            <div class="card-block">
+              <h3 class="card-title">
+                Responsibilities for:
+              </h3>
+              <ul class="list-icons list-linklist">
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#user-experience" class="link-ts"><span>User Experience</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#developers" class="link-ts"><span>Developers</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#editors" class="link-ts"><span>Editors</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#customer-journey-expert" class="link-ts"><span>Customer Journey Expert</span></a>
+                </li>
+                <li>
+                  <a href="../../basics/fundamentals/responsibilities.html#accessibility-champion" class="link-ts"><span>Accessibility Champion</span></a>
+                </li>
+              </ul>
+            </div>
+            <a href="../../basics/fundamentals/responsibilities.html" class="link-plug-on">
+            <span class="icon icon-right-left icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> More on Responsibilities</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="../../images/quiz-small.jpg" alt="">
+            <div class="card-block">
+              <h3 class="card-title">Take a look at the quiz questions!</h3>
+              <p class="card-text">For a quick insight in accessibility and what the advanced information is based upon the quiz questions are a good place to start.
+              </p>
+            </div>
+            <div>
+              <a href="../../advanced/quiz/fundamentals.html" class="link-plug-on">
+              <span class="icon icon-questionmark icon-lg icon-gray-dark mr-2" aria-hidden="true"></span> See all the questions
+            </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </aside>
+  
+  <footer class="full-cover site-footer text-center" role="contentinfo">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-inline mt-2" aria-label="footer links">
+          <li class="list-inline-item">
+            <a href="#" class="link-ts"><span>COMPANY</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/team-a11y/A11YPortal" class="link-ts"><span>Github</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://dequeuniversity.com/" class="link-ts"><span>Deque University</span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="../../about/fundamentals/contact.html" class="link-ts"><span>Contact</span></a>
+          </li>
+          <li class="list-inline-item">
+            &copy; 2018 Copyright
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../scripts/libs/tether/tether.min.js"></script>
+  <script src="../../scripts/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../../scripts/script.js"></script>
+	<script src="../../scripts/prism.js"></script>
+
+</body>
+
+</html>
