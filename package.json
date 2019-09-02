@@ -1,6 +1,6 @@
 {
   "name": "a11yportal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A central hub for accessibility information. It features all basics, guidelines, training material and good/bad examples.",
   "main": "index.js",
   "directories": {
