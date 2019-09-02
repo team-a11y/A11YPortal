@@ -33,7 +33,7 @@
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "del": "^3.0.0",
-    "firebase-tools": "^4.2.1",
+    "firebase-tools": "^7.3.0",
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
     "gulp-sass": "^4.0.1"
