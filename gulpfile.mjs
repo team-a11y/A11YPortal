@@ -1,12 +1,14 @@
-const browserSync = require('browser-sync');
-const del = require('del');
-const eslint = require('gulp-eslint');
-const gulp = require('gulp');
-const sass = require('gulp-sass');
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import eslint from 'gulp-eslint';
+import { deleteAsync } from 'del';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 
 const browserSyncInstance = browserSync.create();
 
-gulp.task('clean', () => del(['dist/**', '!dist'], { force: true }));
+gulp.task('clean', () => deleteAsync(['dist/**', '!dist'], { force: true }));
 
 gulp.task('scss', () =>
   gulp
@@ -37,13 +39,13 @@ gulp.task('js', () =>
 
 gulp.task('images', () =>
   gulp
-    .src('src/images/**/*', { base: 'src', since: gulp.lastRun('images') })
+    .src('src/images/**/*', { base: 'src', encoding: false, since: gulp.lastRun('images') })
     .pipe(gulp.dest('dist'))
 );
 
 gulp.task('fonts', () =>
   gulp
-    .src('src/fonts/**/*', { base: 'src', since: gulp.lastRun('fonts') })
+    .src('src/fonts/**/*', { base: 'src', encoding: false, since: gulp.lastRun('fonts') })
     .pipe(gulp.dest('dist'))
 );
 
